@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../FFT.ip_user_files/ip/xbip_dsp48_macro_0/sim/xbip_dsp48_macro_0.vhd" \
+"../../../../FFT.srcs/sources_1/ip/xbip_multadd_0/sim/xbip_multadd_0.vhd" \
+"../../../../FFT.srcs/sources_1/new/ComplexMultiply.vhd" \
+
+# Do not sort compile order
+nosort

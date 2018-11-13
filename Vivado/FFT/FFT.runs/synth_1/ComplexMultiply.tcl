@@ -31,8 +31,8 @@ set_property target_language VHDL [current_project]
 set_property ip_output_repo /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd
-read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_dsp48_macro_0/xbip_dsp48_macro_0.xci
-set_property used_in_implementation false [get_files -all /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_dsp48_macro_0/xbip_dsp48_macro_0_ooc.xdc]
+read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/xbip_multadd_0.xci
+set_property used_in_implementation false [get_files -all /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/xbip_multadd_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

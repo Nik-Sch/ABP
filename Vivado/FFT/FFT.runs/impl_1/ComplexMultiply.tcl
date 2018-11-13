@@ -74,7 +74,7 @@ set rc [catch {
   set_property ip_output_repo /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/synth_1/ComplexMultiply.dcp
-  read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_dsp48_macro_0/xbip_dsp48_macro_0.xci
+  read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/xbip_multadd_0.xci
   read_xdc /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/constrs_1/new/timing.xdc
   link_design -top ComplexMultiply -part xc7z020clg484-1
   close_msg_db -file init_design.pb

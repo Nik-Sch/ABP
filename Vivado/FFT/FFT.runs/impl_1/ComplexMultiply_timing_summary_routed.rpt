@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Mon Nov 12 21:25:07 2018
+| Date         : Tue Nov 13 22:26:02 2018
 | Host         : niklas-desktop running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_timing_summary -max_paths 10 -file ComplexMultiply_timing_summary_routed.rpt -pb ComplexMultiply_timing_summary_routed.pb -rpx ComplexMultiply_timing_summary_routed.rpx -warn_on_violation
 | Design       : ComplexMultiply
@@ -126,7 +126,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      0.317        0.000                      0                  560        0.109        0.000                      0                  560        0.845        0.000                       0                   349  
+      0.690        0.000                      0                  396        0.122        0.000                      0                  396        0.845        0.000                       0                   185  
 
 
 All user specified timing constraints are met.
@@ -149,7 +149,7 @@ i_clk  {0.000 1.500}        3.000           333.333
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-i_clk               0.317        0.000                      0                  560        0.109        0.000                      0                  560        0.845        0.000                       0                   349  
+i_clk               0.690        0.000                      0                  396        0.122        0.000                      0                  396        0.845        0.000                       0                   185  
 
 
 ------------------------------------------------------------------------------------------------
@@ -180,28 +180,28 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  i_clk
   To Clock:  i_clk
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.317ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.109ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        0.690ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.122ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        0.845ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.317ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.690ns  (required time - arrival time)
+  Source:                 r_b_real_reg[2]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[33]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[2]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.690ns  (logic 2.255ns (83.838%)  route 0.435ns (16.162%))
-  Logic Levels:           9  (CARRY4=9)
-  Clock Path Skew:        -0.067ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.505ns = ( 7.505 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.717ns  (logic 0.518ns (30.176%)  route 1.199ns (69.824%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.108ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.598ns = ( 7.598 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -216,39 +216,12 @@ Slack (MET) :             0.317ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X102Y49        FDCE                                         r  r_b_real_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.278 r  r_real_mul_1_neg_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.278    r_real_mul_1_neg_reg[27]_i_1_n_0
-    SLICE_X102Y62        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.395 r  r_real_mul_1_neg_reg[31]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.395    r_real_mul_1_neg_reg[31]_i_1_n_0
-    SLICE_X102Y63        CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.323     7.718 r  r_real_mul_1_neg_reg[35]_i_1/O[1]
-                         net (fo=1, routed)           0.000     7.718    plusOp[33]
-    SLICE_X102Y63        FDCE                                         r  r_real_mul_1_neg_reg[33]/D
+    SLICE_X102Y49        FDCE (Prop_fdce_C_Q)         0.518     5.566 r  r_b_real_reg[2]/Q
+                         net (fo=2, routed)           1.199     6.764    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[2]
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[2]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -257,31 +230,32 @@ Slack (MET) :             0.317ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.604     7.505    i_clk_IBUF_BUFG
-    SLICE_X102Y63        FDCE                                         r  r_real_mul_1_neg_reg[33]/C
-                         clock pessimism              0.457     7.962    
-                         clock uncertainty           -0.035     7.926    
-    SLICE_X102Y63        FDCE (Setup_fdce_C_D)        0.109     8.035    r_real_mul_1_neg_reg[33]
+                         net (fo=184, routed)         1.696     7.598    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.940    
+                         clock uncertainty           -0.035     7.905    
+    DSP48_X3Y20          DSP48E1 (Setup_dsp48e1_CLK_B[2])
+                                                     -0.450     7.455    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.035    
-                         arrival time                          -7.718    
+                         required time                          7.455    
+                         arrival time                          -6.764    
   -------------------------------------------------------------------
-                         slack                                  0.317    
+                         slack                                  0.690    
 
-Slack (MET) :             0.325ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.694ns  (required time - arrival time)
+  Source:                 r_b_real_reg[10]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[35]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[10]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.682ns  (logic 2.247ns (83.790%)  route 0.435ns (16.210%))
-  Logic Levels:           9  (CARRY4=9)
-  Clock Path Skew:        -0.067ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.505ns = ( 7.505 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.714ns  (logic 0.456ns (26.597%)  route 1.258ns (73.403%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.600ns = ( 7.600 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -296,39 +270,12 @@ Slack (MET) :             0.325ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X103Y49        FDCE                                         r  r_b_real_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.278 r  r_real_mul_1_neg_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.278    r_real_mul_1_neg_reg[27]_i_1_n_0
-    SLICE_X102Y62        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.395 r  r_real_mul_1_neg_reg[31]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.395    r_real_mul_1_neg_reg[31]_i_1_n_0
-    SLICE_X102Y63        CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.315     7.710 r  r_real_mul_1_neg_reg[35]_i_1/O[3]
-                         net (fo=1, routed)           0.000     7.710    plusOp[35]
-    SLICE_X102Y63        FDCE                                         r  r_real_mul_1_neg_reg[35]/D
+    SLICE_X103Y49        FDCE (Prop_fdce_C_Q)         0.456     5.504 r  r_b_real_reg[10]/Q
+                         net (fo=2, routed)           1.258     6.762    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[10]
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[10]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -337,31 +284,32 @@ Slack (MET) :             0.325ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.604     7.505    i_clk_IBUF_BUFG
-    SLICE_X102Y63        FDCE                                         r  r_real_mul_1_neg_reg[35]/C
-                         clock pessimism              0.457     7.962    
-                         clock uncertainty           -0.035     7.926    
-    SLICE_X102Y63        FDCE (Setup_fdce_C_D)        0.109     8.035    r_real_mul_1_neg_reg[35]
+                         net (fo=184, routed)         1.698     7.600    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.942    
+                         clock uncertainty           -0.035     7.906    
+    DSP48_X4Y22          DSP48E1 (Setup_dsp48e1_CLK_B[10])
+                                                     -0.450     7.457    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.035    
-                         arrival time                          -7.710    
+                         required time                          7.457    
+                         arrival time                          -6.762    
   -------------------------------------------------------------------
-                         slack                                  0.325    
+                         slack                                  0.694    
 
-Slack (MET) :             0.401ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.697ns  (required time - arrival time)
+  Source:                 r_b_real_reg[5]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[34]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[5]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.606ns  (logic 2.171ns (83.317%)  route 0.435ns (16.683%))
-  Logic Levels:           9  (CARRY4=9)
-  Clock Path Skew:        -0.067ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.505ns = ( 7.505 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.712ns  (logic 0.518ns (30.265%)  route 1.194ns (69.735%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.600ns = ( 7.600 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -376,39 +324,12 @@ Slack (MET) :             0.401ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X102Y49        FDCE                                         r  r_b_real_reg[5]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.278 r  r_real_mul_1_neg_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.278    r_real_mul_1_neg_reg[27]_i_1_n_0
-    SLICE_X102Y62        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.395 r  r_real_mul_1_neg_reg[31]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.395    r_real_mul_1_neg_reg[31]_i_1_n_0
-    SLICE_X102Y63        CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239     7.634 r  r_real_mul_1_neg_reg[35]_i_1/O[2]
-                         net (fo=1, routed)           0.000     7.634    plusOp[34]
-    SLICE_X102Y63        FDCE                                         r  r_real_mul_1_neg_reg[34]/D
+    SLICE_X102Y49        FDCE (Prop_fdce_C_Q)         0.518     5.566 r  r_b_real_reg[5]/Q
+                         net (fo=2, routed)           1.194     6.759    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[5]
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[5]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -417,31 +338,32 @@ Slack (MET) :             0.401ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.604     7.505    i_clk_IBUF_BUFG
-    SLICE_X102Y63        FDCE                                         r  r_real_mul_1_neg_reg[34]/C
-                         clock pessimism              0.457     7.962    
-                         clock uncertainty           -0.035     7.926    
-    SLICE_X102Y63        FDCE (Setup_fdce_C_D)        0.109     8.035    r_real_mul_1_neg_reg[34]
+                         net (fo=184, routed)         1.698     7.600    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.942    
+                         clock uncertainty           -0.035     7.906    
+    DSP48_X4Y22          DSP48E1 (Setup_dsp48e1_CLK_B[5])
+                                                     -0.450     7.457    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.035    
-                         arrival time                          -7.634    
+                         required time                          7.457    
+                         arrival time                          -6.759    
   -------------------------------------------------------------------
-                         slack                                  0.401    
+                         slack                                  0.697    
 
-Slack (MET) :             0.421ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.713ns  (required time - arrival time)
+  Source:                 r_b_real_reg[2]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[32]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[2]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.586ns  (logic 2.151ns (83.188%)  route 0.435ns (16.812%))
-  Logic Levels:           9  (CARRY4=9)
-  Clock Path Skew:        -0.067ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.505ns = ( 7.505 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.696ns  (logic 0.518ns (30.536%)  route 1.178ns (69.464%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.600ns = ( 7.600 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -456,39 +378,12 @@ Slack (MET) :             0.421ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X102Y49        FDCE                                         r  r_b_real_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.278 r  r_real_mul_1_neg_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.278    r_real_mul_1_neg_reg[27]_i_1_n_0
-    SLICE_X102Y62        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.395 r  r_real_mul_1_neg_reg[31]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.395    r_real_mul_1_neg_reg[31]_i_1_n_0
-    SLICE_X102Y63        CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.219     7.614 r  r_real_mul_1_neg_reg[35]_i_1/O[0]
-                         net (fo=1, routed)           0.000     7.614    plusOp[32]
-    SLICE_X102Y63        FDCE                                         r  r_real_mul_1_neg_reg[32]/D
+    SLICE_X102Y49        FDCE (Prop_fdce_C_Q)         0.518     5.566 r  r_b_real_reg[2]/Q
+                         net (fo=2, routed)           1.178     6.744    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[2]
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[2]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -497,31 +392,32 @@ Slack (MET) :             0.421ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.604     7.505    i_clk_IBUF_BUFG
-    SLICE_X102Y63        FDCE                                         r  r_real_mul_1_neg_reg[32]/C
-                         clock pessimism              0.457     7.962    
-                         clock uncertainty           -0.035     7.926    
-    SLICE_X102Y63        FDCE (Setup_fdce_C_D)        0.109     8.035    r_real_mul_1_neg_reg[32]
+                         net (fo=184, routed)         1.698     7.600    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.942    
+                         clock uncertainty           -0.035     7.906    
+    DSP48_X4Y22          DSP48E1 (Setup_dsp48e1_CLK_B[2])
+                                                     -0.450     7.457    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.035    
-                         arrival time                          -7.614    
+                         required time                          7.457    
+                         arrival time                          -6.744    
   -------------------------------------------------------------------
-                         slack                                  0.421    
+                         slack                                  0.713    
 
-Slack (MET) :             0.435ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.731ns  (required time - arrival time)
+  Source:                 r_b_real_reg[11]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[29]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[11]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.573ns  (logic 2.138ns (83.103%)  route 0.435ns (16.897%))
-  Logic Levels:           8  (CARRY4=8)
-  Clock Path Skew:        -0.066ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.506ns = ( 7.506 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.676ns  (logic 0.518ns (30.909%)  route 1.158ns (69.091%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.108ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.598ns = ( 7.598 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -536,36 +432,12 @@ Slack (MET) :             0.435ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X102Y47        FDCE                                         r  r_b_real_reg[11]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.278 r  r_real_mul_1_neg_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.278    r_real_mul_1_neg_reg[27]_i_1_n_0
-    SLICE_X102Y62        CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.323     7.601 r  r_real_mul_1_neg_reg[31]_i_1/O[1]
-                         net (fo=1, routed)           0.000     7.601    plusOp[29]
-    SLICE_X102Y62        FDCE                                         r  r_real_mul_1_neg_reg[29]/D
+    SLICE_X102Y47        FDCE (Prop_fdce_C_Q)         0.518     5.566 r  r_b_real_reg[11]/Q
+                         net (fo=2, routed)           1.158     6.724    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[11]
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[11]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -574,31 +446,32 @@ Slack (MET) :             0.435ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.605     7.506    i_clk_IBUF_BUFG
-    SLICE_X102Y62        FDCE                                         r  r_real_mul_1_neg_reg[29]/C
-                         clock pessimism              0.457     7.963    
-                         clock uncertainty           -0.035     7.927    
-    SLICE_X102Y62        FDCE (Setup_fdce_C_D)        0.109     8.036    r_real_mul_1_neg_reg[29]
+                         net (fo=184, routed)         1.696     7.598    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.940    
+                         clock uncertainty           -0.035     7.905    
+    DSP48_X3Y20          DSP48E1 (Setup_dsp48e1_CLK_B[11])
+                                                     -0.450     7.455    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.036    
-                         arrival time                          -7.601    
+                         required time                          7.455    
+                         arrival time                          -6.724    
   -------------------------------------------------------------------
-                         slack                                  0.435    
+                         slack                                  0.731    
 
-Slack (MET) :             0.443ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.732ns  (required time - arrival time)
+  Source:                 r_b_real_reg[10]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[31]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[10]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.565ns  (logic 2.130ns (83.050%)  route 0.435ns (16.950%))
-  Logic Levels:           8  (CARRY4=8)
-  Clock Path Skew:        -0.066ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.506ns = ( 7.506 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.675ns  (logic 0.456ns (27.228%)  route 1.219ns (72.772%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.108ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.598ns = ( 7.598 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -613,36 +486,12 @@ Slack (MET) :             0.443ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X103Y49        FDCE                                         r  r_b_real_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.278 r  r_real_mul_1_neg_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.278    r_real_mul_1_neg_reg[27]_i_1_n_0
-    SLICE_X102Y62        CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.315     7.593 r  r_real_mul_1_neg_reg[31]_i_1/O[3]
-                         net (fo=1, routed)           0.000     7.593    plusOp[31]
-    SLICE_X102Y62        FDCE                                         r  r_real_mul_1_neg_reg[31]/D
+    SLICE_X103Y49        FDCE (Prop_fdce_C_Q)         0.456     5.504 r  r_b_real_reg[10]/Q
+                         net (fo=2, routed)           1.219     6.722    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[10]
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[10]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -651,31 +500,32 @@ Slack (MET) :             0.443ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.605     7.506    i_clk_IBUF_BUFG
-    SLICE_X102Y62        FDCE                                         r  r_real_mul_1_neg_reg[31]/C
-                         clock pessimism              0.457     7.963    
-                         clock uncertainty           -0.035     7.927    
-    SLICE_X102Y62        FDCE (Setup_fdce_C_D)        0.109     8.036    r_real_mul_1_neg_reg[31]
+                         net (fo=184, routed)         1.696     7.598    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.940    
+                         clock uncertainty           -0.035     7.905    
+    DSP48_X3Y20          DSP48E1 (Setup_dsp48e1_CLK_B[10])
+                                                     -0.450     7.455    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.036    
-                         arrival time                          -7.593    
+                         required time                          7.455    
+                         arrival time                          -6.722    
   -------------------------------------------------------------------
-                         slack                                  0.443    
+                         slack                                  0.732    
 
-Slack (MET) :             0.519ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.774ns  (required time - arrival time)
+  Source:                 r_b_real_reg[11]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[30]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[11]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.489ns  (logic 2.054ns (82.533%)  route 0.435ns (17.467%))
-  Logic Levels:           8  (CARRY4=8)
-  Clock Path Skew:        -0.066ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.506ns = ( 7.506 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.634ns  (logic 0.518ns (31.693%)  route 1.116ns (68.307%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.600ns = ( 7.600 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -690,36 +540,12 @@ Slack (MET) :             0.519ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X102Y47        FDCE                                         r  r_b_real_reg[11]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.278 r  r_real_mul_1_neg_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.278    r_real_mul_1_neg_reg[27]_i_1_n_0
-    SLICE_X102Y62        CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239     7.517 r  r_real_mul_1_neg_reg[31]_i_1/O[2]
-                         net (fo=1, routed)           0.000     7.517    plusOp[30]
-    SLICE_X102Y62        FDCE                                         r  r_real_mul_1_neg_reg[30]/D
+    SLICE_X102Y47        FDCE (Prop_fdce_C_Q)         0.518     5.566 r  r_b_real_reg[11]/Q
+                         net (fo=2, routed)           1.116     6.682    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[11]
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[11]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -728,31 +554,32 @@ Slack (MET) :             0.519ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.605     7.506    i_clk_IBUF_BUFG
-    SLICE_X102Y62        FDCE                                         r  r_real_mul_1_neg_reg[30]/C
-                         clock pessimism              0.457     7.963    
-                         clock uncertainty           -0.035     7.927    
-    SLICE_X102Y62        FDCE (Setup_fdce_C_D)        0.109     8.036    r_real_mul_1_neg_reg[30]
+                         net (fo=184, routed)         1.698     7.600    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.942    
+                         clock uncertainty           -0.035     7.906    
+    DSP48_X4Y22          DSP48E1 (Setup_dsp48e1_CLK_B[11])
+                                                     -0.450     7.457    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.036    
-                         arrival time                          -7.517    
+                         required time                          7.457    
+                         arrival time                          -6.682    
   -------------------------------------------------------------------
-                         slack                                  0.519    
+                         slack                                  0.774    
 
-Slack (MET) :             0.539ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.788ns  (required time - arrival time)
+  Source:                 r_b_real_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[28]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[1]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.469ns  (logic 2.034ns (82.391%)  route 0.435ns (17.609%))
-  Logic Levels:           8  (CARRY4=8)
-  Clock Path Skew:        -0.066ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.506ns = ( 7.506 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.620ns  (logic 0.456ns (28.142%)  route 1.164ns (71.858%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.600ns = ( 7.600 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -767,36 +594,12 @@ Slack (MET) :             0.539ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X103Y49        FDCE                                         r  r_b_real_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.278 r  r_real_mul_1_neg_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.278    r_real_mul_1_neg_reg[27]_i_1_n_0
-    SLICE_X102Y62        CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.219     7.497 r  r_real_mul_1_neg_reg[31]_i_1/O[0]
-                         net (fo=1, routed)           0.000     7.497    plusOp[28]
-    SLICE_X102Y62        FDCE                                         r  r_real_mul_1_neg_reg[28]/D
+    SLICE_X103Y49        FDCE (Prop_fdce_C_Q)         0.456     5.504 r  r_b_real_reg[1]/Q
+                         net (fo=2, routed)           1.164     6.668    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[1]
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[1]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -805,31 +608,32 @@ Slack (MET) :             0.539ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.605     7.506    i_clk_IBUF_BUFG
-    SLICE_X102Y62        FDCE                                         r  r_real_mul_1_neg_reg[28]/C
-                         clock pessimism              0.457     7.963    
-                         clock uncertainty           -0.035     7.927    
-    SLICE_X102Y62        FDCE (Setup_fdce_C_D)        0.109     8.036    r_real_mul_1_neg_reg[28]
+                         net (fo=184, routed)         1.698     7.600    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.942    
+                         clock uncertainty           -0.035     7.906    
+    DSP48_X4Y22          DSP48E1 (Setup_dsp48e1_CLK_B[1])
+                                                     -0.450     7.457    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.036    
-                         arrival time                          -7.497    
+                         required time                          7.457    
+                         arrival time                          -6.668    
   -------------------------------------------------------------------
-                         slack                                  0.539    
+                         slack                                  0.788    
 
-Slack (MET) :             0.553ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.815ns  (required time - arrival time)
+  Source:                 r_b_real_reg[4]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[25]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[4]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.456ns  (logic 2.021ns (82.298%)  route 0.435ns (17.702%))
-  Logic Levels:           7  (CARRY4=7)
-  Clock Path Skew:        -0.065ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.507ns = ( 7.507 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.594ns  (logic 0.518ns (32.500%)  route 1.076ns (67.500%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.600ns = ( 7.600 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -844,33 +648,12 @@ Slack (MET) :             0.553ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X102Y49        FDCE                                         r  r_b_real_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.323     7.484 r  r_real_mul_1_neg_reg[27]_i_1/O[1]
-                         net (fo=1, routed)           0.000     7.484    plusOp[25]
-    SLICE_X102Y61        FDCE                                         r  r_real_mul_1_neg_reg[25]/D
+    SLICE_X102Y49        FDCE (Prop_fdce_C_Q)         0.518     5.566 r  r_b_real_reg[4]/Q
+                         net (fo=2, routed)           1.076     6.642    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[4]
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[4]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -879,31 +662,32 @@ Slack (MET) :             0.553ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.606     7.507    i_clk_IBUF_BUFG
-    SLICE_X102Y61        FDCE                                         r  r_real_mul_1_neg_reg[25]/C
-                         clock pessimism              0.457     7.964    
-                         clock uncertainty           -0.035     7.928    
-    SLICE_X102Y61        FDCE (Setup_fdce_C_D)        0.109     8.037    r_real_mul_1_neg_reg[25]
+                         net (fo=184, routed)         1.698     7.600    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.942    
+                         clock uncertainty           -0.035     7.906    
+    DSP48_X4Y22          DSP48E1 (Setup_dsp48e1_CLK_B[4])
+                                                     -0.450     7.457    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.037    
-                         arrival time                          -7.484    
+                         required time                          7.457    
+                         arrival time                          -6.642    
   -------------------------------------------------------------------
-                         slack                                  0.553    
+                         slack                                  0.815    
 
-Slack (MET) :             0.561ns  (required time - arrival time)
-  Source:                 r_real_mul_1_not_reg[1]/C
+Slack (MET) :             0.815ns  (required time - arrival time)
+  Source:                 r_b_real_reg[3]/C
                             (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            r_real_mul_1_neg_reg[27]/D
-                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[3]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (i_clk rise@3.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        2.448ns  (logic 2.013ns (82.240%)  route 0.435ns (17.760%))
-  Logic Levels:           7  (CARRY4=7)
-  Clock Path Skew:        -0.065ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.507ns = ( 7.507 - 3.000 ) 
-    Source Clock Delay      (SCD):    5.029ns
-    Clock Pessimism Removal (CPR):    0.457ns
+  Data Path Delay:        1.594ns  (logic 0.518ns (32.504%)  route 1.076ns (67.496%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.106ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.600ns = ( 7.600 - 3.000 ) 
+    Source Clock Delay      (SCD):    5.048ns
+    Clock Pessimism Removal (CPR):    0.342ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -918,33 +702,12 @@ Slack (MET) :             0.561ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.938     0.938 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.205     3.143    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.244 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.785     5.029    i_clk_IBUF_BUFG
-    SLICE_X105Y55        FDCE                                         r  r_real_mul_1_not_reg[1]/C
+                         net (fo=184, routed)         1.804     5.048    i_clk_IBUF_BUFG
+    SLICE_X102Y47        FDCE                                         r  r_b_real_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y55        FDCE (Prop_fdce_C_Q)         0.456     5.485 r  r_real_mul_1_not_reg[1]/Q
-                         net (fo=1, routed)           0.435     5.919    r_real_mul_1_not[1]
-    SLICE_X102Y55        CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.657     6.576 r  r_real_mul_1_neg_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.576    r_real_mul_1_neg_reg[3]_i_1_n_0
-    SLICE_X102Y56        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.693 r  r_real_mul_1_neg_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.693    r_real_mul_1_neg_reg[7]_i_1_n_0
-    SLICE_X102Y57        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.810 r  r_real_mul_1_neg_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.810    r_real_mul_1_neg_reg[11]_i_1_n_0
-    SLICE_X102Y58        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     6.927 r  r_real_mul_1_neg_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     6.927    r_real_mul_1_neg_reg[15]_i_1_n_0
-    SLICE_X102Y59        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.044 r  r_real_mul_1_neg_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.044    r_real_mul_1_neg_reg[19]_i_1_n_0
-    SLICE_X102Y60        CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117     7.161 r  r_real_mul_1_neg_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.161    r_real_mul_1_neg_reg[23]_i_1_n_0
-    SLICE_X102Y61        CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.315     7.476 r  r_real_mul_1_neg_reg[27]_i_1/O[3]
-                         net (fo=1, routed)           0.000     7.476    plusOp[27]
-    SLICE_X102Y61        FDCE                                         r  r_real_mul_1_neg_reg[27]/D
+    SLICE_X102Y47        FDCE (Prop_fdce_C_Q)         0.518     5.566 r  r_b_real_reg[3]/Q
+                         net (fo=2, routed)           1.076     6.641    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[3]
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[3]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      3.000     3.000 r  
@@ -953,16 +716,17 @@ Slack (MET) :             0.561ns  (required time - arrival time)
     K19                  IBUF (Prop_ibuf_I_O)         0.804     3.804 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           2.006     5.810    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091     5.901 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         1.606     7.507    i_clk_IBUF_BUFG
-    SLICE_X102Y61        FDCE                                         r  r_real_mul_1_neg_reg[27]/C
-                         clock pessimism              0.457     7.964    
-                         clock uncertainty           -0.035     7.928    
-    SLICE_X102Y61        FDCE (Setup_fdce_C_D)        0.109     8.037    r_real_mul_1_neg_reg[27]
+                         net (fo=184, routed)         1.698     7.600    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism              0.342     7.942    
+                         clock uncertainty           -0.035     7.906    
+    DSP48_X4Y22          DSP48E1 (Setup_dsp48e1_CLK_B[3])
+                                                     -0.450     7.457    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                          8.037    
-                         arrival time                          -7.476    
+                         required time                          7.457    
+                         arrival time                          -6.641    
   -------------------------------------------------------------------
-                         slack                                  0.561    
+                         slack                                  0.815    
 
 
 
@@ -970,257 +734,20 @@ Slack (MET) :             0.561ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.109ns  (arrival time - required time)
-  Source:                 inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_has_c.i_c3/opt_has_pipe.first_q_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[0]/D
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Path Group:             i_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.536%)  route 0.056ns (28.464%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.993ns
-    Source Clock Delay      (SCD):    1.475ns
-    Clock Pessimism Removal (CPR):    0.506ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.608     1.475    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_has_c.i_c3/CLK
-    SLICE_X99Y55         FDRE                                         r  inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_has_c.i_c3/opt_has_pipe.first_q_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X99Y55         FDRE (Prop_fdre_C_Q)         0.141     1.616 r  inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_has_c.i_c3/opt_has_pipe.first_q_reg[0]/Q
-                         net (fo=1, routed)           0.056     1.672    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[7]_35
-    SLICE_X98Y55         FDRE                                         r  inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.878     1.993    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/CLK
-    SLICE_X98Y55         FDRE                                         r  inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[0]/C
-                         clock pessimism             -0.506     1.488    
-    SLICE_X98Y55         FDRE (Hold_fdre_C_D)         0.075     1.563    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[0]
-  -------------------------------------------------------------------
-                         required time                         -1.563    
-                         arrival time                           1.672    
-  -------------------------------------------------------------------
-                         slack                                  0.109    
-
-Slack (MET) :             0.113ns  (arrival time - required time)
-  Source:                 inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[13]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/OPMODE[5]
-                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Path Group:             i_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.353ns  (logic 0.141ns (39.985%)  route 0.212ns (60.015%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.127ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.083ns
-    Source Clock Delay      (SCD):    1.474ns
-    Clock Pessimism Removal (CPR):    0.483ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.607     1.474    inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/i_op4/CLK
-    SLICE_X101Y57        FDRE                                         r  inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[13]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X101Y57        FDRE (Prop_fdre_C_Q)         0.141     1.615 r  inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[13]/Q
-                         net (fo=1, routed)           0.212     1.826    inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/opt_has_pipe.first_q_reg[23][5]
-    DSP48_X4Y22          DSP48E1                                      r  inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/OPMODE[5]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.968     2.083    inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/CLK
-    DSP48_X4Y22          DSP48E1                                      r  inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/CLK
-                         clock pessimism             -0.483     1.600    
-    DSP48_X4Y22          DSP48E1 (Hold_dsp48e1_CLK_OPMODE[5])
-                                                      0.113     1.713    inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive
-  -------------------------------------------------------------------
-                         required time                         -1.713    
-                         arrival time                           1.826    
-  -------------------------------------------------------------------
-                         slack                                  0.113    
-
-Slack (MET) :             0.117ns  (arrival time - required time)
-  Source:                 inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[10]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/OPMODE[2]
-                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Path Group:             i_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.355ns  (logic 0.141ns (39.681%)  route 0.214ns (60.319%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.126ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.082ns
-    Source Clock Delay      (SCD):    1.474ns
-    Clock Pessimism Removal (CPR):    0.483ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.607     1.474    inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/i_op4/CLK
-    SLICE_X101Y58        FDRE                                         r  inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[10]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X101Y58        FDRE (Prop_fdre_C_Q)         0.141     1.615 r  inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[10]/Q
-                         net (fo=1, routed)           0.214     1.829    inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/opt_has_pipe.first_q_reg[23][2]
-    DSP48_X4Y23          DSP48E1                                      r  inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/OPMODE[2]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.967     2.082    inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/CLK
-    DSP48_X4Y23          DSP48E1                                      r  inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/CLK
-                         clock pessimism             -0.483     1.599    
-    DSP48_X4Y23          DSP48E1 (Hold_dsp48e1_CLK_OPMODE[2])
-                                                      0.113     1.712    inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive
-  -------------------------------------------------------------------
-                         required time                         -1.712    
-                         arrival time                           1.829    
-  -------------------------------------------------------------------
-                         slack                                  0.117    
-
-Slack (MET) :             0.119ns  (arrival time - required time)
-  Source:                 inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[8]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[8]/D
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Path Group:             i_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.990ns
-    Source Clock Delay      (SCD):    1.472ns
-    Clock Pessimism Removal (CPR):    0.519ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.605     1.472    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/CLK
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[8]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X105Y62        FDRE (Prop_fdre_C_Q)         0.141     1.613 r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[8]/Q
-                         net (fo=1, routed)           0.056     1.668    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/D[8]
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[8]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.875     1.990    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/CLK
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[8]/C
-                         clock pessimism             -0.519     1.472    
-    SLICE_X105Y62        FDRE (Hold_fdre_C_D)         0.078     1.550    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[8]
-  -------------------------------------------------------------------
-                         required time                         -1.550    
-                         arrival time                           1.668    
-  -------------------------------------------------------------------
-                         slack                                  0.119    
-
-Slack (MET) :             0.121ns  (arrival time - required time)
-  Source:                 inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[13]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[13]/D
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Path Group:             i_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.990ns
-    Source Clock Delay      (SCD):    1.472ns
-    Clock Pessimism Removal (CPR):    0.519ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.605     1.472    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/CLK
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[13]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X105Y62        FDRE (Prop_fdre_C_Q)         0.141     1.613 r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[13]/Q
-                         net (fo=1, routed)           0.056     1.668    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/D[13]
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[13]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.875     1.990    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/CLK
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[13]/C
-                         clock pessimism             -0.519     1.472    
-    SLICE_X105Y62        FDRE (Hold_fdre_C_D)         0.076     1.548    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[13]
-  -------------------------------------------------------------------
-                         required time                         -1.548    
-                         arrival time                           1.668    
-  -------------------------------------------------------------------
-                         slack                                  0.121    
-
 Slack (MET) :             0.122ns  (arrival time - required time)
-  Source:                 inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[10]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[10]/D
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Source:                 r_b_real_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[0]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Data Path Delay:        0.557ns  (logic 0.164ns (29.435%)  route 0.393ns (70.565%))
   Logic Levels:           0  
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.990ns
-    Source Clock Delay      (SCD):    1.472ns
-    Clock Pessimism Removal (CPR):    0.519ns
+  Clock Path Skew:        0.353ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.083ns
+    Source Clock Delay      (SCD):    1.481ns
+    Clock Pessimism Removal (CPR):    0.248ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1230,12 +757,12 @@ Slack (MET) :             0.122ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           0.674     0.841    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.605     1.472    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/CLK
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[10]/C
+                         net (fo=184, routed)         0.615     1.481    i_clk_IBUF_BUFG
+    SLICE_X102Y47        FDCE                                         r  r_b_real_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y62        FDRE (Prop_fdre_C_Q)         0.141     1.613 r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[10]/Q
-                         net (fo=1, routed)           0.056     1.668    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/D[10]
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[10]/D
+    SLICE_X102Y47        FDCE (Prop_fdce_C_Q)         0.164     1.645 r  r_b_real_reg[0]/Q
+                         net (fo=2, routed)           0.393     2.039    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[0]
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[0]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      0.000     0.000 r  
@@ -1244,77 +771,30 @@ Slack (MET) :             0.122ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           0.731     1.086    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.875     1.990    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/CLK
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[10]/C
-                         clock pessimism             -0.519     1.472    
-    SLICE_X105Y62        FDRE (Hold_fdre_C_D)         0.075     1.547    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[10]
+                         net (fo=184, routed)         0.968     2.083    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism             -0.248     1.834    
+    DSP48_X4Y22          DSP48E1 (Hold_dsp48e1_CLK_B[0])
+                                                      0.082     1.916    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                         -1.547    
-                         arrival time                           1.668    
+                         required time                         -1.916    
+                         arrival time                           2.039    
   -------------------------------------------------------------------
                          slack                                  0.122    
 
-Slack (MET) :             0.124ns  (arrival time - required time)
-  Source:                 inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[16]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/C[16]
-                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+Slack (MET) :             0.131ns  (arrival time - required time)
+  Source:                 r_b_imaginary_reg[5]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            rr_b_imaginary_reg[5]/D
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.328ns  (logic 0.141ns (42.995%)  route 0.187ns (57.005%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.108ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.081ns
-    Source Clock Delay      (SCD):    1.471ns
-    Clock Pessimism Removal (CPR):    0.503ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.604     1.471    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/CLK
-    SLICE_X103Y64        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[16]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X103Y64        FDRE (Prop_fdre_C_Q)         0.141     1.612 r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[16]/Q
-                         net (fo=1, routed)           0.187     1.799    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/opt_has_pipe.first_q_reg[47][16]
-    DSP48_X4Y24          DSP48E1                                      r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/C[16]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock i_clk rise edge)      0.000     0.000 r  
-    K19                                               0.000     0.000 r  i_clk (IN)
-                         net (fo=0)                   0.000     0.000    i_clk
-    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
-                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.966     2.081    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/CLK
-    DSP48_X4Y24          DSP48E1                                      r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/CLK
-                         clock pessimism             -0.503     1.578    
-    DSP48_X4Y24          DSP48E1 (Hold_dsp48e1_CLK_C[16])
-                                                      0.096     1.674    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive
-  -------------------------------------------------------------------
-                         required time                         -1.674    
-                         arrival time                           1.799    
-  -------------------------------------------------------------------
-                         slack                                  0.124    
-
-Slack (MET) :             0.126ns  (arrival time - required time)
-  Source:                 inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[12]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[12]/D
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Path Group:             i_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Data Path Delay:        0.206ns  (logic 0.141ns (68.336%)  route 0.065ns (31.664%))
   Logic Levels:           0  
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.990ns
-    Source Clock Delay      (SCD):    1.472ns
+    Destination Clock Delay (DCD):    2.021ns
+    Source Clock Delay      (SCD):    1.503ns
     Clock Pessimism Removal (CPR):    0.519ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1325,12 +805,12 @@ Slack (MET) :             0.126ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           0.674     0.841    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.605     1.472    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/CLK
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[12]/C
+                         net (fo=184, routed)         0.636     1.503    i_clk_IBUF_BUFG
+    SLICE_X106Y51        FDCE                                         r  r_b_imaginary_reg[5]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X105Y62        FDRE (Prop_fdre_C_Q)         0.141     1.613 r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op3/opt_has_pipe.first_q_reg[12]/Q
-                         net (fo=1, routed)           0.056     1.668    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/D[12]
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[12]/D
+    SLICE_X106Y51        FDCE (Prop_fdce_C_Q)         0.141     1.644 r  r_b_imaginary_reg[5]/Q
+                         net (fo=1, routed)           0.065     1.709    r_b_imaginary[5]
+    SLICE_X106Y51        FDCE                                         r  rr_b_imaginary_reg[5]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      0.000     0.000 r  
@@ -1339,29 +819,171 @@ Slack (MET) :             0.126ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           0.731     1.086    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.875     1.990    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/CLK
-    SLICE_X105Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[12]/C
-                         clock pessimism             -0.519     1.472    
-    SLICE_X105Y62        FDRE (Hold_fdre_C_D)         0.071     1.543    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_op4/opt_has_pipe.first_q_reg[12]
+                         net (fo=184, routed)         0.906     2.021    i_clk_IBUF_BUFG
+    SLICE_X106Y51        FDCE                                         r  rr_b_imaginary_reg[5]/C
+                         clock pessimism             -0.519     1.503    
+    SLICE_X106Y51        FDCE (Hold_fdce_C_D)         0.075     1.578    rr_b_imaginary_reg[5]
   -------------------------------------------------------------------
-                         required time                         -1.543    
-                         arrival time                           1.668    
+                         required time                         -1.578    
+                         arrival time                           1.709    
   -------------------------------------------------------------------
-                         slack                                  0.126    
+                         slack                                  0.131    
 
-Slack (MET) :             0.126ns  (arrival time - required time)
-  Source:                 inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[17]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/C[17]
+Slack (MET) :             0.133ns  (arrival time - required time)
+  Source:                 r_b_real_reg[8]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[8]
                             (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.330ns  (logic 0.141ns (42.766%)  route 0.189ns (57.234%))
+  Data Path Delay:        0.567ns  (logic 0.164ns (28.903%)  route 0.403ns (71.097%))
   Logic Levels:           0  
-  Clock Path Skew:        0.108ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.081ns
-    Source Clock Delay      (SCD):    1.471ns
+  Clock Path Skew:        0.353ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.083ns
+    Source Clock Delay      (SCD):    1.481ns
+    Clock Pessimism Removal (CPR):    0.248ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.615     1.481    i_clk_IBUF_BUFG
+    SLICE_X102Y47        FDCE                                         r  r_b_real_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X102Y47        FDCE (Prop_fdce_C_Q)         0.164     1.645 r  r_b_real_reg[8]/Q
+                         net (fo=2, routed)           0.403     2.049    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[8]
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[8]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.968     2.083    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y22          DSP48E1                                      r  inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism             -0.248     1.834    
+    DSP48_X4Y22          DSP48E1 (Hold_dsp48e1_CLK_B[8])
+                                                      0.082     1.916    inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
+  -------------------------------------------------------------------
+                         required time                         -1.916    
+                         arrival time                           2.049    
+  -------------------------------------------------------------------
+                         slack                                  0.133    
+
+Slack (MET) :             0.156ns  (arrival time - required time)
+  Source:                 rr_a_real_reg[12]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            rrr_a_real_reg[12]/D
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             i_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
+  Data Path Delay:        0.220ns  (logic 0.164ns (74.580%)  route 0.056ns (25.420%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.993ns
+    Source Clock Delay      (SCD):    1.475ns
+    Clock Pessimism Removal (CPR):    0.519ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.608     1.475    i_clk_IBUF_BUFG
+    SLICE_X100Y55        FDCE                                         r  rr_a_real_reg[12]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X100Y55        FDCE (Prop_fdce_C_Q)         0.164     1.639 r  rr_a_real_reg[12]/Q
+                         net (fo=1, routed)           0.056     1.694    rr_a_real[12]
+    SLICE_X100Y55        FDCE                                         r  rrr_a_real_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.878     1.993    i_clk_IBUF_BUFG
+    SLICE_X100Y55        FDCE                                         r  rrr_a_real_reg[12]/C
+                         clock pessimism             -0.519     1.475    
+    SLICE_X100Y55        FDCE (Hold_fdce_C_D)         0.064     1.539    rrr_a_real_reg[12]
+  -------------------------------------------------------------------
+                         required time                         -1.539    
+                         arrival time                           1.694    
+  -------------------------------------------------------------------
+                         slack                                  0.156    
+
+Slack (MET) :             0.156ns  (arrival time - required time)
+  Source:                 rr_a_real_reg[17]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            rrr_a_real_reg[17]/D
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             i_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
+  Data Path Delay:        0.220ns  (logic 0.164ns (74.580%)  route 0.056ns (25.420%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.993ns
+    Source Clock Delay      (SCD):    1.475ns
+    Clock Pessimism Removal (CPR):    0.519ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.608     1.475    i_clk_IBUF_BUFG
+    SLICE_X100Y55        FDCE                                         r  rr_a_real_reg[17]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X100Y55        FDCE (Prop_fdce_C_Q)         0.164     1.639 r  rr_a_real_reg[17]/Q
+                         net (fo=1, routed)           0.056     1.694    rr_a_real[17]
+    SLICE_X100Y55        FDCE                                         r  rrr_a_real_reg[17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.878     1.993    i_clk_IBUF_BUFG
+    SLICE_X100Y55        FDCE                                         r  rrr_a_real_reg[17]/C
+                         clock pessimism             -0.519     1.475    
+    SLICE_X100Y55        FDCE (Hold_fdce_C_D)         0.064     1.539    rrr_a_real_reg[17]
+  -------------------------------------------------------------------
+                         required time                         -1.539    
+                         arrival time                           1.694    
+  -------------------------------------------------------------------
+                         slack                                  0.156    
+
+Slack (MET) :             0.157ns  (arrival time - required time)
+  Source:                 rrr_a_imaginary_reg[10]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/A[10]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             i_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
+  Data Path Delay:        0.329ns  (logic 0.141ns (42.896%)  route 0.188ns (57.104%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.106ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.082ns
+    Source Clock Delay      (SCD):    1.474ns
     Clock Pessimism Removal (CPR):    0.503ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1372,12 +994,12 @@ Slack (MET) :             0.126ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           0.674     0.841    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.604     1.471    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/CLK
-    SLICE_X103Y64        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[17]/C
+                         net (fo=184, routed)         0.607     1.474    i_clk_IBUF_BUFG
+    SLICE_X103Y57        FDCE                                         r  rrr_a_imaginary_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X103Y64        FDRE (Prop_fdre_C_Q)         0.141     1.612 r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[17]/Q
-                         net (fo=1, routed)           0.189     1.800    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/opt_has_pipe.first_q_reg[47][17]
-    DSP48_X4Y24          DSP48E1                                      r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/C[17]
+    SLICE_X103Y57        FDCE (Prop_fdce_C_Q)         0.141     1.615 r  rrr_a_imaginary_reg[10]/Q
+                         net (fo=1, routed)           0.188     1.802    inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/A[10]
+    DSP48_X4Y23          DSP48E1                                      r  inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/A[10]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      0.000     0.000 r  
@@ -1386,30 +1008,126 @@ Slack (MET) :             0.126ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           0.731     1.086    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.966     2.081    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/CLK
-    DSP48_X4Y24          DSP48E1                                      r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/CLK
-                         clock pessimism             -0.503     1.578    
-    DSP48_X4Y24          DSP48E1 (Hold_dsp48e1_CLK_C[17])
-                                                      0.096     1.674    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive
+                         net (fo=184, routed)         0.967     2.082    inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y23          DSP48E1                                      r  inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism             -0.503     1.579    
+    DSP48_X4Y23          DSP48E1 (Hold_dsp48e1_CLK_A[10])
+                                                      0.066     1.645    inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                         -1.674    
-                         arrival time                           1.800    
+                         required time                         -1.645    
+                         arrival time                           1.802    
   -------------------------------------------------------------------
-                         slack                                  0.126    
+                         slack                                  0.157    
 
-Slack (MET) :             0.130ns  (arrival time - required time)
-  Source:                 inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[24]/C
-                            (rising edge-triggered cell FDRE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/C[24]
+Slack (MET) :             0.158ns  (arrival time - required time)
+  Source:                 r_b_real_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[0]
                             (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             i_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
-  Data Path Delay:        0.353ns  (logic 0.141ns (39.985%)  route 0.212ns (60.015%))
+  Data Path Delay:        0.592ns  (logic 0.164ns (27.724%)  route 0.428ns (72.276%))
   Logic Levels:           0  
-  Clock Path Skew:        0.127ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.081ns
-    Source Clock Delay      (SCD):    1.472ns
+  Clock Path Skew:        0.352ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.082ns
+    Source Clock Delay      (SCD):    1.481ns
+    Clock Pessimism Removal (CPR):    0.248ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.615     1.481    i_clk_IBUF_BUFG
+    SLICE_X102Y47        FDCE                                         r  r_b_real_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X102Y47        FDCE (Prop_fdce_C_Q)         0.164     1.645 r  r_b_real_reg[0]/Q
+                         net (fo=2, routed)           0.428     2.073    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[0]
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.967     2.082    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism             -0.248     1.833    
+    DSP48_X3Y20          DSP48E1 (Hold_dsp48e1_CLK_B[0])
+                                                      0.082     1.915    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
+  -------------------------------------------------------------------
+                         required time                         -1.915    
+                         arrival time                           2.073    
+  -------------------------------------------------------------------
+                         slack                                  0.158    
+
+Slack (MET) :             0.160ns  (arrival time - required time)
+  Source:                 r_b_real_reg[8]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[8]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             i_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
+  Data Path Delay:        0.594ns  (logic 0.164ns (27.592%)  route 0.430ns (72.408%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.352ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.082ns
+    Source Clock Delay      (SCD):    1.481ns
+    Clock Pessimism Removal (CPR):    0.248ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.615     1.481    i_clk_IBUF_BUFG
+    SLICE_X102Y47        FDCE                                         r  r_b_real_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X102Y47        FDCE (Prop_fdce_C_Q)         0.164     1.645 r  r_b_real_reg[8]/Q
+                         net (fo=2, routed)           0.430     2.076    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/B[8]
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/B[8]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.967     2.082    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X3Y20          DSP48E1                                      r  inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism             -0.248     1.833    
+    DSP48_X3Y20          DSP48E1 (Hold_dsp48e1_CLK_B[8])
+                                                      0.082     1.915    inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
+  -------------------------------------------------------------------
+                         required time                         -1.915    
+                         arrival time                           2.076    
+  -------------------------------------------------------------------
+                         slack                                  0.160    
+
+Slack (MET) :             0.162ns  (arrival time - required time)
+  Source:                 rrr_a_imaginary_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/A[4]
+                            (rising edge-triggered cell DSP48E1 clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             i_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
+  Data Path Delay:        0.353ns  (logic 0.141ns (39.955%)  route 0.212ns (60.045%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.125ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.082ns
+    Source Clock Delay      (SCD):    1.475ns
     Clock Pessimism Removal (CPR):    0.483ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1420,12 +1138,12 @@ Slack (MET) :             0.130ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           0.674     0.841    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.605     1.472    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/CLK
-    SLICE_X101Y62        FDRE                                         r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[24]/C
+                         net (fo=184, routed)         0.608     1.475    i_clk_IBUF_BUFG
+    SLICE_X101Y55        FDCE                                         r  rrr_a_imaginary_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X101Y62        FDRE (Prop_fdre_C_Q)         0.141     1.613 r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[24]/Q
-                         net (fo=1, routed)           0.212     1.824    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/opt_has_pipe.first_q_reg[47][24]
-    DSP48_X4Y24          DSP48E1                                      r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/C[24]
+    SLICE_X101Y55        FDCE (Prop_fdce_C_Q)         0.141     1.616 r  rrr_a_imaginary_reg[4]/Q
+                         net (fo=1, routed)           0.212     1.827    inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/A[4]
+    DSP48_X4Y23          DSP48E1                                      r  inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/A[4]
   -------------------------------------------------------------------    -------------------
 
                          (clock i_clk rise edge)      0.000     0.000 r  
@@ -1434,16 +1152,63 @@ Slack (MET) :             0.130ns  (arrival time - required time)
     K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
                          net (fo=1, routed)           0.731     1.086    i_clk_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
-                         net (fo=348, routed)         0.966     2.081    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/CLK
-    DSP48_X4Y24          DSP48E1                                      r  inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/CLK
-                         clock pessimism             -0.483     1.598    
-    DSP48_X4Y24          DSP48E1 (Hold_dsp48e1_CLK_C[24])
-                                                      0.096     1.694    inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive
+                         net (fo=184, routed)         0.967     2.082    inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/CLK
+    DSP48_X4Y23          DSP48E1                                      r  inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+                         clock pessimism             -0.483     1.599    
+    DSP48_X4Y23          DSP48E1 (Hold_dsp48e1_CLK_A[4])
+                                                      0.066     1.665    inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive
   -------------------------------------------------------------------
-                         required time                         -1.694    
-                         arrival time                           1.824    
+                         required time                         -1.665    
+                         arrival time                           1.827    
   -------------------------------------------------------------------
-                         slack                                  0.130    
+                         slack                                  0.162    
+
+Slack (MET) :             0.163ns  (arrival time - required time)
+  Source:                 rr_b_imaginary_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            rrr_b_imaginary_reg[0]/D
+                            (rising edge-triggered cell FDCE clocked by i_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             i_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (i_clk rise@0.000ns - i_clk rise@0.000ns)
+  Data Path Delay:        0.491ns  (logic 0.164ns (33.415%)  route 0.327ns (66.585%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.264ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.994ns
+    Source Clock Delay      (SCD):    1.481ns
+    Clock Pessimism Removal (CPR):    0.248ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.167     0.167 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.674     0.841    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.867 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.615     1.481    i_clk_IBUF_BUFG
+    SLICE_X102Y49        FDCE                                         r  rr_b_imaginary_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X102Y49        FDCE (Prop_fdce_C_Q)         0.164     1.645 r  rr_b_imaginary_reg[0]/Q
+                         net (fo=1, routed)           0.327     1.972    rr_b_imaginary[0]
+    SLICE_X102Y50        FDCE                                         r  rrr_b_imaginary_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock i_clk rise edge)      0.000     0.000 r  
+    K19                                               0.000     0.000 r  i_clk (IN)
+                         net (fo=0)                   0.000     0.000    i_clk
+    K19                  IBUF (Prop_ibuf_I_O)         0.355     0.355 r  i_clk_IBUF_inst/O
+                         net (fo=1, routed)           0.731     1.086    i_clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.115 r  i_clk_IBUF_BUFG_inst/O
+                         net (fo=184, routed)         0.879     1.994    i_clk_IBUF_BUFG
+    SLICE_X102Y50        FDCE                                         r  rrr_b_imaginary_reg[0]/C
+                         clock pessimism             -0.248     1.746    
+    SLICE_X102Y50        FDCE (Hold_fdce_C_D)         0.063     1.809    rrr_b_imaginary_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.809    
+                         arrival time                           1.972    
+  -------------------------------------------------------------------
+                         slack                                  0.163    
 
 
 
@@ -1458,35 +1223,35 @@ Sources:            { i_clk }
 
 Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I       n/a            2.155         3.000       0.845      BUFGCTRL_X0Y16  i_clk_IBUF_BUFG_inst/I
-Min Period        n/a     DSP48E1/CLK  n/a            2.154         3.000       0.846      DSP48_X4Y23     inst_real_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.154         3.000       0.846      DSP48_X4Y22     inst_complex_dsp_1/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.154         3.000       0.846      DSP48_X3Y22     inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.154         3.000       0.846      DSP48_X4Y24     inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/opt_7series.i_uniwrap/i_primitive/CLK
-Min Period        n/a     FDRE/C       n/a            1.000         3.000       2.000      SLICE_X98Y55    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[0]/C
-Min Period        n/a     FDRE/C       n/a            1.000         3.000       2.000      SLICE_X95Y57    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[10]/C
-Min Period        n/a     FDRE/C       n/a            1.000         3.000       2.000      SLICE_X98Y58    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[11]/C
-Min Period        n/a     FDRE/C       n/a            1.000         3.000       2.000      SLICE_X98Y58    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[12]/C
-Min Period        n/a     FDRE/C       n/a            1.000         3.000       2.000      SLICE_X96Y58    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[13]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X94Y60    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[16]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X94Y60    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[17]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X98Y59    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[18]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X101Y59   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[0]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X101Y60   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[10]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X100Y61   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[11]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X104Y62   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[12]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X104Y62   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[13]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X104Y62   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[14]/C
-Low Pulse Width   Slow    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X101Y60   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[15]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X95Y57    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[10]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X96Y58    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[13]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X96Y58    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[19]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X95Y57    inst_complex_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[27]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X101Y60   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[10]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X100Y61   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[11]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X101Y60   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[15]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X101Y61   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[20]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X100Y61   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[25]/C
-High Pulse Width  Fast    FDRE/C       n/a            0.500         1.500       1.000      SLICE_X100Y61   inst_real_dsp_2/U0/i_synth/i_synth_option.i_synth_model/i_c4/opt_has_pipe.first_q_reg[26]/C
+Min Period        n/a     DSP48E1/CLK  n/a            2.154         3.000       0.846      DSP48_X3Y21     inst_imaginary_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.154         3.000       0.846      DSP48_X4Y22     inst_real_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.154         3.000       0.846      DSP48_X4Y23     inst_real_mul_2/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.154         3.000       0.846      DSP48_X3Y20     inst_imaginary_mul_1/U0/i_synth/device_supports_dsp.use_multadd_dsp/dsp48_multadd.multadd_usecase_inst/i_synth_option.i_synth_model/opt_vx7.i_uniwrap/i_primitive/CLK
+Min Period        n/a     FDCE/C       n/a            1.000         3.000       2.000      SLICE_X98Y50    r_a_imaginary_reg[0]/C
+Min Period        n/a     FDCE/C       n/a            1.000         3.000       2.000      SLICE_X98Y58    r_a_imaginary_reg[10]/C
+Min Period        n/a     FDCE/C       n/a            1.000         3.000       2.000      SLICE_X100Y57   r_a_imaginary_reg[11]/C
+Min Period        n/a     FDCE/C       n/a            1.000         3.000       2.000      SLICE_X98Y58    r_a_imaginary_reg[12]/C
+Min Period        n/a     FDCE/C       n/a            1.000         3.000       2.000      SLICE_X99Y57    r_a_imaginary_reg[13]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X102Y61   r_a_real_reg[17]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X103Y47   r_b_imaginary_reg[0]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X103Y49   r_b_imaginary_reg[10]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X102Y47   r_b_real_reg[0]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X103Y49   r_b_real_reg[10]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X102Y47   r_b_real_reg[11]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X103Y49   r_b_real_reg[1]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X102Y49   r_b_real_reg[2]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X102Y47   r_b_real_reg[3]/C
+Low Pulse Width   Slow    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X102Y49   r_b_real_reg[4]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X102Y61   r_a_real_reg[17]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X107Y54   r_b_imaginary_reg[12]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X107Y54   r_b_imaginary_reg[13]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X107Y54   r_b_imaginary_reg[14]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X107Y54   r_b_imaginary_reg[15]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X106Y54   r_b_imaginary_reg[16]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X106Y54   r_b_imaginary_reg[17]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X106Y53   rr_b_imaginary_reg[11]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X106Y54   rr_b_imaginary_reg[12]/C
+High Pulse Width  Fast    FDCE/C       n/a            0.500         1.500       1.000      SLICE_X106Y54   rr_b_imaginary_reg[13]/C
 
 
 

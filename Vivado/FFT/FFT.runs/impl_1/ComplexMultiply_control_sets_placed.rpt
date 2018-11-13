@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Mon Nov 12 21:24:42 2018
+| Date         : Tue Nov 13 22:25:38 2018
 | Host         : niklas-desktop running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_control_sets -verbose -file ComplexMultiply_control_sets_placed.rpt
 | Design       : ComplexMultiply
@@ -23,7 +23,7 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     2 |
+| Number of unique control sets                            |     1 |
 | Unused register locations in slices containing registers |     0 |
 +----------------------------------------------------------+-------+
 
@@ -34,7 +34,7 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|    16+ |            2 |
+|    16+ |            1 |
 +--------+--------------+
 
 
@@ -44,8 +44,8 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             400 |           44 |
-| No           | No                    | Yes                    |             288 |           38 |
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |             360 |           49 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
@@ -59,8 +59,7 @@ Table of Contents
 +------------------+---------------+------------------+------------------+----------------+
 |   Clock Signal   | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +------------------+---------------+------------------+------------------+----------------+
-|  i_clk_IBUF_BUFG |               | i_reset_IBUF     |               38 |            288 |
-|  i_clk_IBUF_BUFG |               |                  |               44 |            400 |
+|  i_clk_IBUF_BUFG |               | i_reset_IBUF     |               49 |            360 |
 +------------------+---------------+------------------+------------------+----------------+
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Mon Nov 12 21:25:07 2018
+| Date             : Tue Nov 13 22:26:02 2018
 | Host             : niklas-desktop running 64-bit Ubuntu 18.04.1 LTS
 | Command          : report_power -file ComplexMultiply_power_routed.rpt -pb ComplexMultiply_power_summary_routed.pb -rpx ComplexMultiply_power_routed.rpx
 | Design           : ComplexMultiply
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.379        |
+| Total On-Chip Power (W)  | 0.367        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.271        |
+| Dynamic (W)              | 0.258        |
 | Device Static (W)        | 0.108        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 80.6         |
-| Junction Temperature (C) | 29.4         |
+| Max Ambient (C)          | 80.8         |
+| Junction Temperature (C) | 29.2         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -49,21 +49,19 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+----------------+-----------+----------+-----------+-----------------+
-| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
-+----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.007 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      439 |       --- |             --- |
-|   Register     |    <0.001 |      344 |    106400 |            0.32 |
-|   LUT as Logic |    <0.001 |       38 |     53200 |            0.07 |
-|   CARRY4       |    <0.001 |        9 |     13300 |            0.07 |
-|   Others       |     0.000 |       48 |       --- |             --- |
-| Signals        |     0.020 |      569 |       --- |             --- |
-| DSPs           |     0.014 |        4 |       220 |            1.82 |
-| I/O            |     0.228 |      146 |       200 |           73.00 |
-| Static Power   |     0.108 |          |           |                 |
-| Total          |     0.379 |          |           |                 |
-+----------------+-----------+----------+-----------+-----------------+
++--------------+-----------+----------+-----------+-----------------+
+| On-Chip      | Power (W) | Used     | Available | Utilization (%) |
++--------------+-----------+----------+-----------+-----------------+
+| Clocks       |     0.007 |        3 |       --- |             --- |
+| Slice Logic  |    <0.001 |      190 |       --- |             --- |
+|   Register   |    <0.001 |      180 |    106400 |            0.17 |
+|   Others     |     0.000 |       10 |       --- |             --- |
+| Signals      |     0.016 |      397 |       --- |             --- |
+| DSPs         |     0.013 |        4 |       220 |            1.82 |
+| I/O          |     0.223 |      146 |       200 |           73.00 |
+| Static Power |     0.108 |          |           |                 |
+| Total        |     0.367 |          |           |                 |
++--------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -72,11 +70,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.052 |       0.044 |      0.008 |
-| Vccaux    |       1.800 |     0.030 |       0.019 |      0.011 |
+| Vccint    |       1.000 |     0.045 |       0.037 |      0.008 |
+| Vccaux    |       1.800 |     0.029 |       0.018 |      0.011 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.108 |       0.107 |      0.001 |
+| Vcco18    |       1.800 |     0.106 |       0.105 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -145,48 +143,38 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------------------------+-----------+
-| Name                                 | Power (W) |
-+--------------------------------------+-----------+
-| ComplexMultiply                      |     0.271 |
-|   inst_complex_dsp_1                 |     0.004 |
-|     U0                               |     0.004 |
-|       i_synth                        |     0.004 |
-|         i_synth_option.i_synth_model |     0.004 |
-|           i_c4                       |     0.000 |
-|           i_carryin4                 |     0.000 |
-|           i_op3                      |    <0.001 |
-|           i_op4                      |    <0.001 |
-|           opt_7series.i_uniwrap      |     0.004 |
-|   inst_complex_dsp_2                 |     0.015 |
-|     U0                               |     0.015 |
-|       i_synth                        |     0.015 |
-|         i_synth_option.i_synth_model |     0.015 |
-|           i_c4                       |     0.002 |
-|           i_carryin4                 |     0.000 |
-|           i_has_c.i_c3               |     0.002 |
-|           i_op3                      |    <0.001 |
-|           i_op4                      |    <0.001 |
-|           opt_7series.i_uniwrap      |     0.011 |
-|   inst_real_dsp_1                    |     0.004 |
-|     U0                               |     0.004 |
-|       i_synth                        |     0.004 |
-|         i_synth_option.i_synth_model |     0.004 |
-|           i_c4                       |     0.000 |
-|           i_carryin4                 |     0.000 |
-|           i_op3                      |    <0.001 |
-|           i_op4                      |    <0.001 |
-|           opt_7series.i_uniwrap      |     0.004 |
-|   inst_real_dsp_2                    |     0.012 |
-|     U0                               |     0.012 |
-|       i_synth                        |     0.012 |
-|         i_synth_option.i_synth_model |     0.012 |
-|           i_c4                       |     0.002 |
-|           i_carryin4                 |     0.000 |
-|           i_has_c.i_c3               |     0.002 |
-|           i_op3                      |    <0.001 |
-|           i_op4                      |    <0.001 |
-|           opt_7series.i_uniwrap      |     0.008 |
-+--------------------------------------+-----------+
++----------------------------------------------+-----------+
+| Name                                         | Power (W) |
++----------------------------------------------+-----------+
+| ComplexMultiply                              |     0.258 |
+|   inst_imaginary_mul_1                       |     0.004 |
+|     U0                                       |     0.004 |
+|       i_synth                                |     0.004 |
+|         device_supports_dsp.use_multadd_dsp  |     0.004 |
+|           dsp48_multadd.multadd_usecase_inst |     0.004 |
+|             i_synth_option.i_synth_model     |     0.004 |
+|               opt_vx7.i_uniwrap              |     0.004 |
+|   inst_imaginary_mul_2                       |     0.010 |
+|     U0                                       |     0.010 |
+|       i_synth                                |     0.010 |
+|         device_supports_dsp.use_multadd_dsp  |     0.010 |
+|           dsp48_multadd.multadd_usecase_inst |     0.010 |
+|             i_synth_option.i_synth_model     |     0.010 |
+|               opt_vx7.i_uniwrap              |     0.010 |
+|   inst_real_mul_1                            |     0.004 |
+|     U0                                       |     0.004 |
+|       i_synth                                |     0.004 |
+|         device_supports_dsp.use_multadd_dsp  |     0.004 |
+|           dsp48_multadd.multadd_usecase_inst |     0.004 |
+|             i_synth_option.i_synth_model     |     0.004 |
+|               opt_vx7.i_uniwrap              |     0.004 |
+|   inst_real_mul_2                            |     0.008 |
+|     U0                                       |     0.008 |
+|       i_synth                                |     0.008 |
+|         device_supports_dsp.use_multadd_dsp  |     0.008 |
+|           dsp48_multadd.multadd_usecase_inst |     0.008 |
+|             i_synth_option.i_synth_model     |     0.008 |
+|               opt_vx7.i_uniwrap              |     0.008 |
++----------------------------------------------+-----------+
 
 
