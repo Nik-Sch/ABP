@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 // 2018-07-11   1.0     Schelten        initial TB
 //--------------------------------------------------------------
-module testbench_fft;
+module testbench_complex_mul;
 
   parameter integer MAX_TESTS = 200;
 
@@ -44,28 +44,32 @@ module testbench_fft;
     return len + curr_valid;
   endfunction;
 
-  parameter integer bit_depth = 18;
+  parameter integer reg_stages = 6;
+
+  parameter integer bit_depth = 18; // dsp need to change
   typedef struct packed {
     logic signed [bit_depth-1:0] r, i;
   } complex;
 
-  typedef struct packed {
-    logic signed [(bit_depth * 2)-1:0] r, i;
-  } complex_large;
 
+  complex dut_cm_a, dut_cm_b;
+  complex dut_cm_q;
+  complex [0:MAX_TESTS-1] dut_cm_q_ref;
+  string filename = "0";
 
-  complex a, b;
-  complex_large q;
-  complex_large [0:MAX_TESTS-1] q_ref;
-
-  function complex_large complex_multiply;
+  function complex complex_multiply;
+    // a: Q11.7, b: Q2.16
+    // out: Q11.7
     input                 complex a, b;
 
-    complex_large result;
-    result.r = (a.r * b.r) - (a.i * b.i);
-    result.i = (a.r * b.i) + (a.i * b.r);
+    complex result;
+    logic signed [(bit_depth * 2)-1:0] r = (a.r * b.r) - (a.i * b.i);
+    logic signed [(bit_depth * 2)-1:0] i = (a.r * b.i) + (a.i * b.r);
+    result.r = r[(bit_depth * 2)-3-:bit_depth];
+    result.i = i[(bit_depth * 2)-3-:bit_depth];
     return result;
   endfunction;
+
 
   initial begin
     reset = 1;
@@ -77,25 +81,28 @@ module testbench_fft;
       @(negedge clk);
     end
 
-    for (i = 0; i < MAX_TESTS + 5; i++) begin
-        a.r = $random;
-        a.i = $random;
-        b.r = $random;
-        b.i = $random;
+    $display("[CM Testbench] Starting ComplexMultiply tests. @ %01t", $time);
+    for (i = 0; i < MAX_TESTS + reg_stages; i++) begin
+        dut_cm_a.r = $random;
+        dut_cm_a.i = $random;
+        dut_cm_b.r = $random;
+        dut_cm_b.i = $random;
       if (i < MAX_TESTS) begin
-        q_ref[i] = complex_multiply(a, b);
+        dut_cm_q_ref[i] = complex_multiply(dut_cm_a, dut_cm_b);
       end
       @(negedge clk);
-      if (i >= 5) begin
-        if (q_ref[i - 5] != q) begin
-          $fatal(1, "[FFT Testbench] result is wrong.\n    q.r: %6d     q.i: %6d\nq_ref.r: %6d q_ref.i: %6d @ %01t",
-        q.r, q.i, q_ref[i - 5].r, q_ref[i - 5].i, $time);
+      if (i >= reg_stages) begin
+        if (dut_cm_q_ref[i - reg_stages] != dut_cm_q) begin
+          $fatal(1, "[CM Testbench] result is wrong (i: %0d).\n    dut_cm_q.r: %6d     dut_cm_q.i: %6d\nq_ref.r: %6d dut_cm_q_ref.i: %6d @ %01t",
+        i -reg_stages, dut_cm_q.r, dut_cm_q.i, dut_cm_q_ref[i - reg_stages].r, dut_cm_q_ref[i - reg_stages].i, $time);
         end else begin
           $display("calculation correct @ %01t", $time);
         end
       end
     end
-    $display("[FFT Testbench] All tests successful. @ %01t", $time);
+    $display("[CM Testbench] ComplexMultiply tests successful. @ %01t", $time);
+
+
     $stop;
   end
 
@@ -103,13 +110,13 @@ module testbench_fft;
   (
     .i_clk(clk),
     .i_reset(reset),
-    .i_a_real(a.r),
-    .i_a_imaginary(a.i),
-    .i_b_real(b.r),
-    .i_b_imaginary(b.i),
+    .i_a_real(dut_cm_a.r),
+    .i_a_imaginary(dut_cm_a.i),
+    .i_b_real(dut_cm_b.r),
+    .i_b_imaginary(dut_cm_b.i),
 
-    .o_q_real(q.r),
-    .o_q_imaginary(q.i)
+    .o_q_real(dut_cm_q.r),
+    .o_q_imaginary(dut_cm_q.i)
     );
 
 

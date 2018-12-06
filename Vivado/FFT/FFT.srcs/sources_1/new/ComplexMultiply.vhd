@@ -36,13 +36,13 @@ entity ComplexMultiply is
   port (
     i_clk         : in std_ulogic;
     i_reset       : in std_ulogic;
-    i_a_real      : in std_ulogic_vector(g_width - 1 downto 0);
-    i_a_imaginary : in std_ulogic_vector(g_width - 1 downto 0);
-    i_b_real      : in std_ulogic_vector(g_width - 1 downto 0);
-    i_b_imaginary : in std_ulogic_vector(g_width - 1 downto 0);
+    i_a_real      : in std_ulogic_vector(g_width - 1 downto 0);  -- Q11.7
+    i_a_imaginary : in std_ulogic_vector(g_width - 1 downto 0);  -- Q11.7
+    i_b_real      : in std_ulogic_vector(g_width - 1 downto 0);  -- Q2.16
+    i_b_imaginary : in std_ulogic_vector(g_width - 1 downto 0);  -- Q2.16
 
-    o_q_real      : out std_ulogic_vector((g_width * 2) - 1 downto 0);
-    o_q_imaginary : out std_ulogic_vector((g_width * 2) - 1 downto 0)
+    o_q_real      : out std_ulogic_vector(g_width - 1 downto 0); -- Q11.7
+    o_q_imaginary : out std_ulogic_vector(g_width - 1 downto 0)  -- Q11.7
     );
 end ComplexMultiply;
 
@@ -72,6 +72,9 @@ architecture rtl of ComplexMultiply is
   signal rr_b_imaginary  : std_ulogic_vector(g_width - 1 downto 0);
   signal rrr_b_imaginary : std_ulogic_vector(g_width - 1 downto 0);
 
+  signal r_q_real      : std_ulogic_vector((g_width * 2) - 1 downto 0);
+  signal r_q_imaginary : std_ulogic_vector((g_width * 2) - 1 downto 0);
+
   signal r_real_mul_1      : std_ulogic_vector((g_width * 2) - 1 downto 0);
   signal r_imaginary_mul_1 : std_ulogic_vector((g_width * 2) - 1 downto 0);
 
@@ -91,6 +94,9 @@ begin
       pcout                => open
       );
 
+  -- a,b->p latency: 3 cycles
+  -- c->p latency: 2 cycles
+  -- -> a_i and b_i need to be delayed (registered) only two cycles such that a,b and c arrive "simultaniously"
   inst_real_mul_2 : xbip_multadd_0
     port map(
       clk                  => i_clk,
@@ -100,7 +106,7 @@ begin
       b                    => std_logic_vector(rrr_b_imaginary),
       c                    => std_logic_vector(r_real_mul_1),
       subtract             => '1',
-      std_ulogic_vector(p) => o_q_real,
+      std_ulogic_vector(p) => r_q_real,
       pcout                => open
       );
 
@@ -127,13 +133,15 @@ begin
       b                    => std_logic_vector(rrr_b_imaginary),
       c                    => std_logic_vector(r_imaginary_mul_1),
       subtract             => '0',
-      std_ulogic_vector(p) => o_q_imaginary,
+      std_ulogic_vector(p) => r_q_imaginary,
       pcout                => open
       );
 
   p_reg : process(i_reset, i_clk)
   begin
     if i_reset = '1' then
+      o_q_imaginary   <= (others => '0');
+      o_q_real        <= (others => '0');
       r_a_real        <= (others => '0');
       rr_a_real       <= (others => '0');
       rrr_a_real      <= (others => '0');
@@ -158,9 +166,11 @@ begin
       rrr_a_imaginary <= rr_a_imaginary;
       rrr_b_imaginary <= rr_b_imaginary;
 
+      -- make Q13.23 to Q11.7 again
+      o_q_real      <= r_q_real((g_width * 2) - 3 downto g_width - 2);
+      o_q_imaginary <= r_q_imaginary((g_width * 2) - 3 downto g_width - 2);
     end if;
   end process p_reg;
-
 
 
 end rtl;

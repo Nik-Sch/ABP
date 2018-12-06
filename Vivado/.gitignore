@@ -85,3 +85,8 @@
 !*.elf
 !*.bmm
 !*.xmp
+
+# python test
+!*/python.test/*.py
+!*/python.test/*.wav
+!*/python.test/*.sh
