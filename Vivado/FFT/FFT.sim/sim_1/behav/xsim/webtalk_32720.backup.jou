@@ -2,8 +2,8 @@
 # Webtalk v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Dec  5 23:34:50 2018
-# Process ID: 28741
+# Start of session at: Wed Dec 12 17:46:47 2018
+# Process ID: 32720
 # Current directory: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.sim/sim_1/behav/xsim
 # Command line: wbtcv -mode batch -source /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.sim/sim_1/behav/xsim/xsim.dir/testbench_fft_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.sim/sim_1/behav/xsim/webtalk.log
