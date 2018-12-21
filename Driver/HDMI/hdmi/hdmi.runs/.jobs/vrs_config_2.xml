@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="hdmi_sda_in_out_to_inout_0_0_synth_1" LaunchDir="/home/steffnet/Schreibtisch/ABP/Driver/HDMI/hdmi/hdmi.runs/hdmi_sda_in_out_to_inout_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="hdmi_auto_pc_0_synth_1" LaunchDir="/home/steffnet/Schreibtisch/ABP/Driver/HDMI/hdmi/hdmi.runs/hdmi_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="hdmi_axi_iic_0_0_synth_1" LaunchDir="/home/steffnet/Schreibtisch/ABP/Driver/HDMI/hdmi/hdmi.runs/hdmi_axi_iic_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="hdmi_processing_system7_0_0_synth_1" LaunchDir="/home/steffnet/Schreibtisch/ABP/Driver/HDMI/hdmi/hdmi.runs/hdmi_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="hdmi_rst_ps7_0_102M_0_synth_1" LaunchDir="/home/steffnet/Schreibtisch/ABP/Driver/HDMI/hdmi/hdmi.runs/hdmi_rst_ps7_0_102M_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/steffnet/Schreibtisch/ABP/Driver/HDMI/hdmi/hdmi.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="hdmi_sda_in_out_to_inout_0_0_synth_1"/>
+		<Parent Id="hdmi_auto_pc_0_synth_1"/>
+		<Parent Id="hdmi_axi_iic_0_0_synth_1"/>
+		<Parent Id="hdmi_processing_system7_0_0_synth_1"/>
+		<Parent Id="hdmi_rst_ps7_0_102M_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+
