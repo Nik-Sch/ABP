@@ -32,17 +32,18 @@ parameter integer testF2 = 1100;
 parameter integer testTime = 1;
 parameter integer N = 1000;
 
-typedef struct packed {
-  logic signed [17:0] r, i;
-} complex_18; // Q2.16
-typedef struct packed {
-  logic signed [24:0] r, i;
-} complex_25; // Q11.14
-
 typedef struct {
   logic signed [24:0] data[testFs*testTime-1:0];
   } t_testData;
 integer out_file;
+
+typedef struct packed {
+  logic signed [17:0] r, i;
+  } complex_18; // Q2.16
+
+typedef struct packed {
+  logic signed [24:0] r, i;
+} complex_25; // Q11.14
 
 function complex_25 complex_multiply(complex_25 a, complex_18 b);
   // a: Q11.14, b: Q2.16

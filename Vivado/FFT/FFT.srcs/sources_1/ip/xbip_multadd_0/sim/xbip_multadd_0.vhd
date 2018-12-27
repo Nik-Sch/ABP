@@ -61,11 +61,11 @@ ENTITY xbip_multadd_0 IS
     CLK : IN STD_LOGIC;
     CE : IN STD_LOGIC;
     SCLR : IN STD_LOGIC;
-    A : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+    A : IN STD_LOGIC_VECTOR(24 DOWNTO 0);
     B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
-    C : IN STD_LOGIC_VECTOR(35 DOWNTO 0);
+    C : IN STD_LOGIC_VECTOR(42 DOWNTO 0);
     SUBTRACT : IN STD_LOGIC;
-    P : OUT STD_LOGIC_VECTOR(35 DOWNTO 0);
+    P : OUT STD_LOGIC_VECTOR(42 DOWNTO 0);
     PCOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
   );
 END xbip_multadd_0;
@@ -95,12 +95,12 @@ ARCHITECTURE xbip_multadd_0_arch OF xbip_multadd_0 IS
       CLK : IN STD_LOGIC;
       CE : IN STD_LOGIC;
       SCLR : IN STD_LOGIC;
-      A : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+      A : IN STD_LOGIC_VECTOR(24 DOWNTO 0);
       B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
-      C : IN STD_LOGIC_VECTOR(35 DOWNTO 0);
+      C : IN STD_LOGIC_VECTOR(42 DOWNTO 0);
       PCIN : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
       SUBTRACT : IN STD_LOGIC;
-      P : OUT STD_LOGIC_VECTOR(35 DOWNTO 0);
+      P : OUT STD_LOGIC_VECTOR(42 DOWNTO 0);
       PCOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
     );
   END COMPONENT xbip_multadd_v3_0_12;
@@ -129,16 +129,16 @@ BEGIN
     GENERIC MAP (
       C_VERBOSITY => 0,
       C_XDEVICEFAMILY => "zynq",
-      C_A_WIDTH => 18,
+      C_A_WIDTH => 25,
       C_B_WIDTH => 18,
-      C_C_WIDTH => 36,
+      C_C_WIDTH => 43,
       C_A_TYPE => 0,
       C_B_TYPE => 0,
       C_C_TYPE => 0,
       C_CE_OVERRIDES_SCLR => 0,
       C_AB_LATENCY => -1,
       C_C_LATENCY => -1,
-      C_OUT_HIGH => 35,
+      C_OUT_HIGH => 42,
       C_OUT_LOW => 0,
       C_USE_PCIN => 0,
       C_TEST_CORE => 0
