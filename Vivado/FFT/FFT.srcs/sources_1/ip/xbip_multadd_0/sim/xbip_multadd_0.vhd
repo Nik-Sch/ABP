@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:xbip_multadd:3.0
--- IP Revision: 12
+-- IP Revision: 13
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY xbip_multadd_v3_0_12;
-USE xbip_multadd_v3_0_12.xbip_multadd_v3_0_12;
+LIBRARY xbip_multadd_v3_0_13;
+USE xbip_multadd_v3_0_13.xbip_multadd_v3_0_13;
 
 ENTITY xbip_multadd_0 IS
   PORT (
@@ -73,7 +73,7 @@ END xbip_multadd_0;
 ARCHITECTURE xbip_multadd_0_arch OF xbip_multadd_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF xbip_multadd_0_arch: ARCHITECTURE IS "yes";
-  COMPONENT xbip_multadd_v3_0_12 IS
+  COMPONENT xbip_multadd_v3_0_13 IS
     GENERIC (
       C_VERBOSITY : INTEGER;
       C_XDEVICEFAMILY : STRING;
@@ -103,7 +103,7 @@ ARCHITECTURE xbip_multadd_0_arch OF xbip_multadd_0 IS
       P : OUT STD_LOGIC_VECTOR(42 DOWNTO 0);
       PCOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
     );
-  END COMPONENT xbip_multadd_v3_0_12;
+  END COMPONENT xbip_multadd_v3_0_13;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF PCOUT: SIGNAL IS "XIL_INTERFACENAME pcout_intf, LAYERED_METADATA undef";
@@ -118,14 +118,14 @@ ARCHITECTURE xbip_multadd_0_arch OF xbip_multadd_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF B: SIGNAL IS "xilinx.com:signal:data:1.0 b_intf DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF A: SIGNAL IS "XIL_INTERFACENAME a_intf, LAYERED_METADATA undef";
   ATTRIBUTE X_INTERFACE_INFO OF A: SIGNAL IS "xilinx.com:signal:data:1.0 a_intf DATA";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF SCLR: SIGNAL IS "XIL_INTERFACENAME sclr_intf, POLARITY ACTIVE_HIGH";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF SCLR: SIGNAL IS "XIL_INTERFACENAME sclr_intf, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF SCLR: SIGNAL IS "xilinx.com:signal:reset:1.0 sclr_intf RST";
   ATTRIBUTE X_INTERFACE_PARAMETER OF CE: SIGNAL IS "XIL_INTERFACENAME ce_intf, POLARITY ACTIVE_LOW";
   ATTRIBUTE X_INTERFACE_INFO OF CE: SIGNAL IS "xilinx.com:signal:clockenable:1.0 ce_intf CE";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF pcout_intf:p_intf:subtract_intf:pcin_intf:c_intf:b_intf:a_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 100000000, PHASE 0.000";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF pcout_intf:p_intf:subtract_intf:pcin_intf:c_intf:b_intf:a_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
 BEGIN
-  U0 : xbip_multadd_v3_0_12
+  U0 : xbip_multadd_v3_0_13
     GENERIC MAP (
       C_VERBOSITY => 0,
       C_XDEVICEFAMILY => "zynq",

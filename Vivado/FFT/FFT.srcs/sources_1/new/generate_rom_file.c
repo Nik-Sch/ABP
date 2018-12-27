@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     printf("the argument needs to be an integer\n");
     return 1;
   }
-  printf("writing to 'rom_N%d.txt'\n", N);
+  printf("writing to 'rom_N%d.txt'.\n", N);
   char *filename = malloc(16);
   snprintf(filename, 16, "rom_N%d.txt", N);
   FILE *fp = fopen(filename, "w+");
