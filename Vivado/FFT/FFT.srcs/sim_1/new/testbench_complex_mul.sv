@@ -61,8 +61,8 @@ module testbench_complex_mul;
     // out: Q11.14
 
     complex_25 result;
-    logic signed [(25+18)-1:0] r = (a.r * b.r) - (a.i * b.i);
-    logic signed [(25+18)-1:0] i = (a.r * b.i) + (a.i * b.r);
+    automatic logic signed [(25+18)-1:0] r = (a.r * b.r) - (a.i * b.i);
+    automatic logic signed [(25+18)-1:0] i = (a.r * b.i) + (a.i * b.r);
     result.r = r[(25+18)-3-:25];
     result.i = i[(25+18)-3-:25];
     return result;

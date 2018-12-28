@@ -32,7 +32,7 @@ entity ComplexMultiply is
     i_a_imaginary : in std_ulogic_vector(24 downto 0);  -- Q11.14
     i_b_real      : in std_ulogic_vector(17 downto 0);  -- Q2.16
     i_b_imaginary : in std_ulogic_vector(17 downto 0);  -- Q2.16
-
+    -- takes 6 cycles
     o_q_real      : out std_ulogic_vector(24 downto 0); -- Q11.14
     o_q_imaginary : out std_ulogic_vector(24 downto 0)  -- Q11.14
     );

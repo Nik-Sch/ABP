@@ -22,7 +22,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use IEEE.math_real.all;
+use ieee.math_real.all;
 use std.textio.all;
 use ieee.std_logic_textio.all;
 
@@ -39,7 +39,7 @@ entity eFunctionRom is
 end eFunctionRom;
 
 architecture rtl of eFunctionRom is
-  type t_romArray is array (0 to N2) of std_ulogic_vector(35 downto 0);
+  type t_romArray is array (0 to N2-1) of std_ulogic_vector(35 downto 0);
 
   function initRom(filename: string) return t_romArray is
     file romFile: text open read_mode is filename;
