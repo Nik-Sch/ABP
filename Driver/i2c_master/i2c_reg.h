@@ -34,9 +34,9 @@
 
 
 /* ADV7511 Slave Address */
-#define ADV7511_SLAVE_ADDR 0x7A
+#define ADV7511_SLAVE_ADDR 0x72
 
-void writeAddrInfo(unsigned int base_addr, unsigned char addr);
+void writeI2CRegisterMaster(unsigned int base_addr, unsigned char addr, unsigned char data);
 unsigned char readI2CRegisterMaster(unsigned int base_addr, unsigned char addr);
 void modifyI2CRegisterMaster(unsigned int base_addr, unsigned char addr, unsigned char end, unsigned char start, unsigned char data);
 

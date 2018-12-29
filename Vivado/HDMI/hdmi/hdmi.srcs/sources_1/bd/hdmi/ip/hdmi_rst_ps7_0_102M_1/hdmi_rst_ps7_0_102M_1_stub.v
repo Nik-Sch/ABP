@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Thu Dec 27 17:55:55 2018
+// Date        : Thu Dec 27 17:55:54 2018
 // Host        : steffnet-X705UNR running 64-bit Ubuntu 18.04.1 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_rst_ps7_0_102M_1/hdmi_rst_ps7_0_102M_1_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top hdmi_rst_ps7_0_102M_1 -prefix
+//               hdmi_rst_ps7_0_102M_1_ hdmi_rst_ps7_0_102M_1_stub.v
 // Design      : hdmi_rst_ps7_0_102M_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

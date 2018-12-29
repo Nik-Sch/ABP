@@ -27,10 +27,17 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.cache/wt [current_project]
 set_property parent.project_path /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
+set_property ip_repo_paths {
+  /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/vid_out/vid_out_1.0
+  /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/vid_out/vid_out_1.0
+  /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/axi4_to_video_out/axi4_to_video_out_1.0
+  /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/ax4_to_vid_out/axi4_to_video_out_1.0
+} [current_project]
+update_ip_catalog
 set_property ip_output_repo /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_ip -quiet /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_axi_iic_0_0/hdmi_axi_iic_0_0.xci

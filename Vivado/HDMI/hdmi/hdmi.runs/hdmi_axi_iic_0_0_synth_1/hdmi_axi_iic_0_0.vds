@@ -2,22 +2,31 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Thu Dec 27 17:55:17 2018
-# Process ID: 17503
+# Start of session at: Sat Dec 29 15:08:18 2018
+# Process ID: 4198
 # Current directory: /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.runs/hdmi_axi_iic_0_0_synth_1
 # Command line: vivado -log hdmi_axi_iic_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_axi_iic_0_0.tcl
 # Log file: /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.runs/hdmi_axi_iic_0_0_synth_1/hdmi_axi_iic_0_0.vds
 # Journal file: /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.runs/hdmi_axi_iic_0_0_synth_1/vivado.jou
 #-----------------------------------------------------------
 source hdmi_axi_iic_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/vid_out/vid_out_1.0'.
+WARNING: [IP_Flow 19-2207] Repository '/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/vid_out/vid_out_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/vid_out/vid_out_1.0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/axi4_to_video_out/axi4_to_video_out_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/ax4_to_vid_out/axi4_to_video_out_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/steffnet/Vivado/Vivado/2018.3/data/ip'.
 Command: synth_design -top hdmi_axi_iic_0_0 -part xc7z020clg484-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17526 
+INFO: Helper process launched with PID 4219 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1390.723 ; gain = 26.918 ; free physical = 8405 ; free virtual = 12945
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1390.445 ; gain = 45.918 ; free physical = 7740 ; free virtual = 12826
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-2048] function gpo_bit_used does not always return a value [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:1139]
 INFO: [Synth 8-638] synthesizing module 'hdmi_axi_iic_0_0' [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_axi_iic_0_0/synth/hdmi_axi_iic_0_0.vhd:91]
@@ -28,8 +37,8 @@ INFO: [Synth 8-638] synthesizing module 'hdmi_axi_iic_0_0' [/home/steffnet/Schre
 	Parameter C_TEN_BIT_ADR bound to: 0 - type: integer 
 	Parameter C_GPO_WIDTH bound to: 1 - type: integer 
 	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 102000000 - type: integer 
-	Parameter C_SCL_INERTIAL_DELAY bound to: 0 - type: integer 
-	Parameter C_SDA_INERTIAL_DELAY bound to: 0 - type: integer 
+	Parameter C_SCL_INERTIAL_DELAY bound to: 1 - type: integer 
+	Parameter C_SDA_INERTIAL_DELAY bound to: 1 - type: integer 
 	Parameter C_SDA_LEVEL bound to: 1 - type: integer 
 	Parameter C_SMBUS_PMBUS_HOST bound to: 0 - type: integer 
 	Parameter C_DEFAULT_VALUE bound to: 8'b00000000 
@@ -42,8 +51,8 @@ INFO: [Synth 8-638] synthesizing module 'axi_iic' [/home/steffnet/Schreibtisch/A
 	Parameter C_TEN_BIT_ADR bound to: 0 - type: integer 
 	Parameter C_GPO_WIDTH bound to: 1 - type: integer 
 	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 102000000 - type: integer 
-	Parameter C_SCL_INERTIAL_DELAY bound to: 0 - type: integer 
-	Parameter C_SDA_INERTIAL_DELAY bound to: 0 - type: integer 
+	Parameter C_SCL_INERTIAL_DELAY bound to: 1 - type: integer 
+	Parameter C_SDA_INERTIAL_DELAY bound to: 1 - type: integer 
 	Parameter C_SDA_LEVEL bound to: 1 - type: integer 
 	Parameter C_SMBUS_PMBUS_HOST bound to: 0 - type: integer 
 	Parameter C_DEFAULT_VALUE bound to: 8'b00000000 
@@ -53,8 +62,8 @@ INFO: [Synth 8-638] synthesizing module 'iic' [/home/steffnet/Schreibtisch/ABP/V
 	Parameter C_IIC_FREQ bound to: 100000 - type: integer 
 	Parameter C_TEN_BIT_ADR bound to: 0 - type: integer 
 	Parameter C_GPO_WIDTH bound to: 1 - type: integer 
-	Parameter C_SCL_INERTIAL_DELAY bound to: 0 - type: integer 
-	Parameter C_SDA_INERTIAL_DELAY bound to: 0 - type: integer 
+	Parameter C_SCL_INERTIAL_DELAY bound to: 1 - type: integer 
+	Parameter C_SDA_INERTIAL_DELAY bound to: 1 - type: integer 
 	Parameter C_SDA_LEVEL bound to: 1 - type: integer 
 	Parameter C_SMBUS_PMBUS_HOST bound to: 0 - type: integer 
 	Parameter C_TX_FIFO_EXIST bound to: 1 - type: bool 
@@ -367,7 +376,7 @@ INFO: [Synth 8-113] binding component instance 'FF_WRACK' to cell 'FDRSE' [/home
 INFO: [Synth 8-256] done synthesizing module 'soft_reset' (6#1) [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:141]
 INFO: [Synth 8-256] done synthesizing module 'axi_ipif_ssp1' (7#1) [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:5661]
 INFO: [Synth 8-638] synthesizing module 'reg_interface' [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:1677]
-	Parameter C_SCL_INERTIAL_DELAY bound to: 0 - type: integer 
+	Parameter C_SCL_INERTIAL_DELAY bound to: 1 - type: integer 
 	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 102000000 - type: integer 
 	Parameter C_IIC_FREQ bound to: 100000 - type: integer 
 	Parameter C_SMBUS_PMBUS_HOST bound to: 0 - type: integer 
@@ -385,10 +394,10 @@ INFO: [Synth 8-638] synthesizing module 'reg_interface' [/home/steffnet/Schreibt
 WARNING: [Synth 8-6014] Unused sequential element ro_a_reg was removed.  [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:2273]
 INFO: [Synth 8-256] done synthesizing module 'reg_interface' (8#1) [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:1677]
 INFO: [Synth 8-638] synthesizing module 'filter' [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:4985]
-	Parameter SCL_INERTIAL_DELAY bound to: 0 - type: integer 
-	Parameter SDA_INERTIAL_DELAY bound to: 0 - type: integer 
+	Parameter SCL_INERTIAL_DELAY bound to: 1 - type: integer 
+	Parameter SDA_INERTIAL_DELAY bound to: 1 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'debounce' [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:1307]
-	Parameter C_INERTIAL_DELAY bound to: 0 - type: integer 
+	Parameter C_INERTIAL_DELAY bound to: 1 - type: integer 
 	Parameter C_DEFAULT bound to: 1'b1 
 INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
 	Parameter C_CDC_TYPE bound to: 1 - type: integer 
@@ -413,7 +422,7 @@ INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (9#1) [/home/steffnet/Sc
 INFO: [Synth 8-256] done synthesizing module 'debounce' (10#1) [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:1307]
 INFO: [Synth 8-256] done synthesizing module 'filter' (11#1) [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:4985]
 INFO: [Synth 8-638] synthesizing module 'iic_control' [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ipshared/304c/hdl/axi_iic_v2_0_vh_rfs.vhd:2908]
-	Parameter C_SCL_INERTIAL_DELAY bound to: 0 - type: integer 
+	Parameter C_SCL_INERTIAL_DELAY bound to: 1 - type: integer 
 	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 102000000 - type: integer 
 	Parameter C_IIC_FREQ bound to: 100000 - type: integer 
 	Parameter C_SIZE bound to: 10 - type: integer 
@@ -545,8 +554,6 @@ WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_vect_in[2]
 WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_vect_in[1]
 WARNING: [Synth 8-3331] design cdc_sync has unconnected port prmry_vect_in[0]
 WARNING: [Synth 8-3331] design cdc_sync has unconnected port scndry_resetn
-WARNING: [Synth 8-3331] design debounce has unconnected port Rst
-WARNING: [Synth 8-3331] design debounce has unconnected port Stable
 WARNING: [Synth 8-3331] design reg_interface has unconnected port Bus2IIC_Addr[0]
 WARNING: [Synth 8-3331] design reg_interface has unconnected port Bus2IIC_Data[0]
 WARNING: [Synth 8-3331] design reg_interface has unconnected port Bus2IIC_Data[1]
@@ -600,9 +607,11 @@ WARNING: [Synth 8-3331] design soft_reset has unconnected port Bus2IP_Data[12]
 WARNING: [Synth 8-3331] design soft_reset has unconnected port Bus2IP_Data[13]
 WARNING: [Synth 8-3331] design soft_reset has unconnected port Bus2IP_Data[14]
 WARNING: [Synth 8-3331] design soft_reset has unconnected port Bus2IP_Data[15]
+WARNING: [Synth 8-3331] design soft_reset has unconnected port Bus2IP_Data[16]
+WARNING: [Synth 8-3331] design soft_reset has unconnected port Bus2IP_Data[17]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1444.473 ; gain = 80.668 ; free physical = 9009 ; free virtual = 13549
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1444.195 ; gain = 99.668 ; free physical = 7751 ; free virtual = 12840
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -615,10 +624,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1444.473 ; gain = 80.668 ; free physical = 8925 ; free virtual = 13465
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1444.195 ; gain = 99.668 ; free physical = 7736 ; free virtual = 12823
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1444.473 ; gain = 80.668 ; free physical = 8925 ; free virtual = 13465
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1444.195 ; gain = 99.668 ; free physical = 7736 ; free virtual = 12823
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 44 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -636,31 +645,31 @@ Parsing XDC File [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.runs/hdm
 Finished Parsing XDC File [/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.runs/hdmi_axi_iic_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1812.504 ; gain = 0.000 ; free physical = 8352 ; free virtual = 12909
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1813.227 ; gain = 0.000 ; free physical = 7216 ; free virtual = 12304
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 32 instances were transformed.
   FDR => FDRE: 15 instances
   FDRSE => FDRSE (FDRE, LUT4, VCC): 5 instances
   MUXCY_L => MUXCY: 12 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1812.504 ; gain = 0.000 ; free physical = 8352 ; free virtual = 12908
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1812.504 ; gain = 0.000 ; free physical = 8345 ; free virtual = 12901
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1813.227 ; gain = 0.000 ; free physical = 7216 ; free virtual = 12304
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1813.227 ; gain = 0.000 ; free physical = 7216 ; free virtual = 12303
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 8050 ; free virtual = 12607
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 7349 ; free virtual = 12437
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 8050 ; free virtual = 12607
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 7348 ; free virtual = 12436
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.runs/hdmi_axi_iic_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 8050 ; free virtual = 12607
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 7350 ; free virtual = 12438
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
 INFO: [Synth 8-5544] ROM "s_axi_rresp_i" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
@@ -736,7 +745,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'scl_state_reg' using encod
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'iic_control'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 8182 ; free virtual = 12742
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 7355 ; free virtual = 12445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -750,7 +759,7 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     10 Bit       Adders := 2     
-	   2 Input      8 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 3     
 	   2 Input      4 Bit       Adders := 2     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 20    
@@ -758,11 +767,11 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 1     
 	               10 Bit    Registers := 10    
 	                9 Bit    Registers := 2     
-	                8 Bit    Registers := 8     
+	                8 Bit    Registers := 10    
 	                7 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 143   
+	                1 Bit    Registers := 147   
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 5     
 	   2 Input     10 Bit        Muxes := 2     
@@ -775,7 +784,7 @@ Detailed RTL Component Info :
 	  21 Input      3 Bit        Muxes := 1     
 	   7 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 108   
+	   2 Input      1 Bit        Muxes := 116   
 	   4 Input      1 Bit        Muxes := 3     
 	   3 Input      1 Bit        Muxes := 1     
 	   7 Input      1 Bit        Muxes := 3     
@@ -983,6 +992,15 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
+Module debounce 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
 Module upcnt_n 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1098,7 +1116,7 @@ INFO: [Synth 8-3332] Sequential element (X_IIC/FILTER_I/SDA_DEBOUNCE/INPUT_DOUBL
 INFO: [Synth 8-3332] Sequential element (X_IIC/FILTER_I/SDA_DEBOUNCE/INPUT_DOUBLE_REGS/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module axi_iic.
 INFO: [Synth 8-3886] merging instance 'U0/X_IIC/X_AXI_IPIF_SSP1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16]' (FDRE) to 'U0/X_IIC/X_AXI_IPIF_SSP1/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN[1].cs_out_i_reg[1]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 8034 ; free virtual = 12602
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 7293 ; free virtual = 12386
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1110,13 +1128,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7628 ; free virtual = 12202
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6907 ; free virtual = 12001
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7647 ; free virtual = 12222
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6907 ; free virtual = 12000
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1127,8 +1145,9 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'U0/X_IIC/FILTER_I/SCL_DEBOUNCE/GEN_INERTIAL.debounce_ct_reg[0]' (FDSE) to 'U0/X_IIC/FILTER_I/SCL_DEBOUNCE/GEN_INERTIAL.Unstable_n_reg'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7638 ; free virtual = 12212
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6904 ; free virtual = 11998
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1152,7 +1171,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7584 ; free virtual = 12161
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6905 ; free virtual = 11998
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1165,7 +1184,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7584 ; free virtual = 12161
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6905 ; free virtual = 11998
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1177,25 +1196,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7584 ; free virtual = 12160
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6905 ; free virtual = 11998
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7584 ; free virtual = 12160
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6906 ; free virtual = 11999
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7583 ; free virtual = 12160
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6906 ; free virtual = 11999
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7583 ; free virtual = 12160
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6906 ; free virtual = 11999
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1214,80 +1233,80 @@ Report Cell Usage:
 |1     |CARRY4  |     8|
 |2     |LUT1    |     8|
 |3     |LUT2    |    55|
-|4     |LUT3    |    54|
-|5     |LUT4    |    73|
-|6     |LUT5    |    68|
-|7     |LUT6    |   190|
+|4     |LUT3    |    52|
+|5     |LUT4    |    79|
+|6     |LUT5    |    71|
+|7     |LUT6    |   191|
 |8     |MUXCY_L |     9|
 |9     |MUXF7   |     9|
 |10    |MUXF8   |     4|
 |11    |SRL16E  |    18|
 |12    |XORCY   |    12|
 |13    |FDR     |    11|
-|14    |FDRE    |   305|
-|15    |FDSE    |    52|
+|14    |FDRE    |   308|
+|15    |FDSE    |    53|
 +------+--------+------+
 
 Report Instance Areas: 
 +------+-----------------------------+-------------------------+------+
 |      |Instance                     |Module                   |Cells |
 +------+-----------------------------+-------------------------+------+
-|1     |top                          |                         |   876|
-|2     |  U0                         |axi_iic                  |   876|
-|3     |    X_IIC                    |iic                      |   876|
+|1     |top                          |                         |   888|
+|2     |  U0                         |axi_iic                  |   888|
+|3     |    X_IIC                    |iic                      |   888|
 |4     |      DYN_MASTER_I           |dynamic_master           |    34|
-|5     |      FILTER_I               |filter                   |    10|
-|6     |        SCL_DEBOUNCE         |debounce                 |     5|
-|7     |          INPUT_DOUBLE_REGS  |cdc_sync_4               |     5|
-|8     |        SDA_DEBOUNCE         |debounce_3               |     5|
-|9     |          INPUT_DOUBLE_REGS  |cdc_sync                 |     5|
-|10    |      IIC_CONTROL_I          |iic_control              |   281|
+|5     |      FILTER_I               |filter                   |    18|
+|6     |        SCL_DEBOUNCE         |debounce                 |     9|
+|7     |          INPUT_DOUBLE_REGS  |cdc_sync_4               |     6|
+|8     |        SDA_DEBOUNCE         |debounce_3               |     9|
+|9     |          INPUT_DOUBLE_REGS  |cdc_sync                 |     6|
+|10    |      IIC_CONTROL_I          |iic_control              |   282|
 |11    |        BITCNT               |upcnt_n__parameterized0  |    17|
 |12    |        CLKCNT               |upcnt_n                  |    33|
 |13    |        I2CDATA_REG          |shift8                   |    18|
 |14    |        I2CHEADER_REG        |shift8_1                 |    24|
-|15    |        SETUP_CNT            |upcnt_n_2                |    25|
-|16    |      READ_FIFO_I            |SRL_FIFO                 |    32|
-|17    |      REG_INTERFACE_I        |reg_interface            |   195|
+|15    |        SETUP_CNT            |upcnt_n_2                |    26|
+|16    |      READ_FIFO_I            |SRL_FIFO                 |    31|
+|17    |      REG_INTERFACE_I        |reg_interface            |   188|
 |18    |      WRITE_FIFO_CTRL_I      |SRL_FIFO__parameterized0 |    22|
 |19    |      WRITE_FIFO_I           |SRL_FIFO_0               |    33|
-|20    |      X_AXI_IPIF_SSP1        |axi_ipif_ssp1            |   265|
-|21    |        AXI_LITE_IPIF_I      |axi_lite_ipif            |   217|
-|22    |          I_SLAVE_ATTACHMENT |slave_attachment         |   217|
-|23    |            I_DECODER        |address_decoder          |   100|
+|20    |      X_AXI_IPIF_SSP1        |axi_ipif_ssp1            |   276|
+|21    |        AXI_LITE_IPIF_I      |axi_lite_ipif            |   228|
+|22    |          I_SLAVE_ATTACHMENT |slave_attachment         |   228|
+|23    |            I_DECODER        |address_decoder          |   102|
 |24    |        X_INTERRUPT_CONTROL  |interrupt_control        |    31|
 |25    |        X_SOFT_RESET         |soft_reset               |    13|
 +------+-----------------------------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7583 ; free virtual = 12160
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 6906 ; free virtual = 11999
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 51 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1812.504 ; gain = 80.668 ; free physical = 7638 ; free virtual = 12215
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1812.504 ; gain = 448.699 ; free physical = 7638 ; free virtual = 12215
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1813.227 ; gain = 99.668 ; free physical = 7013 ; free virtual = 12106
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1813.227 ; gain = 468.699 ; free physical = 7015 ; free virtual = 12108
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 53 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.512 ; gain = 0.000 ; free physical = 7607 ; free virtual = 12184
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1814.234 ; gain = 0.000 ; free physical = 6896 ; free virtual = 11989
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 14 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 3 instances
   FDR => FDRE: 11 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-257 Infos, 105 Warnings, 1 Critical Warnings and 0 Errors encountered.
+262 Infos, 108 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1820.512 ; gain = 456.789 ; free physical = 7660 ; free virtual = 12238
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1820.512 ; gain = 0.000 ; free physical = 7660 ; free virtual = 12238
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1814.234 ; gain = 469.789 ; free physical = 7077 ; free virtual = 12171
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1814.234 ; gain = 0.000 ; free physical = 7090 ; free virtual = 12184
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.runs/hdmi_axi_iic_0_0_synth_1/hdmi_axi_iic_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP hdmi_axi_iic_0_0, cache-ID = 1e01cd57a31300ec
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP hdmi_axi_iic_0_0, cache-ID = 96f3c7fcfe54e9c4
 INFO: [Coretcl 2-1174] Renamed 24 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1844.523 ; gain = 0.000 ; free physical = 7637 ; free virtual = 12215
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1838.246 ; gain = 0.000 ; free physical = 7143 ; free virtual = 12238
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.runs/hdmi_axi_iic_0_0_synth_1/hdmi_axi_iic_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file hdmi_axi_iic_0_0_utilization_synth.rpt -pb hdmi_axi_iic_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 27 17:55:50 2018...
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 29 15:08:46 2018...

@@ -7,5 +7,6 @@
 # of Vivado)
 ################################################################################
 create_clock -name processing_system7_0_FCLK_CLK0 -period 9.804 [get_pins processing_system7_0/FCLK_CLK0]
+create_clock -name processing_system7_0_FCLK_CLK2 -period 16.043 [get_pins processing_system7_0/FCLK_CLK2]
 
 ################################################################################

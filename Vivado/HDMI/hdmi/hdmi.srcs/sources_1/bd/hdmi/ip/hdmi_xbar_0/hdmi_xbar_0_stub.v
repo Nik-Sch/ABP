@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Thu Dec 27 18:10:35 2018
+// Date        : Thu Dec 27 18:10:34 2018
 // Host        : steffnet-X705UNR running 64-bit Ubuntu 18.04.1 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_xbar_0/hdmi_xbar_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top hdmi_xbar_0 -prefix
+//               hdmi_xbar_0_ hdmi_xbar_0_stub.v
 // Design      : hdmi_xbar_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
