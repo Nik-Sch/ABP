@@ -1,32 +1,19 @@
 #include "setup.h"
 
-#define POWER_DOWN (1 << 6)
+#define POWER_DOWN 0
 
 void adv7511_setup_power_up(unsigned int *mm_addr) {
-    unsigned char entry = readI2CRegisterMaster(&mm_addr, 0x41);
-    entry &= ~POWER_DOWN;
-    writeI2CRegisterMaster(&mm_addr, 0x41, entry);
+    modifyI2CRegisterMaster(&mm_addr, 0x41, 6, 6, POWER_DOWN);
 }
 
 void adv7511_setup_fixed_register(unsigned int *mm_addr) {
-    unsigned char entry;
-
     writeI2CRegisterMaster(&mm_addr, 0x96, 0x03);
-
-    entry = readI2CRegisterMaster(&mm_addr, 0x9A);
-    entry |= (0b111 << 5);
-    writeI2CRegisterMaster(&mm_addr, 0x9A, entry);
-
+    modifyI2CRegisterMaster(&mm_addr, 0x9A, 7, 5, 0b111);
     writeI2CRegisterMaster(&mm_addr, 0x9C, 0x30);
-
-    entry = readI2CRegisterMaster(&mm_addr, 0x9D);
-    entry |= 0b01;
-    writeI2CRegisterMaster(&mm_addr, 0x9D, entry);
-
+    modifyI2CRegisterMaster(&mm_addr, 0x9D, 1, 0, 0b01);
     writeI2CRegisterMaster(&mm_addr, 0xA2, 0xA4);
-
+    writeI2CRegisterMaster(&mm_addr, 0xA3, 0xA4);
     writeI2CRegisterMaster(&mm_addr, 0xE0, 0xD0);
-
     writeI2CRegisterMaster(&mm_addr, 0xF9, 0x00);
 
 }
