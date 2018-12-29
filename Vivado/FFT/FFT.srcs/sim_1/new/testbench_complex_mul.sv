@@ -46,30 +46,32 @@ module testbench_complex_mul;
 
   parameter integer reg_stages = 6;
 
-  parameter integer bit_depth = 18; // dsp need to change
+
+
   typedef struct packed {
-    logic signed [bit_depth-1:0] r, i;
-  } complex;
+    logic signed [17:0] r, i;
+    } complex_18; // Q2.16
 
+  typedef struct packed {
+    logic signed [24:0] r, i;
+  } complex_25; // Q11.14
 
-  complex dut_cm_a, dut_cm_b;
-  complex dut_cm_q;
-  complex [0:MAX_TESTS-1] dut_cm_q_ref;
-  string filename = "0";
+  function complex_25 complex_multiply(complex_25 a, complex_18 b);
+    // a: Q11.14, b: Q2.16
+    // out: Q11.14
 
-  function complex complex_multiply;
-    // a: Q11.7, b: Q2.16
-    // out: Q11.7
-    input                 complex a, b;
-
-    complex result;
-    logic signed [(bit_depth * 2)-1:0] r = (a.r * b.r) - (a.i * b.i);
-    logic signed [(bit_depth * 2)-1:0] i = (a.r * b.i) + (a.i * b.r);
-    result.r = r[(bit_depth * 2)-3-:bit_depth];
-    result.i = i[(bit_depth * 2)-3-:bit_depth];
+    complex_25 result;
+    automatic logic signed [(25+18)-1:0] r = (a.r * b.r) - (a.i * b.i);
+    automatic logic signed [(25+18)-1:0] i = (a.r * b.i) + (a.i * b.r);
+    result.r = r[(25+18)-3-:25];
+    result.i = i[(25+18)-3-:25];
     return result;
   endfunction;
 
+  complex_25 dut_cm_a;
+  complex_18 dut_cm_b;
+  complex_25 dut_cm_q;
+  complex_25 [0:MAX_TESTS-1] dut_cm_q_ref;
 
   initial begin
     reset = 1;
@@ -106,7 +108,7 @@ module testbench_complex_mul;
     $stop;
   end
 
-  ComplexMultiply#(.g_width(18)) dut_complex_multiply
+  ComplexMultiply dut_complex_multiply
   (
     .i_clk(clk),
     .i_reset(reset),

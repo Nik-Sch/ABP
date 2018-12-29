@@ -32,25 +32,26 @@ parameter integer testF2 = 1100;
 parameter integer testTime = 1;
 parameter integer N = 1000;
 
-typedef struct packed {
-  logic signed [17:0] r, i;
-} complex_18; // Q2.16
-typedef struct packed {
-  logic signed [24:0] r, i;
-} complex_25; // Q11.14
-
 typedef struct {
   logic signed [24:0] data[testFs*testTime-1:0];
   } t_testData;
 integer out_file;
+
+typedef struct packed {
+  logic signed [17:0] r, i;
+  } complex_18; // Q2.16
+
+typedef struct packed {
+  logic signed [24:0] r, i;
+} complex_25; // Q11.14
 
 function complex_25 complex_multiply(complex_25 a, complex_18 b);
   // a: Q11.14, b: Q2.16
   // out: Q11.14
 
   complex_25 result;
-  logic signed [(25+18)-1:0] r = (a.r * b.r) - (a.i * b.i);
-  logic signed [(25+18)-1:0] i = (a.r * b.i) + (a.i * b.r);
+  automatic logic signed [(25+18)-1:0] r = (a.r * b.r) - (a.i * b.i);
+  automatic logic signed [(25+18)-1:0] i = (a.r * b.i) + (a.i * b.r);
   result.r = r[(25+18)-3-:25];
   result.i = i[(25+18)-3-:25];
   return result;

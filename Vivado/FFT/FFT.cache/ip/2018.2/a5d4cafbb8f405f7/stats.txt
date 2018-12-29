@@ -1,4 +1,0 @@
-NumberHits:0
-Timestamp: Tue Nov 13 18:13:02 UTC 2018
-VLNV: xilinx.com:ip:xbip_multadd:3.0
-SynthRuntime: 52

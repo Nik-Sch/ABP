@@ -44,7 +44,7 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
-set_param ips.enableIPCacheLiteLoad 0
+set_param ips.enableIPCacheLiteLoad 1
 
 set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/xbip_multadd_0_synth_1 -new_name xbip_multadd_0 -ip [get_ips xbip_multadd_0]]
 

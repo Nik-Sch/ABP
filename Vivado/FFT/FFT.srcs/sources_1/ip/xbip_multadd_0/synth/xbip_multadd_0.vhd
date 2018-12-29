@@ -47,25 +47,25 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:xbip_multadd:3.0
--- IP Revision: 12
+-- IP Revision: 13
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY xbip_multadd_v3_0_12;
-USE xbip_multadd_v3_0_12.xbip_multadd_v3_0_12;
+LIBRARY xbip_multadd_v3_0_13;
+USE xbip_multadd_v3_0_13.xbip_multadd_v3_0_13;
 
 ENTITY xbip_multadd_0 IS
   PORT (
     CLK : IN STD_LOGIC;
     CE : IN STD_LOGIC;
     SCLR : IN STD_LOGIC;
-    A : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+    A : IN STD_LOGIC_VECTOR(24 DOWNTO 0);
     B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
-    C : IN STD_LOGIC_VECTOR(35 DOWNTO 0);
+    C : IN STD_LOGIC_VECTOR(42 DOWNTO 0);
     SUBTRACT : IN STD_LOGIC;
-    P : OUT STD_LOGIC_VECTOR(35 DOWNTO 0);
+    P : OUT STD_LOGIC_VECTOR(42 DOWNTO 0);
     PCOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
   );
 END xbip_multadd_0;
@@ -73,7 +73,7 @@ END xbip_multadd_0;
 ARCHITECTURE xbip_multadd_0_arch OF xbip_multadd_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF xbip_multadd_0_arch: ARCHITECTURE IS "yes";
-  COMPONENT xbip_multadd_v3_0_12 IS
+  COMPONENT xbip_multadd_v3_0_13 IS
     GENERIC (
       C_VERBOSITY : INTEGER;
       C_XDEVICEFAMILY : STRING;
@@ -95,21 +95,21 @@ ARCHITECTURE xbip_multadd_0_arch OF xbip_multadd_0 IS
       CLK : IN STD_LOGIC;
       CE : IN STD_LOGIC;
       SCLR : IN STD_LOGIC;
-      A : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+      A : IN STD_LOGIC_VECTOR(24 DOWNTO 0);
       B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
-      C : IN STD_LOGIC_VECTOR(35 DOWNTO 0);
+      C : IN STD_LOGIC_VECTOR(42 DOWNTO 0);
       PCIN : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
       SUBTRACT : IN STD_LOGIC;
-      P : OUT STD_LOGIC_VECTOR(35 DOWNTO 0);
+      P : OUT STD_LOGIC_VECTOR(42 DOWNTO 0);
       PCOUT : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
     );
-  END COMPONENT xbip_multadd_v3_0_12;
+  END COMPONENT xbip_multadd_v3_0_13;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF xbip_multadd_0_arch: ARCHITECTURE IS "xbip_multadd_v3_0_12,Vivado 2018.2";
+  ATTRIBUTE X_CORE_INFO OF xbip_multadd_0_arch: ARCHITECTURE IS "xbip_multadd_v3_0_13,Vivado 2018.3";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
-  ATTRIBUTE CHECK_LICENSE_TYPE OF xbip_multadd_0_arch : ARCHITECTURE IS "xbip_multadd_0,xbip_multadd_v3_0_12,{}";
+  ATTRIBUTE CHECK_LICENSE_TYPE OF xbip_multadd_0_arch : ARCHITECTURE IS "xbip_multadd_0,xbip_multadd_v3_0_13,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF xbip_multadd_0_arch: ARCHITECTURE IS "xbip_multadd_0,xbip_multadd_v3_0_12,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xbip_multadd,x_ipVersion=3.0,x_ipCoreRevision=12,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_VERBOSITY=0,C_XDEVICEFAMILY=zynq,C_A_WIDTH=18,C_B_WIDTH=18,C_C_WIDTH=36,C_A_TYPE=0,C_B_TYPE=0,C_C_TYPE=0,C_CE_OVERRIDES_SCLR=0,C_AB_LATENCY=-1,C_C_LATENCY=-1,C_OUT_HIGH=35,C_OUT_LOW=0,C_USE_PCIN=0,C_TEST_CORE=0}";
+  ATTRIBUTE CORE_GENERATION_INFO OF xbip_multadd_0_arch: ARCHITECTURE IS "xbip_multadd_0,xbip_multadd_v3_0_13,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xbip_multadd,x_ipVersion=3.0,x_ipCoreRevision=13,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_VERBOSITY=0,C_XDEVICEFAMILY=zynq,C_A_WIDTH=25,C_B_WIDTH=18,C_C_WIDTH=43,C_A_TYPE=0,C_B_TYPE=0,C_C_TYPE=0,C_CE_OVERRIDES_SCLR=0,C_AB_LATENCY=-1,C_C_LATENCY=-1,C_OUT_HIGH=42,C_OUT_LOW=0,C_USE_PCIN=0,C_TEST_CORE=0}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF PCOUT: SIGNAL IS "XIL_INTERFACENAME pcout_intf, LAYERED_METADATA undef";
@@ -124,27 +124,27 @@ ARCHITECTURE xbip_multadd_0_arch OF xbip_multadd_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF B: SIGNAL IS "xilinx.com:signal:data:1.0 b_intf DATA";
   ATTRIBUTE X_INTERFACE_PARAMETER OF A: SIGNAL IS "XIL_INTERFACENAME a_intf, LAYERED_METADATA undef";
   ATTRIBUTE X_INTERFACE_INFO OF A: SIGNAL IS "xilinx.com:signal:data:1.0 a_intf DATA";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF SCLR: SIGNAL IS "XIL_INTERFACENAME sclr_intf, POLARITY ACTIVE_HIGH";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF SCLR: SIGNAL IS "XIL_INTERFACENAME sclr_intf, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF SCLR: SIGNAL IS "xilinx.com:signal:reset:1.0 sclr_intf RST";
   ATTRIBUTE X_INTERFACE_PARAMETER OF CE: SIGNAL IS "XIL_INTERFACENAME ce_intf, POLARITY ACTIVE_LOW";
   ATTRIBUTE X_INTERFACE_INFO OF CE: SIGNAL IS "xilinx.com:signal:clockenable:1.0 ce_intf CE";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF pcout_intf:p_intf:subtract_intf:pcin_intf:c_intf:b_intf:a_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 100000000, PHASE 0.000";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF CLK: SIGNAL IS "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF pcout_intf:p_intf:subtract_intf:pcin_intf:c_intf:b_intf:a_intf, ASSOCIATED_RESET SCLR, ASSOCIATED_CLKEN CE, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF CLK: SIGNAL IS "xilinx.com:signal:clock:1.0 clk_intf CLK";
 BEGIN
-  U0 : xbip_multadd_v3_0_12
+  U0 : xbip_multadd_v3_0_13
     GENERIC MAP (
       C_VERBOSITY => 0,
       C_XDEVICEFAMILY => "zynq",
-      C_A_WIDTH => 18,
+      C_A_WIDTH => 25,
       C_B_WIDTH => 18,
-      C_C_WIDTH => 36,
+      C_C_WIDTH => 43,
       C_A_TYPE => 0,
       C_B_TYPE => 0,
       C_C_TYPE => 0,
       C_CE_OVERRIDES_SCLR => 0,
       C_AB_LATENCY => -1,
       C_C_LATENCY => -1,
-      C_OUT_HIGH => 35,
+      C_OUT_HIGH => 42,
       C_OUT_LOW => 0,
       C_USE_PCIN => 0,
       C_TEST_CORE => 0

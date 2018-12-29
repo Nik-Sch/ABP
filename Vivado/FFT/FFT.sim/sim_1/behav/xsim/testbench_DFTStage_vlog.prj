@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+sv work  \
+"../../../../FFT.srcs/sim_1/new/pkg_sv.sv" \
+"../../../../FFT.srcs/sim_1/new/testbench_complex_mul.sv" \
+"../../../../FFT.srcs/sim_1/new/reference_dft.sv" \
+"../../../../FFT.srcs/sim_1/new/testbench_eFunctionRom.sv" \
+"../../../../FFT.srcs/sim_1/new/testbench_DFTStage.sv" \
+
+# compile glbl module
+verilog work "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -19,30 +19,22 @@
 ----------------------------------------------------------------------------------
 
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-use ieee.std_logic_signed.all;
-use IEEE.NUMERIC_STD.all;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity ComplexMultiply is
-  generic (
-    g_width : natural := 18
-    );
   port (
     i_clk         : in std_ulogic;
     i_reset       : in std_ulogic;
-    i_a_real      : in std_ulogic_vector(g_width - 1 downto 0);  -- Q11.7
-    i_a_imaginary : in std_ulogic_vector(g_width - 1 downto 0);  -- Q11.7
-    i_b_real      : in std_ulogic_vector(g_width - 1 downto 0);  -- Q2.16
-    i_b_imaginary : in std_ulogic_vector(g_width - 1 downto 0);  -- Q2.16
-
-    o_q_real      : out std_ulogic_vector(g_width - 1 downto 0); -- Q11.7
-    o_q_imaginary : out std_ulogic_vector(g_width - 1 downto 0)  -- Q11.7
+    i_a_real      : in std_ulogic_vector(24 downto 0);  -- Q11.14
+    i_a_imaginary : in std_ulogic_vector(24 downto 0);  -- Q11.14
+    i_b_real      : in std_ulogic_vector(17 downto 0);  -- Q2.16
+    i_b_imaginary : in std_ulogic_vector(17 downto 0);  -- Q2.16
+    -- takes 6 cycles
+    o_q_real      : out std_ulogic_vector(24 downto 0); -- Q11.14
+    o_q_imaginary : out std_ulogic_vector(24 downto 0)  -- Q11.14
     );
 end ComplexMultiply;
 
@@ -52,31 +44,31 @@ architecture rtl of ComplexMultiply is
       clk      : in  std_logic;
       ce       : in  std_logic;
       sclr     : in  std_logic;
-      a        : in  std_logic_vector(17 downto 0);
+      a        : in  std_logic_vector(24 downto 0);
       b        : in  std_logic_vector(17 downto 0);
-      c        : in  std_logic_vector(35 downto 0);
+      c        : in  std_logic_vector(42 downto 0);
       subtract : in  std_logic;
-      p        : out std_logic_vector(35 downto 0);
+      p        : out std_logic_vector(42 downto 0);
       pcout    : out std_logic_vector(47 downto 0)
       );
   end component;
 
-  signal r_a_real        : std_ulogic_vector(g_width - 1 downto 0);
-  signal rr_a_real       : std_ulogic_vector(g_width - 1 downto 0);
-  signal rrr_a_real      : std_ulogic_vector(g_width - 1 downto 0);
-  signal r_b_real        : std_ulogic_vector(g_width - 1 downto 0);
-  signal r_a_imaginary   : std_ulogic_vector(g_width - 1 downto 0);
-  signal rr_a_imaginary  : std_ulogic_vector(g_width - 1 downto 0);
-  signal rrr_a_imaginary : std_ulogic_vector(g_width - 1 downto 0);
-  signal r_b_imaginary   : std_ulogic_vector(g_width - 1 downto 0);
-  signal rr_b_imaginary  : std_ulogic_vector(g_width - 1 downto 0);
-  signal rrr_b_imaginary : std_ulogic_vector(g_width - 1 downto 0);
+  signal r_a_real        : std_ulogic_vector(24 downto 0);
+  signal rr_a_real       : std_ulogic_vector(24 downto 0);
+  signal rrr_a_real      : std_ulogic_vector(24 downto 0);
+  signal r_a_imaginary   : std_ulogic_vector(24 downto 0);
+  signal rr_a_imaginary  : std_ulogic_vector(24 downto 0);
+  signal rrr_a_imaginary : std_ulogic_vector(24 downto 0);
+  signal r_b_real        : std_ulogic_vector(17 downto 0);
+  signal r_b_imaginary   : std_ulogic_vector(17 downto 0);
+  signal rr_b_imaginary  : std_ulogic_vector(17 downto 0);
+  signal rrr_b_imaginary : std_ulogic_vector(17 downto 0);
 
-  signal r_q_real      : std_ulogic_vector((g_width * 2) - 1 downto 0);
-  signal r_q_imaginary : std_ulogic_vector((g_width * 2) - 1 downto 0);
+  signal r_q_real      : std_ulogic_vector(42 downto 0);
+  signal r_q_imaginary : std_ulogic_vector(42 downto 0);
 
-  signal r_real_mul_1      : std_ulogic_vector((g_width * 2) - 1 downto 0);
-  signal r_imaginary_mul_1 : std_ulogic_vector((g_width * 2) - 1 downto 0);
+  signal r_real_mul_1      : std_ulogic_vector(42 downto 0);
+  signal r_imaginary_mul_1 : std_ulogic_vector(42 downto 0);
 
 begin
 
@@ -166,9 +158,9 @@ begin
       rrr_a_imaginary <= rr_a_imaginary;
       rrr_b_imaginary <= rr_b_imaginary;
 
-      -- make Q13.23 to Q11.7 again
-      o_q_real      <= r_q_real((g_width * 2) - 3 downto g_width - 2);
-      o_q_imaginary <= r_q_imaginary((g_width * 2) - 3 downto g_width - 2);
+      -- make Q13.30 to Q11.14 again
+      o_q_real      <= r_q_real(r_q_real'high - 2 downto r_q_real'length - 2 - 25);
+      o_q_imaginary <= r_q_imaginary(r_q_imaginary'high - 2 downto r_q_imaginary'length - 2 - 25);
     end if;
   end process p_reg;
 

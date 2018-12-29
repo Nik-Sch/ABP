@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-// Date        : Tue Nov 13 19:13:03 2018
+// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+// Date        : Thu Dec 27 17:16:30 2018
 // Host        : niklas-desktop running 64-bit Ubuntu 18.04.1 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/xbip_multadd_0_stub.v
@@ -13,16 +13,16 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* x_core_info = "xbip_multadd_v3_0_12,Vivado 2018.2" *)
+(* x_core_info = "xbip_multadd_v3_0_13,Vivado 2018.3" *)
 module xbip_multadd_0(CLK, CE, SCLR, A, B, C, SUBTRACT, P, PCOUT)
-/* synthesis syn_black_box black_box_pad_pin="CLK,CE,SCLR,A[17:0],B[17:0],C[35:0],SUBTRACT,P[35:0],PCOUT[47:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="CLK,CE,SCLR,A[24:0],B[17:0],C[42:0],SUBTRACT,P[42:0],PCOUT[47:0]" */;
   input CLK;
   input CE;
   input SCLR;
-  input [17:0]A;
+  input [24:0]A;
   input [17:0]B;
-  input [35:0]C;
+  input [42:0]C;
   input SUBTRACT;
-  output [35:0]P;
+  output [42:0]P;
   output [47:0]PCOUT;
 endmodule
