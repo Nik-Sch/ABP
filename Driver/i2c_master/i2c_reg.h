@@ -26,18 +26,19 @@
 #define THDDAT 0x144
 
 /* AXI ICC States */
-#define RX_FIFO_EMPTY (1 << 6)
 #define START_BIT (1 << 8)
 #define STOP_BIT (1 << 9)
+#define RX_FIFO_EMPTY  (1 << 6)
 #define WRITE_BIT 0
 #define READ_BIT 1
 
-/* AXI Slave Address of ADV7511 */
+
+/* ADV7511 Slave Address */
 #define ADV7511_SLAVE_ADDR 0x7A
 
+void writeAddrInfo(unsigned int base_addr, unsigned char addr);
 unsigned char readI2CRegisterMaster(unsigned int base_addr, unsigned char addr);
-void writeI2CRegisterMaster(unsigned int base_addr, unsigned char addr, unsigned char data);
-void modifyI2CRegisterMaster(unsigned int base_addr, unsigned char addr, unsigned char end, unsigned char start, unsigned char data)
+void modifyI2CRegisterMaster(unsigned int base_addr, unsigned char addr, unsigned char end, unsigned char start, unsigned char data);
 
 
 #endif
