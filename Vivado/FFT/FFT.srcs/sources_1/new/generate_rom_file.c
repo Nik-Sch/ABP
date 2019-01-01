@@ -14,17 +14,35 @@ int main(int argc, char *argv[]) {
     printf("the argument needs to be an integer\n");
     return 1;
   }
-  printf("writing to 'rom_N%d.txt'.\n", N);
-  char *filename = malloc(16);
-  snprintf(filename, 16, "rom_N%d.txt", N);
-  FILE *fp = fopen(filename, "w+");
-  // fprintf(fp, "real, imag\n");
-  for (int f = 0; f < N/2; f++) {
+  printf("writing to 'rom_N%d_real.coe' and 'rom_N%d_imag.coe'.\n", N, N);
+  char *filename = malloc(24);
+  snprintf(filename, 24, "rom_N%d_real.coe", N);
+  FILE *fp_real = fopen(filename, "w+");
+  snprintf(filename, 24, "rom_N%d_imag.coe", N);
+  FILE *fp_imag = fopen(filename, "w+");
+  free(filename);
+  fprintf(fp_real, "; 18 bits in hex:\n"
+  "; 17 downto 0: real value\n");
+  fprintf(fp_real, "memory_initialization_radix=16;\n");
+  fprintf(fp_real, "memory_initialization_vector=\n");
+
+  fprintf(fp_imag, "; 18 bits in hex:\n"
+  "; 17 downto 0: imag value\n");
+  fprintf(fp_imag, "memory_initialization_radix=16;\n");
+  fprintf(fp_imag, "memory_initialization_vector=\n");
+  int f;
+  for (f = 0; f < N/2 - 1; f++) {
     int real = (int)   (1 << 16) * cos(2.0 * PI * (float) f/ (float) N);
     int imag = (int) - (1 << 16) * sin(2.0 * PI * (float) f/ (float) N);
-    fprintf(fp, "%07d %07d\n", real, imag);
+    fprintf(fp_real, "%05x,\n", (real & ((1 << 18) - 1)));
+    fprintf(fp_imag, "%05x,\n", (imag & ((1 << 18) - 1)));
   }
-  fclose(fp);
-  free(filename);
+  f = N/2 - 1;
+  int real = (int)   (1 << 16) * cos(2.0 * PI * (float) f/ (float) N);
+  int imag = (int) - (1 << 16) * sin(2.0 * PI * (float) f/ (float) N);
+  fprintf(fp_real, "%05x;\n", (real & ((1 << 18) - 1)));
+  fprintf(fp_imag, "%05x;\n", (imag & ((1 << 18) - 1)));
+  fclose(fp_real);
+  fclose(fp_imag);
   return 0;
 }

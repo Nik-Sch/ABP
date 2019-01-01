@@ -23,52 +23,50 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
-use std.textio.all;
-use ieee.std_logic_textio.all;
 
 entity eFunctionRom is
-  generic (
-    N2 : integer := 256  -- #bins/2
-    );
   port (
     i_clk     : in  std_ulogic;
-    i_reset   : in  std_ulogic;
-    i_address : in  std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
-    o_data    : out std_ulogic_vector(35 downto 0) -- 35 downto 18: real, 17 downto 0: imaginary
+    i_address : in  std_ulogic_vector(7 downto 0);
+    o_data    : out std_ulogic_vector(35 downto 0)  -- 35 downto 18: real, 17 downto 0: imaginary
     );
 end eFunctionRom;
 
 architecture rtl of eFunctionRom is
-  type t_romArray is array (0 to N2-1) of std_ulogic_vector(35 downto 0);
+  component blk_rom_e_real
+    port (
+      clka  : in  std_logic;
+      addra : in  std_logic_vector(7 downto 0);
+      douta : out std_logic_vector(17 downto 0)
+      );
+  end component;
 
-  function initRom(filename: string) return t_romArray is
-    file romFile: text open read_mode is filename;
-    variable romLine: line;
-    variable romValue: integer;
-    variable result: t_romArray;
-    variable r: std_ulogic_vector(17 downto 0);
-  begin
-    for f in result'range loop
-      readline(romFile, romLine);
-      read(romLine, romValue);
-      r := std_ulogic_vector(to_signed(romValue, 18));
-      read(romLine, romValue);
-      result(f) := r & std_ulogic_vector(to_signed(romValue, 18));
-    end loop;
-    return result;
-  end initRom;
+  component blk_rom_e_imag
+    port (
+      clka  : in  std_logic;
+      addra : in  std_logic_vector(7 downto 0);
+      douta : out std_logic_vector(17 downto 0)
+      );
+  end component;
 
-  constant rom : t_romArray := initRom("rom_N" & integer'image(N2*2) & ".txt");
+  signal s_e_real: std_logic_vector(17 downto 0);
+  signal s_e_imag: std_logic_vector(17 downto 0);
 begin
 
-  p_reg : process(i_clk, i_reset)
-  begin
-    if i_reset = '1' then
-      o_data <= (others => '0');
-    elsif rising_edge(i_clk) then
-      o_data <= rom(to_integer(unsigned(i_address)));
-    end if;
-  end process;
+  o_data <= std_ulogic_vector(s_e_real) & std_ulogic_vector(s_e_imag);
 
+  inst_rom_e_real : blk_rom_e_real
+    port map (
+      clka  => i_clk,
+      addra => std_logic_vector(i_address),
+      douta => s_e_real
+      );
+
+  inst_rom_e_imag : blk_rom_e_imag
+    port map (
+      clka  => i_clk,
+      addra => std_logic_vector(i_address),
+      douta => s_e_imag
+      );
 
 end rtl;

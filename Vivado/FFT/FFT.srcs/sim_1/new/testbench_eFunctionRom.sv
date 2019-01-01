@@ -40,8 +40,8 @@ module testbench_eFunctionRom;
     end
 
     $display("[e-F Testbench] Starting eFunction tests. @ %01t", $time);
-    for (int f = 0; f < N/2; f++) begin
-      automatic complex_18 reference = e_function(f, N);
+    for (int f = 1; f < N/2; f++) begin
+      automatic complex_18 reference = e_function(f - 1, N);
       automatic complex_18 dut;
       dut_address = f;
       @(negedge clk);
@@ -50,6 +50,8 @@ module testbench_eFunctionRom;
 
 
       if (dut_data.r !== reference.r || dut_data.i !== reference.i) begin
+        @(negedge clk);
+
         $fatal(1, "[e-F Testbench] result is wrong (f: %0d).\ndut_data.r: %018b dut_data.i: %018b\nref_data.r: %018b ref_data.i: %018b @ %01t",
       f, dut.r, dut.i, reference.r, reference.i, $time);
       end else begin
@@ -60,12 +62,9 @@ module testbench_eFunctionRom;
     $stop;
   end
 
-  eFunctionRom #(
-    .n2(N/2)
-    ) dut_eFunctionRom
+  eFunctionRom dut_eFunctionRom
   (
     .i_clk(clk),
-    .i_reset(reset),
     .i_address(dut_address),
     .o_data(dut_data)
     );
