@@ -29,16 +29,23 @@
 #define START_BIT (1 << 8)
 #define STOP_BIT (1 << 9)
 #define RX_FIFO_EMPTY  (1 << 6)
+#define TX_FIFO_EMPTY (1 << 7)
+#define TX_FIFO_RESET (1 << 1)
+#define BUS_BUSY (1 << 2)
 #define WRITE_BIT 0
 #define READ_BIT 1
+#define GC_EN (1 << 6)
+#define IIC_EN 1
 
 
 /* ADV7511 Slave Address */
 #define ADV7511_SLAVE_ADDR 0x72
 
-void writeI2CRegisterMaster(unsigned int base_addr, unsigned char addr, unsigned char data);
-unsigned char readI2CRegisterMaster(unsigned int base_addr, unsigned char addr);
-void modifyI2CRegisterMaster(unsigned int base_addr, unsigned char addr, unsigned char end, unsigned char start, unsigned char data);
+void I2CMasterSetup(unsigned int *base_addr);
+
+void writeI2CRegisterMaster(unsigned int *base_addr, unsigned char addr, unsigned char data);
+unsigned char readI2CRegisterMaster(unsigned int *base_addr, unsigned char addr);
+void modifyI2CRegisterMaster(unsigned int *base_addr, unsigned char addr, unsigned char end, unsigned char start, unsigned char data);
 
 
 #endif
