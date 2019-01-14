@@ -66,6 +66,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   create_project -in_memory -part xc7z020clg484-1
+  set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.cache/wt [current_project]

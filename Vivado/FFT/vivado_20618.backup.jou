@@ -1,0 +1,88 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Dec 29 20:48:38 2018
+# Process ID: 20618
+# Current directory: /home/niklas/dev/uni/ABP/git/Vivado/FFT
+# Command line: vivado FFT.xpr
+# Log file: /home/niklas/dev/uni/ABP/git/Vivado/FFT/vivado.log
+# Journal file: /home/niklas/dev/uni/ABP/git/Vivado/FFT/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project FFT.xpr
+config_webtalk -user off
+set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
+reset_property board_connections [get_projects FFT]
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+close_design
+launch_simulation
+source testbench_DFTStage.tcl
+close_sim
+close_project
+create_project ddr_test /home/niklas/dev/uni/ABP/ddr_test -part xc7z020clg484-1
+set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
+set_property target_language VHDL [current_project]
+create_bd_design "design_1"
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+endgroup
+set_property -dict [list CONFIG.PCW_USE_S_AXI_GP0 {1}] [get_bd_cells processing_system7_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:cmpy:6.0 cmpy_0
+endgroup
+delete_bd_objs [get_bd_cells cmpy_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+endgroup
+set_property location {1 98 -252} [get_bd_cells axi_bram_ctrl_0]
+set_property -dict [list CONFIG.SINGLE_PORT_BRAM {1}] [get_bd_cells axi_bram_ctrl_0]
+set_property location {2 424 -333} [get_bd_cells axi_bram_ctrl_0]
+set_property -dict [list CONFIG.PCW_USE_S_AXI_GP0 {0}] [get_bd_cells processing_system7_0]
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name blk_mem_gen_0
+set_property -dict [list CONFIG.Memory_Type {Simple_Dual_Port_RAM} CONFIG.Write_Width_A {50} CONFIG.Write_Depth_A {256} CONFIG.Read_Width_A {50} CONFIG.Operating_Mode_A {NO_CHANGE} CONFIG.Write_Width_B {50} CONFIG.Read_Width_B {50} CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Register_PortB_Output_of_Memory_Primitives {true} CONFIG.Fill_Remaining_Memory_Locations {true} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Enable_Rate {100}] [get_ips blk_mem_gen_0]
+generate_target {instantiation_template} [get_files /home/niklas/dev/uni/ABP/ddr_test/ddr_test.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+endgroup
+delete_bd_objs [get_bd_cells blk_mem_gen_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+endgroup
+set_property -dict [list CONFIG.Memory_Type {True_Dual_Port_RAM} CONFIG.Enable_32bit_Address {true} CONFIG.Use_Byte_Write_Enable {true} CONFIG.Byte_Size {8} CONFIG.Enable_B {Use_ENB_Pin} CONFIG.Register_PortA_Output_of_Memory_Primitives {false} CONFIG.Use_RSTA_Pin {true} CONFIG.Use_RSTB_Pin {true} CONFIG.Port_B_Clock {100} CONFIG.Port_B_Write_Rate {50} CONFIG.Port_B_Enable_Rate {100} CONFIG.use_bram_block {BRAM_Controller} CONFIG.EN_SAFETY_CKT {true}] [get_bd_cells blk_mem_gen_0]
+connect_bd_intf_net [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins blk_mem_gen_0/BRAM_PORTA]
+set_property location {1.5 208 -196} [get_bd_cells processing_system7_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_bram_ctrl_0/S_AXI} intc_ip {Auto} master_apm {0}}  [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
+set_property location {2 458 -205} [get_bd_cells processing_system7_0]
+set_property location {1.5 280 -219} [get_bd_cells processing_system7_0]
+set_property location {2.5 553 -408} [get_bd_cells axi_smc]
+set_property location {3 645 -107} [get_bd_cells rst_ps7_0_50M]
+set_property location {3.5 748 -119} [get_bd_cells rst_ps7_0_50M]
+set_property location {4 843 -510} [get_bd_cells blk_mem_gen_0]
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+regenerate_bd_layout
+file mkdir /home/niklas/dev/uni/ABP/ddr_test/ddr_test.srcs/sources_1/new
+close [ open /home/niklas/dev/uni/ABP/ddr_test/ddr_test.srcs/sources_1/new/writeToBRAM.vhd w ]
+add_files /home/niklas/dev/uni/ABP/ddr_test/ddr_test.srcs/sources_1/new/writeToBRAM.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference writeToBRAM writeToBRAM_0
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config {Clk "/processing_system7_0/FCLK_CLK0 (100 MHz)" }  [get_bd_pins writeToBRAM_0/i_clk]
+connect_bd_net [get_bd_pins writeToBRAM_0/doutb] [get_bd_pins blk_mem_gen_0/doutb]
+connect_bd_net [get_bd_pins writeToBRAM_0/web] [get_bd_pins blk_mem_gen_0/web]
+connect_bd_net [get_bd_pins writeToBRAM_0/rstb] [get_bd_pins blk_mem_gen_0/rstb]
+connect_bd_net [get_bd_pins writeToBRAM_0/enb] [get_bd_pins blk_mem_gen_0/enb]
+connect_bd_net [get_bd_pins writeToBRAM_0/enb] [get_bd_pins blk_mem_gen_0/dinb]
+delete_bd_objs [get_bd_nets writeToBRAM_0_enb]
+connect_bd_net [get_bd_pins writeToBRAM_0/enb] [get_bd_pins blk_mem_gen_0/enb]
+connect_bd_net [get_bd_pins writeToBRAM_0/dinb] [get_bd_pins blk_mem_gen_0/dinb]
+connect_bd_net [get_bd_pins writeToBRAM_0/clkb] [get_bd_pins blk_mem_gen_0/clkb]
+connect_bd_net [get_bd_pins writeToBRAM_0/addrb] [get_bd_pins blk_mem_gen_0/addrb]
+regenerate_bd_layout
+save_bd_design

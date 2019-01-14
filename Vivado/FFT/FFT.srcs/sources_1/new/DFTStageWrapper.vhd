@@ -35,17 +35,17 @@ entity DFTStageWrapper is
   port (
     i_clk   : in  std_ulogic;
     i_reset : in  std_ulogic;
-    i_start : in  std_ulogic;
     o_ready : out std_ulogic;
 
-    i_data_new : in std_ulogic_vector(24 downto 0);
-    i_data_old : in std_ulogic_vector(24 downto 0);
+    i_dataValid : in std_ulogic;
+    i_dataNew   : in std_ulogic_vector(24 downto 0);
 
     -- bram interface
     -- write
-    o_bram_we    : out std_ulogic;
-    o_bram_waddr : out std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
-    o_bram_wdata : out std_ulogic_vector(49 downto 0)  -- 49 downto 25: real, 24 downto 0: imag
+    o_freqDataEn    : out std_ulogic;
+    o_freqDataIndex : out std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
+    o_freqDataReal  : out std_ulogic_vector(24 downto 0);
+    o_freqDataImag  : out std_ulogic_vector(24 downto 0)
     );
 end DFTStageWrapper;
 
@@ -58,58 +58,95 @@ architecture rtl of DFTStageWrapper is
       addra : in  std_logic_vector(7 downto 0);
       dina  : in  std_logic_vector(49 downto 0);
       clkb  : in  std_logic;
+      enb   : in  std_logic;
       addrb : in  std_logic_vector(7 downto 0);
       doutb : out std_logic_vector(49 downto 0)
       );
   end component;
 
-  signal s_bram_raddr : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
-  signal s_bram_rdata : std_ulogic_vector(49 downto 0);
+  signal s_bramRaddr : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
+  signal s_bramRe    : std_ulogic;
+  signal s_bramRData : std_ulogic_vector(49 downto 0);
 
 
-  signal s_bram_we        : std_ulogic;
-  signal s_bram_we_vector : std_logic_vector(0 downto 0);
-  signal s_bram_waddr     : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
-  signal s_bram_wdata     : std_ulogic_vector(49 downto 0);  -- 49 downto 25: real, 24 downto 0: imag
+  signal s_bramWe       : std_ulogic;
+  signal s_bramWeVector : std_logic_vector(0 downto 0);
+  signal s_bramWAddr    : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
+  signal s_bramWData    : std_ulogic_vector(49 downto 0);  -- 49 downto 25: real, 24 downto 0: imag
+
+  signal s_start : std_ulogic;
+  signal s_ready : std_ulogic;
+
+  signal s_dataOld           : std_ulogic_vector(24 downto 0);
+  signal s_dataFifoDout      : std_ulogic_vector(24 downto 0);
+  signal s_dataFifoRead      : std_ulogic;
+  signal s_dataFifoFillLevel : integer;
 begin
 
-  o_bram_we    <= s_bram_we;
-  o_bram_waddr <= s_bram_waddr;
-  o_bram_wdata <= s_bram_wdata;
+  s_start <= i_dataValid and s_ready;
+
+  o_ready         <= s_ready;
+  o_freqDataEn    <= s_bramWe;
+  o_freqDataIndex <= s_bramWAddr;
+  o_freqDataReal  <= s_bramWData(49 downto 25);
+  o_freqDataImag  <= s_bramWData(24 downto 0);
+
+  s_dataFifoRead <= '1' when (s_dataFifoFillLevel >= (N2 * 2) - 1) and s_start = '1' else
+                    '0';
+
+  -- the first N stages don't have data_old
+  s_dataOld <= s_dataFifoDout when (s_dataFifoFillLevel >= (N2 * 2) - 1) else
+               (others => '0');
+
+  inst_dataFifoFillLevel : entity work.dataFifoFillLevel
+    port map (
+      i_clk       => i_clk,
+      i_reset     => i_reset,
+      i_din       => i_dataNew,
+      i_we        => s_start,
+      o_dout      => s_dataFifoDout,
+      i_re        => s_dataFifoRead,
+      o_full      => open,
+      o_empty     => open,
+      o_fillLevel => s_dataFifoFillLevel
+      );
+
 
   inst_DFTStage : entity work.DFTStage
     generic map (
-      N2                  => N2
+      N2 => N2
       )
     port map (
-      i_clk      => i_clk,
-      i_reset    => i_reset,
-      i_start    => i_start,
-      o_ready    => o_ready,
-      i_data_new => i_data_new,
-      i_data_old => i_data_old,
+      i_clk     => i_clk,
+      i_reset   => i_reset,
+      i_start   => s_start,
+      o_ready   => s_ready,
+      i_dataNew => i_dataNew,
+      i_dataOld => s_dataOld,
 
-      o_bram_raddr => s_bram_raddr,
-      i_bram_rdata => s_bram_rdata,
+      o_bramRe    => s_bramRe,
+      o_bramRAddr => s_bramRaddr,
+      i_bramRData => s_bramRData,
 
-      o_bram_we    => s_bram_we,
-      o_bram_waddr => s_bram_waddr,
-      o_bram_wdata => s_bram_wdata
+      o_bramWe    => s_bramWe,
+      o_bramWAddr => s_bramWAddr,
+      o_bramWData => s_bramWData
       );
 
-  s_bram_we_vector(0) <= std_logic(s_bram_we);
+  s_bramWeVector(0) <= std_logic(s_bramWe);
 
   inst_BlockRam : blk_mem_gen_0
     port map (
       clka  => std_logic(i_clk),
-      ena   => std_logic(s_bram_we),
-      wea   => s_bram_we_vector,
-      addra => std_logic_vector(s_bram_waddr),
-      dina  => std_logic_vector(s_bram_wdata),
+      ena   => std_logic(s_bramWe),
+      wea   => s_bramWeVector,
+      addra => std_logic_vector(s_bramWAddr),
+      dina  => std_logic_vector(s_bramWData),
 
       clkb                     => std_logic(i_clk),
-      addrb                    => std_logic_vector(s_bram_raddr),
-      std_ulogic_vector(doutb) => s_bram_rdata
+      enb                      => std_logic(s_bramRe),
+      addrb                    => std_logic_vector(s_bramRaddr),
+      std_ulogic_vector(doutb) => s_bramRData
       );
 
 end rtl;

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Sat Dec 29 17:38:24 2018
+| Date             : Sat Dec 29 20:52:14 2018
 | Host             : niklas-desktop running 64-bit Ubuntu 18.04.1 LTS
 | Command          : report_power -file DFTStageWrapper_power_routed.rpt -pb DFTStageWrapper_power_summary_routed.pb -rpx DFTStageWrapper_power_routed.rpx
 | Design           : DFTStageWrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.255        |
+| Total On-Chip Power (W)  | 0.130        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.148        |
-| Device Static (W)        | 0.107        |
+| Dynamic (W)              | 0.025        |
+| Device Static (W)        | 0.105        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 82.1         |
-| Junction Temperature (C) | 27.9         |
+| Max Ambient (C)          | 83.5         |
+| Junction Temperature (C) | 26.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      641 |       --- |             --- |
+| Clocks         |     0.006 |        3 |       --- |             --- |
+| Slice Logic    |    <0.001 |      638 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       73 |     53200 |            0.14 |
 |   Register     |    <0.001 |      521 |    106400 |            0.49 |
-|   LUT as Logic |    <0.001 |       76 |     53200 |            0.14 |
 |   CARRY4       |    <0.001 |       14 |     13300 |            0.11 |
 |   Others       |     0.000 |       22 |       --- |             --- |
-| Signals        |     0.012 |      831 |       --- |             --- |
-| Block RAM      |     0.017 |        2 |       140 |            1.43 |
-| DSPs           |     0.008 |        4 |       220 |            1.82 |
-| I/O            |     0.104 |      113 |       200 |           56.50 |
-| Static Power   |     0.107 |          |           |                 |
-| Total          |     0.255 |          |           |                 |
+| Signals        |     0.003 |      829 |       --- |             --- |
+| Block RAM      |     0.007 |        2 |       140 |            1.43 |
+| DSPs           |     0.007 |        4 |       220 |            1.82 |
+| I/O            |     0.001 |      113 |       200 |           56.50 |
+| Static Power   |     0.105 |          |           |                 |
+| Total          |     0.130 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,20 +73,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.052 |       0.044 |      0.008 |
-| Vccaux    |       1.800 |     0.019 |       0.008 |      0.011 |
+| Vccint    |       1.000 |     0.032 |       0.024 |      0.008 |
+| Vccaux    |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.050 |       0.049 |      0.001 |
+| Vcco18    |       1.800 |     0.001 |       0.000 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.001 |       0.001 |      0.001 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.017 |       0.000 |      0.017 |
+| Vccpint   |       1.000 |     0.016 |       0.000 |      0.016 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -149,12 +149,12 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| DFTStageWrapper            |     0.148 |
-|   inst_BlockRam            |     0.013 |
-|     U0                     |     0.013 |
-|       inst_blk_mem_gen     |     0.013 |
-|   inst_DFTStage            |     0.030 |
-|     inst_ComplexMultiply   |     0.017 |
+| DFTStageWrapper            |     0.025 |
+|   inst_BlockRam            |     0.003 |
+|     U0                     |     0.003 |
+|       inst_blk_mem_gen     |     0.003 |
+|   inst_DFTStage            |     0.020 |
+|     inst_ComplexMultiply   |     0.013 |
 |       inst_imaginary_mul_1 |     0.002 |
 |       inst_imaginary_mul_2 |     0.002 |
 |       inst_real_mul_1      |     0.002 |

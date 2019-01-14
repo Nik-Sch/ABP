@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Sat Dec 29 17:37:54 2018
+| Date         : Sat Dec 29 20:51:38 2018
 | Host         : niklas-desktop running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_drc -file DFTStageWrapper_drc_opted.rpt -pb DFTStageWrapper_drc_opted.pb -rpx DFTStageWrapper_drc_opted.rpx
 | Design       : DFTStageWrapper

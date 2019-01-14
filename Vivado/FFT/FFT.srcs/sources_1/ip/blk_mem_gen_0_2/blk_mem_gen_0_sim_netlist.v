@@ -1,8 +1,8 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Sat Dec 29 15:44:11 2018
-// Host        : niklas-desktop running 64-bit Ubuntu 18.04.1 LTS
+// Date        : Sun Jan 13 23:33:37 2019
+// Host        : niklas-desktop running 64-bit Ubuntu 18.10
 // Command     : write_verilog -force -mode funcsim
 //               /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/blk_mem_gen_0_sim_netlist.v
 // Design      : blk_mem_gen_0
@@ -21,6 +21,7 @@ module blk_mem_gen_0
     addra,
     dina,
     clkb,
+    enb,
     addrb,
     doutb);
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *) input clka;
@@ -29,6 +30,7 @@ module blk_mem_gen_0
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR" *) input [7:0]addra;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA DIN" *) input [49:0]dina;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *) input clkb;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB EN" *) input enb;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR" *) input [7:0]addrb;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB DOUT" *) output [49:0]doutb;
 
@@ -39,6 +41,7 @@ module blk_mem_gen_0
   wire [49:0]dina;
   wire [49:0]doutb;
   wire ena;
+  wire enb;
   wire [0:0]wea;
   wire NLW_U0_dbiterr_UNCONNECTED;
   wire NLW_U0_rsta_busy_UNCONNECTED;
@@ -88,7 +91,7 @@ module blk_mem_gen_0
   (* C_FAMILY = "zynq" *) 
   (* C_HAS_AXI_ID = "0" *) 
   (* C_HAS_ENA = "1" *) 
-  (* C_HAS_ENB = "0" *) 
+  (* C_HAS_ENB = "1" *) 
   (* C_HAS_INJECTERR = "0" *) 
   (* C_HAS_MEM_OUTPUT_REGS_A = "0" *) 
   (* C_HAS_MEM_OUTPUT_REGS_B = "1" *) 
@@ -150,7 +153,7 @@ module blk_mem_gen_0
         .doutb(doutb),
         .eccpipece(1'b0),
         .ena(ena),
-        .enb(1'b0),
+        .enb(enb),
         .injectdbiterr(1'b0),
         .injectsbiterr(1'b0),
         .rdaddrecc(NLW_U0_rdaddrecc_UNCONNECTED[7:0]),
@@ -207,6 +210,7 @@ endmodule
 module blk_mem_gen_0_blk_mem_gen_generic_cstr
    (doutb,
     clka,
+    enb,
     ena,
     addrb,
     addra,
@@ -214,6 +218,7 @@ module blk_mem_gen_0_blk_mem_gen_generic_cstr
     wea);
   output [49:0]doutb;
   input clka;
+  input enb;
   input ena;
   input [7:0]addrb;
   input [7:0]addra;
@@ -226,6 +231,7 @@ module blk_mem_gen_0_blk_mem_gen_generic_cstr
   wire [49:0]dina;
   wire [49:0]doutb;
   wire ena;
+  wire enb;
   wire [0:0]wea;
 
   blk_mem_gen_0_blk_mem_gen_prim_width \ramloop[0].ram.r 
@@ -235,6 +241,7 @@ module blk_mem_gen_0_blk_mem_gen_generic_cstr
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
+        .enb(enb),
         .wea(wea));
 endmodule
 
@@ -242,6 +249,7 @@ endmodule
 module blk_mem_gen_0_blk_mem_gen_prim_width
    (doutb,
     clka,
+    enb,
     ena,
     addrb,
     addra,
@@ -249,6 +257,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
     wea);
   output [49:0]doutb;
   input clka;
+  input enb;
   input ena;
   input [7:0]addrb;
   input [7:0]addra;
@@ -261,6 +270,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
   wire [49:0]dina;
   wire [49:0]doutb;
   wire ena;
+  wire enb;
   wire [0:0]wea;
 
   blk_mem_gen_0_blk_mem_gen_prim_wrapper_init \prim_init.ram 
@@ -270,6 +280,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_width
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
+        .enb(enb),
         .wea(wea));
 endmodule
 
@@ -277,6 +288,7 @@ endmodule
 module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
    (doutb,
     clka,
+    enb,
     ena,
     addrb,
     addra,
@@ -284,6 +296,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
     wea);
   output [49:0]doutb;
   input clka;
+  input enb;
   input ena;
   input [7:0]addrb;
   input [7:0]addra;
@@ -318,6 +331,7 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
   wire [49:0]dina;
   wire [49:0]doutb;
   wire ena;
+  wire enb;
   wire [0:0]wea;
   wire \NLW_DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_CASCADEOUTA_UNCONNECTED ;
   wire \NLW_DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_CASCADEOUTB_UNCONNECTED ;
@@ -522,12 +536,12 @@ module blk_mem_gen_0_blk_mem_gen_prim_wrapper_init
         .DOPADOP({\DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_n_68 ,\DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_n_69 ,\DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_n_70 ,\DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_n_71 }),
         .DOPBDOP({\DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_n_72 ,\DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_n_73 ,\DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_n_74 ,\DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_n_75 }),
         .ECCPARITY(\NLW_DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_ECCPARITY_UNCONNECTED [7:0]),
-        .ENARDEN(1'b1),
+        .ENARDEN(enb),
         .ENBWREN(ena),
         .INJECTDBITERR(1'b0),
         .INJECTSBITERR(1'b0),
         .RDADDRECC(\NLW_DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM36.ram_RDADDRECC_UNCONNECTED [8:0]),
-        .REGCEAREGCE(1'b1),
+        .REGCEAREGCE(enb),
         .REGCEB(1'b0),
         .RSTRAMARSTRAM(1'b0),
         .RSTRAMB(1'b0),
@@ -542,6 +556,7 @@ endmodule
 module blk_mem_gen_0_blk_mem_gen_top
    (doutb,
     clka,
+    enb,
     ena,
     addrb,
     addra,
@@ -549,6 +564,7 @@ module blk_mem_gen_0_blk_mem_gen_top
     wea);
   output [49:0]doutb;
   input clka;
+  input enb;
   input ena;
   input [7:0]addrb;
   input [7:0]addra;
@@ -561,6 +577,7 @@ module blk_mem_gen_0_blk_mem_gen_top
   wire [49:0]dina;
   wire [49:0]doutb;
   wire ena;
+  wire enb;
   wire [0:0]wea;
 
   blk_mem_gen_0_blk_mem_gen_generic_cstr \valid.cstr 
@@ -570,6 +587,7 @@ module blk_mem_gen_0_blk_mem_gen_top
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
+        .enb(enb),
         .wea(wea));
 endmodule
 
@@ -582,7 +600,7 @@ endmodule
 (* C_EN_RDADDRA_CHG = "0" *) (* C_EN_RDADDRB_CHG = "0" *) (* C_EN_SAFETY_CKT = "0" *) 
 (* C_EN_SHUTDOWN_PIN = "0" *) (* C_EN_SLEEP_PIN = "0" *) (* C_EST_POWER_SUMMARY = "Estimated Power for IP     :     6.4733 mW" *) 
 (* C_FAMILY = "zynq" *) (* C_HAS_AXI_ID = "0" *) (* C_HAS_ENA = "1" *) 
-(* C_HAS_ENB = "0" *) (* C_HAS_INJECTERR = "0" *) (* C_HAS_MEM_OUTPUT_REGS_A = "0" *) 
+(* C_HAS_ENB = "1" *) (* C_HAS_INJECTERR = "0" *) (* C_HAS_MEM_OUTPUT_REGS_A = "0" *) 
 (* C_HAS_MEM_OUTPUT_REGS_B = "1" *) (* C_HAS_MUX_OUTPUT_REGS_A = "0" *) (* C_HAS_MUX_OUTPUT_REGS_B = "0" *) 
 (* C_HAS_REGCEA = "0" *) (* C_HAS_REGCEB = "0" *) (* C_HAS_RSTA = "0" *) 
 (* C_HAS_RSTB = "0" *) (* C_HAS_SOFTECC_INPUT_REGS_A = "0" *) (* C_HAS_SOFTECC_OUTPUT_REGS_B = "0" *) 
@@ -734,6 +752,7 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_2
   wire [49:0]dina;
   wire [49:0]doutb;
   wire ena;
+  wire enb;
   wire [0:0]wea;
 
   assign dbiterr = \<const0> ;
@@ -885,6 +904,7 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_2
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
+        .enb(enb),
         .wea(wea));
 endmodule
 
@@ -892,6 +912,7 @@ endmodule
 module blk_mem_gen_0_blk_mem_gen_v8_4_2_synth
    (doutb,
     clka,
+    enb,
     ena,
     addrb,
     addra,
@@ -899,6 +920,7 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_2_synth
     wea);
   output [49:0]doutb;
   input clka;
+  input enb;
   input ena;
   input [7:0]addrb;
   input [7:0]addra;
@@ -911,6 +933,7 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_2_synth
   wire [49:0]dina;
   wire [49:0]doutb;
   wire ena;
+  wire enb;
   wire [0:0]wea;
 
   blk_mem_gen_0_blk_mem_gen_top \gnbram.gnativebmg.native_blk_mem_gen 
@@ -920,6 +943,7 @@ module blk_mem_gen_0_blk_mem_gen_v8_4_2_synth
         .dina(dina),
         .doutb(doutb),
         .ena(ena),
+        .enb(enb),
         .wea(wea));
 endmodule
 `ifndef GLBL

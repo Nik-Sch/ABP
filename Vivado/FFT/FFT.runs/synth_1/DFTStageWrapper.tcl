@@ -28,6 +28,7 @@ set_property parent.project_path /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.xpr
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
+set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_output_repo /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/rom_N512_real.coe

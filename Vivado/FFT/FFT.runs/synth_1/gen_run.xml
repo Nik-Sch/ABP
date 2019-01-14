@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1546101419">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1546113038">
+  <File Type="RDS-DCP" Name="DFTStageWrapper.dcp"/>
   <File Type="PA-TCL" Name="DFTStageWrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="DFTStageWrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="DFTStageWrapper.vds"/>
-  <File Type="RDS-DCP" Name="DFTStageWrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="DFTStageWrapper_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="DFTStageWrapper_utilization_synth.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -84,8 +84,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="blk_rom_e_real"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_rom_e_imag"/>
   <BlockFileSet Type="BlockSrcs" Name="xbip_multadd_0"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_rom_e_imag"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_rom_e_real"/>
 </GenRun>

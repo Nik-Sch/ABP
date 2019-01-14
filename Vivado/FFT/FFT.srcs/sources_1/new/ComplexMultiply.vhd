@@ -26,15 +26,15 @@ use ieee.numeric_std.all;
 
 entity ComplexMultiply is
   port (
-    i_clk         : in std_ulogic;
-    i_reset       : in std_ulogic;
-    i_a_real      : in std_ulogic_vector(24 downto 0);  -- Q11.14
-    i_a_imaginary : in std_ulogic_vector(24 downto 0);  -- Q11.14
-    i_b_real      : in std_ulogic_vector(17 downto 0);  -- Q2.16
-    i_b_imaginary : in std_ulogic_vector(17 downto 0);  -- Q2.16
+    i_clk   : in  std_ulogic;
+    i_reset : in  std_ulogic;
+    i_aReal : in  std_ulogic_vector(24 downto 0);  -- Q11.14
+    i_aImag : in  std_ulogic_vector(24 downto 0);  -- Q11.14
+    i_bReal : in  std_ulogic_vector(17 downto 0);  -- Q2.16
+    i_bImag : in  std_ulogic_vector(17 downto 0);  -- Q2.16
     -- takes 6 cycles
-    o_q_real      : out std_ulogic_vector(24 downto 0); -- Q11.14
-    o_q_imaginary : out std_ulogic_vector(24 downto 0)  -- Q11.14
+    o_qReal : out std_ulogic_vector(24 downto 0);  -- Q11.14
+    o_qImag : out std_ulogic_vector(24 downto 0)   -- Q11.14
     );
 end ComplexMultiply;
 
@@ -53,22 +53,22 @@ architecture rtl of ComplexMultiply is
       );
   end component;
 
-  signal r_a_real        : std_ulogic_vector(24 downto 0);
-  signal rr_a_real       : std_ulogic_vector(24 downto 0);
-  signal rrr_a_real      : std_ulogic_vector(24 downto 0);
-  signal r_a_imaginary   : std_ulogic_vector(24 downto 0);
-  signal rr_a_imaginary  : std_ulogic_vector(24 downto 0);
-  signal rrr_a_imaginary : std_ulogic_vector(24 downto 0);
-  signal r_b_real        : std_ulogic_vector(17 downto 0);
-  signal r_b_imaginary   : std_ulogic_vector(17 downto 0);
-  signal rr_b_imaginary  : std_ulogic_vector(17 downto 0);
-  signal rrr_b_imaginary : std_ulogic_vector(17 downto 0);
+  signal r_aReal   : std_ulogic_vector(24 downto 0);
+  signal rr_aReal  : std_ulogic_vector(24 downto 0);
+  signal rrr_aReal : std_ulogic_vector(24 downto 0);
+  signal r_aImag   : std_ulogic_vector(24 downto 0);
+  signal rr_aImag  : std_ulogic_vector(24 downto 0);
+  signal rrr_aImag : std_ulogic_vector(24 downto 0);
+  signal r_bReal   : std_ulogic_vector(17 downto 0);
+  signal r_bImag   : std_ulogic_vector(17 downto 0);
+  signal rr_bImag  : std_ulogic_vector(17 downto 0);
+  signal rrr_bImag : std_ulogic_vector(17 downto 0);
 
-  signal r_q_real      : std_ulogic_vector(42 downto 0);
-  signal r_q_imaginary : std_ulogic_vector(42 downto 0);
+  signal r_qReal : std_ulogic_vector(42 downto 0);
+  signal r_qImag : std_ulogic_vector(42 downto 0);
 
-  signal r_real_mul_1      : std_ulogic_vector(42 downto 0);
-  signal r_imaginary_mul_1 : std_ulogic_vector(42 downto 0);
+  signal r_realMul1      : std_ulogic_vector(42 downto 0);
+  signal r_imaginaryMul1 : std_ulogic_vector(42 downto 0);
 
 begin
 
@@ -78,11 +78,11 @@ begin
       clk                  => i_clk,
       ce                   => '1',
       sclr                 => '0',
-      a                    => std_logic_vector(r_a_real),
-      b                    => std_logic_vector(r_b_real),
+      a                    => std_logic_vector(r_aReal),
+      b                    => std_logic_vector(r_bReal),
       c                    => (others => '0'),
       subtract             => '0',
-      std_ulogic_vector(p) => r_real_mul_1,
+      std_ulogic_vector(p) => r_realMul1,
       pcout                => open
       );
 
@@ -94,11 +94,11 @@ begin
       clk                  => i_clk,
       ce                   => '1',
       sclr                 => '0',
-      a                    => std_logic_vector(rrr_a_imaginary),
-      b                    => std_logic_vector(rrr_b_imaginary),
-      c                    => std_logic_vector(r_real_mul_1),
+      a                    => std_logic_vector(rrr_aImag),
+      b                    => std_logic_vector(rrr_bImag),
+      c                    => std_logic_vector(r_realMul1),
       subtract             => '1',
-      std_ulogic_vector(p) => r_q_real,
+      std_ulogic_vector(p) => r_qReal,
       pcout                => open
       );
 
@@ -108,11 +108,11 @@ begin
       clk                  => i_clk,
       ce                   => '1',
       sclr                 => '0',
-      a                    => std_logic_vector(r_a_imaginary),
-      b                    => std_logic_vector(r_b_real),
+      a                    => std_logic_vector(r_aImag),
+      b                    => std_logic_vector(r_bReal),
       c                    => (others => '0'),
       subtract             => '0',
-      std_ulogic_vector(p) => r_imaginary_mul_1,
+      std_ulogic_vector(p) => r_imaginaryMul1,
       pcout                => open
       );
 
@@ -121,46 +121,46 @@ begin
       clk                  => i_clk,
       ce                   => '1',
       sclr                 => '0',
-      a                    => std_logic_vector(rrr_a_real),
-      b                    => std_logic_vector(rrr_b_imaginary),
-      c                    => std_logic_vector(r_imaginary_mul_1),
+      a                    => std_logic_vector(rrr_aReal),
+      b                    => std_logic_vector(rrr_bImag),
+      c                    => std_logic_vector(r_imaginaryMul1),
       subtract             => '0',
-      std_ulogic_vector(p) => r_q_imaginary,
+      std_ulogic_vector(p) => r_qImag,
       pcout                => open
       );
 
   p_reg : process(i_reset, i_clk)
   begin
     if i_reset = '1' then
-      o_q_imaginary   <= (others => '0');
-      o_q_real        <= (others => '0');
-      r_a_real        <= (others => '0');
-      rr_a_real       <= (others => '0');
-      rrr_a_real      <= (others => '0');
-      r_a_imaginary   <= (others => '0');
-      rr_a_imaginary  <= (others => '0');
-      rrr_a_imaginary <= (others => '0');
-      r_b_real        <= (others => '0');
-      r_b_imaginary   <= (others => '0');
-      rr_b_imaginary  <= (others => '0');
-      rrr_b_imaginary <= (others => '0');
+      o_qImag   <= (others => '0');
+      o_qReal   <= (others => '0');
+      r_aReal   <= (others => '0');
+      rr_aReal  <= (others => '0');
+      rrr_aReal <= (others => '0');
+      r_aImag   <= (others => '0');
+      rr_aImag  <= (others => '0');
+      rrr_aImag <= (others => '0');
+      r_bReal   <= (others => '0');
+      r_bImag   <= (others => '0');
+      rr_bImag  <= (others => '0');
+      rrr_bImag <= (others => '0');
 
     elsif rising_edge(i_clk) then
-      r_a_real   <= i_a_real;
-      rr_a_real  <= r_a_real;
-      rrr_a_real <= rr_a_real;
-      r_b_real   <= i_b_real;
+      r_aReal   <= i_aReal;
+      rr_aReal  <= r_aReal;
+      rrr_aReal <= rr_aReal;
+      r_bReal   <= i_bReal;
 
-      r_a_imaginary   <= i_a_imaginary;
-      r_b_imaginary   <= i_b_imaginary;
-      rr_a_imaginary  <= r_a_imaginary;
-      rr_b_imaginary  <= r_b_imaginary;
-      rrr_a_imaginary <= rr_a_imaginary;
-      rrr_b_imaginary <= rr_b_imaginary;
+      r_aImag   <= i_aImag;
+      r_bImag   <= i_bImag;
+      rr_aImag  <= r_aImag;
+      rr_bImag  <= r_bImag;
+      rrr_aImag <= rr_aImag;
+      rrr_bImag <= rr_bImag;
 
       -- make Q13.30 to Q11.14 again
-      o_q_real      <= r_q_real(r_q_real'high - 2 downto r_q_real'length - 2 - 25);
-      o_q_imaginary <= r_q_imaginary(r_q_imaginary'high - 2 downto r_q_imaginary'length - 2 - 25);
+      o_qReal <= r_qReal(r_qReal'high - 2 downto r_qReal'length - 2 - 25);
+      o_qImag <= r_qImag(r_qImag'high - 2 downto r_qImag'length - 2 - 25);
     end if;
   end process p_reg;
 

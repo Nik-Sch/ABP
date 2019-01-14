@@ -5,6 +5,8 @@
 //--------------------------------------------------------------
 module testbench_complex_mul;
 
+import pkg_sv::*;
+
   parameter integer MAX_TESTS = 200;
 
   integer cycles = 50000000;
@@ -45,28 +47,6 @@ module testbench_complex_mul;
   endfunction;
 
   parameter integer reg_stages = 6;
-
-
-
-  typedef struct packed {
-    logic signed [17:0] r, i;
-    } complex_18; // Q2.16
-
-  typedef struct packed {
-    logic signed [24:0] r, i;
-  } complex_25; // Q11.14
-
-  function complex_25 complex_multiply(complex_25 a, complex_18 b);
-    // a: Q11.14, b: Q2.16
-    // out: Q11.14
-
-    complex_25 result;
-    automatic logic signed [(25+18)-1:0] r = (a.r * b.r) - (a.i * b.i);
-    automatic logic signed [(25+18)-1:0] i = (a.r * b.i) + (a.i * b.r);
-    result.r = r[(25+18)-3-:25];
-    result.i = i[(25+18)-3-:25];
-    return result;
-  endfunction;
 
   complex_25 dut_cm_a;
   complex_18 dut_cm_b;
@@ -112,13 +92,13 @@ module testbench_complex_mul;
   (
     .i_clk(clk),
     .i_reset(reset),
-    .i_a_real(dut_cm_a.r),
-    .i_a_imaginary(dut_cm_a.i),
-    .i_b_real(dut_cm_b.r),
-    .i_b_imaginary(dut_cm_b.i),
+    .i_aReal(dut_cm_a.r),
+    .i_aImag(dut_cm_a.i),
+    .i_bReal(dut_cm_b.r),
+    .i_bImag(dut_cm_b.i),
 
-    .o_q_real(dut_cm_q.r),
-    .o_q_imaginary(dut_cm_q.i)
+    .o_qReal(dut_cm_q.r),
+    .o_qImag(dut_cm_q.i)
     );
 
 

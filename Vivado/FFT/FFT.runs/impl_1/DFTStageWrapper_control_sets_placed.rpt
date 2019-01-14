@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Sat Dec 29 17:37:59 2018
+| Date         : Sat Dec 29 20:51:44 2018
 | Host         : niklas-desktop running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_control_sets -verbose -file DFTStageWrapper_control_sets_placed.rpt
 | Design       : DFTStageWrapper
@@ -48,10 +48,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               2 |            2 |
-| No           | No                    | Yes                    |             275 |           53 |
+| No           | No                    | Yes                    |             274 |           63 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             244 |           55 |
+| Yes          | No                    | Yes                    |             245 |           66 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -63,12 +63,12 @@ Table of Contents
 |   Clock Signal   |             Enable Signal            | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +------------------+--------------------------------------+------------------+------------------+----------------+
 |  i_clk_IBUF_BUFG |                                      |                  |                2 |              2 |
-|  i_clk_IBUF_BUFG | inst_DFTStage/r_e_address[7]_i_1_n_0 | i_reset_IBUF     |                1 |              8 |
+|  i_clk_IBUF_BUFG | inst_DFTStage/r_e_address[7]_i_1_n_0 | i_reset_IBUF     |                2 |              8 |
 |  i_clk_IBUF_BUFG | inst_DFTStage/r_f[8]_i_1_n_0         | i_reset_IBUF     |                2 |              9 |
-|  i_clk_IBUF_BUFG | inst_DFTStage/r_data[24]_i_1_n_0     | i_reset_IBUF     |                7 |             25 |
-|  i_clk_IBUF_BUFG | inst_DFTStage/r_b_imag_0             | i_reset_IBUF     |               20 |             86 |
-|  i_clk_IBUF_BUFG | inst_DFTStage/r_bram_we_i_1_n_0      | i_reset_IBUF     |               25 |            116 |
-|  i_clk_IBUF_BUFG |                                      | i_reset_IBUF     |               53 |            275 |
+|  i_clk_IBUF_BUFG | inst_DFTStage/r_data[24]_i_1_n_0     | i_reset_IBUF     |                8 |             26 |
+|  i_clk_IBUF_BUFG | inst_DFTStage/r_b_imag_0             | i_reset_IBUF     |               23 |             86 |
+|  i_clk_IBUF_BUFG | inst_DFTStage/r_bram_we_i_1_n_0      | i_reset_IBUF     |               31 |            116 |
+|  i_clk_IBUF_BUFG |                                      | i_reset_IBUF     |               63 |            274 |
 +------------------+--------------------------------------+------------------+------------------+----------------+
 
 

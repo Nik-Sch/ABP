@@ -4,26 +4,14 @@
 // 2018-07-11   1.0     Schelten        initial TB
 //--------------------------------------------------------------
 module testbench_eFunctionRom;
-`define PI 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862
+
+import pkg_sv::*;
 
   integer cycles = 50000000;
   logic   clk;
   logic   reset;
   parameter int N = 512;
 
-
-  typedef struct packed {
-    logic signed [17:0] r, i;
-    } complex_18; // Q2.16
-
-  function complex_18 e_function(integer f, integer N);
-  // out: Q2.16
-
-    complex_18 result;
-    result.r =  $rtoi((1 << 16) * $cos(2*`PI*f/N));
-    result.i = -$rtoi((1 << 16) * $sin(2*`PI*f/N));
-    return result;
-  endfunction;
 
 
   complex_18 dut_data;
