@@ -1,0 +1,6 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../hdmi.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" --include "../../../../../hdmi.srcs/sources_1/bd/hdmi/ipshared/70cf/hdl" --include "/home/steffnet/Vivado/Vivado/2018.3/data/xilinx_vip/include" \
+"hdmi_wrapper_time_impl.v" \
+
+# Do not sort compile order
+nosort
