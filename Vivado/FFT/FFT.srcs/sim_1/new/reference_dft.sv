@@ -57,6 +57,8 @@ complex_25 [N/2-1:0] X;
 // test data from file
 `define LITTLE_TO_BIG_ENDIAN_32(x) {x[7:0], x[15:8], x[23:16], x[31:24]}
 `define LITTLE_TO_BIG_ENDIAN_16(x) {x[7:0], x[15:8]}
+parameter int DATA_OFFSET = 'h2c;
+
 int file;
 logic [31:0] sample_rate;
 logic [31:0] data_length;
@@ -79,61 +81,60 @@ initial begin
   end
 
 
-  // load sample data from file
-  file = $fopen("sample_guitar.wav", "r");
-  $fseek(file, 'h18, 0);
-  $fread(sample_rate, file);
-  sample_rate = `LITTLE_TO_BIG_ENDIAN_32(sample_rate);
-  $display("sample_rate: %0d", sample_rate);
-
-  $fseek(file, 'h22, 0);
-  $fread(bps, file);
-  bps = `LITTLE_TO_BIG_ENDIAN_16(bps) / 8;
-  $display("bytes per sample: %0d", bps);
-
-  $fseek(file, 'h28, 0);
-  $fread(data_length, file);
-  data_length = `LITTLE_TO_BIG_ENDIAN_32(data_length);
-  $display("data_length: 0x%h", data_length);
-
-  for (int i = 'h2c; i < data_length + 'h2c; i += 2) begin
-    automatic logic [15:0] tmp;
-    automatic logic [24:0] data_new, data_old;
-
-    $fseek(file, i, 0);
-    $fread(tmp, file);
-    tmp = `LITTLE_TO_BIG_ENDIAN_16(tmp);
-    data_new = {10'b0, tmp[15:1]};
-    if (i / 2 >= N) begin
-      $fseek(file, i - N, 0);
-      $fread(tmp, file);
-      tmp = `LITTLE_TO_BIG_ENDIAN_16(tmp);
-      data_old = {10'b0, tmp[15:1]};
-
-      X = dft_stage(data_new, data_old, X);
-    end else begin
-      X = dft_stage(data_new, 0, X);
-    end
-
-
-    // status output
-    if (i % 100 == 0) begin
-      automatic string file_name;
-      $sformat(file_name, "25bit_wav/%04d.txt", i / 100);
-      $display("%04d", i / 100);
-
-      out_file = $fopen(file_name, "w");
-      $fwrite(out_file, "real, imaginary\n");
-      for (integer i = 0; i < N/2; i++) begin
-        $fwrite(out_file, "%d, %d\n", X[i].r, X[i].i);
-      end
-      $fclose(out_file);
-      @(negedge clk);
-    end
-  end
-
-  $fclose(file);
-  $stop;
+  // // load sample data from file
+  // file = $fopen("sample_guitar.wav", "r");
+  // $fseek(file, 'h18, 0);
+  // $fread(sample_rate, file);
+  // sample_rate = `LITTLE_TO_BIG_ENDIAN_32(sample_rate);
+  // $display("sample_rate: %0d", sample_rate);
+  //
+  // $fseek(file, 'h22, 0);
+  // $fread(bps, file);
+  // bps = `LITTLE_TO_BIG_ENDIAN_16(bps) / 8;
+  // $display("bytes per sample: %0d", bps);
+  //
+  // $fseek(file, 'h28, 0);
+  // $fread(data_length, file);
+  // data_length = `LITTLE_TO_BIG_ENDIAN_32(data_length);
+  // $display("data_length: 0x%h", data_length);
+  //
+  // for (int i = DATA_OFFSET; i < data_length + DATA_OFFSET; i += 2) begin
+  //   automatic logic [15:0] tmp;
+  //   automatic logic [24:0] data_new, data_old;
+  //
+  //   $fseek(file, i, 0);
+  //   $fread(tmp, file);
+  //   tmp = `LITTLE_TO_BIG_ENDIAN_16(tmp);
+  //   data_new = {10'b0, tmp[15:1]};
+  //   if ((i - DATA_OFFSET) / 2 >= N) begin
+  //     $fseek(file, i - (N * 2), 0);
+  //     $fread(tmp, file);
+  //     tmp = `LITTLE_TO_BIG_ENDIAN_16(tmp);
+  //     data_old = {10'b0, tmp[15:1]};
+  //   end else begin
+  //     data_old = 0;
+  //   end
+  //   X = dft_stage(data_new, data_old, X);
+  //
+  //
+  //   // status output
+  //   if (i % N == 0) begin
+  //     automatic string file_name;
+  //     $sformat(file_name, "25bit_wav/%04d.txt", i / N);
+  //     $display("%04d", i / N);
+  //
+  //     out_file = $fopen(file_name, "w");
+  //     $fwrite(out_file, "real, imaginary\n");
+  //     for (integer i = 0; i < N/2; i++) begin
+  //       $fwrite(out_file, "%d, %d\n", X[i].r, X[i].i);
+  //     end
+  //     $fclose(out_file);
+  //     @(negedge clk);
+  //   end
+  // end
+  //
+  // $fclose(file);
+  // $stop;
 
   testData = createTestData();
   $display("created testdata @%0t", $time);
@@ -151,10 +152,9 @@ initial begin
     end
 
     // status output
-    if (i % 100 == 0) begin
+    if (i % (N / 2) == 0) begin
       automatic string file_name;
-      $sformat(file_name, "25bit/%02d.txt", i / 100);
-      // $display("%02d", i / 100);
+      $sformat(file_name, "25bit/%02d.txt", i / (N / 2));
 
       out_file = $fopen(file_name, "w");
       $fwrite(out_file, "real, imaginary\n");

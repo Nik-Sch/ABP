@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 // 2018-07-11   1.0     Schelten        initial TB
 //--------------------------------------------------------------
-module testbench_DFTStage;
+module testbench_DFTStage_file;
 
   import pkg_sv::*;
 
@@ -25,6 +25,8 @@ module testbench_DFTStage;
   // test data from file
   `define LITTLE_TO_BIG_ENDIAN_32(x) {x[7:0], x[15:8], x[23:16], x[31:24]}
   `define LITTLE_TO_BIG_ENDIAN_16(x) {x[7:0], x[15:8]}
+  parameter int DATA_OFFSET = 'h2c;
+
   int file;
   logic [31:0] sample_rate;
   logic [31:0] data_length;
@@ -70,7 +72,7 @@ module testbench_DFTStage;
     $display("data_length: 0x%h", data_length);
     count = 0;
 
-    for (int i = 'h2c; i < data_length + 'h2c; i += 2) begin
+    for (int i = DATA_OFFSET; i < data_length + DATA_OFFSET; i += 2) begin
       automatic logic [15:0] tmp;
       automatic int bin = 0;
 
@@ -78,8 +80,8 @@ module testbench_DFTStage;
       $fread(tmp, file);
       tmp = `LITTLE_TO_BIG_ENDIAN_16(tmp);
       data_new = {10'b0, tmp[15:1]};
-      if (i / 2 >= N) begin
-        $fseek(file, i - N, 0);
+      if ((i - DATA_OFFSET) / 2 >= N) begin
+        $fseek(file, i - (N * 2), 0);
         $fread(tmp, file);
         tmp = `LITTLE_TO_BIG_ENDIAN_16(tmp);
         data_old = {10'b0, tmp[15:1]};
@@ -106,7 +108,7 @@ module testbench_DFTStage;
                   (X[dut_o_freqDataIndex].i !== dut_o_freqDataImag)) begin
             @(negedge clk);
             $fclose(file);
-            $fatal(1, "frequency data is not correct (count=%0d, f=%0d):\nref.r: %08h  ref.i: %8h\ndut.r: %8h  dut.i: %8h @ %01t", count, dut_o_freqDataIndex, X[dut_o_freqDataIndex].r, X[dut_o_freqDataIndex].i, dut_o_freqDataReal, dut_o_freqDataImag, $time);
+            $fatal(1, "frequency data is not correct (count=%0d, i=%0d, f=%0d):\nref.r: %08h  ref.i: %8h\ndut.r: %8h  dut.i: %8h @ %01t", count, i, dut_o_freqDataIndex, X[dut_o_freqDataIndex].r, X[dut_o_freqDataIndex].i, dut_o_freqDataReal, dut_o_freqDataImag, $time);
           end
           bin += 1;
         end

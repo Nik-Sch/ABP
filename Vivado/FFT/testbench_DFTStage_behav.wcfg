@@ -14,23 +14,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="87467480540fs"></ZoomStartTime>
-      <ZoomEndTime time="87686503892fs"></ZoomEndTime>
-      <Cursor1Time time="87650000000fs"></Cursor1Time>
+      <ZoomStartTime time="7004628004521fs"></ZoomStartTime>
+      <ZoomEndTime time="7004810399096fs"></ZoomEndTime>
+      <Cursor1Time time="7004780000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="317"></NameColumnWidth>
-      <ValueColumnWidth column_width="247"></ValueColumnWidth>
+      <ValueColumnWidth column_width="235"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="24" />
+   <WVObjectSize size="13" />
    <wvobject type="logic" fp_name="/testbench_DFTStage/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_DFTStage/count">
-      <obj_property name="ElementShortName">count[31:0]</obj_property>
-      <obj_property name="ObjectShortName">count[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/testbench_DFTStage/dut_o_ready">
       <obj_property name="ElementShortName">dut_o_ready</obj_property>
@@ -64,53 +59,13 @@
       <obj_property name="ElementShortName">X[255:0]</obj_property>
       <obj_property name="ObjectShortName">X[255:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/i_bramRdata">
-      <obj_property name="ElementShortName">i_bramRdata[49:0]</obj_property>
-      <obj_property name="ObjectShortName">i_bramRdata[49:0]</obj_property>
+   <wvobject type="array" fp_name="/testbench_DFTStage/data_new">
+      <obj_property name="ElementShortName">data_new[24:0]</obj_property>
+      <obj_property name="ObjectShortName">data_new[24:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/i_dataNew">
-      <obj_property name="ElementShortName">i_dataNew[24:0]</obj_property>
-      <obj_property name="ObjectShortName">i_dataNew[24:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/i_dataOld">
-      <obj_property name="ElementShortName">i_dataOld[24:0]</obj_property>
-      <obj_property name="ObjectShortName">i_dataOld[24:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/i_reset">
-      <obj_property name="ElementShortName">i_reset</obj_property>
-      <obj_property name="ObjectShortName">i_reset</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/i_start">
-      <obj_property name="ElementShortName">i_start</obj_property>
-      <obj_property name="ObjectShortName">i_start</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/o_bramRaddr">
-      <obj_property name="ElementShortName">o_bramRaddr[7:0]</obj_property>
-      <obj_property name="ObjectShortName">o_bramRaddr[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/o_bramWAddr">
-      <obj_property name="ElementShortName">o_bramWAddr[7:0]</obj_property>
-      <obj_property name="ObjectShortName">o_bramWAddr[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/o_bramWData">
-      <obj_property name="ElementShortName">o_bramWData[49:0]</obj_property>
-      <obj_property name="ObjectShortName">o_bramWData[49:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/o_bramWe">
-      <obj_property name="ElementShortName">o_bramWe</obj_property>
-      <obj_property name="ObjectShortName">o_bramWe</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/inst_DFTStage/o_ready">
-      <obj_property name="ElementShortName">o_ready</obj_property>
-      <obj_property name="ObjectShortName">o_ready</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/i_dataValid">
-      <obj_property name="ElementShortName">i_dataValid</obj_property>
-      <obj_property name="ObjectShortName">i_dataValid</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/testbench_DFTStage/dut_DFTStageWrapper/i_dataNew">
-      <obj_property name="ElementShortName">i_dataNew[24:0]</obj_property>
-      <obj_property name="ObjectShortName">i_dataNew[24:0]</obj_property>
+   <wvobject type="array" fp_name="/testbench_DFTStage/data_old">
+      <obj_property name="ElementShortName">data_old[24:0]</obj_property>
+      <obj_property name="ObjectShortName">data_old[24:0]</obj_property>
    </wvobject>
    <wvobject type="group" fp_name="group328">
       <obj_property name="label">wrapper</obj_property>

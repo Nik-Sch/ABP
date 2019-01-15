@@ -91,11 +91,11 @@ begin
   o_freqDataReal  <= s_bramWData(49 downto 25);
   o_freqDataImag  <= s_bramWData(24 downto 0);
 
-  s_dataFifoRead <= '1' when (s_dataFifoFillLevel >= (N2 * 2) - 1) and s_start = '1' else
+  s_dataFifoRead <= '1' when (s_dataFifoFillLevel > (N2 * 2) - 1) and s_start = '1' else
                     '0';
 
   -- the first N stages don't have data_old
-  s_dataOld <= s_dataFifoDout when (s_dataFifoFillLevel >= (N2 * 2) - 1) else
+  s_dataOld <= s_dataFifoDout when (s_dataFifoFillLevel > (N2 * 2) - 1) else
                (others => '0');
 
   inst_dataFifoFillLevel : entity work.dataFifoFillLevel

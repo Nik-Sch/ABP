@@ -7,8 +7,28 @@ module testbench_DFTStage;
 
   import pkg_sv::*;
 
-  parameter integer TEST_COUNT = 1;
+  parameter integer testFs = 8000;
+  parameter integer testF1 = 550;
+  parameter integer testF2 = 1100;
+  parameter integer testTime = 1;
 
+  typedef struct {
+    logic signed [24:0] data[testFs*testTime-1:0];
+    } t_testData;
+
+  function t_testData createTestData();
+    // out: Q11.14
+    t_testData result;
+    logic signed [24:0] test;
+
+    for (int i = 0; i < testFs * testTime / 2; i++) begin
+      result.data[i] = $rtoi((1 << 14) * $sin(2*`PI*testF1 * i/testFs));
+    end
+    for (int i = testFs * testTime / 2; i < testFs * testTime; i++) begin
+      result.data[i] = $rtoi((1 << 14) * $sin(2*`PI*testF2 * i/testFs));
+    end
+    return result;
+  endfunction;
 
   logic   clk;
   logic   reset;
@@ -20,8 +40,10 @@ module testbench_DFTStage;
   logic [$clog2(N/2)-1:0] dut_o_freqDataIndex;
   logic [24:0] dut_o_freqDataReal;
   logic [24:0] dut_o_freqDataImag;
+  logic [24:0] data_new, data_old;
 
   complex_25 [N/2-1:0] X;
+  t_testData testData;
 
 
   initial begin
@@ -38,6 +60,7 @@ module testbench_DFTStage;
       @(negedge clk);
     end
 
+    testData = createTestData();
     $display("[DFTStage Testbench] Starting DFTStage tests. @ %01t", $time);
     for (integer f = 0; f < N/2; f++) begin
       X[f].r = 0;
@@ -45,14 +68,17 @@ module testbench_DFTStage;
     end
 
 
-    for (int i = 0; i < TEST_COUNT; i += 1) begin
+    for (int i = 0; i < $size(testData.data); i += 1) begin
       automatic logic [15:0] tmp;
-      automatic logic [24:0] data_new, data_old;
       automatic int bin = 0;
-      data_new = '{1'b1};
-      data_old = 0;
 
+      data_new = testData.data[i];
       // reference
+      if (i >= N) begin
+        data_old = testData.data[i - N];
+      end else begin
+        data_old = 0;
+      end
       X = dft_stage(data_new, data_old, X);
 
       // dut

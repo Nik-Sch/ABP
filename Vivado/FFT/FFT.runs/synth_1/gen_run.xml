@@ -84,8 +84,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="blk_rom_e_real"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_rom_e_imag"/>
-  <BlockFileSet Type="BlockSrcs" Name="xbip_multadd_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_rom_e_real"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="xbip_multadd_0"/>
 </GenRun>
