@@ -24,10 +24,6 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
 
-library work;
-use work.pkg_vhd.all;
-
-
 entity DFTStage is
   generic (
     N2 : integer := 256                 -- #bins/2
@@ -116,7 +112,7 @@ begin
   o_bramWAddr <= r_bramWaddr;
   o_bramWData <= r_bramWdata;
 
-  p_reg : process(i_clk, i_reset)
+  p_fsm : process(i_clk, i_reset)
   begin
     if i_reset = '1' then
       r_bramRe    <= '0';

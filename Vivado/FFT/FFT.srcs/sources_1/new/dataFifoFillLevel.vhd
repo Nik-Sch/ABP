@@ -22,15 +22,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
--- uncomment the following library declaration if using
--- arithmetic functions with signed or unsigned values
---use ieee.numeric_std.all;
-
--- uncomment the following library declaration if instantiating
--- any xilinx leaf cells in this code.
---library unisim;
---use unisim.vcomponents.all;
-
 entity dataFifoFillLevel is
   port(
     i_clk       : in  std_ulogic;

@@ -24,26 +24,23 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
 
-library work;
-use work.pkg_vhd.all;
-
-
 entity DFTStageWrapper is
-  generic (
-    N2 : integer := 256                 -- #bins/2
-    );
+  -- generic (
+  --   N2 : integer := 256                 -- #bins/2
+  --   );
   port (
-    i_clk   : in  std_ulogic;
-    i_reset : in  std_ulogic;
-    o_ready : out std_ulogic;
+    i_clk   : in std_ulogic;
+    i_reset : in std_ulogic;
 
-    i_dataValid : in std_ulogic;
-    i_dataNew   : in std_ulogic_vector(24 downto 0);
+    o_ready     : out std_ulogic;
+    i_dataValid : in  std_ulogic;
+    i_dataNew   : in  std_ulogic_vector(24 downto 0);
 
     -- bram interface
     -- write
     o_freqDataEn    : out std_ulogic;
-    o_freqDataIndex : out std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
+    -- o_freqDataIndex : out std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
+    o_freqDataIndex : out std_ulogic_vector(7 downto 0);
     o_freqDataReal  : out std_ulogic_vector(24 downto 0);
     o_freqDataImag  : out std_ulogic_vector(24 downto 0)
     );
@@ -63,15 +60,16 @@ architecture rtl of DFTStageWrapper is
       doutb : out std_logic_vector(49 downto 0)
       );
   end component;
+  constant c_N2: integer := 256;
 
-  signal s_bramRaddr : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
+  signal s_bramRaddr : std_ulogic_vector(integer(ceil(log2(real(c_N2))))-1 downto 0);
   signal s_bramRe    : std_ulogic;
   signal s_bramRData : std_ulogic_vector(49 downto 0);
 
 
   signal s_bramWe       : std_ulogic;
   signal s_bramWeVector : std_logic_vector(0 downto 0);
-  signal s_bramWAddr    : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
+  signal s_bramWAddr    : std_ulogic_vector(integer(ceil(log2(real(c_N2))))-1 downto 0);
   signal s_bramWData    : std_ulogic_vector(49 downto 0);  -- 49 downto 25: real, 24 downto 0: imag
 
   signal s_start : std_ulogic;
@@ -81,6 +79,7 @@ architecture rtl of DFTStageWrapper is
   signal s_dataFifoDout      : std_ulogic_vector(24 downto 0);
   signal s_dataFifoRead      : std_ulogic;
   signal s_dataFifoFillLevel : integer;
+
 begin
 
   s_start <= i_dataValid and s_ready;
@@ -91,11 +90,11 @@ begin
   o_freqDataReal  <= s_bramWData(49 downto 25);
   o_freqDataImag  <= s_bramWData(24 downto 0);
 
-  s_dataFifoRead <= '1' when (s_dataFifoFillLevel > (N2 * 2) - 1) and s_start = '1' else
+  s_dataFifoRead <= '1' when (s_dataFifoFillLevel > (c_N2 * 2) - 1) and s_start = '1' else
                     '0';
 
   -- the first N stages don't have data_old
-  s_dataOld <= s_dataFifoDout when (s_dataFifoFillLevel > (N2 * 2) - 1) else
+  s_dataOld <= s_dataFifoDout when (s_dataFifoFillLevel > (c_N2 * 2) - 1) else
                (others => '0');
 
   inst_dataFifoFillLevel : entity work.dataFifoFillLevel
@@ -114,7 +113,7 @@ begin
 
   inst_DFTStage : entity work.DFTStage
     generic map (
-      N2 => N2
+      N2 => c_N2
       )
     port map (
       i_clk     => i_clk,

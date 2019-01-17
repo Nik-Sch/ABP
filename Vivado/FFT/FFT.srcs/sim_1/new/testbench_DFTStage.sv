@@ -6,6 +6,7 @@
 module testbench_DFTStage;
 
   import pkg_sv::*;
+  `define PI 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862
 
   parameter integer testFs = 8000;
   parameter integer testF1 = 550;
@@ -84,6 +85,7 @@ module testbench_DFTStage;
       // dut
       dut_i_dataValid = 1;
       dut_i_dataNew = data_new;
+      $display("count %0d/%0d starting @ %01t", i, $size(testData.data), $time);
       @(negedge clk);
       dut_i_dataValid = 0;
       while (!dut_o_ready) begin
@@ -108,9 +110,7 @@ module testbench_DFTStage;
     $stop;
   end
 
-  DFTStageWrapper #(
-    .n2(N/2)
-    ) dut_DFTStageWrapper
+  DFTStageWrapper dut_DFTStageWrapper
   (
     .i_clk(clk),
     .i_reset(reset),

@@ -24,10 +24,6 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
 
-library work;
-use work.pkg_vhd.all;
-
-
 entity Freq2BRAM is
   -- generic (
   --   N2 : integer := 256                 -- #bins/2
@@ -85,8 +81,8 @@ architecture rtl of Freq2BRAM is
   signal r_fifoImagRe    : std_ulogic;
   signal r_fifoImagWe    : std_ulogic;
   signal s_fifoImagEmpty : std_ulogic;
-  signal r_fifoAddrDin   : std_ulogic_vector(24 downto 0);
-  signal s_fifoAddrDout  : std_ulogic_vector(24 downto 0);
+  signal r_fifoAddrDin   : std_ulogic_vector(7 downto 0);
+  signal s_fifoAddrDout  : std_ulogic_vector(7 downto 0);
   signal r_fifoAddrRe    : std_ulogic;
   signal r_fifoAddrWe    : std_ulogic;
 
@@ -94,8 +90,8 @@ architecture rtl of Freq2BRAM is
   signal r_freqDataImag  : std_ulogic_vector(24 downto 0);
   signal r_freqDataIndex : std_ulogic_vector(7 downto 0);
 
-  constant c_BASE_ADDR_REAL : std_logic_vector(23 downto 0)    := x"00";
-  constant c_BASE_ADDR_IMAG : std_logic_vector(23 downto 0)    := x"01";
+  constant c_BASE_ADDR_REAL : std_logic_vector(23 downto 0)    := x"000000";
+  constant c_BASE_ADDR_IMAG : std_logic_vector(23 downto 0)    := x"000001";
   constant c_DATA_PADDING   : std_logic_vector(31-25 downto 0) := (others => '0');
 begin
 
@@ -111,7 +107,7 @@ begin
       std_logic(empty)        => s_fifoImagEmpty
       );
 
-  inst_addrFifo : addr_fifo
+  inst_addrFifo : index_fifo
     port map(
       clk                     => std_logic(i_clk),
       rst                     => std_logic(i_reset),
@@ -120,7 +116,7 @@ begin
       rd_en                   => std_logic(r_fifoAddrRe),
       std_ulogic_vector(dout) => s_fifoAddrDout,
       full                    => open,
-      std_logic(empty)        => open
+      empty                   => open
       );
 
   p_fsm : process(i_clk, i_reset)
@@ -163,23 +159,25 @@ begin
           if i_freqDataEn = '1' then
             o_bramEn     <= '1';
             o_bramByteWe <= "1111";
-            o_bramAddr   <= c_BASE_ADDR_REAL & r_freqDataIndex;
-            o_bramDin    <= c_DATA_PADDING & r_freqDataReal;
+            o_bramAddr   <= c_BASE_ADDR_REAL & std_logic_vector(r_freqDataIndex);
+            o_bramDin    <= c_DATA_PADDING & std_logic_vector(r_freqDataReal);
 
             r_fifoImagWe  <= '1';
             r_fifoImagDin <= r_freqDataImag;
             r_fifoAddrWe  <= '1';
             r_fifoAddrDin <= r_freqDataIndex;
 
-            if i_freqDataIndex = x"ff" then
+            if r_freqDataIndex = x"ff" then
               r_state <= s_OUTPUT_IMAG;
+              r_fifoAddrRe <= '1';
+              r_fifoImagRe <= '1';
             end if;
           end if;
         when s_OUTPUT_IMAG =>           -- store imag value from fifo to bram
           o_bramEn     <= '1';
           o_bramByteWe <= "1111";
-          o_bramAddr   <= c_BASE_ADDR_IMAG & s_fifoAddrDout;
-          o_bramDin    <= c_DATA_PADDING & s_fifoImagDout;
+          o_bramAddr   <= c_BASE_ADDR_IMAG & std_logic_vector(s_fifoAddrDout);
+          o_bramDin    <= c_DATA_PADDING & std_logic_vector(s_fifoImagDout);
 
           r_fifoAddrRe <= '1';
           r_fifoImagRe <= '1';
