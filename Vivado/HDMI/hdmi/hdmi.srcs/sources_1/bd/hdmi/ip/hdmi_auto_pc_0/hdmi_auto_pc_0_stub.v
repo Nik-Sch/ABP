@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Thu Dec 27 17:55:49 2018
+// Date        : Sat Dec 29 11:29:56 2018
 // Host        : steffnet-X705UNR running 64-bit Ubuntu 18.04.1 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top hdmi_auto_pc_0 -prefix
 //               hdmi_auto_pc_0_ hdmi_auto_pc_0_stub.v

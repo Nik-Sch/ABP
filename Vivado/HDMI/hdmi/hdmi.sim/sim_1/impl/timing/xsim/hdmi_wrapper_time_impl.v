@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Sun Dec 30 10:34:00 2018
+// Date        : Mon Jan  7 16:32:13 2019
 // Host        : steffnet-X705UNR running 64-bit Ubuntu 18.04.1 LTS
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
 //               /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.sim/sim_1/impl/timing/xsim/hdmi_wrapper_time_impl.v

@@ -61,22 +61,6 @@ architecture Behavioral of video_output is
 	-- signals
 	signal vid_input : std_logic_vector((C_S_AXIS_TDATA_WIDTH-1) downto 0) := (others => '0');
 begin
-
--- Instantiation of Video Output Interface
-vid_out_v1_0_S00_AXIS_inst : vid_out_v1_0_S00_AXIS
-	generic map (
-		C_S_AXIS_TDATA_WIDTH	=> C_S_AXIS_TDATA_WIDTH
-	);
-	port map (
-	    vid_pixel => vid_input,
-		S_AXIS_ACLK	=> open,
-		S_AXIS_ARESETN	=> open,
-		S_AXIS_TREADY	=> open,
-		S_AXIS_TDATA	=> open,
-		S_AXIS_TSTRB	=> open,
-		S_AXIS_TLAST	=> open,
-		S_AXIS_TVALID	=> open
-	);
     
 
 
