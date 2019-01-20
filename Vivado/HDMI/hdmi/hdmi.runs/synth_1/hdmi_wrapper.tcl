@@ -30,7 +30,8 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_repo_paths {
-  /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/vid_out/vid_out_1.0
+  /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/i2c_translator
+  /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/i2c_master/i2c_master_1.0
   /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/vid_out/vid_out_1.0
   /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/axi4_to_video_out/axi4_to_video_out_1.0
   /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/ax4_to_vid_out/axi4_to_video_out_1.0
@@ -40,13 +41,16 @@ set_property ip_output_repo /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdm
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.vhd
 add_files /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/hdmi.bd
-set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_processing_system7_0_0/hdmi_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_axi_iic_0_0/hdmi_axi_iic_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_axi_iic_0_0/hdmi_axi_iic_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_xbar_0/hdmi_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_rst_ps7_0_102M_1/hdmi_rst_ps7_0_102M_1_board.xdc]
-set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_rst_ps7_0_102M_1/hdmi_rst_ps7_0_102M_1.xdc]
-set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_rst_ps7_0_102M_1/hdmi_rst_ps7_0_102M_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_0_0/hdmi_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_0_0/hdmi_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_0_0/hdmi_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_processing_system7_0_2/hdmi_processing_system7_0_2.xdc]
+set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_xbar_1/hdmi_xbar_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_rst_ps7_0_102M_0/hdmi_rst_ps7_0_102M_0_board.xdc]
+set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_rst_ps7_0_102M_0/hdmi_rst_ps7_0_102M_0.xdc]
+set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_rst_ps7_0_102M_0/hdmi_rst_ps7_0_102M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_auto_pc_0/hdmi_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/hdmi_ooc.xdc]
 

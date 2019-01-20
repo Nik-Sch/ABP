@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Sat Dec 29 15:11:25 2018
+| Date             : Sun Jan 13 10:54:52 2019
 | Host             : steffnet-X705UNR running 64-bit Ubuntu 18.04.1 LTS
 | Command          : report_power -file hdmi_wrapper_power_routed.rpt -pb hdmi_wrapper_power_summary_routed.pb -rpx hdmi_wrapper_power_routed.rpx
 | Design           : hdmi_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.677        |
+| Total On-Chip Power (W)  | 1.678        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.536        |
+| Dynamic (W)              | 1.537        |
 | Device Static (W)        | 0.141        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 65.7         |
-| Junction Temperature (C) | 44.3         |
+| Max Ambient (C)          | 65.6         |
+| Junction Temperature (C) | 44.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.005 |        4 |       --- |             --- |
-| Slice Logic             |     0.001 |     2382 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      825 |     53200 |            1.55 |
+| Clocks                  |     0.006 |        3 |       --- |             --- |
+| Slice Logic             |     0.001 |     2588 |       --- |             --- |
+|   LUT as Logic          |     0.001 |      893 |     53200 |            1.68 |
 |   CARRY4                |    <0.001 |       29 |     13300 |            0.22 |
-|   Register              |    <0.001 |     1023 |    106400 |            0.96 |
-|   LUT as Shift Register |    <0.001 |       63 |     17400 |            0.36 |
+|   Register              |    <0.001 |     1133 |    106400 |            1.06 |
+|   LUT as Shift Register |    <0.001 |       72 |     17400 |            0.41 |
 |   F7/F8 Muxes           |    <0.001 |       13 |     53200 |            0.02 |
-|   Others                |     0.000 |      225 |       --- |             --- |
-| Signals                 |     0.002 |     1694 |       --- |             --- |
-| I/O                     |     0.000 |        2 |       200 |            1.00 |
+|   Others                |     0.000 |      230 |       --- |             --- |
+| Signals                 |     0.002 |     1885 |       --- |             --- |
+| I/O                     |     0.000 |       10 |       200 |            5.00 |
 | PS7                     |     1.528 |        1 |       --- |             --- |
 | Static Power            |     0.141 |          |           |                 |
-| Total                   |     1.677 |          |           |                 |
+| Total                   |     1.678 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.023 |       0.008 |      0.015 |
+| Vccint    |       1.000 |     0.024 |       0.009 |      0.015 |
 | Vccaux    |       1.800 |     0.015 |       0.000 |      0.015 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -150,8 +150,8 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| hdmi_wrapper             |     1.536 |
-|   hdmi_i                 |     1.536 |
+| hdmi_wrapper             |     1.537 |
+|   hdmi_i                 |     1.537 |
 |     axi_iic_0            |     0.002 |
 |       U0                 |     0.002 |
 |     processing_system7_0 |     1.528 |

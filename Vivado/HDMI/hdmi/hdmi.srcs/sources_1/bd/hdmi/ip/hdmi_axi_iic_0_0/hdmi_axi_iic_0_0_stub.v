@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Sat Dec 29 15:08:46 2018
+// Date        : Sat Dec 29 13:27:30 2018
 // Host        : steffnet-X705UNR running 64-bit Ubuntu 18.04.1 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_axi_iic_0_0/hdmi_axi_iic_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top hdmi_axi_iic_0_0 -prefix
+//               hdmi_axi_iic_0_0_ hdmi_axi_iic_0_0_stub.v
 // Design      : hdmi_axi_iic_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

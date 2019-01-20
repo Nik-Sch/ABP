@@ -6,20 +6,23 @@
 # Block Designs: bd/hdmi/hdmi.bd
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi || ORIG_REF_NAME==hdmi} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_processing_system7_0_0/hdmi_processing_system7_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_processing_system7_0_0 || ORIG_REF_NAME==hdmi_processing_system7_0_0} -quiet] -quiet
-
 # IP: bd/hdmi/ip/hdmi_axi_iic_0_0/hdmi_axi_iic_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_axi_iic_0_0 || ORIG_REF_NAME==hdmi_axi_iic_0_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_xbar_0/hdmi_xbar_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_xbar_0 || ORIG_REF_NAME==hdmi_xbar_0} -quiet] -quiet
+# IP: bd/hdmi/ip/hdmi_axi_gpio_0_0/hdmi_axi_gpio_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_axi_gpio_0_0 || ORIG_REF_NAME==hdmi_axi_gpio_0_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_ps7_0_axi_periph_1/hdmi_ps7_0_axi_periph_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_ps7_0_axi_periph_1 || ORIG_REF_NAME==hdmi_ps7_0_axi_periph_1} -quiet] -quiet
+# IP: bd/hdmi/ip/hdmi_processing_system7_0_2/hdmi_processing_system7_0_2.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_processing_system7_0_2 || ORIG_REF_NAME==hdmi_processing_system7_0_2} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_rst_ps7_0_102M_1/hdmi_rst_ps7_0_102M_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_rst_ps7_0_102M_1 || ORIG_REF_NAME==hdmi_rst_ps7_0_102M_1} -quiet] -quiet
+# IP: bd/hdmi/ip/hdmi_xbar_1/hdmi_xbar_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_xbar_1 || ORIG_REF_NAME==hdmi_xbar_1} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_ps7_0_axi_periph_0/hdmi_ps7_0_axi_periph_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_ps7_0_axi_periph_0 || ORIG_REF_NAME==hdmi_ps7_0_axi_periph_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_rst_ps7_0_102M_0/hdmi_rst_ps7_0_102M_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_rst_ps7_0_102M_0 || ORIG_REF_NAME==hdmi_rst_ps7_0_102M_0} -quiet] -quiet
 
 # IP: bd/hdmi/ip/hdmi_auto_pc_0/hdmi_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_pc_0 || ORIG_REF_NAME==hdmi_auto_pc_0} -quiet] -quiet

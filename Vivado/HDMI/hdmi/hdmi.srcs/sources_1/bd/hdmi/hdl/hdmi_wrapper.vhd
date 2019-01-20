@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Sat Dec 29 15:07:51 2018
+--Date        : Sun Jan 13 10:48:42 2019
 --Host        : steffnet-X705UNR running 64-bit Ubuntu 18.04.1 LTS
 --Command     : generate_target hdmi_wrapper.bd
 --Design      : hdmi_wrapper
@@ -35,7 +35,8 @@ entity hdmi_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     IIC_0_scl_io : inout STD_LOGIC;
-    IIC_0_sda_io : inout STD_LOGIC
+    IIC_0_sda_io : inout STD_LOGIC;
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
 end hdmi_wrapper;
 
@@ -48,6 +49,7 @@ architecture STRUCTURE of hdmi_wrapper is
     IIC_0_sda_i : in STD_LOGIC;
     IIC_0_sda_o : out STD_LOGIC;
     IIC_0_sda_t : out STD_LOGIC;
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -128,6 +130,7 @@ hdmi_i: component hdmi
       IIC_0_scl_t => IIC_0_scl_t,
       IIC_0_sda_i => IIC_0_sda_i,
       IIC_0_sda_o => IIC_0_sda_o,
-      IIC_0_sda_t => IIC_0_sda_t
+      IIC_0_sda_t => IIC_0_sda_t,
+      leds_8bits_tri_o(7 downto 0) => leds_8bits_tri_o(7 downto 0)
     );
 end STRUCTURE;

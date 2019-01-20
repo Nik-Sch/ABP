@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Sat Dec 29 15:08:46 2018
+// Date        : Sat Dec 29 13:27:30 2018
 // Host        : steffnet-X705UNR running 64-bit Ubuntu 18.04.1 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/steffnet/Schreibtisch/ABP/Vivado/HDMI/hdmi/hdmi.srcs/sources_1/bd/hdmi/ip/hdmi_axi_iic_0_0/hdmi_axi_iic_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top hdmi_axi_iic_0_0 -prefix
+//               hdmi_axi_iic_0_0_ hdmi_axi_iic_0_0_sim_netlist.v
 // Design      : hdmi_axi_iic_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,136 +12,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "hdmi_axi_iic_0_0,axi_iic,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_iic,Vivado 2018.3" *) 
-(* NotValidForBitStream *)
-module hdmi_axi_iic_0_0
-   (s_axi_aclk,
-    s_axi_aresetn,
-    iic2intc_irpt,
-    s_axi_awaddr,
-    s_axi_awvalid,
-    s_axi_awready,
-    s_axi_wdata,
-    s_axi_wstrb,
-    s_axi_wvalid,
-    s_axi_wready,
-    s_axi_bresp,
-    s_axi_bvalid,
-    s_axi_bready,
-    s_axi_araddr,
-    s_axi_arvalid,
-    s_axi_arready,
-    s_axi_rdata,
-    s_axi_rresp,
-    s_axi_rvalid,
-    s_axi_rready,
-    sda_i,
-    sda_o,
-    sda_t,
-    scl_i,
-    scl_o,
-    scl_t,
-    gpo);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 S_AXI_ACLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI_ACLK, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 102000000, PHASE 0.000, CLK_DOMAIN hdmi_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s_axi_aclk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 S_AXI_ARESETN RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI_ARESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
-  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 INTERRUPT INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME INTERRUPT, SENSITIVITY LEVEL_HIGH, PortWidth 1" *) output iic2intc_irpt;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 102000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN hdmi_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [8:0]s_axi_awaddr;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *) input s_axi_awvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *) output s_axi_awready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *) input [31:0]s_axi_wdata;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WSTRB" *) input [3:0]s_axi_wstrb;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WVALID" *) input s_axi_wvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WREADY" *) output s_axi_wready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BRESP" *) output [1:0]s_axi_bresp;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BVALID" *) output s_axi_bvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BREADY" *) input s_axi_bready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARADDR" *) input [8:0]s_axi_araddr;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARVALID" *) input s_axi_arvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARREADY" *) output s_axi_arready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RDATA" *) output [31:0]s_axi_rdata;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RRESP" *) output [1:0]s_axi_rresp;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RVALID" *) output s_axi_rvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) input s_axi_rready;
-  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SDA_I" *) (* x_interface_parameter = "XIL_INTERFACENAME IIC, BOARD.ASSOCIATED_PARAM IIC_BOARD_INTERFACE" *) input sda_i;
-  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SDA_O" *) output sda_o;
-  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SDA_T" *) output sda_t;
-  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SCL_I" *) input scl_i;
-  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SCL_O" *) output scl_o;
-  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SCL_T" *) output scl_t;
-  output [0:0]gpo;
-
-  wire [0:0]gpo;
-  wire iic2intc_irpt;
-  wire s_axi_aclk;
-  wire [8:0]s_axi_araddr;
-  wire s_axi_aresetn;
-  wire s_axi_arready;
-  wire s_axi_arvalid;
-  wire [8:0]s_axi_awaddr;
-  wire s_axi_awready;
-  wire s_axi_awvalid;
-  wire s_axi_bready;
-  wire [1:0]s_axi_bresp;
-  wire s_axi_bvalid;
-  wire [31:0]s_axi_rdata;
-  wire s_axi_rready;
-  wire [1:0]s_axi_rresp;
-  wire s_axi_rvalid;
-  wire [31:0]s_axi_wdata;
-  wire s_axi_wready;
-  wire [3:0]s_axi_wstrb;
-  wire s_axi_wvalid;
-  wire scl_i;
-  wire scl_o;
-  wire scl_t;
-  wire sda_i;
-  wire sda_o;
-  wire sda_t;
-
-  (* C_DEFAULT_VALUE = "8'b00000000" *) 
-  (* C_FAMILY = "zynq" *) 
-  (* C_GPO_WIDTH = "1" *) 
-  (* C_IIC_FREQ = "100000" *) 
-  (* C_SCL_INERTIAL_DELAY = "1" *) 
-  (* C_SDA_INERTIAL_DELAY = "1" *) 
-  (* C_SDA_LEVEL = "1" *) 
-  (* C_SMBUS_PMBUS_HOST = "0" *) 
-  (* C_S_AXI_ACLK_FREQ_HZ = "102000000" *) 
-  (* C_S_AXI_ADDR_WIDTH = "9" *) 
-  (* C_S_AXI_DATA_WIDTH = "32" *) 
-  (* C_TEN_BIT_ADR = "0" *) 
-  (* downgradeipidentifiedwarnings = "yes" *) 
-  hdmi_axi_iic_0_0_axi_iic U0
-       (.gpo(gpo),
-        .iic2intc_irpt(iic2intc_irpt),
-        .s_axi_aclk(s_axi_aclk),
-        .s_axi_araddr(s_axi_araddr),
-        .s_axi_aresetn(s_axi_aresetn),
-        .s_axi_arready(s_axi_arready),
-        .s_axi_arvalid(s_axi_arvalid),
-        .s_axi_awaddr(s_axi_awaddr),
-        .s_axi_awready(s_axi_awready),
-        .s_axi_awvalid(s_axi_awvalid),
-        .s_axi_bready(s_axi_bready),
-        .s_axi_bresp(s_axi_bresp),
-        .s_axi_bvalid(s_axi_bvalid),
-        .s_axi_rdata(s_axi_rdata),
-        .s_axi_rready(s_axi_rready),
-        .s_axi_rresp(s_axi_rresp),
-        .s_axi_rvalid(s_axi_rvalid),
-        .s_axi_wdata(s_axi_wdata),
-        .s_axi_wready(s_axi_wready),
-        .s_axi_wstrb(s_axi_wstrb),
-        .s_axi_wvalid(s_axi_wvalid),
-        .scl_i(scl_i),
-        .scl_o(scl_o),
-        .scl_t(scl_t),
-        .sda_i(sda_i),
-        .sda_o(sda_o),
-        .sda_t(sda_t));
-endmodule
-
-(* ORIG_REF_NAME = "SRL_FIFO" *) 
 module hdmi_axi_iic_0_0_SRL_FIFO
    (Rc_Data_Exists,
     Rc_addr,
@@ -1118,7 +988,6 @@ module hdmi_axi_iic_0_0_SRL_FIFO__parameterized0
         .O(Data_Exists_DFF_1));
 endmodule
 
-(* ORIG_REF_NAME = "address_decoder" *) 
 module hdmi_axi_iic_0_0_address_decoder
    (\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8]_0 ,
     Bus_RNW_reg_reg_0,
@@ -2211,9 +2080,9 @@ endmodule
 
 (* C_DEFAULT_VALUE = "8'b00000000" *) (* C_FAMILY = "zynq" *) (* C_GPO_WIDTH = "1" *) 
 (* C_IIC_FREQ = "100000" *) (* C_SCL_INERTIAL_DELAY = "1" *) (* C_SDA_INERTIAL_DELAY = "1" *) 
-(* C_SDA_LEVEL = "1" *) (* C_SMBUS_PMBUS_HOST = "0" *) (* C_S_AXI_ACLK_FREQ_HZ = "102000000" *) 
+(* C_SDA_LEVEL = "1" *) (* C_SMBUS_PMBUS_HOST = "0" *) (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) 
 (* C_S_AXI_ADDR_WIDTH = "9" *) (* C_S_AXI_DATA_WIDTH = "32" *) (* C_TEN_BIT_ADR = "0" *) 
-(* ORIG_REF_NAME = "axi_iic" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module hdmi_axi_iic_0_0_axi_iic
    (s_axi_aclk,
     s_axi_aresetn,
@@ -2353,7 +2222,6 @@ module hdmi_axi_iic_0_0_axi_iic
         .sda_t(sda_t));
 endmodule
 
-(* ORIG_REF_NAME = "axi_ipif_ssp1" *) 
 module hdmi_axi_iic_0_0_axi_ipif_ssp1
    (s_axi_rresp,
     Bus2IIC_Reset,
@@ -2713,7 +2581,6 @@ module hdmi_axi_iic_0_0_axi_ipif_ssp1
         .sw_rst_cond_d1(sw_rst_cond_d1));
 endmodule
 
-(* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module hdmi_axi_iic_0_0_axi_lite_ipif
    (p_27_in,
     s_axi_rresp,
@@ -3041,7 +2908,6 @@ module hdmi_axi_iic_0_0_axi_lite_ipif
         .sw_rst_cond_d1(sw_rst_cond_d1));
 endmodule
 
-(* ORIG_REF_NAME = "cdc_sync" *) 
 module hdmi_axi_iic_0_0_cdc_sync
    (\GEN_INERTIAL.debounce_ct_reg_0_sp_1 ,
     \GEN_INERTIAL.debounce_ct_reg[0]_0 ,
@@ -3237,7 +3103,6 @@ module hdmi_axi_iic_0_0_cdc_sync_4
         .O(\GEN_INERTIAL.Unstable_n_reg ));
 endmodule
 
-(* ORIG_REF_NAME = "debounce" *) 
 module hdmi_axi_iic_0_0_debounce
    (\GEN_INERTIAL.clean_cs_reg_0 ,
     scl_unstable_n,
@@ -3367,7 +3232,6 @@ module hdmi_axi_iic_0_0_debounce_3
         .O(\GEN_INERTIAL.clean_cs_reg_1 ));
 endmodule
 
-(* ORIG_REF_NAME = "dynamic_master" *) 
 module hdmi_axi_iic_0_0_dynamic_master
    (rdCntrFrmTxFifo,
     rxCntDone,
@@ -3692,7 +3556,6 @@ module hdmi_axi_iic_0_0_dynamic_master
         .R(Tx_fifo_rst));
 endmodule
 
-(* ORIG_REF_NAME = "filter" *) 
 module hdmi_axi_iic_0_0_filter
    (scl_clean,
     sda_clean,
@@ -3755,7 +3618,135 @@ module hdmi_axi_iic_0_0_filter
         .sda_rin_d1(sda_rin_d1));
 endmodule
 
-(* ORIG_REF_NAME = "iic" *) 
+(* CHECK_LICENSE_TYPE = "hdmi_axi_iic_0_0,axi_iic,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_iic,Vivado 2018.3" *) 
+(* NotValidForBitStream *)
+module hdmi_axi_iic_0_0
+   (s_axi_aclk,
+    s_axi_aresetn,
+    iic2intc_irpt,
+    s_axi_awaddr,
+    s_axi_awvalid,
+    s_axi_awready,
+    s_axi_wdata,
+    s_axi_wstrb,
+    s_axi_wvalid,
+    s_axi_wready,
+    s_axi_bresp,
+    s_axi_bvalid,
+    s_axi_bready,
+    s_axi_araddr,
+    s_axi_arvalid,
+    s_axi_arready,
+    s_axi_rdata,
+    s_axi_rresp,
+    s_axi_rvalid,
+    s_axi_rready,
+    sda_i,
+    sda_o,
+    sda_t,
+    scl_i,
+    scl_o,
+    scl_t,
+    gpo);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 S_AXI_ACLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI_ACLK, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN hdmi_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s_axi_aclk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 S_AXI_ARESETN RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI_ARESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
+  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 INTERRUPT INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME INTERRUPT, SENSITIVITY LEVEL_HIGH, PortWidth 1" *) output iic2intc_irpt;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN hdmi_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [8:0]s_axi_awaddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *) input s_axi_awvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *) output s_axi_awready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *) input [31:0]s_axi_wdata;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WSTRB" *) input [3:0]s_axi_wstrb;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WVALID" *) input s_axi_wvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WREADY" *) output s_axi_wready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BRESP" *) output [1:0]s_axi_bresp;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BVALID" *) output s_axi_bvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BREADY" *) input s_axi_bready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARADDR" *) input [8:0]s_axi_araddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARVALID" *) input s_axi_arvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARREADY" *) output s_axi_arready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RDATA" *) output [31:0]s_axi_rdata;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RRESP" *) output [1:0]s_axi_rresp;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RVALID" *) output s_axi_rvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) input s_axi_rready;
+  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SDA_I" *) (* x_interface_parameter = "XIL_INTERFACENAME IIC, BOARD.ASSOCIATED_PARAM IIC_BOARD_INTERFACE" *) input sda_i;
+  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SDA_O" *) output sda_o;
+  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SDA_T" *) output sda_t;
+  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SCL_I" *) input scl_i;
+  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SCL_O" *) output scl_o;
+  (* x_interface_info = "xilinx.com:interface:iic:1.0 IIC SCL_T" *) output scl_t;
+  output [0:0]gpo;
+
+  wire [0:0]gpo;
+  wire iic2intc_irpt;
+  wire s_axi_aclk;
+  wire [8:0]s_axi_araddr;
+  wire s_axi_aresetn;
+  wire s_axi_arready;
+  wire s_axi_arvalid;
+  wire [8:0]s_axi_awaddr;
+  wire s_axi_awready;
+  wire s_axi_awvalid;
+  wire s_axi_bready;
+  wire [1:0]s_axi_bresp;
+  wire s_axi_bvalid;
+  wire [31:0]s_axi_rdata;
+  wire s_axi_rready;
+  wire [1:0]s_axi_rresp;
+  wire s_axi_rvalid;
+  wire [31:0]s_axi_wdata;
+  wire s_axi_wready;
+  wire [3:0]s_axi_wstrb;
+  wire s_axi_wvalid;
+  wire scl_i;
+  wire scl_o;
+  wire scl_t;
+  wire sda_i;
+  wire sda_o;
+  wire sda_t;
+
+  (* C_DEFAULT_VALUE = "8'b00000000" *) 
+  (* C_FAMILY = "zynq" *) 
+  (* C_GPO_WIDTH = "1" *) 
+  (* C_IIC_FREQ = "100000" *) 
+  (* C_SCL_INERTIAL_DELAY = "1" *) 
+  (* C_SDA_INERTIAL_DELAY = "1" *) 
+  (* C_SDA_LEVEL = "1" *) 
+  (* C_SMBUS_PMBUS_HOST = "0" *) 
+  (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) 
+  (* C_S_AXI_ADDR_WIDTH = "9" *) 
+  (* C_S_AXI_DATA_WIDTH = "32" *) 
+  (* C_TEN_BIT_ADR = "0" *) 
+  (* downgradeipidentifiedwarnings = "yes" *) 
+  hdmi_axi_iic_0_0_axi_iic U0
+       (.gpo(gpo),
+        .iic2intc_irpt(iic2intc_irpt),
+        .s_axi_aclk(s_axi_aclk),
+        .s_axi_araddr(s_axi_araddr),
+        .s_axi_aresetn(s_axi_aresetn),
+        .s_axi_arready(s_axi_arready),
+        .s_axi_arvalid(s_axi_arvalid),
+        .s_axi_awaddr(s_axi_awaddr),
+        .s_axi_awready(s_axi_awready),
+        .s_axi_awvalid(s_axi_awvalid),
+        .s_axi_bready(s_axi_bready),
+        .s_axi_bresp(s_axi_bresp),
+        .s_axi_bvalid(s_axi_bvalid),
+        .s_axi_rdata(s_axi_rdata),
+        .s_axi_rready(s_axi_rready),
+        .s_axi_rresp(s_axi_rresp),
+        .s_axi_rvalid(s_axi_rvalid),
+        .s_axi_wdata(s_axi_wdata),
+        .s_axi_wready(s_axi_wready),
+        .s_axi_wstrb(s_axi_wstrb),
+        .s_axi_wvalid(s_axi_wvalid),
+        .scl_i(scl_i),
+        .scl_o(scl_o),
+        .scl_t(scl_t),
+        .sda_i(sda_i),
+        .sda_o(sda_o),
+        .sda_t(sda_t));
+endmodule
+
 module hdmi_axi_iic_0_0_iic
    (s_axi_rdata,
     s_axi_rresp,
@@ -4314,7 +4305,6 @@ module hdmi_axi_iic_0_0_iic
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "iic_control" *) 
 module hdmi_axi_iic_0_0_iic_control
    (shift_reg_ld,
     sda_rin_d1,
@@ -6028,7 +6018,6 @@ module hdmi_axi_iic_0_0_iic_control
         .R(\q_int_reg[9] ));
 endmodule
 
-(* ORIG_REF_NAME = "interrupt_control" *) 
 module hdmi_axi_iic_0_0_interrupt_control
    (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ,
     p_1_in17_in,
@@ -6336,7 +6325,6 @@ module hdmi_axi_iic_0_0_interrupt_control
         .R(SR));
 endmodule
 
-(* ORIG_REF_NAME = "reg_interface" *) 
 module hdmi_axi_iic_0_0_reg_interface
    (IIC2Bus_IntrEvent,
     Q,
@@ -7481,24 +7469,24 @@ module hdmi_axi_iic_0_0_reg_interface
         .D(s_axi_wdata[0]),
         .Q(\timing_param_tbuf_i_reg[7]_0 [0]),
         .R(Bus2IIC_Reset));
-  FDSE \timing_param_tbuf_i_reg[1] 
+  FDRE \timing_param_tbuf_i_reg[1] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[3]),
         .D(s_axi_wdata[1]),
         .Q(\timing_param_tbuf_i_reg[7]_0 [1]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_tbuf_i_reg[2] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[3]),
         .D(s_axi_wdata[2]),
         .Q(\timing_param_tbuf_i_reg[7]_0 [2]),
         .S(Bus2IIC_Reset));
-  FDSE \timing_param_tbuf_i_reg[3] 
+  FDRE \timing_param_tbuf_i_reg[3] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[3]),
         .D(s_axi_wdata[3]),
         .Q(\timing_param_tbuf_i_reg[7]_0 [3]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_tbuf_i_reg[4] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[3]),
@@ -7613,18 +7601,18 @@ module hdmi_axi_iic_0_0_reg_interface
         .D(s_axi_wdata[2]),
         .Q(\timing_param_thdsta_i_reg[7]_0 [2]),
         .S(Bus2IIC_Reset));
-  FDRE \timing_param_thdsta_i_reg[3] 
+  FDSE \timing_param_thdsta_i_reg[3] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[5]),
         .D(s_axi_wdata[3]),
         .Q(\timing_param_thdsta_i_reg[7]_0 [3]),
-        .R(Bus2IIC_Reset));
-  FDSE \timing_param_thdsta_i_reg[4] 
+        .S(Bus2IIC_Reset));
+  FDRE \timing_param_thdsta_i_reg[4] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[5]),
         .D(s_axi_wdata[4]),
         .Q(\timing_param_thdsta_i_reg[7]_0 [4]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_thdsta_i_reg[5] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[5]),
@@ -7661,30 +7649,30 @@ module hdmi_axi_iic_0_0_reg_interface
         .D(s_axi_wdata[0]),
         .Q(\timing_param_thigh_i_reg[7]_0 [0]),
         .R(Bus2IIC_Reset));
-  FDSE \timing_param_thigh_i_reg[1] 
+  FDRE \timing_param_thigh_i_reg[1] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[2]),
         .D(s_axi_wdata[1]),
         .Q(\timing_param_thigh_i_reg[7]_0 [1]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_thigh_i_reg[2] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[2]),
         .D(s_axi_wdata[2]),
         .Q(\timing_param_thigh_i_reg[7]_0 [2]),
         .S(Bus2IIC_Reset));
-  FDRE \timing_param_thigh_i_reg[3] 
+  FDSE \timing_param_thigh_i_reg[3] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[2]),
         .D(s_axi_wdata[3]),
         .Q(\timing_param_thigh_i_reg[7]_0 [3]),
-        .R(Bus2IIC_Reset));
-  FDSE \timing_param_thigh_i_reg[4] 
+        .S(Bus2IIC_Reset));
+  FDRE \timing_param_thigh_i_reg[4] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[2]),
         .D(s_axi_wdata[4]),
         .Q(\timing_param_thigh_i_reg[7]_0 [4]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_thigh_i_reg[5] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[2]),
@@ -7721,30 +7709,30 @@ module hdmi_axi_iic_0_0_reg_interface
         .D(s_axi_wdata[0]),
         .Q(\timing_param_tlow_i_reg[7]_0 [0]),
         .R(Bus2IIC_Reset));
-  FDSE \timing_param_tlow_i_reg[1] 
+  FDRE \timing_param_tlow_i_reg[1] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[1]),
         .D(s_axi_wdata[1]),
         .Q(Timing_param_tlow[1]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_tlow_i_reg[2] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[1]),
         .D(s_axi_wdata[2]),
         .Q(Timing_param_tlow[2]),
         .S(Bus2IIC_Reset));
-  FDRE \timing_param_tlow_i_reg[3] 
+  FDSE \timing_param_tlow_i_reg[3] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[1]),
         .D(s_axi_wdata[3]),
         .Q(Timing_param_tlow[3]),
-        .R(Bus2IIC_Reset));
-  FDSE \timing_param_tlow_i_reg[4] 
+        .S(Bus2IIC_Reset));
+  FDRE \timing_param_tlow_i_reg[4] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[1]),
         .D(s_axi_wdata[4]),
         .Q(\timing_param_tlow_i_reg[7]_0 [1]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_tlow_i_reg[5] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[1]),
@@ -7775,30 +7763,30 @@ module hdmi_axi_iic_0_0_reg_interface
         .D(s_axi_wdata[9]),
         .Q(Timing_param_tlow[9]),
         .R(Bus2IIC_Reset));
-  FDRE \timing_param_tsudat_i_reg[0] 
+  FDSE \timing_param_tsudat_i_reg[0] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[4]),
         .D(s_axi_wdata[0]),
         .Q(\timing_param_tsudat_i_reg[8]_0 [0]),
-        .R(Bus2IIC_Reset));
-  FDRE \timing_param_tsudat_i_reg[1] 
+        .S(Bus2IIC_Reset));
+  FDSE \timing_param_tsudat_i_reg[1] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[4]),
         .D(s_axi_wdata[1]),
         .Q(\timing_param_tsudat_i_reg[8]_0 [1]),
-        .R(Bus2IIC_Reset));
-  FDRE \timing_param_tsudat_i_reg[2] 
+        .S(Bus2IIC_Reset));
+  FDSE \timing_param_tsudat_i_reg[2] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[4]),
         .D(s_axi_wdata[2]),
         .Q(\timing_param_tsudat_i_reg[8]_0 [2]),
-        .R(Bus2IIC_Reset));
-  FDSE \timing_param_tsudat_i_reg[3] 
+        .S(Bus2IIC_Reset));
+  FDRE \timing_param_tsudat_i_reg[3] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[4]),
         .D(s_axi_wdata[3]),
         .Q(\timing_param_tsudat_i_reg[8]_0 [3]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_tsudat_i_reg[4] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[4]),
@@ -7835,48 +7823,48 @@ module hdmi_axi_iic_0_0_reg_interface
         .D(s_axi_wdata[9]),
         .Q(Timing_param_tsudat[9]),
         .R(Bus2IIC_Reset));
-  FDSE \timing_param_tsusta_i_reg[0] 
+  FDRE \timing_param_tsusta_i_reg[0] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[7]),
         .D(s_axi_wdata[0]),
         .Q(\timing_param_tsusta_i_reg[7]_0 [0]),
-        .S(Bus2IIC_Reset));
-  FDRE \timing_param_tsusta_i_reg[1] 
+        .R(Bus2IIC_Reset));
+  FDSE \timing_param_tsusta_i_reg[1] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[7]),
         .D(s_axi_wdata[1]),
         .Q(\timing_param_tsusta_i_reg[7]_0 [1]),
-        .R(Bus2IIC_Reset));
-  FDSE \timing_param_tsusta_i_reg[2] 
+        .S(Bus2IIC_Reset));
+  FDRE \timing_param_tsusta_i_reg[2] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[7]),
         .D(s_axi_wdata[2]),
         .Q(\timing_param_tsusta_i_reg[7]_0 [2]),
-        .S(Bus2IIC_Reset));
-  FDRE \timing_param_tsusta_i_reg[3] 
+        .R(Bus2IIC_Reset));
+  FDSE \timing_param_tsusta_i_reg[3] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[7]),
         .D(s_axi_wdata[3]),
         .Q(\timing_param_tsusta_i_reg[7]_0 [3]),
-        .R(Bus2IIC_Reset));
-  FDRE \timing_param_tsusta_i_reg[4] 
+        .S(Bus2IIC_Reset));
+  FDSE \timing_param_tsusta_i_reg[4] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[7]),
         .D(s_axi_wdata[4]),
         .Q(\timing_param_tsusta_i_reg[7]_0 [4]),
-        .R(Bus2IIC_Reset));
-  FDRE \timing_param_tsusta_i_reg[5] 
+        .S(Bus2IIC_Reset));
+  FDSE \timing_param_tsusta_i_reg[5] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[7]),
         .D(s_axi_wdata[5]),
         .Q(\timing_param_tsusta_i_reg[7]_0 [5]),
-        .R(Bus2IIC_Reset));
-  FDSE \timing_param_tsusta_i_reg[6] 
+        .S(Bus2IIC_Reset));
+  FDRE \timing_param_tsusta_i_reg[6] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[7]),
         .D(s_axi_wdata[6]),
         .Q(\timing_param_tsusta_i_reg[7]_0 [6]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDRE \timing_param_tsusta_i_reg[7] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[7]),
@@ -7901,24 +7889,24 @@ module hdmi_axi_iic_0_0_reg_interface
         .D(s_axi_wdata[0]),
         .Q(\timing_param_tsusto_i_reg[7]_0 [0]),
         .R(Bus2IIC_Reset));
-  FDSE \timing_param_tsusto_i_reg[1] 
+  FDRE \timing_param_tsusto_i_reg[1] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[6]),
         .D(s_axi_wdata[1]),
         .Q(\timing_param_tsusto_i_reg[7]_0 [1]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_tsusto_i_reg[2] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[6]),
         .D(s_axi_wdata[2]),
         .Q(\timing_param_tsusto_i_reg[7]_0 [2]),
         .S(Bus2IIC_Reset));
-  FDSE \timing_param_tsusto_i_reg[3] 
+  FDRE \timing_param_tsusto_i_reg[3] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[6]),
         .D(s_axi_wdata[3]),
         .Q(\timing_param_tsusto_i_reg[7]_0 [3]),
-        .S(Bus2IIC_Reset));
+        .R(Bus2IIC_Reset));
   FDSE \timing_param_tsusto_i_reg[4] 
        (.C(s_axi_aclk),
         .CE(Bus2IIC_WrCE[6]),
@@ -7957,7 +7945,6 @@ module hdmi_axi_iic_0_0_reg_interface
         .R(Bus2IIC_Reset));
 endmodule
 
-(* ORIG_REF_NAME = "shift8" *) 
 module hdmi_axi_iic_0_0_shift8
    (\data_int_reg[7]_0 ,
     Q,
@@ -8440,7 +8427,6 @@ module hdmi_axi_iic_0_0_shift8_1
         .O(\data_int_reg[0]_0 ));
 endmodule
 
-(* ORIG_REF_NAME = "slave_attachment" *) 
 module hdmi_axi_iic_0_0_slave_attachment
    (\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ,
     s_axi_rresp,
@@ -9868,7 +9854,6 @@ module hdmi_axi_iic_0_0_slave_attachment
         .R(rst));
 endmodule
 
-(* ORIG_REF_NAME = "soft_reset" *) 
 module hdmi_axi_iic_0_0_soft_reset
    (sw_rst_cond_d1,
     AXI_Bus2IP_Reset,
@@ -10029,7 +10014,6 @@ module hdmi_axi_iic_0_0_soft_reset
         .R(AXI_Bus2IP_Reset));
 endmodule
 
-(* ORIG_REF_NAME = "upcnt_n" *) 
 module hdmi_axi_iic_0_0_upcnt_n
    (\FSM_sequential_scl_state_reg[1] ,
     \q_int_reg[0]_0 ,
