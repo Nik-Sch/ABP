@@ -1,0 +1,28 @@
+/*
+ * push_buttons.c
+ *
+ *  Created on: 19.01.2019
+ *      Author: Jannes
+ */
+
+#include "push_buttons.h"
+#include "stdio.h"
+
+
+void check_switch_test(){
+	unsigned int a,b = 0;
+	while(1){
+		a = *push_buttons;
+		if(a != b){
+			b = 0;
+		}
+		switch(a){
+		case push_button_up:
+			if ( a != b) {
+			printf("up\n");
+			b = a;
+			break;
+			}
+		}
+	}
+}

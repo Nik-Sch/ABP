@@ -1,0 +1,13 @@
+v 4
+file . "i2s.vhd" "8a77a2d232004ac43200411ecbbc492dcb80c1ad" "20190112205601.152":
+  entity i2s_interface at 1( 0) + 0 on 55;
+  architecture rtl of i2s_interface at 22( 590) + 0 on 56;
+file . "audio_receiver.vhd" "496b5006b31fa7a614a0d764f41245bab14170b2" "20190112205601.201":
+  entity audio_receiver at 1( 0) + 0 on 57;
+  architecture behavioral of audio_receiver at 22( 594) + 0 on 58;
+file . "clkReduce.vhd" "c12340806b215a11c0bc90f1069c3d6dfa8f560d" "20190112205601.129":
+  entity clkreduce at 1( 0) + 0 on 53;
+  architecture behavioral of clkreduce at 11( 208) + 0 on 54;
+file . "audio_receiver_tb.vhd" "e10f4414eadd1a90af7b975e087a2afd9ca483f2" "20190112205601.271":
+  entity audio_receiver_tb at 1( 0) + 0 on 59;
+  architecture behavioral of audio_receiver_tb at 13( 189) + 0 on 60;

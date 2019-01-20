@@ -1,0 +1,37 @@
+/*
+ * push_buttons.c
+ *
+ *  Created on: 19.01.2019
+ *      Author: Jannes
+ */
+
+#include "push_buttons.h"
+#include "stdio.h"
+
+static volatile unsigned int *const push_buttons = (unsigned int*) (GPIO_BASE_ADDRESS);
+
+int main(){
+	while(1){
+		unsigned int a = *push_buttons;
+		switch(a) {
+		case push_button_up:
+			printf("up\n");
+			break;
+		case push_button_down:
+			printf("down\n");
+			break;
+		}
+	}
+}
+
+int push_button_check(){
+
+	while(*push_buttons == 0);
+	if(*push_buttons == push_button_up) {
+		return push_button_up;
+	}else if (*push_buttons == push_button_down) {
+		return push_button_down;
+	}else {return 0;}
+}
+
+

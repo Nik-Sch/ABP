@@ -1,0 +1,19 @@
+/*
+ * push_buttons.c
+ *
+ *  Created on: 19.01.2019
+ *      Author: Jannes
+ */
+
+#include "push_buttons.h"
+
+static volatile unsigned int *const push_buttons = (unsigned int*) GPIO_BASE_ADDRESS
+
+int main(){
+	for (int i = 0; i < 1000000; i++){
+
+	}
+	printf(" \n", push_)
+}
+
+

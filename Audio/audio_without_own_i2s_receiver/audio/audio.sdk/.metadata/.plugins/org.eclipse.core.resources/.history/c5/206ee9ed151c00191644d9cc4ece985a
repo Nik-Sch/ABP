@@ -1,0 +1,61 @@
+/*
+ * push_buttons.c
+ *
+ *  Created on: 19.01.2019
+ *      Author: Jannes
+ */
+
+#include "push_buttons.h"
+#include "stdio.h"
+
+int checkout_push_buttons(){
+	unsigned int a,b = 0;
+	while(1){
+
+		unsigned int a = *push_buttons;
+		if (a == push_button_up && a != b){
+			return push_button_up;
+			b = a;
+			while(b == a) {
+				a = *push_buttons;
+			}
+			b = 0;
+		}
+
+		if (a == push_button_down && a != b){
+			return push_button_down;
+					b = a;
+					while(b == a) {
+						a = *push_buttons;
+					}
+					b = 0;
+		}
+		if (a == push_button_mid && a != b){
+			return push_button_mid;
+					b = a;
+					while(b == a) {
+						a = *push_buttons;
+					}
+					b = 0;
+				}
+
+	}
+}
+
+void check_switch_test(){
+	unsigned int a,b = 0;
+	while(1){
+		a = *push_buttons;
+		if(a != b){
+			b = 0;
+		}
+		switch(a){
+		case push_button_up:
+			if ( a != b) {
+			printf("up\n");
+			b = a;
+			break;
+			}
+		}
+	}
+}

@@ -1,0 +1,128 @@
+//
+// Created by Jannes Potthoff on 18.01.19.
+//
+#include "menu_navigation.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "push_buttons.h"
+
+menu *actual_menu = NULL;
+int cursor_position = 0;
+
+
+void initialize_navigation(menu* menu){
+    actual_menu = menu;
+}
+
+void _print_cursor(){
+    cursor_save_position();
+    for (int i = 0; i < 25; i++) {
+        cursor_forward();
+    }
+
+    printf("%d",cursor_position);
+    cursor_restore_position();
+}
+
+void _print_debug(int value){
+	 cursor_save_position();
+	    for (int i = 0; i < 25; i++) {
+	        cursor_forward();
+	    }
+
+	    printf("%d",cursor_position);
+	    cursor_restore_position();
+}
+
+void menu_navigation() {
+    print_menu(actual_menu);
+    _print_cursor();
+    unsigned int c = 0;
+    while (1) {
+        c =*push_buttons;
+        switch (c) {
+            case push_button_up:
+                c = 0;
+                if (cursor_position > 0) {
+                    cursor_clear_cursor_from_postion();
+                    cursor_up();
+                    cursor_set_cursor_to_position();
+                    cursor_position--;
+                    _print_cursor();
+
+                }
+                break;
+
+            case push_button_down:
+            	c = 0;
+                if (actual_menu->prev_menu == NULL) {
+                    if (cursor_position < actual_menu->length - 1) {
+                        cursor_clear_cursor_from_postion();
+                        cursor_down();
+                        cursor_set_cursor_to_position();
+                        cursor_position++;
+                        _print_cursor();
+                    }
+                } else { // reach back
+                    if (cursor_position < actual_menu->length) {
+                        cursor_clear_cursor_from_postion();
+                        cursor_down();
+                        cursor_set_cursor_to_position();
+                        cursor_position++;
+                        _print_cursor();
+                    }
+                }
+                break;
+            case push_button_mid:
+                c = 0;
+                if(cursor_position == actual_menu->length) { // over back button
+                    if (actual_menu->prev_menu != NULL) {
+                        actual_menu = actual_menu->prev_menu;
+                        print_menu(actual_menu);
+                    }
+                } else if (actual_menu->submenus[cursor_position] != NULL && actual_menu->submenus[cursor_position]->submenus != NULL ) {
+                    actual_menu = actual_menu->submenus[cursor_position];
+                    print_menu(actual_menu);
+                } else if(actual_menu->submenus[cursor_position] != NULL && actual_menu->submenus[cursor_position]->function != NULL ){
+                    (actual_menu->submenus[cursor_position]->function)(actual_menu->submenus[cursor_position]->reg_config_value);
+                }
+                break;
+        }
+    }
+}
+
+void print_menu(menu *menu) {
+    clear_menu();
+    cursor_hide();
+    printf("%s actual menu size: %d\n", menu->header, menu->length);
+
+    for (int i = 0; i < menu->length; i++) {
+        printf("[ ] %s\n", menu->submenus[i]->header);
+    }
+    if (menu->prev_menu != NULL) {
+        printf("[ ] back\n");
+    }
+    if(menu->submenus != NULL) {
+        cursor_home();
+        cursor_down();
+        cursor_forward();
+        cursor_set_cursor_to_position();
+        cursor_position = 0;
+    }
+}
+
+void push_buttons_test(){
+	  unsigned int c = 0;
+	    while (1) {
+	        c = *push_buttons;
+	        switch (c) {
+	        for (int i = 0; i < 100000; i++);
+	            case push_button_up:
+	            	printf("up up up up\n");
+	            	c = 0;
+	            	break;
+	        }
+	    }
+}
