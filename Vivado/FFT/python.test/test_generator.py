@@ -28,8 +28,8 @@ def sliding_dft(data, N, Fs):
         if i % N == 0:
             fig = plt.figure()
             plt.ylim((0, 500000))
-            # plt.plot(np.abs(X))
-            plt.plot(freq[0:int(len(freq)/2)], np.abs(X))
+            plt.plot(np.abs(X), 'bx')
+            # plt.plot(freq[0:int(len(freq)/2)], np.abs(X))
             plt.title(f't={i:d}')
             plt.xlabel('Frequency [Hz]')
             plt.ylabel('freq amplitude (no real unit)')

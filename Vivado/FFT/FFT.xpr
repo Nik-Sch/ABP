@@ -22,6 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../I2S_receiver"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -145,14 +146,34 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/fifoDataIn.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="work"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/i2s2bram.vhd">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/bd/fourier_bram/fourier_bram.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_blk_mem_gen_0_1/fourier_bram_blk_mem_gen_0_1.xci">
-          <Proxy FileSetName="fourier_bram_blk_mem_gen_0_1"/>
+        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_processing_system7_0_0/fourier_bram_processing_system7_0_0.xci">
+          <Proxy FileSetName="fourier_bram_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_DFTStageWrapper_0_0/fourier_bram_DFTStageWrapper_0_0.xci">
+          <Proxy FileSetName="fourier_bram_DFTStageWrapper_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_Freq2BRAM_0_0/fourier_bram_Freq2BRAM_0_0.xci">
+          <Proxy FileSetName="fourier_bram_Freq2BRAM_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_DFTStageWrapper_1_0/fourier_bram_DFTStageWrapper_1_0.xci">
           <Proxy FileSetName="fourier_bram_DFTStageWrapper_1_0"/>
@@ -160,26 +181,17 @@
         <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_Freq2BRAM_1_0/fourier_bram_Freq2BRAM_1_0.xci">
           <Proxy FileSetName="fourier_bram_Freq2BRAM_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_axi_bram_ctrl_0_1/fourier_bram_axi_bram_ctrl_0_1.xci">
-          <Proxy FileSetName="fourier_bram_axi_bram_ctrl_0_1"/>
+        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_fifoDataIn_0_0/fourier_bram_fifoDataIn_0_0.xci">
+          <Proxy FileSetName="fourier_bram_fifoDataIn_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_processing_system7_0_0/fourier_bram_processing_system7_0_0.xci">
-          <Proxy FileSetName="fourier_bram_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_fifoDataInLeft_0/fourier_bram_fifoDataInLeft_0.xci">
+          <Proxy FileSetName="fourier_bram_fifoDataInLeft_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_axi_bram_ctrl_0_0/fourier_bram_axi_bram_ctrl_0_0.xci">
-          <Proxy FileSetName="fourier_bram_axi_bram_ctrl_0_0"/>
+        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_ila_0_0/fourier_bram_ila_0_0.xci">
+          <Proxy FileSetName="fourier_bram_ila_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_axi_smc_0/fourier_bram_axi_smc_0.xci">
-          <Proxy FileSetName="fourier_bram_axi_smc_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_rst_ps7_0_100M_0/fourier_bram_rst_ps7_0_100M_0.xci">
-          <Proxy FileSetName="fourier_bram_rst_ps7_0_100M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_DFTStageWrapper_0_0/fourier_bram_DFTStageWrapper_0_0.xci">
-          <Proxy FileSetName="fourier_bram_DFTStageWrapper_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_Freq2BRAM_0_0/fourier_bram_Freq2BRAM_0_0.xci">
-          <Proxy FileSetName="fourier_bram_Freq2BRAM_0_0"/>
+        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0.xci">
+          <Proxy FileSetName="fourier_bram_i2s2bram_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/fourier_bram/hdl/fourier_bram_wrapper.vhd">
@@ -207,6 +219,14 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/imports/new/constraints_1.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../audio_1_0/audio_1_0.srcs/constrs_1/new/constraints_1.xdc"/>
+          <Attr Name="ImportTime" Val="1548114258"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
@@ -290,39 +310,9 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
-    <FileSet Name="fourier_bram_blk_mem_gen_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_blk_mem_gen_0_1">
-      <Config>
-        <Option Name="TopModule" Val="fourier_bram_blk_mem_gen_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="fourier_bram_axi_smc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_axi_smc_0">
-      <Config>
-        <Option Name="TopModule" Val="fourier_bram_axi_smc_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="fourier_bram_rst_ps7_0_100M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_rst_ps7_0_100M_0">
-      <Config>
-        <Option Name="TopModule" Val="fourier_bram_rst_ps7_0_100M_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="fourier_bram_axi_bram_ctrl_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_axi_bram_ctrl_0_0">
-      <Config>
-        <Option Name="TopModule" Val="fourier_bram_axi_bram_ctrl_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="fourier_bram_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_processing_system7_0_0">
       <Config>
         <Option Name="TopModule" Val="fourier_bram_processing_system7_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="fourier_bram_axi_bram_ctrl_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_axi_bram_ctrl_0_1">
-      <Config>
-        <Option Name="TopModule" Val="fourier_bram_axi_bram_ctrl_0_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -347,6 +337,30 @@
     <FileSet Name="fourier_bram_Freq2BRAM_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_Freq2BRAM_1_0">
       <Config>
         <Option Name="TopModule" Val="fourier_bram_Freq2BRAM_1_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fourier_bram_fifoDataIn_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_fifoDataIn_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fourier_bram_fifoDataIn_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fourier_bram_fifoDataInLeft_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_fifoDataInLeft_0">
+      <Config>
+        <Option Name="TopModule" Val="fourier_bram_fifoDataInLeft_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fourier_bram_ila_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_ila_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fourier_bram_ila_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fourier_bram_i2s2bram_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fourier_bram_i2s2bram_0_0">
+      <Config>
+        <Option Name="TopModule" Val="fourier_bram_i2s2bram_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -385,52 +399,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="fourier_bram_blk_mem_gen_0_1_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_blk_mem_gen_0_1" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_blk_mem_gen_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_blk_mem_gen_0_1_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="fourier_bram_axi_smc_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_axi_smc_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_axi_smc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_axi_smc_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="fourier_bram_rst_ps7_0_100M_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_rst_ps7_0_100M_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_rst_ps7_0_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_rst_ps7_0_100M_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="fourier_bram_axi_bram_ctrl_0_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_axi_bram_ctrl_0_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_axi_bram_ctrl_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_axi_bram_ctrl_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="fourier_bram_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_processing_system7_0_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_processing_system7_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="fourier_bram_axi_bram_ctrl_0_1_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_axi_bram_ctrl_0_1" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_axi_bram_ctrl_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_axi_bram_ctrl_0_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
@@ -475,6 +444,46 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
+    <Run Id="fourier_bram_fifoDataIn_0_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_fifoDataIn_0_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_fifoDataIn_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_fifoDataIn_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="fourier_bram_fifoDataInLeft_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_fifoDataInLeft_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_fifoDataInLeft_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_fifoDataInLeft_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="fourier_bram_ila_0_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_ila_0_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_ila_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_ila_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="fourier_bram_i2s2bram_0_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_i2s2bram_0_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_i2s2bram_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_i2s2bram_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
@@ -508,87 +517,7 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="fourier_bram_blk_mem_gen_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_blk_mem_gen_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_blk_mem_gen_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="fourier_bram_axi_smc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_axi_smc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_axi_smc_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="fourier_bram_rst_ps7_0_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_rst_ps7_0_100M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_rst_ps7_0_100M_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="fourier_bram_axi_bram_ctrl_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_axi_bram_ctrl_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_axi_bram_ctrl_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="fourier_bram_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_processing_system7_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="fourier_bram_axi_bram_ctrl_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_axi_bram_ctrl_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_axi_bram_ctrl_0_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
@@ -655,6 +584,74 @@
     <Run Id="fourier_bram_Freq2BRAM_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_Freq2BRAM_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_Freq2BRAM_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="fourier_bram_fifoDataIn_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_fifoDataIn_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_fifoDataIn_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="fourier_bram_fifoDataInLeft_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_fifoDataInLeft_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_fifoDataInLeft_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="fourier_bram_ila_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_ila_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_ila_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="fourier_bram_i2s2bram_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_i2s2bram_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_i2s2bram_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product Version: Vivado v2018.3 (64-bit)                     -->
+<!--                                                              -->
+<!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.        -->
+
+<hwsession version="1" minor="2">
+  <device name="xc7z020_1" gui_info="dashboard1=hw_ila_1[xc7z020_1/hw_ila_1/Waveform=ILA_WAVE_1;xc7z020_1/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xc7z020_1/hw_ila_1/Status=ILA_STATUS_1;xc7z020_1/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xc7z020_1/hw_ila_1/Settings=ILA_SETTINGS_1;]"/>
+  <ObjectList object_type="hw_device" gui_info="">
+    <Object name="xc7z020_1" gui_info="">
+      <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_1/fourier_bram_wrapper.ltx"/>
+      <Properties Property="PROBES.FILE" value="$_project_name_.runs/impl_1/fourier_bram_wrapper.ltx"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/fourier_bram_wrapper.bit"/>
+      <Properties Property="SLR.COUNT" value="1"/>
+    </Object>
+  </ObjectList>
+  <ObjectList object_type="hw_ila" gui_info="">
+    <Object name="" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+    <Object name="fourier_bram_i/ila_0" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+  </ObjectList>
+  <probeset name="hw project" active="false">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="fourier_bram_i/ADC_SDATA_1"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="fourier_bram_i/ila_0"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataEn"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq25&apos;hXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq25&apos;hXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="fourier_bram_i/ila_0"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe7[24:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq25&apos;hXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[24]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[23]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[22]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[21]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[20]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[19]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[18]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[17]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[16]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[15]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[14]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[13]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[12]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[11]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[10]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[9]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[8]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[7]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[6]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[5]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[4]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[3]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[2]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[1]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataImag[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="fourier_bram_i/ila_0"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe5[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataIndex[7]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataIndex[6]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataIndex[5]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataIndex[4]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataIndex[3]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataIndex[2]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataIndex[1]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataIndex[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq25&apos;hXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq25&apos;hXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="fourier_bram_i/ila_0"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe6[24:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq25&apos;hXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[24]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[23]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[22]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[21]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[20]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[19]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[18]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[17]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[16]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[15]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[14]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[13]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[12]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[11]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[10]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[9]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[8]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[7]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[6]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[5]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[4]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[3]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[2]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[1]"/>
+        <net name="fourier_bram_i/DFTStageWrapper_0_o_freqDataReal[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq24&apos;hXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="fourier_bram_i/ila_0"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[23:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq24&apos;hXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[23]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[22]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[21]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[20]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[19]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[18]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[17]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[16]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[15]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[14]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[13]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[12]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[11]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[10]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[9]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[8]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[7]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[6]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[5]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[4]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[3]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[2]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[1]"/>
+        <net name="fourier_bram_i/I2S_receiver_0_SDATA_REC[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="fourier_bram_i/ila_0"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="fourier_bram_i/I2S_receiver_0_WR_EN_LEFT"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="fourier_bram_i/ila_0"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftDataValid"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq25&apos;hXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq25&apos;hXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="fourier_bram_i/ila_0"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe3[24:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq25&apos;hXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[24]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[23]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[22]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[21]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[20]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[19]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[18]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[17]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[16]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[15]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[14]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[13]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[12]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[11]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[10]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[9]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[8]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[7]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[6]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[5]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[4]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[3]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[2]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[1]"/>
+        <net name="fourier_bram_i/fifoDataInLeft_o_dftData[0]"/>
+      </nets>
+    </probe>
+  </probeset>
+</hwsession>

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1547684089">
-  <File Type="PA-TCL" Name="fourier_bram_wrapper.tcl"/>
-  <File Type="REPORTS-TCL" Name="fourier_bram_wrapper_reports.tcl"/>
-  <File Type="RDS-RDS" Name="fourier_bram_wrapper.vds"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1548199490">
+  <File Type="VDS-TIMING-PB" Name="fourier_bram_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="fourier_bram_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="fourier_bram_wrapper.dcp"/>
   <File Type="RDS-UTIL-PB" Name="fourier_bram_wrapper_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="fourier_bram_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="fourier_bram_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="fourier_bram_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="fourier_bram_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="fourier_bram_wrapper.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/blk_mem_gen_0_2/blk_mem_gen_0.xci">
@@ -92,6 +95,20 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/fifoDataIn.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/i2s2bram.vhd">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/fourier_bram/fourier_bram.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -124,6 +141,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/new/constraints_1.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../audio_1_0/audio_1_0.srcs/constrs_1/new/constraints_1.xdc"/>
+        <Attr Name="ImportTime" Val="1548114258"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
@@ -138,14 +163,13 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_blk_mem_gen_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_axi_smc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_axi_bram_ctrl_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_i2s2bram_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_fifoDataInLeft_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_Freq2BRAM_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_fifoDataIn_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_Freq2BRAM_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fourier_bram_DFTStageWrapper_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fourier_bram_DFTStageWrapper_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_Freq2BRAM_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="fourier_bram_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_rst_ps7_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_Freq2BRAM_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="fourier_bram_axi_bram_ctrl_0_0"/>
 </GenRun>

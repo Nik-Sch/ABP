@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Thu Jan 17 01:14:34 2019
+--Date        : Wed Jan 23 00:23:58 2019
 --Host        : niklas-desktop running 64-bit Ubuntu 18.10
 --Command     : generate_target fourier_bram_wrapper.bd
 --Design      : fourier_bram_wrapper
@@ -13,6 +13,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity fourier_bram_wrapper is
   port (
+    ADC_SDATA : in STD_LOGIC;
+    BCLK : in STD_LOGIC;
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
     DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
@@ -28,30 +30,42 @@ entity fourier_bram_wrapper is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
+    FCLK_CLK2_0 : out STD_LOGIC;
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    i_dataNewLeft : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    i_dataNewRight : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    i_dataValidLeft : in STD_LOGIC;
-    i_dataValidRight : in STD_LOGIC;
-    o_readyLeft : out STD_LOGIC;
-    o_readyRight : out STD_LOGIC
+    LRCLK : in STD_LOGIC;
+    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    led0 : out STD_LOGIC;
+    spi_rtl_io0_io : inout STD_LOGIC;
+    spi_rtl_io1_io : inout STD_LOGIC;
+    spi_rtl_sck_io : inout STD_LOGIC;
+    spi_rtl_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 )
   );
 end fourier_bram_wrapper;
 
 architecture STRUCTURE of fourier_bram_wrapper is
   component fourier_bram is
   port (
-    i_dataValidLeft : in STD_LOGIC;
-    i_dataNewLeft : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_readyLeft : out STD_LOGIC;
-    o_readyRight : out STD_LOGIC;
-    i_dataValidRight : in STD_LOGIC;
-    i_dataNewRight : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    LRCLK : in STD_LOGIC;
+    BCLK : in STD_LOGIC;
+    ADC_SDATA : in STD_LOGIC;
+    FCLK_CLK2_0 : out STD_LOGIC;
+    spi_rtl_io0_i : in STD_LOGIC;
+    spi_rtl_io0_o : out STD_LOGIC;
+    spi_rtl_io0_t : out STD_LOGIC;
+    spi_rtl_io1_i : in STD_LOGIC;
+    spi_rtl_io1_o : out STD_LOGIC;
+    spi_rtl_io1_t : out STD_LOGIC;
+    spi_rtl_sck_i : in STD_LOGIC;
+    spi_rtl_sck_o : out STD_LOGIC;
+    spi_rtl_sck_t : out STD_LOGIC;
+    spi_rtl_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
+    spi_rtl_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
+    spi_rtl_ss_t : out STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -72,12 +86,37 @@ architecture STRUCTURE of fourier_bram_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 )
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    led0 : out STD_LOGIC
   );
   end component fourier_bram;
+  component IOBUF is
+  port (
+    I : in STD_LOGIC;
+    O : out STD_LOGIC;
+    T : in STD_LOGIC;
+    IO : inout STD_LOGIC
+  );
+  end component IOBUF;
+  signal spi_rtl_io0_i : STD_LOGIC;
+  signal spi_rtl_io0_o : STD_LOGIC;
+  signal spi_rtl_io0_t : STD_LOGIC;
+  signal spi_rtl_io1_i : STD_LOGIC;
+  signal spi_rtl_io1_o : STD_LOGIC;
+  signal spi_rtl_io1_t : STD_LOGIC;
+  signal spi_rtl_sck_i : STD_LOGIC;
+  signal spi_rtl_sck_o : STD_LOGIC;
+  signal spi_rtl_sck_t : STD_LOGIC;
+  signal spi_rtl_ss_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal spi_rtl_ss_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal spi_rtl_ss_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal spi_rtl_ss_t : STD_LOGIC;
 begin
 fourier_bram_i: component fourier_bram
      port map (
+      ADC_SDATA => ADC_SDATA,
+      BCLK => BCLK,
       DDR_addr(14 downto 0) => DDR_addr(14 downto 0),
       DDR_ba(2 downto 0) => DDR_ba(2 downto 0),
       DDR_cas_n => DDR_cas_n,
@@ -93,17 +132,55 @@ fourier_bram_i: component fourier_bram
       DDR_ras_n => DDR_ras_n,
       DDR_reset_n => DDR_reset_n,
       DDR_we_n => DDR_we_n,
+      FCLK_CLK2_0 => FCLK_CLK2_0,
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      i_dataNewLeft(24 downto 0) => i_dataNewLeft(24 downto 0),
-      i_dataNewRight(24 downto 0) => i_dataNewRight(24 downto 0),
-      i_dataValidLeft => i_dataValidLeft,
-      i_dataValidRight => i_dataValidRight,
-      o_readyLeft => o_readyLeft,
-      o_readyRight => o_readyRight
+      LRCLK => LRCLK,
+      btns_5bits_tri_i(4 downto 0) => btns_5bits_tri_i(4 downto 0),
+      led0 => led0,
+      spi_rtl_io0_i => spi_rtl_io0_i,
+      spi_rtl_io0_o => spi_rtl_io0_o,
+      spi_rtl_io0_t => spi_rtl_io0_t,
+      spi_rtl_io1_i => spi_rtl_io1_i,
+      spi_rtl_io1_o => spi_rtl_io1_o,
+      spi_rtl_io1_t => spi_rtl_io1_t,
+      spi_rtl_sck_i => spi_rtl_sck_i,
+      spi_rtl_sck_o => spi_rtl_sck_o,
+      spi_rtl_sck_t => spi_rtl_sck_t,
+      spi_rtl_ss_i(0) => spi_rtl_ss_i_0(0),
+      spi_rtl_ss_o(0) => spi_rtl_ss_o_0(0),
+      spi_rtl_ss_t => spi_rtl_ss_t
+    );
+spi_rtl_io0_iobuf: component IOBUF
+     port map (
+      I => spi_rtl_io0_o,
+      IO => spi_rtl_io0_io,
+      O => spi_rtl_io0_i,
+      T => spi_rtl_io0_t
+    );
+spi_rtl_io1_iobuf: component IOBUF
+     port map (
+      I => spi_rtl_io1_o,
+      IO => spi_rtl_io1_io,
+      O => spi_rtl_io1_i,
+      T => spi_rtl_io1_t
+    );
+spi_rtl_sck_iobuf: component IOBUF
+     port map (
+      I => spi_rtl_sck_o,
+      IO => spi_rtl_sck_io,
+      O => spi_rtl_sck_i,
+      T => spi_rtl_sck_t
+    );
+spi_rtl_ss_iobuf_0: component IOBUF
+     port map (
+      I => spi_rtl_ss_o_0(0),
+      IO => spi_rtl_ss_io(0),
+      O => spi_rtl_ss_i_0(0),
+      T => spi_rtl_ss_t
     );
 end STRUCTURE;

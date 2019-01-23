@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Thu Jan 17 01:18:28 2019
+| Date             : Wed Jan 23 00:36:46 2019
 | Host             : niklas-desktop running 64-bit Ubuntu 18.10
 | Command          : report_power -file fourier_bram_wrapper_power_routed.rpt -pb fourier_bram_wrapper_power_summary_routed.pb -rpx fourier_bram_wrapper_power_routed.rpx
 | Design           : fourier_bram_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.781        |
+| Total On-Chip Power (W)  | 1.888        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.634        |
-| Device Static (W)        | 0.147        |
+| Dynamic (W)              | 1.729        |
+| Device Static (W)        | 0.159        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 64.5         |
-| Junction Temperature (C) | 45.5         |
+| Max Ambient (C)          | 63.2         |
+| Junction Temperature (C) | 46.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.029 |        4 |       --- |             --- |
-| Slice Logic              |     0.015 |    12214 |       --- |             --- |
-|   LUT as Logic           |     0.012 |     3927 |     53200 |            7.38 |
-|   Register               |     0.001 |     5728 |    106400 |            5.38 |
-|   LUT as Distributed RAM |     0.001 |      324 |     17400 |            1.86 |
-|   CARRY4                 |    <0.001 |       70 |     13300 |            0.53 |
-|   LUT as Shift Register  |    <0.001 |      301 |     17400 |            1.73 |
-|   Others                 |     0.000 |      584 |       --- |             --- |
-| Signals                  |     0.022 |     8755 |       --- |             --- |
-| Block RAM                |     0.029 |       11 |       140 |            7.86 |
+| Clocks                   |     0.070 |        7 |       --- |             --- |
+| Slice Logic              |     0.022 |    25364 |       --- |             --- |
+|   LUT as Logic           |     0.018 |     8022 |     53200 |           15.08 |
+|   LUT as Distributed RAM |     0.002 |      752 |     17400 |            4.32 |
+|   Register               |     0.002 |    11746 |    106400 |           11.04 |
+|   CARRY4                 |    <0.001 |      198 |     13300 |            1.49 |
+|   LUT as Shift Register  |    <0.001 |      572 |     17400 |            3.29 |
+|   F7/F8 Muxes            |    <0.001 |       30 |     53200 |            0.06 |
+|   Others                 |     0.000 |     1426 |       --- |             --- |
+| Signals                  |     0.035 |    17552 |       --- |             --- |
+| Block RAM                |     0.060 |     63.5 |       140 |           45.36 |
 | DSPs                     |     0.011 |        8 |       220 |            3.64 |
-| I/O                      |    <0.001 |       54 |       200 |           27.00 |
+| I/O                      |     0.002 |       14 |       200 |            7.00 |
 | PS7                      |     1.529 |        1 |       --- |             --- |
-| Static Power             |     0.147 |          |           |                 |
-| Total                    |     1.781 |          |           |                 |
+| Static Power             |     0.159 |          |           |                 |
+| Total                    |     1.888 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,20 +77,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.119 |       0.103 |      0.016 |
+| Vccint    |       1.000 |     0.212 |       0.194 |      0.019 |
 | Vccaux    |       1.800 |     0.016 |       0.000 |      0.016 |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
-| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.001 |       0.000 |      0.001 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
+| Vcco25    |       2.500 |     0.001 |       0.000 |      0.001 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.003 |       0.002 |      0.002 |
+| Vccbram   |       1.000 |     0.009 |       0.004 |      0.005 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.749 |       0.718 |      0.031 |
+| Vccpint   |       1.000 |     0.750 |       0.718 |      0.032 |
 | Vccpaux   |       1.800 |     0.061 |       0.051 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |
@@ -136,12 +137,15 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+------------+-----------------------------------------------------------------+-----------------+
-| Clock      | Domain                                                          | Constraint (ns) |
-+------------+-----------------------------------------------------------------+-----------------+
-| clk_fpga_0 | fourier_bram_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            10.0 |
-| clk_fpga_1 | fourier_bram_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1] |             7.0 |
-+------------+-----------------------------------------------------------------+-----------------+
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
+| Clock                                                                                      | Domain                                                               | Constraint (ns) |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
+| clk_fpga_0                                                                                 | fourier_bram_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]      |            10.0 |
+| clk_fpga_1                                                                                 | fourier_bram_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]      |             7.0 |
+| clk_fpga_2                                                                                 | fourier_bram_i/processing_system7_0/inst/FCLK_CLK_unbuffered[2]      |           100.0 |
+| clk_fpga_3                                                                                 | fourier_bram_i/processing_system7_0/inst/FCLK_CLK3                   |             5.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs |            33.0 |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -153,26 +157,41 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| fourier_bram_wrapper     |     1.634 |
-|   fourier_bram_i         |     1.633 |
-|     DFTStageWrapperLeft  |     0.017 |
-|       U0                 |     0.017 |
-|     DFTStageWrapperRight |     0.016 |
-|       U0                 |     0.016 |
+| fourier_bram_wrapper     |     1.729 |
+|   dbg_hub                |     0.005 |
+|     inst                 |     0.005 |
+|       BSCANID.u_xsdbm_id |     0.005 |
+|   fourier_bram_i         |     1.721 |
+|     DFTStageWrapperLeft  |     0.021 |
+|       U0                 |     0.021 |
+|     DFTStageWrapperRight |     0.020 |
+|       U0                 |     0.020 |
 |     Freq2BRAMLeft        |     0.007 |
 |       U0                 |     0.007 |
-|     Freq2BRAMRight       |     0.006 |
-|       U0                 |     0.006 |
-|     axiBramCtrlLeft      |     0.002 |
+|     Freq2BRAMRight       |     0.007 |
+|       U0                 |     0.007 |
+|     axiBramCtrlLeft      |     0.001 |
+|       U0                 |     0.001 |
+|     axiBramCtrlRight     |     0.001 |
+|       U0                 |     0.001 |
+|     axiSmc               |     0.062 |
+|       inst               |     0.062 |
+|     axi_bram_ctrl_0      |     0.001 |
+|       U0                 |     0.001 |
+|     axi_quad_spi_0       |     0.002 |
 |       U0                 |     0.002 |
-|     axiBramCtrlRight     |     0.002 |
-|       U0                 |     0.002 |
-|     axiSmc               |     0.042 |
-|       inst               |     0.042 |
 |     blkMemGenLeft        |     0.005 |
 |       U0                 |     0.005 |
-|     blkMemGenRight       |     0.006 |
-|       U0                 |     0.006 |
+|     blkMemGenRight       |     0.005 |
+|       U0                 |     0.005 |
+|     blk_mem_gen_0        |     0.005 |
+|       U0                 |     0.005 |
+|     fifoLeft             |     0.002 |
+|       U0                 |     0.002 |
+|     fifoRight            |     0.002 |
+|       U0                 |     0.002 |
+|     ila_0                |     0.050 |
+|       U0                 |     0.050 |
 |     processing_system7_0 |     1.530 |
 |       inst               |     1.530 |
 +--------------------------+-----------+

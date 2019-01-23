@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Wed Jan 16 21:55:37 2019
+// Date        : Wed Jan 16 21:55:36 2019
 // Host        : niklas-desktop running 64-bit Ubuntu 18.10
-// Command     : write_verilog -force -mode funcsim
-//               /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_blk_mem_gen_0_1/fourier_bram_blk_mem_gen_0_1_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top fourier_bram_blk_mem_gen_0_1 -prefix
+//               fourier_bram_blk_mem_gen_0_1_ fourier_bram_blk_mem_gen_0_1_sim_netlist.v
 // Design      : fourier_bram_blk_mem_gen_0_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -220,7 +220,6 @@ module fourier_bram_blk_mem_gen_0_1
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_generic_cstr
    (douta,
     doutb,
@@ -298,7 +297,6 @@ module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_generic_cstr
         .web(web[3:2]));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_prim_width
    (douta,
     doutb,
@@ -424,7 +422,6 @@ module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_prim_width__parameterized0
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
 module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_prim_wrapper
    (douta,
     doutb,
@@ -970,7 +967,6 @@ module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_prim_wrapper__parameterized0
         .WEBWE({1'b0,1'b0,1'b0,1'b0,web,web}));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_top
    (douta,
     doutb,
@@ -1058,7 +1054,7 @@ endmodule
 (* C_WEA_WIDTH = "4" *) (* C_WEB_WIDTH = "4" *) (* C_WRITE_DEPTH_A = "2048" *) 
 (* C_WRITE_DEPTH_B = "2048" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "32" *) (* C_WRITE_WIDTH_B = "32" *) (* C_XDEVICEFAMILY = "zynq" *) 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_v8_4_2
    (clka,
     rsta,
@@ -1342,7 +1338,6 @@ module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_v8_4_2
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2_synth" *) 
 module fourier_bram_blk_mem_gen_0_1_blk_mem_gen_v8_4_2_synth
    (douta,
     doutb,

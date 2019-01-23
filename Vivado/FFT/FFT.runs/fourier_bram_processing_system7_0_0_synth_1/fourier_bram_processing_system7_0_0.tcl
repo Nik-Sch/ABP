@@ -17,7 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param xicom.use_bs_reader 1
+set_param tcl.collectionResultDisplayLimit 0
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xc7z020clg484-1
@@ -32,6 +33,8 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
+set_property ip_repo_paths /home/niklas/dev/uni/ABP/git/Vivado/I2S_receiver [current_project]
+update_ip_catalog
 set_property ip_output_repo /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_processing_system7_0_0/fourier_bram_processing_system7_0_0.xci
