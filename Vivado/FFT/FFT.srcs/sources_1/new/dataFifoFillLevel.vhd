@@ -40,7 +40,6 @@ architecture rtl of dataFifoFillLevel is
   component data_fifo
     port (
       clk   : in  std_logic;
-      rst   : in  std_logic;
       din   : in  std_logic_vector(24 downto 0);
       wr_en : in  std_logic;
       rd_en : in  std_logic;
@@ -62,7 +61,6 @@ begin
   inst_fifo : data_fifo
     port map(
       clk                     => std_logic(i_clk),
-      rst                     => std_logic(i_reset),
       din                     => std_logic_vector(i_din),
       wr_en                   => std_logic(i_we),
       rd_en                   => std_logic(i_re),

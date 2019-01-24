@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Wed Jan 23 00:23:57 2019
+--Date        : Thu Jan 24 18:55:27 2019
 --Host        : niklas-desktop running 64-bit Ubuntu 18.10
 --Command     : generate_target fourier_bram.bd
 --Design      : fourier_bram
@@ -54,7 +54,7 @@ entity fourier_bram is
     spi_rtl_ss_t : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of fourier_bram : entity is "fourier_bram,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=fourier_bram,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=23,numReposBlks=23,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=3,da_bram_cntlr_cnt=5,da_clkrst_cnt=4,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of fourier_bram : entity is "fourier_bram,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=fourier_bram,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=24,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=3,da_bram_cntlr_cnt=5,da_clkrst_cnt=4,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of fourier_bram : entity is "fourier_bram.hwdef";
 end fourier_bram;
@@ -468,62 +468,6 @@ architecture STRUCTURE of fourier_bram is
     bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component fourier_bram_axi_bram_ctrl_0_1;
-  component fourier_bram_DFTStageWrapper_0_0 is
-  port (
-    i_clk : in STD_LOGIC;
-    i_reset : in STD_LOGIC;
-    o_ready : out STD_LOGIC;
-    i_dataValid : in STD_LOGIC;
-    i_dataNew : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_freqDataEn : out STD_LOGIC;
-    o_freqDataIndex : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    o_freqDataReal : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_freqDataImag : out STD_LOGIC_VECTOR ( 24 downto 0 )
-  );
-  end component fourier_bram_DFTStageWrapper_0_0;
-  component fourier_bram_DFTStageWrapper_1_0 is
-  port (
-    i_clk : in STD_LOGIC;
-    i_reset : in STD_LOGIC;
-    o_ready : out STD_LOGIC;
-    i_dataValid : in STD_LOGIC;
-    i_dataNew : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_freqDataEn : out STD_LOGIC;
-    o_freqDataIndex : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    o_freqDataReal : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_freqDataImag : out STD_LOGIC_VECTOR ( 24 downto 0 )
-  );
-  end component fourier_bram_DFTStageWrapper_1_0;
-  component fourier_bram_Freq2BRAM_0_0 is
-  port (
-    i_clk : in STD_LOGIC;
-    i_reset : in STD_LOGIC;
-    i_freqDataEn : in STD_LOGIC;
-    i_freqDataIndex : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    i_freqDataReal : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    i_freqDataImag : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_bramAddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    o_bramDin : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    i_bramDout : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    o_bramEn : out STD_LOGIC;
-    o_bramByteWe : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component fourier_bram_Freq2BRAM_0_0;
-  component fourier_bram_Freq2BRAM_1_0 is
-  port (
-    i_clk : in STD_LOGIC;
-    i_reset : in STD_LOGIC;
-    i_freqDataEn : in STD_LOGIC;
-    i_freqDataIndex : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    i_freqDataReal : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    i_freqDataImag : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_bramAddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    o_bramDin : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    i_bramDout : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    o_bramEn : out STD_LOGIC;
-    o_bramByteWe : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component fourier_bram_Freq2BRAM_1_0;
   component fourier_bram_I2S_receiver_0_0 is
   port (
     CLK : in STD_LOGIC;
@@ -705,14 +649,18 @@ architecture STRUCTURE of fourier_bram is
   component fourier_bram_ila_0_0 is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 24 downto 0 )
+    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe7 : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    probe8 : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    probe9 : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    probe10 : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    probe11 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component fourier_bram_ila_0_0;
   component fourier_bram_i2s2bram_0_0 is
@@ -724,9 +672,80 @@ architecture STRUCTURE of fourier_bram is
     o_bramByteWe : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component fourier_bram_i2s2bram_0_0;
+  component fourier_bram_ila_0_1 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component fourier_bram_ila_0_1;
+  component fourier_bram_Freq2BRAM_0_0 is
+  port (
+    i_clk : in STD_LOGIC;
+    i_reset : in STD_LOGIC;
+    i_freqDataEn : in STD_LOGIC;
+    i_freqDataIndex : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    i_freqDataReal : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    i_freqDataImag : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_bramAddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    o_bramDin : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    i_bramDout : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    o_bramEn : out STD_LOGIC;
+    o_bramByteWe : out STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  end component fourier_bram_Freq2BRAM_0_0;
+  component fourier_bram_Freq2BRAM_1_0 is
+  port (
+    i_clk : in STD_LOGIC;
+    i_reset : in STD_LOGIC;
+    i_freqDataEn : in STD_LOGIC;
+    i_freqDataIndex : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    i_freqDataReal : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    i_freqDataImag : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_bramAddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    o_bramDin : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    i_bramDout : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    o_bramEn : out STD_LOGIC;
+    o_bramByteWe : out STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  end component fourier_bram_Freq2BRAM_1_0;
+  component fourier_bram_DFTStageWrapper_0_0 is
+  port (
+    i_clk : in STD_LOGIC;
+    i_reset : in STD_LOGIC;
+    o_ready : out STD_LOGIC;
+    i_dataValid : in STD_LOGIC;
+    i_dataNew : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_freqDataEn : out STD_LOGIC;
+    o_freqDataIndex : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    o_freqDataReal : out STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_freqDataImag : out STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_r_f : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    o_dataOld : out STD_LOGIC_VECTOR ( 24 downto 0 )
+  );
+  end component fourier_bram_DFTStageWrapper_0_0;
+  component fourier_bram_DFTStageWrapper_1_0 is
+  port (
+    i_clk : in STD_LOGIC;
+    i_reset : in STD_LOGIC;
+    o_ready : out STD_LOGIC;
+    i_dataValid : in STD_LOGIC;
+    i_dataNew : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_freqDataEn : out STD_LOGIC;
+    o_freqDataIndex : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    o_freqDataReal : out STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_freqDataImag : out STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_r_f : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    o_dataOld : out STD_LOGIC_VECTOR ( 24 downto 0 )
+  );
+  end component fourier_bram_DFTStageWrapper_1_0;
   signal ADC_SDATA_1 : STD_LOGIC;
   signal BCLK_1 : STD_LOGIC;
   signal DFTStageWrapperLeft_o_ready : STD_LOGIC;
+  signal DFTStageWrapperRight_o_dataOld : STD_LOGIC_VECTOR ( 24 downto 0 );
+  signal DFTStageWrapperRight_o_r_f : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal DFTStageWrapperRight_o_ready : STD_LOGIC;
   signal DFTStageWrapper_0_o_freqDataEn : STD_LOGIC;
   signal DFTStageWrapper_0_o_freqDataImag : STD_LOGIC_VECTOR ( 24 downto 0 );
@@ -922,6 +941,7 @@ architecture STRUCTURE of fourier_bram is
   signal fifoLeft_empty : STD_LOGIC;
   signal fifoRight_dout : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal fifoRight_empty : STD_LOGIC;
+  signal fifoRight_full : STD_LOGIC;
   signal i2s2bram_0_o_bramAddr : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal i2s2bram_0_o_bramByteWe : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal i2s2bram_0_o_bramDin : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -944,7 +964,6 @@ architecture STRUCTURE of fourier_bram is
   signal processing_system7_0_DDR_WE_N : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK2 : STD_LOGIC;
-  signal processing_system7_0_FCLK_CLK3 : STD_LOGIC;
   signal processing_system7_0_FCLK_RESET0_N : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRN : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_DDR_VRP : STD_LOGIC;
@@ -991,6 +1010,8 @@ architecture STRUCTURE of fourier_bram is
   signal processing_system7_0_M_AXI_GP0_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal processing_system7_0_M_AXI_GP0_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_DFTStageWrapperLeft_o_dataOld_UNCONNECTED : STD_LOGIC_VECTOR ( 24 downto 0 );
+  signal NLW_DFTStageWrapperLeft_o_r_f_UNCONNECTED : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal NLW_axiSmc_M00_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axiSmc_M00_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axiSmc_M01_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -1004,7 +1025,7 @@ architecture STRUCTURE of fourier_bram is
   signal NLW_axi_quad_spi_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_blk_mem_gen_0_doutb_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_fifoLeft_full_UNCONNECTED : STD_LOGIC;
-  signal NLW_fifoRight_full_UNCONNECTED : STD_LOGIC;
+  signal NLW_processing_system7_0_FCLK_CLK3_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE0_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE1_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
@@ -1094,10 +1115,12 @@ DFTStageWrapperLeft: component fourier_bram_DFTStageWrapper_0_0
       i_dataNew(24 downto 0) => fifoDataInLeft_o_dftData(24 downto 0),
       i_dataValid => fifoDataInLeft_o_dftDataValid,
       i_reset => proc_sys_reset_0_peripheral_reset(0),
+      o_dataOld(24 downto 0) => NLW_DFTStageWrapperLeft_o_dataOld_UNCONNECTED(24 downto 0),
       o_freqDataEn => DFTStageWrapper_0_o_freqDataEn,
       o_freqDataImag(24 downto 0) => DFTStageWrapper_0_o_freqDataImag(24 downto 0),
       o_freqDataIndex(7 downto 0) => DFTStageWrapper_0_o_freqDataIndex(7 downto 0),
       o_freqDataReal(24 downto 0) => DFTStageWrapper_0_o_freqDataReal(24 downto 0),
+      o_r_f(8 downto 0) => NLW_DFTStageWrapperLeft_o_r_f_UNCONNECTED(8 downto 0),
       o_ready => DFTStageWrapperLeft_o_ready
     );
 DFTStageWrapperRight: component fourier_bram_DFTStageWrapper_1_0
@@ -1106,10 +1129,12 @@ DFTStageWrapperRight: component fourier_bram_DFTStageWrapper_1_0
       i_dataNew(24 downto 0) => fifoDataInRight_o_dftData(24 downto 0),
       i_dataValid => fifoDataInRight_o_dftDataValid,
       i_reset => proc_sys_reset_0_peripheral_reset(0),
+      o_dataOld(24 downto 0) => DFTStageWrapperRight_o_dataOld(24 downto 0),
       o_freqDataEn => DFTStageWrapper_1_o_freqDataEn,
       o_freqDataImag(24 downto 0) => DFTStageWrapper_1_o_freqDataImag(24 downto 0),
       o_freqDataIndex(7 downto 0) => DFTStageWrapper_1_o_freqDataIndex(7 downto 0),
       o_freqDataReal(24 downto 0) => DFTStageWrapper_1_o_freqDataReal(24 downto 0),
+      o_r_f(8 downto 0) => DFTStageWrapperRight_o_r_f(8 downto 0),
       o_ready => DFTStageWrapperRight_o_ready
     );
 Freq2BRAMLeft: component fourier_bram_Freq2BRAM_0_0
@@ -1606,7 +1631,7 @@ fifoRight: component fourier_bram_fifo_generator_0_1
       din(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
       dout(23 downto 0) => fifoRight_dout(23 downto 0),
       empty => fifoRight_empty,
-      full => NLW_fifoRight_full_UNCONNECTED,
+      full => fifoRight_full,
       rd_clk => Net,
       rd_en => fifoDataInRight_o_fifoRdEn,
       wr_clk => processing_system7_0_FCLK_CLK0,
@@ -1620,17 +1645,29 @@ i2s2bram_0: component fourier_bram_i2s2bram_0_0
       o_bramDin(31 downto 0) => i2s2bram_0_o_bramDin(31 downto 0),
       o_bramEn => i2s2bram_0_o_bramEn
     );
-ila_0: component fourier_bram_ila_0_0
+ila_dft_domain: component fourier_bram_ila_0_0
      port map (
-      clk => processing_system7_0_FCLK_CLK3,
+      clk => Net,
+      probe0(23 downto 0) => fifoRight_dout(23 downto 0),
+      probe1(0) => fifoDataInRight_o_fifoRdEn,
+      probe10(24 downto 0) => DFTStageWrapperRight_o_dataOld(24 downto 0),
+      probe11(0) => fifoRight_empty,
+      probe2(24 downto 0) => fifoDataInRight_o_dftData(24 downto 0),
+      probe3(0) => fifoDataInRight_o_dftDataValid,
+      probe4(0) => DFTStageWrapperRight_o_ready,
+      probe5(0) => DFTStageWrapper_1_o_freqDataEn,
+      probe6(7 downto 0) => DFTStageWrapper_1_o_freqDataIndex(7 downto 0),
+      probe7(24 downto 0) => DFTStageWrapper_1_o_freqDataReal(24 downto 0),
+      probe8(24 downto 0) => DFTStageWrapper_1_o_freqDataImag(24 downto 0),
+      probe9(8 downto 0) => DFTStageWrapperRight_o_r_f(8 downto 0)
+    );
+ila_i2c_domain: component fourier_bram_ila_0_1
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
       probe0(0) => I2S_receiver_0_WR_EN_LEFT,
-      probe1(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
-      probe2(0) => fifoDataInLeft_o_dftDataValid,
-      probe3(24 downto 0) => fifoDataInLeft_o_dftData(24 downto 0),
-      probe4(0) => DFTStageWrapper_0_o_freqDataEn,
-      probe5(7 downto 0) => DFTStageWrapper_0_o_freqDataIndex(7 downto 0),
-      probe6(24 downto 0) => DFTStageWrapper_0_o_freqDataReal(24 downto 0),
-      probe7(24 downto 0) => DFTStageWrapper_0_o_freqDataImag(24 downto 0)
+      probe1(0) => I2S_receiver_0_WR_EN_RIGHT,
+      probe2(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
+      probe3(0) => fifoRight_full
     );
 processing_system7_0: component fourier_bram_processing_system7_0_0
      port map (
@@ -1654,7 +1691,7 @@ processing_system7_0: component fourier_bram_processing_system7_0_0
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
       FCLK_CLK1 => Net,
       FCLK_CLK2 => processing_system7_0_FCLK_CLK2,
-      FCLK_CLK3 => processing_system7_0_FCLK_CLK3,
+      FCLK_CLK3 => NLW_processing_system7_0_FCLK_CLK3_UNCONNECTED,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
       MIO(53 downto 0) => FIXED_IO_mio(53 downto 0),
       M_AXI_GP0_ACLK => processing_system7_0_FCLK_CLK0,

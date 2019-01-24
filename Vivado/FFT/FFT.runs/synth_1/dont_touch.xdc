@@ -135,6 +135,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_i2
 # IP: bd/fourier_bram/ip/fourier_bram_ila_0_0/fourier_bram_ila_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_ila_0_0 || ORIG_REF_NAME==fourier_bram_ila_0_0} -quiet] -quiet
 
+# IP: bd/fourier_bram/ip/fourier_bram_ila_0_1/fourier_bram_ila_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_ila_0_1 || ORIG_REF_NAME==fourier_bram_ila_0_1} -quiet] -quiet
+
 # XDC: ip/blk_mem_gen_0_2/blk_mem_gen_0_ooc.xdc
 
 # XDC: ip/blk_rom_e_imag/blk_rom_e_imag_ooc.xdc

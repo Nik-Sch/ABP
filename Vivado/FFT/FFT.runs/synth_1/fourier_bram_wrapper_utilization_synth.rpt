@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Jan 23 00:31:15 2019
+| Date         : Thu Jan 24 18:58:59 2019
 | Host         : niklas-desktop running 64-bit Ubuntu 18.10
 | Command      : report_utilization -file fourier_bram_wrapper_utilization_synth.rpt -pb fourier_bram_wrapper_utilization_synth.pb
 | Design       : fourier_bram_wrapper
@@ -161,6 +161,7 @@ Table of Contents
 | fourier_bram_rst_ps7_0_100M_0       |    1 |
 | fourier_bram_processing_system7_0_0 |    1 |
 | fourier_bram_proc_sys_reset_0_0     |    1 |
+| fourier_bram_ila_0_1                |    1 |
 | fourier_bram_ila_0_0                |    1 |
 | fourier_bram_i2s2bram_0_0           |    1 |
 | fourier_bram_fifo_generator_0_1     |    1 |

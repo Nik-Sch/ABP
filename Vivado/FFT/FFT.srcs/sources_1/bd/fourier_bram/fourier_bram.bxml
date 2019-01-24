@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="fourier_bram" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1548199466"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1548199466"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1548199466"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1548199466"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1548352535"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1548352535"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1548352535"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1548352535"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/fourier_bram_processing_system7_0_0/fourier_bram_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -184,7 +184,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/fourier_bram_ila_0_0/fourier_bram_ila_0_0.xci" Type="IP">
-        <Instance HierarchyPath="ila_0"/>
+        <Instance HierarchyPath="ila_dft_domain"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -199,6 +199,14 @@
       <File Name="sim/fourier_bram.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/fourier_bram_ila_0_1/fourier_bram_ila_0_1.xci" Type="IP">
+        <Instance HierarchyPath="ila_i2c_domain"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="fourier_bram.bmm" Type="BMM">

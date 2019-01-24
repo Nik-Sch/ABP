@@ -55,7 +55,6 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module index_fifo (
   clk,
-  rst,
   din,
   wr_en,
   rd_en,
@@ -67,7 +66,6 @@ module index_fifo (
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME core_clk, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 core_clk CLK" *)
 input wire clk;
-input wire rst;
 (* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_DATA" *)
 input wire [7 : 0] din;
 (* X_INTERFACE_INFO = "xilinx.com:interface:fifo_write:1.0 FIFO_WRITE WR_EN" *)
@@ -85,7 +83,7 @@ output wire empty;
     .C_COMMON_CLOCK(1),
     .C_SELECT_XPM(0),
     .C_COUNT_TYPE(0),
-    .C_DATA_COUNT_WIDTH(9),
+    .C_DATA_COUNT_WIDTH(10),
     .C_DEFAULT_VALUE("BlankString"),
     .C_DIN_WIDTH(8),
     .C_DOUT_RST_VAL("0"),
@@ -102,16 +100,16 @@ output wire empty;
     .C_HAS_OVERFLOW(0),
     .C_HAS_RD_DATA_COUNT(0),
     .C_HAS_RD_RST(0),
-    .C_HAS_RST(1),
+    .C_HAS_RST(0),
     .C_HAS_SRST(0),
     .C_HAS_UNDERFLOW(0),
     .C_HAS_VALID(0),
     .C_HAS_WR_ACK(0),
     .C_HAS_WR_DATA_COUNT(0),
     .C_HAS_WR_RST(0),
-    .C_IMPLEMENTATION_TYPE(6),
+    .C_IMPLEMENTATION_TYPE(0),
     .C_INIT_WR_PNTR_VAL(0),
-    .C_MEMORY_TYPE(4),
+    .C_MEMORY_TYPE(1),
     .C_MIF_FILE_NAME("BlankString"),
     .C_OPTIMIZATION_MODE(0),
     .C_OVERFLOW_LOW(0),
@@ -124,7 +122,7 @@ output wire empty;
     .C_PROG_FULL_THRESH_ASSERT_VAL(511),
     .C_PROG_FULL_THRESH_NEGATE_VAL(510),
     .C_PROG_FULL_TYPE(0),
-    .C_RD_DATA_COUNT_WIDTH(9),
+    .C_RD_DATA_COUNT_WIDTH(10),
     .C_RD_DEPTH(512),
     .C_RD_FREQ(1),
     .C_RD_PNTR_WIDTH(9),
@@ -135,10 +133,10 @@ output wire empty;
     .C_USE_PIPELINE_REG(0),
     .C_POWER_SAVING_MODE(0),
     .C_USE_FIFO16_FLAGS(0),
-    .C_USE_FWFT_DATA_COUNT(0),
+    .C_USE_FWFT_DATA_COUNT(1),
     .C_VALID_LOW(0),
     .C_WR_ACK_LOW(0),
-    .C_WR_DATA_COUNT_WIDTH(9),
+    .C_WR_DATA_COUNT_WIDTH(10),
     .C_WR_DEPTH(512),
     .C_WR_FREQ(1),
     .C_WR_PNTR_WIDTH(9),
@@ -288,7 +286,7 @@ output wire empty;
     .backup(1'D0),
     .backup_marker(1'D0),
     .clk(clk),
-    .rst(rst),
+    .rst(1'D0),
     .srst(1'D0),
     .wr_clk(1'D0),
     .wr_rst(1'D0),

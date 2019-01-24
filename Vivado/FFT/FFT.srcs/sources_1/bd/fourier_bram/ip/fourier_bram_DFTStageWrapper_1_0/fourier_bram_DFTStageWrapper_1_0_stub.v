@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Wed Jan 23 00:29:27 2019
+// Date        : Thu Jan 24 18:42:58 2019
 // Host        : niklas-desktop running 64-bit Ubuntu 18.10
 // Command     : write_verilog -force -mode synth_stub
 //               /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapper_1_0/fourier_bram_DFTStageWrapper_1_0_stub.v
@@ -15,8 +15,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "DFTStageWrapper,Vivado 2018.3" *)
 module fourier_bram_DFTStageWrapper_1_0(i_clk, i_reset, o_ready, i_dataValid, i_dataNew, 
-  o_freqDataEn, o_freqDataIndex, o_freqDataReal, o_freqDataImag)
-/* synthesis syn_black_box black_box_pad_pin="i_clk,i_reset,o_ready,i_dataValid,i_dataNew[24:0],o_freqDataEn,o_freqDataIndex[7:0],o_freqDataReal[24:0],o_freqDataImag[24:0]" */;
+  o_freqDataEn, o_freqDataIndex, o_freqDataReal, o_freqDataImag, o_r_f, o_dataOld)
+/* synthesis syn_black_box black_box_pad_pin="i_clk,i_reset,o_ready,i_dataValid,i_dataNew[24:0],o_freqDataEn,o_freqDataIndex[7:0],o_freqDataReal[24:0],o_freqDataImag[24:0],o_r_f[8:0],o_dataOld[24:0]" */;
   input i_clk;
   input i_reset;
   output o_ready;
@@ -26,4 +26,6 @@ module fourier_bram_DFTStageWrapper_1_0(i_clk, i_reset, o_ready, i_dataValid, i_
   output [7:0]o_freqDataIndex;
   output [24:0]o_freqDataReal;
   output [24:0]o_freqDataImag;
+  output [8:0]o_r_f;
+  output [24:0]o_dataOld;
 endmodule

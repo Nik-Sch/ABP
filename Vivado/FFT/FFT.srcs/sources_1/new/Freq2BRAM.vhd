@@ -50,7 +50,6 @@ architecture rtl of Freq2BRAM is
   component data_fifo
     port (
       clk   : in  std_logic;
-      rst   : in  std_logic;
       din   : in  std_logic_vector(24 downto 0);
       wr_en : in  std_logic;
       rd_en : in  std_logic;
@@ -63,7 +62,6 @@ architecture rtl of Freq2BRAM is
   component index_fifo
     port (
       clk   : in  std_logic;
-      rst   : in  std_logic;
       din   : in  std_logic_vector(7 downto 0);
       wr_en : in  std_logic;
       rd_en : in  std_logic;
@@ -98,7 +96,6 @@ begin
   inst_imagFifo : data_fifo
     port map(
       clk                     => std_logic(i_clk),
-      rst                     => std_logic(i_reset),
       din                     => std_logic_vector(r_fifoImagDin),
       wr_en                   => std_logic(r_fifoImagWe),
       rd_en                   => std_logic(r_fifoImagRe),
@@ -110,7 +107,6 @@ begin
   inst_addrFifo : index_fifo
     port map(
       clk                     => std_logic(i_clk),
-      rst                     => std_logic(i_reset),
       din                     => std_logic_vector(r_fifoAddrDin),
       wr_en                   => std_logic(r_fifoAddrWe),
       rd_en                   => std_logic(r_fifoAddrRe),

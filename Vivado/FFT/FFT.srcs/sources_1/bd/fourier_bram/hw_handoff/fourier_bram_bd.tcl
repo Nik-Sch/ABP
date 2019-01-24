@@ -383,23 +383,37 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: ila_0, and set properties
-  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
+  # Create instance: ila_dft_domain, and set properties
+  set ila_dft_domain [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_dft_domain ]
   set_property -dict [ list \
-   CONFIG.C_DATA_DEPTH {16384} \
+   CONFIG.C_DATA_DEPTH {2048} \
    CONFIG.C_ENABLE_ILA_AXI_MON {false} \
-   CONFIG.C_INPUT_PIPE_STAGES {2} \
+   CONFIG.C_INPUT_PIPE_STAGES {0} \
    CONFIG.C_MONITOR_TYPE {Native} \
-   CONFIG.C_NUM_OF_PROBES {8} \
-   CONFIG.C_PROBE0_WIDTH {1} \
-   CONFIG.C_PROBE1_WIDTH {24} \
-   CONFIG.C_PROBE2_WIDTH {1} \
-   CONFIG.C_PROBE3_WIDTH {25} \
+   CONFIG.C_NUM_OF_PROBES {12} \
+   CONFIG.C_PROBE0_WIDTH {24} \
+   CONFIG.C_PROBE10_WIDTH {25} \
+   CONFIG.C_PROBE1_WIDTH {1} \
+   CONFIG.C_PROBE2_WIDTH {25} \
+   CONFIG.C_PROBE3_WIDTH {1} \
    CONFIG.C_PROBE4_WIDTH {1} \
-   CONFIG.C_PROBE5_WIDTH {8} \
-   CONFIG.C_PROBE6_WIDTH {25} \
+   CONFIG.C_PROBE5_WIDTH {1} \
+   CONFIG.C_PROBE6_WIDTH {8} \
    CONFIG.C_PROBE7_WIDTH {25} \
- ] $ila_0
+   CONFIG.C_PROBE8_WIDTH {25} \
+   CONFIG.C_PROBE9_WIDTH {9} \
+   CONFIG.C_TRIGIN_EN {false} \
+ ] $ila_dft_domain
+
+  # Create instance: ila_i2c_domain, and set properties
+  set ila_i2c_domain [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_i2c_domain ]
+  set_property -dict [ list \
+   CONFIG.C_DATA_DEPTH {2048} \
+   CONFIG.C_ENABLE_ILA_AXI_MON {false} \
+   CONFIG.C_MONITOR_TYPE {Native} \
+   CONFIG.C_NUM_OF_PROBES {4} \
+   CONFIG.C_PROBE2_WIDTH {24} \
+ ] $ila_i2c_domain
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -828,15 +842,17 @@ proc create_root_design { parentCell } {
   connect_bd_net -net ADC_SDATA_1 [get_bd_ports ADC_SDATA] [get_bd_ports led0] [get_bd_pins I2S_receiver_0/SDATA]
   connect_bd_net -net BCLK_1 [get_bd_ports BCLK] [get_bd_pins I2S_receiver_0/BCLK]
   connect_bd_net -net DFTStageWrapperLeft_o_ready [get_bd_pins DFTStageWrapperLeft/o_ready] [get_bd_pins fifoDataInLeft/i_dftReady]
-  connect_bd_net -net DFTStageWrapperRight_o_ready [get_bd_pins DFTStageWrapperRight/o_ready] [get_bd_pins fifoDataInRight/i_dftReady]
-  connect_bd_net -net DFTStageWrapper_0_o_freqDataEn [get_bd_pins DFTStageWrapperLeft/o_freqDataEn] [get_bd_pins Freq2BRAMLeft/i_freqDataEn] [get_bd_pins ila_0/probe4]
-  connect_bd_net -net DFTStageWrapper_0_o_freqDataImag [get_bd_pins DFTStageWrapperLeft/o_freqDataImag] [get_bd_pins Freq2BRAMLeft/i_freqDataImag] [get_bd_pins ila_0/probe7]
-  connect_bd_net -net DFTStageWrapper_0_o_freqDataIndex [get_bd_pins DFTStageWrapperLeft/o_freqDataIndex] [get_bd_pins Freq2BRAMLeft/i_freqDataIndex] [get_bd_pins ila_0/probe5]
-  connect_bd_net -net DFTStageWrapper_0_o_freqDataReal [get_bd_pins DFTStageWrapperLeft/o_freqDataReal] [get_bd_pins Freq2BRAMLeft/i_freqDataReal] [get_bd_pins ila_0/probe6]
-  connect_bd_net -net DFTStageWrapper_1_o_freqDataEn [get_bd_pins DFTStageWrapperRight/o_freqDataEn] [get_bd_pins Freq2BRAMRight/i_freqDataEn]
-  connect_bd_net -net DFTStageWrapper_1_o_freqDataImag [get_bd_pins DFTStageWrapperRight/o_freqDataImag] [get_bd_pins Freq2BRAMRight/i_freqDataImag]
-  connect_bd_net -net DFTStageWrapper_1_o_freqDataIndex [get_bd_pins DFTStageWrapperRight/o_freqDataIndex] [get_bd_pins Freq2BRAMRight/i_freqDataIndex]
-  connect_bd_net -net DFTStageWrapper_1_o_freqDataReal [get_bd_pins DFTStageWrapperRight/o_freqDataReal] [get_bd_pins Freq2BRAMRight/i_freqDataReal]
+  connect_bd_net -net DFTStageWrapperRight_o_dataOld [get_bd_pins DFTStageWrapperRight/o_dataOld] [get_bd_pins ila_dft_domain/probe10]
+  connect_bd_net -net DFTStageWrapperRight_o_r_f [get_bd_pins DFTStageWrapperRight/o_r_f] [get_bd_pins ila_dft_domain/probe9]
+  connect_bd_net -net DFTStageWrapperRight_o_ready [get_bd_pins DFTStageWrapperRight/o_ready] [get_bd_pins fifoDataInRight/i_dftReady] [get_bd_pins ila_dft_domain/probe4]
+  connect_bd_net -net DFTStageWrapper_0_o_freqDataEn [get_bd_pins DFTStageWrapperLeft/o_freqDataEn] [get_bd_pins Freq2BRAMLeft/i_freqDataEn]
+  connect_bd_net -net DFTStageWrapper_0_o_freqDataImag [get_bd_pins DFTStageWrapperLeft/o_freqDataImag] [get_bd_pins Freq2BRAMLeft/i_freqDataImag]
+  connect_bd_net -net DFTStageWrapper_0_o_freqDataIndex [get_bd_pins DFTStageWrapperLeft/o_freqDataIndex] [get_bd_pins Freq2BRAMLeft/i_freqDataIndex]
+  connect_bd_net -net DFTStageWrapper_0_o_freqDataReal [get_bd_pins DFTStageWrapperLeft/o_freqDataReal] [get_bd_pins Freq2BRAMLeft/i_freqDataReal]
+  connect_bd_net -net DFTStageWrapper_1_o_freqDataEn [get_bd_pins DFTStageWrapperRight/o_freqDataEn] [get_bd_pins Freq2BRAMRight/i_freqDataEn] [get_bd_pins ila_dft_domain/probe5]
+  connect_bd_net -net DFTStageWrapper_1_o_freqDataImag [get_bd_pins DFTStageWrapperRight/o_freqDataImag] [get_bd_pins Freq2BRAMRight/i_freqDataImag] [get_bd_pins ila_dft_domain/probe8]
+  connect_bd_net -net DFTStageWrapper_1_o_freqDataIndex [get_bd_pins DFTStageWrapperRight/o_freqDataIndex] [get_bd_pins Freq2BRAMRight/i_freqDataIndex] [get_bd_pins ila_dft_domain/probe6]
+  connect_bd_net -net DFTStageWrapper_1_o_freqDataReal [get_bd_pins DFTStageWrapperRight/o_freqDataReal] [get_bd_pins Freq2BRAMRight/i_freqDataReal] [get_bd_pins ila_dft_domain/probe7]
   connect_bd_net -net Freq2BRAM_0_o_bramAddr [get_bd_pins Freq2BRAMLeft/o_bramAddr] [get_bd_pins blkMemGenLeft/addrb]
   connect_bd_net -net Freq2BRAM_0_o_bramByteWe [get_bd_pins Freq2BRAMLeft/o_bramByteWe] [get_bd_pins blkMemGenLeft/web]
   connect_bd_net -net Freq2BRAM_0_o_bramDin [get_bd_pins Freq2BRAMLeft/o_bramDin] [get_bd_pins blkMemGenLeft/dinb]
@@ -845,31 +861,31 @@ proc create_root_design { parentCell } {
   connect_bd_net -net Freq2BRAM_1_o_bramByteWe [get_bd_pins Freq2BRAMRight/o_bramByteWe] [get_bd_pins blkMemGenRight/web]
   connect_bd_net -net Freq2BRAM_1_o_bramDin [get_bd_pins Freq2BRAMRight/o_bramDin] [get_bd_pins blkMemGenRight/dinb]
   connect_bd_net -net Freq2BRAM_1_o_bramEn [get_bd_pins Freq2BRAMRight/o_bramEn] [get_bd_pins blkMemGenRight/enb]
-  connect_bd_net -net I2S_receiver_0_SDATA_REC [get_bd_pins I2S_receiver_0/SDATA_REC] [get_bd_pins fifoLeft/din] [get_bd_pins fifoRight/din] [get_bd_pins i2s2bram_0/i_i2sData] [get_bd_pins ila_0/probe1]
-  connect_bd_net -net I2S_receiver_0_WR_EN_LEFT [get_bd_pins I2S_receiver_0/WR_EN_LEFT] [get_bd_pins fifoLeft/wr_en] [get_bd_pins ila_0/probe0]
-  connect_bd_net -net I2S_receiver_0_WR_EN_RIGHT [get_bd_pins I2S_receiver_0/WR_EN_RIGHT] [get_bd_pins fifoRight/wr_en]
+  connect_bd_net -net I2S_receiver_0_SDATA_REC [get_bd_pins I2S_receiver_0/SDATA_REC] [get_bd_pins fifoLeft/din] [get_bd_pins fifoRight/din] [get_bd_pins i2s2bram_0/i_i2sData] [get_bd_pins ila_i2c_domain/probe2]
+  connect_bd_net -net I2S_receiver_0_WR_EN_LEFT [get_bd_pins I2S_receiver_0/WR_EN_LEFT] [get_bd_pins fifoLeft/wr_en] [get_bd_pins ila_i2c_domain/probe0]
+  connect_bd_net -net I2S_receiver_0_WR_EN_RIGHT [get_bd_pins I2S_receiver_0/WR_EN_RIGHT] [get_bd_pins fifoRight/wr_en] [get_bd_pins ila_i2c_domain/probe1]
   connect_bd_net -net LRCLK_1 [get_bd_ports LRCLK] [get_bd_pins I2S_receiver_0/LRCLK]
-  connect_bd_net -net Net [get_bd_pins DFTStageWrapperLeft/i_clk] [get_bd_pins DFTStageWrapperRight/i_clk] [get_bd_pins Freq2BRAMLeft/i_clk] [get_bd_pins Freq2BRAMRight/i_clk] [get_bd_pins blkMemGenLeft/clkb] [get_bd_pins blkMemGenRight/clkb] [get_bd_pins fifoLeft/rd_clk] [get_bd_pins fifoRight/rd_clk] [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins rstRTL/slowest_sync_clk]
+  connect_bd_net -net Net [get_bd_pins DFTStageWrapperLeft/i_clk] [get_bd_pins DFTStageWrapperRight/i_clk] [get_bd_pins Freq2BRAMLeft/i_clk] [get_bd_pins Freq2BRAMRight/i_clk] [get_bd_pins blkMemGenLeft/clkb] [get_bd_pins blkMemGenRight/clkb] [get_bd_pins fifoLeft/rd_clk] [get_bd_pins fifoRight/rd_clk] [get_bd_pins ila_dft_domain/clk] [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins rstRTL/slowest_sync_clk]
   connect_bd_net -net blk_mem_gen_0_doutb [get_bd_pins Freq2BRAMLeft/i_bramDout] [get_bd_pins blkMemGenLeft/doutb]
   connect_bd_net -net blk_mem_gen_1_doutb [get_bd_pins Freq2BRAMRight/i_bramDout] [get_bd_pins blkMemGenRight/doutb]
-  connect_bd_net -net fifoDataInLeft_o_dftData [get_bd_pins DFTStageWrapperLeft/i_dataNew] [get_bd_pins fifoDataInLeft/o_dftData] [get_bd_pins ila_0/probe3]
-  connect_bd_net -net fifoDataInLeft_o_dftDataValid [get_bd_pins DFTStageWrapperLeft/i_dataValid] [get_bd_pins fifoDataInLeft/o_dftDataValid] [get_bd_pins ila_0/probe2]
+  connect_bd_net -net fifoDataInLeft_o_dftData [get_bd_pins DFTStageWrapperLeft/i_dataNew] [get_bd_pins fifoDataInLeft/o_dftData]
+  connect_bd_net -net fifoDataInLeft_o_dftDataValid [get_bd_pins DFTStageWrapperLeft/i_dataValid] [get_bd_pins fifoDataInLeft/o_dftDataValid]
   connect_bd_net -net fifoDataInLeft_o_fifoRdEn [get_bd_pins fifoDataInLeft/o_fifoRdEn] [get_bd_pins fifoLeft/rd_en]
-  connect_bd_net -net fifoDataInRight_o_dftData [get_bd_pins DFTStageWrapperRight/i_dataNew] [get_bd_pins fifoDataInRight/o_dftData]
-  connect_bd_net -net fifoDataInRight_o_dftDataValid [get_bd_pins DFTStageWrapperRight/i_dataValid] [get_bd_pins fifoDataInRight/o_dftDataValid]
-  connect_bd_net -net fifoDataInRight_o_fifoRdEn [get_bd_pins fifoDataInRight/o_fifoRdEn] [get_bd_pins fifoRight/rd_en]
+  connect_bd_net -net fifoDataInRight_o_dftData [get_bd_pins DFTStageWrapperRight/i_dataNew] [get_bd_pins fifoDataInRight/o_dftData] [get_bd_pins ila_dft_domain/probe2]
+  connect_bd_net -net fifoDataInRight_o_dftDataValid [get_bd_pins DFTStageWrapperRight/i_dataValid] [get_bd_pins fifoDataInRight/o_dftDataValid] [get_bd_pins ila_dft_domain/probe3]
+  connect_bd_net -net fifoDataInRight_o_fifoRdEn [get_bd_pins fifoDataInRight/o_fifoRdEn] [get_bd_pins fifoRight/rd_en] [get_bd_pins ila_dft_domain/probe1]
   connect_bd_net -net fifoLeft_dout [get_bd_pins fifoDataInLeft/i_fifoData] [get_bd_pins fifoLeft/dout]
   connect_bd_net -net fifoLeft_empty [get_bd_pins fifoDataInLeft/i_fifoEmpty] [get_bd_pins fifoLeft/empty]
-  connect_bd_net -net fifoRight_dout [get_bd_pins fifoDataInRight/i_fifoData] [get_bd_pins fifoRight/dout]
-  connect_bd_net -net fifoRight_empty [get_bd_pins fifoDataInRight/i_fifoEmpty] [get_bd_pins fifoRight/empty]
+  connect_bd_net -net fifoRight_dout [get_bd_pins fifoDataInRight/i_fifoData] [get_bd_pins fifoRight/dout] [get_bd_pins ila_dft_domain/probe0]
+  connect_bd_net -net fifoRight_empty [get_bd_pins fifoDataInRight/i_fifoEmpty] [get_bd_pins fifoRight/empty] [get_bd_pins ila_dft_domain/probe11]
+  connect_bd_net -net fifoRight_full [get_bd_pins fifoRight/full] [get_bd_pins ila_i2c_domain/probe3]
   connect_bd_net -net i2s2bram_0_o_bramAddr [get_bd_pins blk_mem_gen_0/addrb] [get_bd_pins i2s2bram_0/o_bramAddr]
   connect_bd_net -net i2s2bram_0_o_bramByteWe [get_bd_pins blk_mem_gen_0/web] [get_bd_pins i2s2bram_0/o_bramByteWe]
   connect_bd_net -net i2s2bram_0_o_bramDin [get_bd_pins blk_mem_gen_0/dinb] [get_bd_pins i2s2bram_0/o_bramDin]
   connect_bd_net -net i2s2bram_0_o_bramEn [get_bd_pins blk_mem_gen_0/enb] [get_bd_pins i2s2bram_0/o_bramEn]
   connect_bd_net -net proc_sys_reset_0_peripheral_reset [get_bd_pins DFTStageWrapperLeft/i_reset] [get_bd_pins DFTStageWrapperRight/i_reset] [get_bd_pins Freq2BRAMLeft/i_reset] [get_bd_pins Freq2BRAMRight/i_reset] [get_bd_pins blkMemGenLeft/rstb] [get_bd_pins blkMemGenRight/rstb] [get_bd_pins rstRTL/peripheral_reset]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins I2S_receiver_0/CLK] [get_bd_pins axiBramCtrlLeft/s_axi_aclk] [get_bd_pins axiBramCtrlRight/s_axi_aclk] [get_bd_pins axiSmc/aclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins fifoLeft/wr_clk] [get_bd_pins fifoRight/wr_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rstAxi/slowest_sync_clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins I2S_receiver_0/CLK] [get_bd_pins axiBramCtrlLeft/s_axi_aclk] [get_bd_pins axiBramCtrlRight/s_axi_aclk] [get_bd_pins axiSmc/aclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins fifoLeft/wr_clk] [get_bd_pins fifoRight/wr_clk] [get_bd_pins ila_i2c_domain/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rstAxi/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_CLK2 [get_bd_ports FCLK_CLK2_0] [get_bd_pins processing_system7_0/FCLK_CLK2]
-  connect_bd_net -net processing_system7_0_FCLK_CLK3 [get_bd_pins ila_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK3]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rstAxi/ext_reset_in] [get_bd_pins rstRTL/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axiBramCtrlLeft/s_axi_aresetn] [get_bd_pins axiBramCtrlRight/s_axi_aresetn] [get_bd_pins axiSmc/aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_quad_spi_0/s_axi_aresetn] [get_bd_pins blk_mem_gen_0/rstb] [get_bd_pins rstAxi/peripheral_aresetn]
 

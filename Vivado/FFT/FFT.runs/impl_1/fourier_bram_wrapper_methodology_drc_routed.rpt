@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Jan 23 00:36:41 2019
+| Date         : Thu Jan 24 19:03:08 2019
 | Host         : niklas-desktop running 64-bit Ubuntu 18.10
 | Command      : report_methodology -file fourier_bram_wrapper_methodology_drc_routed.rpt -pb fourier_bram_wrapper_methodology_drc_routed.pb -rpx fourier_bram_wrapper_methodology_drc_routed.rpx
 | Design       : fourier_bram_wrapper
@@ -23,15 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 95
+             Violations found: 28
 +-----------+----------+-------------------------------------------------+------------+
 | Rule      | Severity | Description                                     | Violations |
 +-----------+----------+-------------------------------------------------+------------+
-| LUTAR-1   | Warning  | LUT drives async reset alert                    | 10         |
-| PDRC-190  | Warning  | Suboptimally placed synchronized register chain | 10         |
-| TIMING-6  | Warning  | No common primary clock between related clocks  | 2          |
-| TIMING-7  | Warning  | No common node between related clocks           | 2          |
-| TIMING-16 | Warning  | Large setup violation                           | 59         |
+| LUTAR-1   | Warning  | LUT drives async reset alert                    | 4          |
+| PDRC-190  | Warning  | Suboptimally placed synchronized register chain | 11         |
+| TIMING-9  | Warning  | Unknown CDC Logic                               | 1          |
 | TIMING-18 | Warning  | Missing input or output delay                   | 12         |
 +-----------+----------+-------------------------------------------------+------------+
 
@@ -57,399 +55,64 @@ LUT drives async reset alert
 LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].wrst_inst/ngwrdrst.grst.g7serrst.wr_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[0]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[1]/PRE, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_reg_reg[2]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
-LUTAR-1#5 Warning
-LUT drives async reset alert  
-LUT cell fourier_bram_i/DFTStageWrapperLeft/U0/inst_dataFifoFillLevel/inst_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/g7ser_birst.rstbt/gf18e1_inst.sngfifo18e1_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) fourier_bram_i/DFTStageWrapperLeft/U0/inst_dataFifoFillLevel/inst_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_q_reg/PRE, fourier_bram_i/DFTStageWrapperLeft/U0/inst_dataFifoFillLevel/inst_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_user_reg/PRE, fourier_bram_i/DFTStageWrapperLeft/U0/inst_dataFifoFillLevel/inst_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gf18e1_inst.sngfifo18e1/RST. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#6 Warning
-LUT drives async reset alert  
-LUT cell fourier_bram_i/DFTStageWrapperRight/U0/inst_dataFifoFillLevel/inst_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/g7ser_birst.rstbt/gf18e1_inst.sngfifo18e1_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) fourier_bram_i/DFTStageWrapperRight/U0/inst_dataFifoFillLevel/inst_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_q_reg/PRE, fourier_bram_i/DFTStageWrapperRight/U0/inst_dataFifoFillLevel/inst_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_user_reg/PRE, fourier_bram_i/DFTStageWrapperRight/U0/inst_dataFifoFillLevel/inst_fifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gf18e1_inst.sngfifo18e1/RST. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#7 Warning
-LUT drives async reset alert  
-LUT cell fourier_bram_i/Freq2BRAMLeft/U0/inst_addrFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/g7ser_birst.rstbt/gf18e1_inst.sngfifo18e1_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) fourier_bram_i/Freq2BRAMLeft/U0/inst_addrFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_q_reg/PRE, fourier_bram_i/Freq2BRAMLeft/U0/inst_addrFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_user_reg/PRE, fourier_bram_i/Freq2BRAMLeft/U0/inst_addrFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gf18e1_inst.sngfifo18e1/RST. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#8 Warning
-LUT drives async reset alert  
-LUT cell fourier_bram_i/Freq2BRAMLeft/U0/inst_imagFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/g7ser_birst.rstbt/gf18e1_inst.sngfifo18e1_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) fourier_bram_i/Freq2BRAMLeft/U0/inst_imagFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_q_reg/PRE, fourier_bram_i/Freq2BRAMLeft/U0/inst_imagFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_user_reg/PRE, fourier_bram_i/Freq2BRAMLeft/U0/inst_imagFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gf18e1_inst.sngfifo18e1/RST. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#9 Warning
-LUT drives async reset alert  
-LUT cell fourier_bram_i/Freq2BRAMRight/U0/inst_addrFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/g7ser_birst.rstbt/gf18e1_inst.sngfifo18e1_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) fourier_bram_i/Freq2BRAMRight/U0/inst_addrFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_q_reg/PRE, fourier_bram_i/Freq2BRAMRight/U0/inst_addrFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_user_reg/PRE, fourier_bram_i/Freq2BRAMRight/U0/inst_addrFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gf18e1_inst.sngfifo18e1/RST. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#10 Warning
-LUT drives async reset alert  
-LUT cell fourier_bram_i/Freq2BRAMRight/U0/inst_imagFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/g7ser_birst.rstbt/gf18e1_inst.sngfifo18e1_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) fourier_bram_i/Freq2BRAMRight/U0/inst_imagFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_q_reg/PRE, fourier_bram_i/Freq2BRAMRight/U0/inst_imagFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gsfl.empty_user_reg/PRE, fourier_bram_i/Freq2BRAMRight/U0/inst_imagFifo/U0/inst_fifo_gen/gconvfifo.rf/gbi.bi/v7_bi_fifo.fblk/gextw[1].gnll_fifo.inst_extd/gonep.inst_prim/gf18e1_inst.sngfifo18e1/RST. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[0] in site SLICE_X71Y45 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[0] in site SLICE_X67Y42 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#2 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[1] in site SLICE_X72Y45 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[1] in site SLICE_X68Y43 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#3 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[2] in site SLICE_X72Y43 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[2] in site SLICE_X70Y41 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#4 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[3] in site SLICE_X71Y43 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[3] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[3] in site SLICE_X69Y43 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[3] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#5 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[0] in site SLICE_X68Y43 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[0] in site SLICE_X69Y39 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#6 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[1] in site SLICE_X65Y40 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[1] in site SLICE_X70Y39 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#7 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[2] in site SLICE_X69Y43 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[2] in site SLICE_X69Y37 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#8 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[0] in site SLICE_X58Y41 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[3] in site SLICE_X71Y39 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[3] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#9 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[1] in site SLICE_X56Y40 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[0] in site SLICE_X73Y38 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#10 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[2] in site SLICE_X54Y40 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[1] in site SLICE_X75Y38 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-6#1 Warning
-No common primary clock between related clocks  
-The clocks clk_fpga_0 and clk_fpga_3 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_fpga_3]
+PDRC-190#11 Warning
+Suboptimally placed synchronized register chain  
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[2] in site SLICE_X74Y38 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
-TIMING-6#2 Warning
-No common primary clock between related clocks  
-The clocks clk_fpga_1 and clk_fpga_3 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_1] -to [get_clocks clk_fpga_3]
-Related violations: <none>
-
-TIMING-7#1 Warning
-No common node between related clocks  
-The clocks clk_fpga_0 and clk_fpga_3 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_fpga_3]
-Related violations: <none>
-
-TIMING-7#2 Warning
-No common node between related clocks  
-The clocks clk_fpga_1 and clk_fpga_3 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_1] -to [get_clocks clk_fpga_3]
-Related violations: <none>
-
-TIMING-16#1 Warning
-Large setup violation  
-There is a large setup violation of -1.003 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[10]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][95]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#2 Warning
-Large setup violation  
-There is a large setup violation of -1.003 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[49]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][84]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -1.004 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[43]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][78]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -1.005 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[16]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][33]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#5 Warning
-Large setup violation  
-There is a large setup violation of -1.011 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[27]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][62]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#6 Warning
-Large setup violation  
-There is a large setup violation of -1.013 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[37]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][72]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#7 Warning
-Large setup violation  
-There is a large setup violation of -1.014 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[19]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][104]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#8 Warning
-Large setup violation  
-There is a large setup violation of -1.014 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[34]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][69]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#9 Warning
-Large setup violation  
-There is a large setup violation of -1.014 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[42]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][77]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#10 Warning
-Large setup violation  
-There is a large setup violation of -1.015 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[18]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][103]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#11 Warning
-Large setup violation  
-There is a large setup violation of -1.017 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[31]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][66]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#12 Warning
-Large setup violation  
-There is a large setup violation of -1.020 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[16]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][101]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#13 Warning
-Large setup violation  
-There is a large setup violation of -1.026 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[11]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][96]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#14 Warning
-Large setup violation  
-There is a large setup violation of -1.026 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[21]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][106]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#15 Warning
-Large setup violation  
-There is a large setup violation of -1.026 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[23]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][108]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#16 Warning
-Large setup violation  
-There is a large setup violation of -1.026 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[32]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][67]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#17 Warning
-Large setup violation  
-There is a large setup violation of -1.027 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[13]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][98]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#18 Warning
-Large setup violation  
-There is a large setup violation of -1.027 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[17]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][102]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#19 Warning
-Large setup violation  
-There is a large setup violation of -1.027 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[44]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][79]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#20 Warning
-Large setup violation  
-There is a large setup violation of -1.030 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[36]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][71]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#21 Warning
-Large setup violation  
-There is a large setup violation of -1.035 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[11]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][28]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#22 Warning
-Large setup violation  
-There is a large setup violation of -1.036 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[21]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][38]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#23 Warning
-Large setup violation  
-There is a large setup violation of -1.037 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[9]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][94]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#24 Warning
-Large setup violation  
-There is a large setup violation of -1.038 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[24]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][109]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#25 Warning
-Large setup violation  
-There is a large setup violation of -1.042 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[0]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][85]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#26 Warning
-Large setup violation  
-There is a large setup violation of -1.044 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWaddr_reg[6]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][58]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#27 Warning
-Large setup violation  
-There is a large setup violation of -1.044 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[15]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][32]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#28 Warning
-Large setup violation  
-There is a large setup violation of -1.048 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[8]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][93]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#29 Warning
-Large setup violation  
-There is a large setup violation of -1.049 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[25]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][60]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#30 Warning
-Large setup violation  
-There is a large setup violation of -1.049 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[4]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][89]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#31 Warning
-Large setup violation  
-There is a large setup violation of -1.050 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[20]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][105]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#32 Warning
-Large setup violation  
-There is a large setup violation of -1.050 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[45]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][80]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#33 Warning
-Large setup violation  
-There is a large setup violation of -1.057 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[33]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][68]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#34 Warning
-Large setup violation  
-There is a large setup violation of -1.057 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[41]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][76]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#35 Warning
-Large setup violation  
-There is a large setup violation of -1.058 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[6]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][91]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#36 Warning
-Large setup violation  
-There is a large setup violation of -1.059 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[38]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][73]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#37 Warning
-Large setup violation  
-There is a large setup violation of -1.061 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWaddr_reg[2]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][54]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#38 Warning
-Large setup violation  
-There is a large setup violation of -1.061 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[22]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][107]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#39 Warning
-Large setup violation  
-There is a large setup violation of -1.062 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[14]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][31]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#40 Warning
-Large setup violation  
-There is a large setup violation of -1.065 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[23]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][40]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#41 Warning
-Large setup violation  
-There is a large setup violation of -1.069 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[3]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][88]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#42 Warning
-Large setup violation  
-There is a large setup violation of -1.072 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWaddr_reg[1]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][53]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#43 Warning
-Large setup violation  
-There is a large setup violation of -1.073 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[29]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][64]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#44 Warning
-Large setup violation  
-There is a large setup violation of -1.075 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[19]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][36]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#45 Warning
-Large setup violation  
-There is a large setup violation of -1.076 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[2]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][87]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#46 Warning
-Large setup violation  
-There is a large setup violation of -1.079 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWaddr_reg[4]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][56]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#47 Warning
-Large setup violation  
-There is a large setup violation of -1.084 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWe_reg/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][51]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#48 Warning
-Large setup violation  
-There is a large setup violation of -1.088 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[40]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][75]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#49 Warning
-Large setup violation  
-There is a large setup violation of -1.091 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[35]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][70]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#50 Warning
-Large setup violation  
-There is a large setup violation of -1.110 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[39]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][74]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#51 Warning
-Large setup violation  
-There is a large setup violation of -1.113 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[48]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][83]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#52 Warning
-Large setup violation  
-There is a large setup violation of -1.123 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWaddr_reg[5]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][57]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#53 Warning
-Large setup violation  
-There is a large setup violation of -1.157 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[10]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][27]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#54 Warning
-Large setup violation  
-There is a large setup violation of -1.160 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[9]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][26]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#55 Warning
-Large setup violation  
-There is a large setup violation of -1.161 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWdata_reg[7]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][92]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#56 Warning
-Large setup violation  
-There is a large setup violation of -1.163 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWaddr_reg[7]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][59]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#57 Warning
-Large setup violation  
-There is a large setup violation of -1.164 ns between fourier_bram_i/DFTStageWrapperLeft/U0/inst_DFTStage/r_bramWaddr_reg[0]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][52]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#58 Warning
-Large setup violation  
-There is a large setup violation of -1.190 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/goreg_bm.dout_i_reg[13]/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][30]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#59 Warning
-Large setup violation  
-There is a large setup violation of -1.191 ns between fourier_bram_i/fifoLeft/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/empty_fwft_i_reg/C (clocked by clk_fpga_1) and fourier_bram_i/ila_0/U0/PROBE_PIPE.shift_probes_reg[0][25]/D (clocked by clk_fpga_3). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
 Related violations: <none>
 
 TIMING-18#1 Warning

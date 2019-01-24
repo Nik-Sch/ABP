@@ -14,11 +14,12 @@ int main() {
     menu_create_main_menu(&main_menu,"ADAU1761 Configuration");
 
     // create main menue submenues
-    char *main_menu_submenus_titles[main_menu_size] = {"Input Signal options", "Output Signal options", "ADC / Serial Port options", "standard configuration", "debug dft left", "debug i2c"};
+    char *main_menu_submenus_titles[main_menu_size] = {"Input Signal options", "Output Signal options", "ADC / Serial Port options", "standard configuration", "debug dft left", "debug dft right", "debug i2c"};
     menu_create_submenus(&main_menu, main_menu_size, main_menu_submenus_titles);
     menu_set_function(main_menu.submenus[3], &audio_std_configuration);
-    menu_set_function(main_menu.submenus[4], &read_dft_data);
-    menu_set_function(main_menu.submenus[5], &read_i2c_data);
+    menu_set_function(main_menu.submenus[4], &read_dft_data_left);
+    menu_set_function(main_menu.submenus[5], &read_dft_data_right);
+    menu_set_function(main_menu.submenus[6], &read_i2c_data);
 
     // create input signal submenus
     char *input_signal_options[Input_Signal_options_size] = {"Mixer 1 Left Record Mixer (MX1AUXG config)", "Mixer 2 Right Record Mixer (MX2AUXG config)",

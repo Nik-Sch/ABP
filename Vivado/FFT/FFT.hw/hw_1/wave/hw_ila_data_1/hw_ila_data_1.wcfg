@@ -10,21 +10,88 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1024001fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomEndTime time="2048001fs"></ZoomEndTime>
+      <Cursor1Time time="2305000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="432"></NameColumnWidth>
-      <ValueColumnWidth column_width="229"></ValueColumnWidth>
+      <NameColumnWidth column_width="374"></NameColumnWidth>
+      <ValueColumnWidth column_width="94"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="1" />
+   <WVObjectSize size="10" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="logic" fp_name="fourier_bram_i/ADC_SDATA_1">
+   <wvobject type="array" fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataIndex">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">fourier_bram_i/ADC_SDATA_1</obj_property>
-      <obj_property name="ObjectShortName">ADC_SDATA_1</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapper_1_o_freqDataIndex[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DFTStageWrapper_1_o_freqDataIndex[7:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataEn">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapper_1_o_freqDataEn</obj_property>
+      <obj_property name="ObjectShortName">DFTStageWrapper_1_o_freqDataEn</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataImag">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapper_1_o_freqDataImag[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DFTStageWrapper_1_o_freqDataImag[24:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataReal">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapper_1_o_freqDataReal[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DFTStageWrapper_1_o_freqDataReal[24:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="fourier_bram_i/DFTStageWrapperRight_o_ready">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapperRight_o_ready</obj_property>
+      <obj_property name="ObjectShortName">DFTStageWrapperRight_o_ready</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="fourier_bram_i/fifoDataInRight_o_dftData">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/fifoDataInRight_o_dftData[24:0]</obj_property>
+      <obj_property name="ObjectShortName">fifoDataInRight_o_dftData[24:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="fourier_bram_i/fifoDataInRight_o_dftDataValid">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/fifoDataInRight_o_dftDataValid</obj_property>
+      <obj_property name="ObjectShortName">fifoDataInRight_o_dftDataValid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="fourier_bram_i/fifoDataInRight_o_fifoRdEn">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/fifoDataInRight_o_fifoRdEn</obj_property>
+      <obj_property name="ObjectShortName">fifoDataInRight_o_fifoRdEn</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="fourier_bram_i/fifoRight_dout">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/fifoRight_dout[23:0]</obj_property>
+      <obj_property name="ObjectShortName">fifoRight_dout[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="fourier_bram_i/fifoRight_empty">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">fourier_bram_i/fifoRight_empty</obj_property>
+      <obj_property name="ObjectShortName">fifoRight_empty</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

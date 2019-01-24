@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Jan 23 00:27:01 2019
-# Process ID: 10707
+# Start of session at: Thu Jan 24 18:55:50 2019
+# Process ID: 13556
 # Current directory: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_ila_0_0_synth_1
 # Command line: vivado -log fourier_bram_ila_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fourier_bram_ila_0_0.tcl
 # Log file: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_ila_0_0_synth_1/fourier_bram_ila_0_0.vds
@@ -18,11 +18,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11462 
+INFO: Helper process launched with PID 14049 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1411.773 ; gain = 54.891 ; free physical = 1150 ; free virtual = 4106
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1411.926 ; gain = 59.891 ; free physical = 3592 ; free virtual = 9096
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'fourier_bram_ila_0_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'fourier_bram_ila_0_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:73]
 	Parameter C_XLNX_HW_PROBE_INFO bound to: DEFAULT - type: string 
 	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
 	Parameter C_CORE_TYPE bound to: 1 - type: integer 
@@ -31,8 +31,8 @@ INFO: [Synth 8-638] synthesizing module 'fourier_bram_ila_0_0' [/home/niklas/dev
 	Parameter C_CAPTURE_TYPE bound to: 0 - type: integer 
 	Parameter C_MU_TYPE bound to: 0 - type: integer 
 	Parameter C_TC_TYPE bound to: 0 - type: integer 
-	Parameter C_NUM_OF_PROBES bound to: 8 - type: integer 
-	Parameter C_DATA_DEPTH bound to: 16384 - type: integer 
+	Parameter C_NUM_OF_PROBES bound to: 12 - type: integer 
+	Parameter C_DATA_DEPTH bound to: 2048 - type: integer 
 	Parameter C_MAJOR_VERSION bound to: 2018 - type: integer 
 	Parameter C_MINOR_VERSION bound to: 3 - type: integer 
 	Parameter C_BUILD_REVISION bound to: 0 - type: integer 
@@ -49,21 +49,21 @@ INFO: [Synth 8-638] synthesizing module 'fourier_bram_ila_0_0' [/home/niklas/dev
 	Parameter C_ADV_TRIGGER bound to: 0 - type: integer 
 	Parameter C_EN_DDR_ILA bound to: 0 - type: integer 
 	Parameter C_EN_STRG_QUAL bound to: 0 - type: integer 
-	Parameter C_INPUT_PIPE_STAGES bound to: 2 - type: integer 
+	Parameter C_INPUT_PIPE_STAGES bound to: 0 - type: integer 
 	Parameter C_EN_TIME_TAG bound to: 0 - type: integer 
 	Parameter C_TIME_TAG_WIDTH bound to: 32 - type: integer 
-	Parameter C_ILA_CLK_FREQ bound to: 200000000 - type: integer 
-	Parameter C_PROBE0_WIDTH bound to: 1 - type: integer 
-	Parameter C_PROBE1_WIDTH bound to: 24 - type: integer 
-	Parameter C_PROBE2_WIDTH bound to: 1 - type: integer 
-	Parameter C_PROBE3_WIDTH bound to: 25 - type: integer 
+	Parameter C_ILA_CLK_FREQ bound to: 142857132 - type: integer 
+	Parameter C_PROBE0_WIDTH bound to: 24 - type: integer 
+	Parameter C_PROBE1_WIDTH bound to: 1 - type: integer 
+	Parameter C_PROBE2_WIDTH bound to: 25 - type: integer 
+	Parameter C_PROBE3_WIDTH bound to: 1 - type: integer 
 	Parameter C_PROBE4_WIDTH bound to: 1 - type: integer 
-	Parameter C_PROBE5_WIDTH bound to: 8 - type: integer 
-	Parameter C_PROBE6_WIDTH bound to: 25 - type: integer 
+	Parameter C_PROBE5_WIDTH bound to: 1 - type: integer 
+	Parameter C_PROBE6_WIDTH bound to: 8 - type: integer 
 	Parameter C_PROBE7_WIDTH bound to: 25 - type: integer 
-	Parameter C_PROBE8_WIDTH bound to: 1 - type: integer 
-	Parameter C_PROBE9_WIDTH bound to: 1 - type: integer 
-	Parameter C_PROBE10_WIDTH bound to: 1 - type: integer 
+	Parameter C_PROBE8_WIDTH bound to: 25 - type: integer 
+	Parameter C_PROBE9_WIDTH bound to: 9 - type: integer 
+	Parameter C_PROBE10_WIDTH bound to: 25 - type: integer 
 	Parameter C_PROBE11_WIDTH bound to: 1 - type: integer 
 	Parameter C_PROBE12_WIDTH bound to: 1 - type: integer 
 	Parameter C_PROBE13_WIDTH bound to: 1 - type: integer 
@@ -2109,10 +2109,10 @@ INFO: [Synth 8-638] synthesizing module 'fourier_bram_ila_0_0' [/home/niklas/dev
 	Parameter C_PROBE5_TYPE bound to: 0 - type: integer 
 	Parameter C_PROBE6_TYPE bound to: 0 - type: integer 
 	Parameter C_PROBE7_TYPE bound to: 0 - type: integer 
-	Parameter C_PROBE8_TYPE bound to: 1 - type: integer 
-	Parameter C_PROBE9_TYPE bound to: 1 - type: integer 
-	Parameter C_PROBE10_TYPE bound to: 1 - type: integer 
-	Parameter C_PROBE11_TYPE bound to: 1 - type: integer 
+	Parameter C_PROBE8_TYPE bound to: 0 - type: integer 
+	Parameter C_PROBE9_TYPE bound to: 0 - type: integer 
+	Parameter C_PROBE10_TYPE bound to: 0 - type: integer 
+	Parameter C_PROBE11_TYPE bound to: 0 - type: integer 
 	Parameter C_PROBE12_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE13_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE14_TYPE bound to: 1 - type: integer 
@@ -3125,7 +3125,7 @@ INFO: [Synth 8-638] synthesizing module 'fourier_bram_ila_0_0' [/home/niklas/dev
 	Parameter C_PROBE1021_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE1022_TYPE bound to: 1 - type: integer 
 	Parameter C_PROBE1023_TYPE bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'ila_v6_2_8_ila' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ipshared/c45e/hdl/ila_v6_2_syn_rfs.v:5640' bound to instance 'U0' of component 'ila_v6_2_8_ila' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
+INFO: [Synth 8-3491] module 'ila_v6_2_8_ila' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ipshared/c45e/hdl/ila_v6_2_syn_rfs.v:5640' bound to instance 'U0' of component 'ila_v6_2_8_ila' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
 INFO: [Synth 8-6157] synthesizing module 'CFGLUT5' [/home/niklas/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:1005]
 INFO: [Synth 8-6155] done synthesizing module 'CFGLUT5' (8#1) [/home/niklas/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:1005]
 INFO: [Synth 8-6157] synthesizing module 'CARRY4' [/home/niklas/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:968]
@@ -3138,111 +3138,111 @@ INFO: [Synth 8-6157] synthesizing module 'SRLC16E' [/home/niklas/Xilinx/Vivado/2
 INFO: [Synth 8-6155] done synthesizing module 'SRLC16E' (23#1) [/home/niklas/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:51788]
 INFO: [Synth 8-6157] synthesizing module 'FDRE' [/home/niklas/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971]
 INFO: [Synth 8-6155] done synthesizing module 'FDRE' (28#1) [/home/niklas/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:3971]
-WARNING: [Synth 8-3848] Net sl_iport0 in module/entity fourier_bram_ila_0_0 does not have driver. [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4251]
-INFO: [Synth 8-256] done synthesizing module 'fourier_bram_ila_0_0' (48#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:69]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MUX_RST[0]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MEM_LAT_RST
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MUX_REGCE[0]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port WE
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[13]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[12]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[11]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[10]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[9]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[8]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[7]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[6]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[5]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[4]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[3]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[2]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[1]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port ADDR_IN[0]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[443]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[442]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[441]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[440]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[439]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[438]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[437]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[436]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[435]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[434]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[433]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[432]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[431]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[430]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[429]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[428]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[427]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[426]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[425]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[424]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[423]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[422]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[421]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[420]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[419]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[418]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[417]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[416]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[415]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[414]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[413]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[412]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[411]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[410]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[409]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[408]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[407]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[406]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[405]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[404]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[403]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[402]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[401]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[400]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[399]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[398]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[397]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[396]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[395]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[394]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[393]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[392]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[391]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[390]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[389]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[388]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[387]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[386]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[385]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[384]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[383]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[382]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[381]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[380]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[379]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[378]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[377]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[376]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[375]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[374]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[373]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[372]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[371]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[370]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[369]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[368]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[367]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[366]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[365]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[364]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[363]
-WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port SBITERRIN[362]
+WARNING: [Synth 8-3848] Net sl_iport0 in module/entity fourier_bram_ila_0_0 does not have driver. [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4255]
+INFO: [Synth 8-256] done synthesizing module 'fourier_bram_ila_0_0' (46#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:73]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port SSRA
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port REGCEA
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port SSRB
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port WEB[0]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[17]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[16]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[15]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[14]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[13]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[12]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[11]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[10]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[9]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[8]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[7]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[6]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[5]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[4]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[3]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[2]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[1]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port DINB[0]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port SLEEP
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port INJECTSBITERR
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port INJECTDBITERR
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized7 has unconnected port ECCPIPECE
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port SSRA
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port REGCEA
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port SSRB
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port WEB[0]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[17]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[16]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[15]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[14]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[13]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[12]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[11]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[10]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[9]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[8]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[7]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[6]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[5]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[4]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[3]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[2]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[1]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port DINB[0]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port SLEEP
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port INJECTSBITERR
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port INJECTDBITERR
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized6 has unconnected port ECCPIPECE
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port SSRA
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port REGCEA
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port SSRB
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port WEB[0]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[17]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[16]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[15]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[14]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[13]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[12]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[11]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[10]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[9]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[8]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[7]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[6]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[5]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[4]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[3]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[2]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[1]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port DINB[0]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port SLEEP
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port INJECTSBITERR
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port INJECTDBITERR
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized5 has unconnected port ECCPIPECE
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port SSRA
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port REGCEA
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port SSRB
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port WEB[0]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[17]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[16]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[15]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[14]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[13]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[12]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[11]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[10]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[9]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[8]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[7]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[6]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[5]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[4]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[3]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[2]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[1]
+WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper__parameterized4 has unconnected port DINB[0]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:57 ; elapsed = 00:02:26 . Memory (MB): peak = 1714.062 ; gain = 357.180 ; free physical = 1946 ; free virtual = 4971
+Finished RTL Elaboration : Time (s): cpu = 00:01:18 ; elapsed = 00:01:33 . Memory (MB): peak = 1696.215 ; gain = 344.180 ; free physical = 3355 ; free virtual = 8863
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -3251,53 +3251,53 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[36] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[35] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[34] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[33] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[32] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[31] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[30] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[29] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[28] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[27] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[26] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[25] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[24] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[23] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[22] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[21] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[20] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[19] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[18] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[17] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[16] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[15] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[14] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[13] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[12] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[11] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[10] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[9] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[8] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[7] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[6] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[5] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[4] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[3] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[2] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[1] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
-INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[0] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4254]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[36] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[35] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[34] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[33] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[32] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[31] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[30] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[29] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[28] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[27] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[26] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[25] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[24] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[23] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[22] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[21] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[20] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[19] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[18] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[17] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[16] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[15] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[14] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[13] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[12] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[11] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[10] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[9] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[8] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[7] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[6] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[5] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[4] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[3] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[2] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[1] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
+INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[0] to constant 0 [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_ila_0_0/synth/fourier_bram_ila_0_0.vhd:4258]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:57 ; elapsed = 00:02:26 . Memory (MB): peak = 1714.062 ; gain = 357.180 ; free physical = 1975 ; free virtual = 5001
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:18 ; elapsed = 00:01:33 . Memory (MB): peak = 1696.215 ; gain = 344.180 ; free physical = 3366 ; free virtual = 8873
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:57 ; elapsed = 00:02:26 . Memory (MB): peak = 1714.062 ; gain = 357.180 ; free physical = 1975 ; free virtual = 5001
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:18 ; elapsed = 00:01:33 . Memory (MB): peak = 1696.215 ; gain = 344.180 ; free physical = 3366 ; free virtual = 8873
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 204 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 216 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -3312,32 +3312,32 @@ Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_
 Finished Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_ila_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1864.078 ; gain = 0.000 ; free physical = 1688 ; free virtual = 4715
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1850.230 ; gain = 0.000 ; free physical = 3052 ; free virtual = 8572
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 116 instances were transformed.
-  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 104 instances
-  CFGLUT5 => SRLC32E: 12 instances
+  A total of 156 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 140 instances
+  CFGLUT5 => SRLC32E: 16 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1865.078 ; gain = 0.000 ; free physical = 1687 ; free virtual = 4714
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1865.078 ; gain = 1.000 ; free physical = 1685 ; free virtual = 4712
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1850.230 ; gain = 0.000 ; free physical = 3050 ; free virtual = 8570
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.06 . Memory (MB): peak = 1850.230 ; gain = 0.000 ; free physical = 3049 ; free virtual = 8570
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:02:07 ; elapsed = 00:02:37 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1792 ; free virtual = 4820
+Finished Constraint Validation : Time (s): cpu = 00:01:27 ; elapsed = 00:01:43 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3154 ; free virtual = 8674
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:02:07 ; elapsed = 00:02:37 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1792 ; free virtual = 4820
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:27 ; elapsed = 00:01:43 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3154 ; free virtual = 8674
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_ila_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:07 ; elapsed = 00:02:37 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1793 ; free virtual = 4821
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:27 ; elapsed = 00:01:43 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3157 ; free virtual = 8677
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized8'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized12'
 INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -3397,6 +3397,30 @@ INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized8'
+INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized9'
+INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized10'
+INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized11'
+INFO: [Synth 8-5544] ROM "data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "drdy_mux_temp" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "adv_drdy" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "read_addr" won't be mapped to RAM because it is too sparse
@@ -3411,7 +3435,7 @@ INFO: [Synth 8-5546] ROM "read_en" won't be mapped to RAM because it is too spar
                      P2S |                             0100 |                             0100
                      S2P |                             1000 |                             1000
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized8'
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized12'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -3502,8 +3526,48 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in m
                      S2P |                             1000 |                             1000
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized7'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                             0001 |                             0001
+                     REG |                             0010 |                             0010
+                     P2S |                             0100 |                             0100
+                     S2P |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized8'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                             0001 |                             0001
+                     REG |                             0010 |                             0010
+                     P2S |                             0100 |                             0100
+                     S2P |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized9'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                             0001 |                             0001
+                     REG |                             0010 |                             0010
+                     P2S |                             0100 |                             0100
+                     S2P |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized10'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                             0001 |                             0001
+                     REG |                             0010 |                             0010
+                     P2S |                             0100 |                             0100
+                     S2P |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized11'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:10 ; elapsed = 00:02:41 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1778 ; free virtual = 4809
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:29 ; elapsed = 00:01:46 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3112 ; free virtual = 8634
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -3516,58 +3580,54 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     14 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 3     
 	   2 Input      9 Bit       Adders := 1     
 	   2 Input      7 Bit       Adders := 2     
 	   2 Input      6 Bit       Adders := 1     
-	   2 Input      4 Bit       Adders := 10    
-	   2 Input      3 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 15    
 +---XORs : 
-	   2 Input     13 Bit         XORs := 24    
+	   2 Input     13 Bit         XORs := 28    
 	   2 Input      1 Bit         XORs := 4     
 +---Registers : 
 	             1024 Bit    Registers := 2     
+	              160 Bit    Registers := 1     
+	              146 Bit    Registers := 9     
 	              128 Bit    Registers := 1     
-	              112 Bit    Registers := 1     
-	              110 Bit    Registers := 11    
 	               33 Bit    Registers := 2     
-	               25 Bit    Registers := 6     
+	               25 Bit    Registers := 8     
 	               24 Bit    Registers := 2     
 	               17 Bit    Registers := 2     
-	               16 Bit    Registers := 101   
-	               14 Bit    Registers := 9     
-	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 3     
+	               16 Bit    Registers := 117   
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 9     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
 	                7 Bit    Registers := 3     
 	                6 Bit    Registers := 2     
-	                4 Bit    Registers := 12    
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 9     
-	                1 Bit    Registers := 139   
+	                4 Bit    Registers := 17    
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 163   
 +---Muxes : 
-	   4 Input    111 Bit        Muxes := 2     
-	   2 Input    110 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 19    
-	  16 Input     16 Bit        Muxes := 1     
+	   2 Input    146 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 23    
 	   4 Input     16 Bit        Muxes := 1     
 	   3 Input     16 Bit        Muxes := 1     
 	   8 Input     16 Bit        Muxes := 1     
-	   2 Input     15 Bit        Muxes := 10    
+	   2 Input     15 Bit        Muxes := 14    
 	   3 Input     14 Bit        Muxes := 1     
-	   8 Input     14 Bit        Muxes := 1     
+	   8 Input     11 Bit        Muxes := 1     
 	   3 Input      7 Bit        Muxes := 1     
 	   8 Input      7 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 4     
 	   2 Input      5 Bit        Muxes := 2     
-	   5 Input      4 Bit        Muxes := 10    
-	   2 Input      4 Bit        Muxes := 31    
-	  16 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 10    
+	   5 Input      4 Bit        Muxes := 14    
+	   2 Input      4 Bit        Muxes := 43    
+	   8 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 14    
 	  10 Input      3 Bit        Muxes := 1     
-	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 5     
-	   2 Input      1 Bit        Muxes := 99    
-	   3 Input      1 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 106   
+	   3 Input      1 Bit        Muxes := 14    
 	   9 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 5     
@@ -3595,7 +3655,7 @@ Module xsdbs_v1_0_2_reg_ctl
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 1     
-Module xsdbs_v1_0_2_reg__parameterized25 
+Module xsdbs_v1_0_2_reg__parameterized33 
 Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input     13 Bit         XORs := 1     
@@ -3603,43 +3663,7 @@ Module xsdbs_v1_0_2_reg_ctl__parameterized0
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 1     
-Module xsdbs_v1_0_2_reg__parameterized26 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input     13 Bit         XORs := 1     
-Module xsdbs_v1_0_2_reg__parameterized40 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input     13 Bit         XORs := 1     
-Module xsdbs_v1_0_2_reg__parameterized41 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input     13 Bit         XORs := 1     
-Module xsdbs_v1_0_2_reg__parameterized42 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input     13 Bit         XORs := 1     
-Module xsdbs_v1_0_2_reg__parameterized43 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input     13 Bit         XORs := 1     
-Module xsdbs_v1_0_2_reg__parameterized44 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input     13 Bit         XORs := 1     
-Module xsdbs_v1_0_2_reg_ctl__parameterized1 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-Module xsdbs_v1_0_2_reg__parameterized45 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input     13 Bit         XORs := 1     
-Module xsdbs_v1_0_2_reg__parameterized46 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input     13 Bit         XORs := 1     
-Module xsdbs_v1_0_2_reg__parameterized47 
+Module xsdbs_v1_0_2_reg__parameterized34 
 Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input     13 Bit         XORs := 1     
@@ -3659,7 +3683,43 @@ Module xsdbs_v1_0_2_reg__parameterized51
 Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input     13 Bit         XORs := 1     
-Module xsdbs_v1_0_2_reg_p2s__parameterized8 
+Module xsdbs_v1_0_2_reg__parameterized52 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
+Module xsdbs_v1_0_2_reg_ctl__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module xsdbs_v1_0_2_reg__parameterized53 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
+Module xsdbs_v1_0_2_reg__parameterized54 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
+Module xsdbs_v1_0_2_reg__parameterized55 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
+Module xsdbs_v1_0_2_reg__parameterized56 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
+Module xsdbs_v1_0_2_reg__parameterized57 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
+Module xsdbs_v1_0_2_reg__parameterized58 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
+Module xsdbs_v1_0_2_reg__parameterized59 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
+Module xsdbs_v1_0_2_reg_p2s__parameterized12 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      4 Bit       Adders := 1     
@@ -3849,6 +3909,78 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
+Module xsdbs_v1_0_2_reg_p2s__parameterized8 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 1     
+Module xsdbs_v1_0_2_reg_p2s__parameterized9 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 1     
+Module xsdbs_v1_0_2_reg_p2s__parameterized10 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 1     
+Module xsdbs_v1_0_2_reg_p2s__parameterized11 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     13 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 1     
 Module ila_v6_2_8_ila_register 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -3864,7 +3996,6 @@ Detailed RTL Component Info :
 	                6 Bit    Registers := 1     
 	                1 Bit    Registers := 31    
 +---Muxes : 
-	  16 Input     16 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 8     
 	   4 Input     16 Bit        Muxes := 1     
 	   3 Input     16 Bit        Muxes := 1     
@@ -3872,18 +4003,17 @@ Detailed RTL Component Info :
 	   3 Input     14 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 4     
 	   2 Input      5 Bit        Muxes := 2     
-	  16 Input      4 Bit        Muxes := 1     
 	  10 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 13    
 	   9 Input      1 Bit        Muxes := 1     
-Module ltlib_v1_0_0_all_typeA_slice 
+Module ltlib_v1_0_0_all_typeA_slice__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
 Module ltlib_v1_0_0_allx_typeA__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 2     
+	               24 Bit    Registers := 2     
 Module ltlib_v1_0_0_match__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -3891,7 +4021,7 @@ Detailed RTL Component Info :
 Module ltlib_v1_0_0_allx_typeA__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
-	               24 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
 Module ltlib_v1_0_0_match__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -3912,10 +4042,18 @@ Module ltlib_v1_0_0_match__parameterized3
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
+Module ltlib_v1_0_0_allx_typeA__parameterized4 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 2     
+Module ltlib_v1_0_0_match__parameterized4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
 Module ltlib_v1_0_0_allx_typeA 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
 Module ltlib_v1_0_0_match 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -3955,16 +4093,28 @@ Detailed RTL Component Info :
 Module ltlib_v1_0_0_allx_typeA_nodelay 
 Detailed RTL Component Info : 
 +---Registers : 
-	               14 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+Module ila_v6_2_8_ila_cap_sample_counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+Module ila_v6_2_8_ila_cap_window_counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
 Module ila_v6_2_8_ila_cap_addrgen 
 Detailed RTL Component Info : 
 +---Registers : 
 	               33 Bit    Registers := 2     
 	               16 Bit    Registers := 1     
-	               14 Bit    Registers := 3     
+	               11 Bit    Registers := 3     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 11    
 Module ltlib_v1_0_0_cfglut6__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -3978,59 +4128,37 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 1     
-Module bindec 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 4     
-Module blk_mem_gen_mux 
-Detailed RTL Component Info : 
-+---Registers : 
-	               14 Bit    Registers := 1     
-	                2 Bit    Registers := 2     
-+---Muxes : 
-	   4 Input    111 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-Module blk_mem_gen_mux__parameterized0 
-Detailed RTL Component Info : 
-+---Registers : 
-	               14 Bit    Registers := 1     
-	                2 Bit    Registers := 2     
-+---Muxes : 
-	   4 Input    111 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
 Module ltlib_v1_0_0_generic_memrd 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     14 Bit       Adders := 1     
-	   2 Input      3 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
-	              112 Bit    Registers := 1     
-	               14 Bit    Registers := 1     
+	              160 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 	                7 Bit    Registers := 1     
-	                4 Bit    Registers := 2     
-	                3 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   8 Input     14 Bit        Muxes := 1     
+	   8 Input     11 Bit        Muxes := 1     
 	   3 Input      7 Bit        Muxes := 1     
 	   8 Input      7 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
-	   8 Input      3 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 5     
 Module ila_v6_2_8_ila_core 
 Detailed RTL Component Info : 
 +---Registers : 
-	              110 Bit    Registers := 9     
+	              146 Bit    Registers := 9     
 	               16 Bit    Registers := 2     
 	                2 Bit    Registers := 3     
 	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input    110 Bit        Muxes := 1     
+	   2 Input    146 Bit        Muxes := 1     
 Module ila_v6_2_8_ila 
 Detailed RTL Component Info : 
 +---Registers : 
-	              110 Bit    Registers := 2     
 	                1 Bit    Registers := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
@@ -4078,26 +4206,6 @@ INFO: [Synth 8-5544] ROM "MU_SRL[4].mu_srl_reg/" won't be mapped to Block RAM be
 INFO: [Synth 8-5544] ROM "MU_SRL[4].mu_srl_reg/data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "MU_SRL[4].mu_srl_reg/shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "MU_SRL[4].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[5].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[5].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[5].mu_srl_reg/data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[5].mu_srl_reg/shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[5].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[6].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[6].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[6].mu_srl_reg/data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[6].mu_srl_reg/shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[6].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[7].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[7].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[7].mu_srl_reg/data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[7].mu_srl_reg/shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "MU_SRL[7].mu_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "TC_SRL[0].tc_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "TC_SRL[0].tc_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "TC_SRL[0].tc_srl_reg/data_out_sel" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "TC_SRL[0].tc_srl_reg/shift_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "TC_SRL[0].tc_srl_reg/" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Common 17-14] Message 'Synth 8-5544' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5546] ROM "drdy_mux_temp" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "drdy_mux_temp" won't be mapped to RAM because it is too sparse
@@ -4142,14 +4250,18 @@ INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/\ila_c
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_892/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_887/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[5].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[4].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[6].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[3].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[3].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[8].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[5].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[10].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[9].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[4].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[3].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[2].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[1].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[2].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[0].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_14/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_13/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_12/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
@@ -4160,7 +4272,7 @@ INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_e/I_EN_ST
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_d/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_c/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_b/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_4/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_4/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_3/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_2/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_1/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[0]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
@@ -4170,14 +4282,18 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_c
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_892/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_887/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[6].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[8].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[5].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[10].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[9].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[4].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[6].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[3].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[3].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[2].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[1].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[3].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[2].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[2].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[0].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_14/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_13/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_12/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
@@ -4192,20 +4308,24 @@ INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_4/I_EN_ST
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_3/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_2/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_1/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_0/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[2]' (FDRE) to 'U0/ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[4]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_0/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[1]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[2]' (FDSE) to 'U0/ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[15]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[2] )
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_892/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_887/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[5].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[4].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[6].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[6].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[3].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[6].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[8].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[5].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[10].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[9].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[4].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[3].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[3].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[2].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[1].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[2].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[0].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_14/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_13/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_12/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
@@ -4217,45 +4337,33 @@ INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_d/I_EN_ST
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_c/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_b/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_4/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_3/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_3/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_2/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_1/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_0/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[3].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[3]' (FDRE) to 'U0/ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[11]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_0/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[2]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[3]' (FDSE) to 'U0/ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[15]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[3] )
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_892/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[5].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[4].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[7].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
 INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[6].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[3].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[3].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[3].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[2].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[1].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE.PROBE_STATUS[3].probe_width_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_14/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_13/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_12/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_11/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_10/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_e/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
-INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/reg_d/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[8].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[11].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'U0/ila_core_inst/u_ila_regs/N_DDR_MODE_MU1.MU_STATUS[5].mu_tpid_reg/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[3]' (FDE) to 'U0/ila_core_inst/u_ila_regs/reg_88f/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[4]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[5] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[8] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[9] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[9] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[10] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[11] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/\ila_core_inst/u_ila_regs/reg_1/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[11] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[12] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff8_reg[13] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[13] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[14] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (U0/\ila_core_inst/u_ila_regs/reg_1/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[14] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_ff7_reg[15] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/reg_0/I_EN_STAT_EQ1.U_STAT/xsdb_reg_reg[15] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_mux_6_reg[0] )
@@ -4287,7 +4395,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_c
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_mux_1_reg[14] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\ila_core_inst/u_ila_regs/slaveRegDo_mux_1_reg[15] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:17 ; elapsed = 00:02:49 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1735 ; free virtual = 4782
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:38 ; elapsed = 00:01:55 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 2961 ; free virtual = 8496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4299,13 +4407,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:28 ; elapsed = 00:02:59 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1655 ; free virtual = 4704
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:48 ; elapsed = 00:02:05 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3539 ; free virtual = 9072
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:28 ; elapsed = 00:03:00 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1650 ; free virtual = 4700
+Finished Timing Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:02:06 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3537 ; free virtual = 9070
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4317,7 +4425,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:30 ; elapsed = 00:03:01 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1646 ; free virtual = 4695
+Finished Technology Mapping : Time (s): cpu = 00:01:50 ; elapsed = 00:02:07 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3532 ; free virtual = 9065
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4337,18 +4445,6 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [1] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [2] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [3] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [4] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [5] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [6] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [7] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [8] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [9] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [10] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_addr [11] is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
-INFO: [Synth 8-6064] Net \ila_core_inst/trace_read_en  is driving 50 big block pins (URAM, BRAM and DSP loads). Created 5 replicas of its driver. 
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
@@ -4391,7 +4487,7 @@ INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[2] to constant 0
 INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[1] to constant 0
 INFO: [Synth 8-3295] tying undriven pin U0:sl_iport0[0] to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:31 ; elapsed = 00:03:02 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1629 ; free virtual = 4693
+Finished IO Insertion : Time (s): cpu = 00:01:51 ; elapsed = 00:02:08 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3523 ; free virtual = 9056
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -4404,7 +4500,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:31 ; elapsed = 00:03:02 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1626 ; free virtual = 4691
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:51 ; elapsed = 00:02:08 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3520 ; free virtual = 9053
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -4416,25 +4512,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:31 ; elapsed = 00:03:02 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1633 ; free virtual = 4705
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:51 ; elapsed = 00:02:08 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3516 ; free virtual = 9050
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:31 ; elapsed = 00:03:02 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1630 ; free virtual = 4702
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:51 ; elapsed = 00:02:08 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3516 ; free virtual = 9049
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:31 ; elapsed = 00:03:03 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1624 ; free virtual = 4700
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:51 ; elapsed = 00:02:08 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3515 ; free virtual = 9048
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:31 ; elapsed = 00:03:03 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1624 ; free virtual = 4700
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:51 ; elapsed = 00:02:09 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3513 ; free virtual = 9046
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -4445,9 +4541,9 @@ Static Shift Register Report:
 |Module Name    | RTL Name                                                                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +---------------+----------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |ila_v6_2_8_ila | ila_core_inst/u_ila_regs/adv_rb_drdy4_reg                                        | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|ila_v6_2_8_ila | ila_core_inst/shifted_data_in_reg[8][145]                                        | 9      | 146   | NO           | NO                 | YES               | 146    | 0       | 
 |ila_v6_2_8_ila | ila_core_inst/xsdb_memory_read_inst/multiple_read_latency.read_enable_out_reg[3] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |ila_v6_2_8_ila | ila_core_inst/xsdb_memory_read_inst/multiple_enable_latency.enable_out_reg[3]    | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|ila_v6_2_8_ila | ila_core_inst/shifted_data_in_reg[8][109]                                        | 9      | 110   | NO           | NO                 | YES               | 110    | 0       | 
 +---------------+----------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
@@ -4464,315 +4560,255 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----------+------+
-|      |Cell       |Count |
-+------+-----------+------+
-|1     |CARRY4     |    50|
-|2     |CFGLUT5    |   116|
-|3     |LUT1       |    37|
-|4     |LUT2       |    52|
-|5     |LUT3       |   173|
-|6     |LUT4       |   148|
-|7     |LUT5       |    48|
-|8     |LUT6       |   627|
-|9     |MUXF7      |    19|
-|10    |RAMB18E1   |     1|
-|11    |RAMB36E1   |     1|
-|12    |RAMB36E1_1 |    48|
-|13    |SRL16E     |   114|
-|14    |SRLC16E    |     2|
-|15    |SRLC32E    |    17|
-|16    |FDRE       |  2141|
-|17    |FDSE       |     9|
-+------+-----------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    51|
+|2     |CFGLUT5  |   156|
+|3     |LUT1     |    41|
+|4     |LUT2     |    53|
+|5     |LUT3     |   110|
+|6     |LUT4     |   192|
+|7     |LUT5     |    68|
+|8     |LUT6     |   633|
+|9     |MUXF7    |     4|
+|10    |RAMB18E1 |     1|
+|11    |RAMB36E1 |     8|
+|12    |SRL16E   |   150|
+|13    |SRLC16E  |     2|
+|14    |SRLC32E  |    17|
+|15    |FDRE     |  2162|
+|16    |FDSE     |     9|
++------+---------+------+
 
 Report Instance Areas: 
 +------+------------------------------------------------------------------------+------------------------------------------------+------+
 |      |Instance                                                                |Module                                          |Cells |
 +------+------------------------------------------------------------------------+------------------------------------------------+------+
-|1     |top                                                                     |                                                |  3603|
-|2     |  U0                                                                    |ila_v6_2_8_ila                                  |  3603|
-|3     |    ila_core_inst                                                       |ila_v6_2_8_ila_core                             |  3376|
-|4     |      ila_trace_memory_inst                                             |ila_v6_2_8_ila_trace_memory                     |   165|
-|5     |        \SUBCORE_RAM_BLK_MEM_1.trace_block_memory                       |blk_mem_gen_v8_3_6                              |   165|
-|6     |          inst_blk_mem_gen                                              |blk_mem_gen_v8_3_6_synth                        |   165|
-|7     |            \gnbram.gnativebmg.native_blk_mem_gen                       |blk_mem_gen_top                                 |   165|
-|8     |              \valid.cstr                                               |blk_mem_gen_generic_cstr                        |   165|
-|9     |                \bindec_a.bindec_inst_a                                 |bindec                                          |     3|
-|10    |                \has_mux_b.B                                            |blk_mem_gen_mux__parameterized0                 |   112|
-|11    |                \ramloop[0].ram.r                                       |blk_mem_gen_prim_width                          |     1|
-|12    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper                        |     1|
-|13    |                \ramloop[10].ram.r                                      |blk_mem_gen_prim_width__parameterized9          |     1|
-|14    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized9        |     1|
-|15    |                \ramloop[11].ram.r                                      |blk_mem_gen_prim_width__parameterized10         |     1|
-|16    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized10       |     1|
-|17    |                \ramloop[12].ram.r                                      |blk_mem_gen_prim_width__parameterized11         |     1|
-|18    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized11       |     1|
-|19    |                \ramloop[13].ram.r                                      |blk_mem_gen_prim_width__parameterized12         |     1|
-|20    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized12       |     1|
-|21    |                \ramloop[14].ram.r                                      |blk_mem_gen_prim_width__parameterized13         |     1|
-|22    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized13       |     1|
-|23    |                \ramloop[15].ram.r                                      |blk_mem_gen_prim_width__parameterized14         |     1|
-|24    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized14       |     1|
-|25    |                \ramloop[16].ram.r                                      |blk_mem_gen_prim_width__parameterized15         |     1|
-|26    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized15       |     1|
-|27    |                \ramloop[17].ram.r                                      |blk_mem_gen_prim_width__parameterized16         |     1|
-|28    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized16       |     1|
-|29    |                \ramloop[18].ram.r                                      |blk_mem_gen_prim_width__parameterized17         |     1|
-|30    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized17       |     1|
-|31    |                \ramloop[19].ram.r                                      |blk_mem_gen_prim_width__parameterized18         |     1|
-|32    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized18       |     1|
-|33    |                \ramloop[1].ram.r                                       |blk_mem_gen_prim_width__parameterized0          |     1|
-|34    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized0        |     1|
-|35    |                \ramloop[20].ram.r                                      |blk_mem_gen_prim_width__parameterized19         |     1|
-|36    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized19       |     1|
-|37    |                \ramloop[21].ram.r                                      |blk_mem_gen_prim_width__parameterized20         |     1|
-|38    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized20       |     1|
-|39    |                \ramloop[22].ram.r                                      |blk_mem_gen_prim_width__parameterized21         |     1|
-|40    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized21       |     1|
-|41    |                \ramloop[23].ram.r                                      |blk_mem_gen_prim_width__parameterized22         |     1|
-|42    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized22       |     1|
-|43    |                \ramloop[24].ram.r                                      |blk_mem_gen_prim_width__parameterized23         |     1|
-|44    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized23       |     1|
-|45    |                \ramloop[25].ram.r                                      |blk_mem_gen_prim_width__parameterized24         |     1|
-|46    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized24       |     1|
-|47    |                \ramloop[26].ram.r                                      |blk_mem_gen_prim_width__parameterized25         |     1|
-|48    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized25       |     1|
-|49    |                \ramloop[27].ram.r                                      |blk_mem_gen_prim_width__parameterized26         |     1|
-|50    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized26       |     1|
-|51    |                \ramloop[28].ram.r                                      |blk_mem_gen_prim_width__parameterized27         |     1|
-|52    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized27       |     1|
-|53    |                \ramloop[29].ram.r                                      |blk_mem_gen_prim_width__parameterized28         |     1|
-|54    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized28       |     1|
-|55    |                \ramloop[2].ram.r                                       |blk_mem_gen_prim_width__parameterized1          |     1|
-|56    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized1        |     1|
-|57    |                \ramloop[30].ram.r                                      |blk_mem_gen_prim_width__parameterized29         |     1|
-|58    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized29       |     1|
-|59    |                \ramloop[31].ram.r                                      |blk_mem_gen_prim_width__parameterized30         |     1|
-|60    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized30       |     1|
-|61    |                \ramloop[32].ram.r                                      |blk_mem_gen_prim_width__parameterized31         |     1|
-|62    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized31       |     1|
-|63    |                \ramloop[33].ram.r                                      |blk_mem_gen_prim_width__parameterized32         |     1|
-|64    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized32       |     1|
-|65    |                \ramloop[34].ram.r                                      |blk_mem_gen_prim_width__parameterized33         |     1|
-|66    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized33       |     1|
-|67    |                \ramloop[35].ram.r                                      |blk_mem_gen_prim_width__parameterized34         |     1|
-|68    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized34       |     1|
-|69    |                \ramloop[36].ram.r                                      |blk_mem_gen_prim_width__parameterized35         |     1|
-|70    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized35       |     1|
-|71    |                \ramloop[37].ram.r                                      |blk_mem_gen_prim_width__parameterized36         |     1|
-|72    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized36       |     1|
-|73    |                \ramloop[38].ram.r                                      |blk_mem_gen_prim_width__parameterized37         |     1|
-|74    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized37       |     1|
-|75    |                \ramloop[39].ram.r                                      |blk_mem_gen_prim_width__parameterized38         |     1|
-|76    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized38       |     1|
-|77    |                \ramloop[3].ram.r                                       |blk_mem_gen_prim_width__parameterized2          |     1|
-|78    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized2        |     1|
-|79    |                \ramloop[40].ram.r                                      |blk_mem_gen_prim_width__parameterized39         |     1|
-|80    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized39       |     1|
-|81    |                \ramloop[41].ram.r                                      |blk_mem_gen_prim_width__parameterized40         |     1|
-|82    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized40       |     1|
-|83    |                \ramloop[42].ram.r                                      |blk_mem_gen_prim_width__parameterized41         |     1|
-|84    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized41       |     1|
-|85    |                \ramloop[43].ram.r                                      |blk_mem_gen_prim_width__parameterized42         |     1|
-|86    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized42       |     1|
-|87    |                \ramloop[44].ram.r                                      |blk_mem_gen_prim_width__parameterized43         |     1|
-|88    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized43       |     1|
-|89    |                \ramloop[45].ram.r                                      |blk_mem_gen_prim_width__parameterized44         |     1|
-|90    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized44       |     1|
-|91    |                \ramloop[46].ram.r                                      |blk_mem_gen_prim_width__parameterized45         |     1|
-|92    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized45       |     1|
-|93    |                \ramloop[47].ram.r                                      |blk_mem_gen_prim_width__parameterized46         |     1|
-|94    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized46       |     1|
-|95    |                \ramloop[48].ram.r                                      |blk_mem_gen_prim_width__parameterized47         |     1|
-|96    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized47       |     1|
-|97    |                \ramloop[49].ram.r                                      |blk_mem_gen_prim_width__parameterized48         |     1|
-|98    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized48       |     1|
-|99    |                \ramloop[4].ram.r                                       |blk_mem_gen_prim_width__parameterized3          |     1|
-|100   |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized3        |     1|
-|101   |                \ramloop[5].ram.r                                       |blk_mem_gen_prim_width__parameterized4          |     1|
-|102   |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized4        |     1|
-|103   |                \ramloop[6].ram.r                                       |blk_mem_gen_prim_width__parameterized5          |     1|
-|104   |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized5        |     1|
-|105   |                \ramloop[7].ram.r                                       |blk_mem_gen_prim_width__parameterized6          |     1|
-|106   |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized6        |     1|
-|107   |                \ramloop[8].ram.r                                       |blk_mem_gen_prim_width__parameterized7          |     1|
-|108   |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized7        |     1|
-|109   |                \ramloop[9].ram.r                                       |blk_mem_gen_prim_width__parameterized8          |     1|
-|110   |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized8        |     1|
-|111   |      u_ila_cap_ctrl                                                    |ila_v6_2_8_ila_cap_ctrl_legacy                  |   298|
-|112   |        U_CDONE                                                         |ltlib_v1_0_0_cfglut6__parameterized0            |     5|
-|113   |        U_NS0                                                           |ltlib_v1_0_0_cfglut7                            |     6|
-|114   |        U_NS1                                                           |ltlib_v1_0_0_cfglut7_53                         |     6|
-|115   |        u_cap_addrgen                                                   |ila_v6_2_8_ila_cap_addrgen                      |   276|
-|116   |          U_CMPRESET                                                    |ltlib_v1_0_0_cfglut6                            |     3|
-|117   |          u_cap_sample_counter                                          |ila_v6_2_8_ila_cap_sample_counter               |    53|
-|118   |            U_SCE                                                       |ltlib_v1_0_0_cfglut4_60                         |     1|
-|119   |            U_SCMPCE                                                    |ltlib_v1_0_0_cfglut5_61                         |     1|
-|120   |            U_SCRST                                                     |ltlib_v1_0_0_cfglut6_62                         |     5|
-|121   |            u_scnt_cmp                                                  |ltlib_v1_0_0_match_nodelay_63                   |    26|
-|122   |              \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst  |ltlib_v1_0_0_allx_typeA_nodelay_64              |    26|
-|123   |                DUT                                                     |ltlib_v1_0_0_all_typeA__parameterized2_65       |    12|
-|124   |                  \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized1_66 |     5|
-|125   |                  \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized2_67 |     5|
-|126   |          u_cap_window_counter                                          |ila_v6_2_8_ila_cap_window_counter               |    62|
-|127   |            U_WCE                                                       |ltlib_v1_0_0_cfglut4                            |     1|
-|128   |            U_WHCMPCE                                                   |ltlib_v1_0_0_cfglut5                            |     1|
-|129   |            U_WLCMPCE                                                   |ltlib_v1_0_0_cfglut5_54                         |     1|
-|130   |            u_wcnt_hcmp                                                 |ltlib_v1_0_0_match_nodelay                      |    12|
-|131   |              \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst  |ltlib_v1_0_0_allx_typeA_nodelay_56              |    12|
-|132   |                DUT                                                     |ltlib_v1_0_0_all_typeA__parameterized2_57       |    12|
-|133   |                  \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized1_58 |     5|
-|134   |                  \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized2_59 |     5|
-|135   |            u_wcnt_lcmp                                                 |ltlib_v1_0_0_match_nodelay_55                   |    26|
-|136   |              \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst  |ltlib_v1_0_0_allx_typeA_nodelay                 |    26|
-|137   |                DUT                                                     |ltlib_v1_0_0_all_typeA__parameterized2          |    12|
-|138   |                  \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized1    |     5|
-|139   |                  \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized2    |     5|
-|140   |      u_ila_regs                                                        |ila_v6_2_8_ila_register                         |  1876|
-|141   |        U_XSDB_SLAVE                                                    |xsdbs_v1_0_2_xsdbs                              |   302|
-|142   |        reg_890                                                         |xsdbs_v1_0_2_reg__parameterized58               |    16|
-|143   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_52                        |    16|
-|144   |        \MU_SRL[0].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s                            |    73|
-|145   |        \MU_SRL[1].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized0            |   105|
-|146   |        \MU_SRL[2].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized1            |    73|
-|147   |        \MU_SRL[3].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized2            |    73|
-|148   |        \MU_SRL[4].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized3            |    73|
-|149   |        \MU_SRL[5].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized4            |    89|
-|150   |        \MU_SRL[6].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized5            |    75|
-|151   |        \MU_SRL[7].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized6            |    73|
-|152   |        \TC_SRL[0].tc_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized7            |    76|
-|153   |        reg_15                                                          |xsdbs_v1_0_2_reg__parameterized40               |    20|
-|154   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_51                         |    20|
-|155   |        reg_16                                                          |xsdbs_v1_0_2_reg__parameterized41               |    22|
-|156   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_50                         |    22|
-|157   |        reg_17                                                          |xsdbs_v1_0_2_reg__parameterized42               |    28|
-|158   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_49                         |    28|
-|159   |        reg_18                                                          |xsdbs_v1_0_2_reg__parameterized43               |    18|
-|160   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_48                         |    18|
-|161   |        reg_19                                                          |xsdbs_v1_0_2_reg__parameterized44               |    43|
-|162   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_47                         |    43|
-|163   |        reg_1a                                                          |xsdbs_v1_0_2_reg__parameterized45               |    17|
-|164   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1_46         |    17|
-|165   |        reg_6                                                           |xsdbs_v1_0_2_reg__parameterized25               |    33|
-|166   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_45                         |    33|
-|167   |        reg_7                                                           |xsdbs_v1_0_2_reg__parameterized26               |    32|
-|168   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized0            |    32|
-|169   |        reg_8                                                           |xsdbs_v1_0_2_reg__parameterized27               |     5|
-|170   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_44                        |     5|
-|171   |        reg_80                                                          |xsdbs_v1_0_2_reg__parameterized46               |    20|
-|172   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1_43         |    20|
-|173   |        reg_81                                                          |xsdbs_v1_0_2_reg__parameterized47               |    60|
-|174   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_42                         |    60|
-|175   |        reg_82                                                          |xsdbs_v1_0_2_reg__parameterized48               |    17|
-|176   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1            |    17|
-|177   |        reg_83                                                          |xsdbs_v1_0_2_reg__parameterized49               |    17|
-|178   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_41                         |    17|
-|179   |        reg_84                                                          |xsdbs_v1_0_2_reg__parameterized50               |    17|
-|180   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_40                         |    17|
-|181   |        reg_85                                                          |xsdbs_v1_0_2_reg__parameterized51               |    17|
-|182   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_39                         |    17|
-|183   |        reg_887                                                         |xsdbs_v1_0_2_reg__parameterized53               |     3|
-|184   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_38                        |     3|
-|185   |        reg_88d                                                         |xsdbs_v1_0_2_reg__parameterized55               |     6|
-|186   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_37                        |     6|
-|187   |        reg_9                                                           |xsdbs_v1_0_2_reg__parameterized28               |    15|
-|188   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_36                        |    15|
-|189   |        reg_srl_fff                                                     |xsdbs_v1_0_2_reg_p2s__parameterized8            |    91|
-|190   |        reg_stream_ffd                                                  |xsdbs_v1_0_2_reg_stream                         |    23|
-|191   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl                            |    23|
-|192   |        reg_stream_ffe                                                  |xsdbs_v1_0_2_reg_stream__parameterized0         |    29|
-|193   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat                           |    29|
-|194   |      u_ila_reset_ctrl                                                  |ila_v6_2_8_ila_reset_ctrl                       |    46|
-|195   |        arm_detection_inst                                              |ltlib_v1_0_0_rising_edge_detection              |     5|
-|196   |        \asyncrounous_transfer.arm_in_transfer_inst                     |ltlib_v1_0_0_async_edge_xfer                    |     7|
-|197   |        \asyncrounous_transfer.arm_out_transfer_inst                    |ltlib_v1_0_0_async_edge_xfer_32                 |     6|
-|198   |        \asyncrounous_transfer.halt_in_transfer_inst                    |ltlib_v1_0_0_async_edge_xfer_33                 |     7|
-|199   |        \asyncrounous_transfer.halt_out_transfer_inst                   |ltlib_v1_0_0_async_edge_xfer_34                 |     6|
-|200   |        halt_detection_inst                                             |ltlib_v1_0_0_rising_edge_detection_35           |     5|
-|201   |      u_trig                                                            |ila_v6_2_8_ila_trigger                          |   366|
-|202   |        \N_DDR_TC.N_DDR_TC_INST[0].U_TC                                 |ltlib_v1_0_0_match                              |    18|
-|203   |          \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst      |ltlib_v1_0_0_allx_typeA                         |    16|
-|204   |            DUT                                                         |ltlib_v1_0_0_all_typeA_30                       |     8|
-|205   |              \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE             |ltlib_v1_0_0_all_typeA_slice_31                 |     6|
-|206   |        U_TM                                                            |ila_v6_2_8_ila_trig_match                       |   347|
-|207   |          \N_DDR_MODE.G_NMU[0].U_M                                      |ltlib_v1_0_0_match__parameterized0              |    11|
-|208   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0_27      |    10|
-|209   |              DUT                                                       |ltlib_v1_0_0_all_typeA_28                       |     8|
-|210   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_29                 |     6|
-|211   |          \N_DDR_MODE.G_NMU[1].U_M                                      |ltlib_v1_0_0_match__parameterized1              |    67|
-|212   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized1         |    66|
-|213   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0          |    18|
-|214   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_24 |     5|
-|215   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_25 |     5|
-|216   |                \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_26                 |     6|
-|217   |          \N_DDR_MODE.G_NMU[2].U_M                                      |ltlib_v1_0_0_match__parameterized0_0            |    11|
-|218   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0_21      |    10|
-|219   |              DUT                                                       |ltlib_v1_0_0_all_typeA_22                       |     8|
-|220   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_23                 |     6|
-|221   |          \N_DDR_MODE.G_NMU[3].U_M                                      |ltlib_v1_0_0_match__parameterized2              |    74|
-|222   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized2_15      |    73|
-|223   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized1_16       |    23|
-|224   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_17 |     5|
-|225   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_18 |     5|
-|226   |                \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_19 |     5|
-|227   |                \I_WHOLE_SLICE.G_SLICE_IDX[3].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_20                 |     6|
-|228   |          \N_DDR_MODE.G_NMU[4].U_M                                      |ltlib_v1_0_0_match__parameterized0_1            |    11|
-|229   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0         |    10|
-|230   |              DUT                                                       |ltlib_v1_0_0_all_typeA_13                       |     8|
-|231   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_14                 |     6|
-|232   |          \N_DDR_MODE.G_NMU[5].U_M                                      |ltlib_v1_0_0_match__parameterized3              |    25|
-|233   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized3         |    24|
-|234   |              DUT                                                       |ltlib_v1_0_0_all_typeA                          |     8|
-|235   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_12                 |     6|
-|236   |          \N_DDR_MODE.G_NMU[6].U_M                                      |ltlib_v1_0_0_match__parameterized2_2            |    74|
-|237   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized2_6       |    73|
-|238   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized1_7        |    23|
-|239   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_8  |     5|
-|240   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_9  |     5|
-|241   |                \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_10 |     5|
-|242   |                \I_WHOLE_SLICE.G_SLICE_IDX[3].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_11                 |     6|
-|243   |          \N_DDR_MODE.G_NMU[7].U_M                                      |ltlib_v1_0_0_match__parameterized2_3            |    74|
-|244   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized2         |    73|
-|245   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized1          |    23|
-|246   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0    |     5|
-|247   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_4  |     5|
-|248   |                \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_5  |     5|
-|249   |                \I_WHOLE_SLICE.G_SLICE_IDX[3].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice                    |     6|
-|250   |      xsdb_memory_read_inst                                             |ltlib_v1_0_0_generic_memrd                      |   346|
+|1     |top                                                                     |                                                |  3657|
+|2     |  U0                                                                    |ila_v6_2_8_ila                                  |  3657|
+|3     |    ila_core_inst                                                       |ila_v6_2_8_ila_core                             |  3650|
+|4     |      ila_trace_memory_inst                                             |ila_v6_2_8_ila_trace_memory                     |     9|
+|5     |        \SUBCORE_RAM_BLK_MEM_1.trace_block_memory                       |blk_mem_gen_v8_3_6                              |     9|
+|6     |          inst_blk_mem_gen                                              |blk_mem_gen_v8_3_6_synth                        |     9|
+|7     |            \gnbram.gnativebmg.native_blk_mem_gen                       |blk_mem_gen_top                                 |     9|
+|8     |              \valid.cstr                                               |blk_mem_gen_generic_cstr                        |     9|
+|9     |                \ramloop[0].ram.r                                       |blk_mem_gen_prim_width                          |     1|
+|10    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper                        |     1|
+|11    |                \ramloop[1].ram.r                                       |blk_mem_gen_prim_width__parameterized0          |     1|
+|12    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized0        |     1|
+|13    |                \ramloop[2].ram.r                                       |blk_mem_gen_prim_width__parameterized1          |     1|
+|14    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized1        |     1|
+|15    |                \ramloop[3].ram.r                                       |blk_mem_gen_prim_width__parameterized2          |     1|
+|16    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized2        |     1|
+|17    |                \ramloop[4].ram.r                                       |blk_mem_gen_prim_width__parameterized3          |     1|
+|18    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized3        |     1|
+|19    |                \ramloop[5].ram.r                                       |blk_mem_gen_prim_width__parameterized4          |     1|
+|20    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized4        |     1|
+|21    |                \ramloop[6].ram.r                                       |blk_mem_gen_prim_width__parameterized5          |     1|
+|22    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized5        |     1|
+|23    |                \ramloop[7].ram.r                                       |blk_mem_gen_prim_width__parameterized6          |     1|
+|24    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized6        |     1|
+|25    |                \ramloop[8].ram.r                                       |blk_mem_gen_prim_width__parameterized7          |     1|
+|26    |                  \prim_noinit.ram                                      |blk_mem_gen_prim_wrapper__parameterized7        |     1|
+|27    |      u_ila_cap_ctrl                                                    |ila_v6_2_8_ila_cap_ctrl_legacy                  |   287|
+|28    |        U_CDONE                                                         |ltlib_v1_0_0_cfglut6__parameterized0            |     5|
+|29    |        U_NS0                                                           |ltlib_v1_0_0_cfglut7                            |     6|
+|30    |        U_NS1                                                           |ltlib_v1_0_0_cfglut7_71                         |     6|
+|31    |        u_cap_addrgen                                                   |ila_v6_2_8_ila_cap_addrgen                      |   265|
+|32    |          U_CMPRESET                                                    |ltlib_v1_0_0_cfglut6                            |     3|
+|33    |          u_cap_sample_counter                                          |ila_v6_2_8_ila_cap_sample_counter               |    65|
+|34    |            U_SCE                                                       |ltlib_v1_0_0_cfglut4_78                         |     1|
+|35    |            U_SCMPCE                                                    |ltlib_v1_0_0_cfglut5_79                         |     1|
+|36    |            U_SCRST                                                     |ltlib_v1_0_0_cfglut6_80                         |     5|
+|37    |            u_scnt_cmp                                                  |ltlib_v1_0_0_match_nodelay_81                   |    23|
+|38    |              \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst  |ltlib_v1_0_0_allx_typeA_nodelay_82              |    23|
+|39    |                DUT                                                     |ltlib_v1_0_0_all_typeA__parameterized3_83       |    12|
+|40    |                  \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized1_84 |     5|
+|41    |                  \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized2_85 |     5|
+|42    |          u_cap_window_counter                                          |ila_v6_2_8_ila_cap_window_counter               |    63|
+|43    |            U_WCE                                                       |ltlib_v1_0_0_cfglut4                            |     1|
+|44    |            U_WHCMPCE                                                   |ltlib_v1_0_0_cfglut5                            |     1|
+|45    |            U_WLCMPCE                                                   |ltlib_v1_0_0_cfglut5_72                         |     1|
+|46    |            u_wcnt_hcmp                                                 |ltlib_v1_0_0_match_nodelay                      |    12|
+|47    |              \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst  |ltlib_v1_0_0_allx_typeA_nodelay_74              |    12|
+|48    |                DUT                                                     |ltlib_v1_0_0_all_typeA__parameterized3_75       |    12|
+|49    |                  \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized1_76 |     5|
+|50    |                  \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized2_77 |     5|
+|51    |            u_wcnt_lcmp                                                 |ltlib_v1_0_0_match_nodelay_73                   |    23|
+|52    |              \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst  |ltlib_v1_0_0_allx_typeA_nodelay                 |    23|
+|53    |                DUT                                                     |ltlib_v1_0_0_all_typeA__parameterized3          |    12|
+|54    |                  \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized1    |     5|
+|55    |                  \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE         |ltlib_v1_0_0_all_typeA_slice__parameterized2    |     5|
+|56    |      u_ila_regs                                                        |ila_v6_2_8_ila_register                         |  2181|
+|57    |        U_XSDB_SLAVE                                                    |xsdbs_v1_0_2_xsdbs                              |   302|
+|58    |        reg_890                                                         |xsdbs_v1_0_2_reg__parameterized66               |    16|
+|59    |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_70                        |    16|
+|60    |        \MU_SRL[0].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s                            |    73|
+|61    |        \MU_SRL[10].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized9            |    73|
+|62    |        \MU_SRL[11].mu_srl_reg                                          |xsdbs_v1_0_2_reg_p2s__parameterized10           |    73|
+|63    |        \MU_SRL[1].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized0            |   105|
+|64    |        \MU_SRL[2].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized1            |    73|
+|65    |        \MU_SRL[3].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized2            |    73|
+|66    |        \MU_SRL[4].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized3            |    73|
+|67    |        \MU_SRL[5].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized4            |    89|
+|68    |        \MU_SRL[6].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized5            |    73|
+|69    |        \MU_SRL[7].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized6            |    73|
+|70    |        \MU_SRL[8].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized7            |    75|
+|71    |        \MU_SRL[9].mu_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized8            |    89|
+|72    |        \TC_SRL[0].tc_srl_reg                                           |xsdbs_v1_0_2_reg_p2s__parameterized11           |    76|
+|73    |        reg_15                                                          |xsdbs_v1_0_2_reg__parameterized48               |    20|
+|74    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_69                         |    20|
+|75    |        reg_16                                                          |xsdbs_v1_0_2_reg__parameterized49               |    19|
+|76    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_68                         |    19|
+|77    |        reg_17                                                          |xsdbs_v1_0_2_reg__parameterized50               |    31|
+|78    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_67                         |    31|
+|79    |        reg_18                                                          |xsdbs_v1_0_2_reg__parameterized51               |    18|
+|80    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_66                         |    18|
+|81    |        reg_19                                                          |xsdbs_v1_0_2_reg__parameterized52               |    32|
+|82    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_65                         |    32|
+|83    |        reg_1a                                                          |xsdbs_v1_0_2_reg__parameterized53               |    17|
+|84    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1_64         |    17|
+|85    |        reg_6                                                           |xsdbs_v1_0_2_reg__parameterized33               |    31|
+|86    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_63                         |    31|
+|87    |        reg_7                                                           |xsdbs_v1_0_2_reg__parameterized34               |    29|
+|88    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized0            |    29|
+|89    |        reg_8                                                           |xsdbs_v1_0_2_reg__parameterized35               |     5|
+|90    |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_62                        |     5|
+|91    |        reg_80                                                          |xsdbs_v1_0_2_reg__parameterized54               |    20|
+|92    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1_61         |    20|
+|93    |        reg_81                                                          |xsdbs_v1_0_2_reg__parameterized55               |    60|
+|94    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_60                         |    60|
+|95    |        reg_82                                                          |xsdbs_v1_0_2_reg__parameterized56               |    17|
+|96    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl__parameterized1            |    17|
+|97    |        reg_83                                                          |xsdbs_v1_0_2_reg__parameterized57               |    17|
+|98    |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_59                         |    17|
+|99    |        reg_84                                                          |xsdbs_v1_0_2_reg__parameterized58               |    17|
+|100   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_58                         |    17|
+|101   |        reg_85                                                          |xsdbs_v1_0_2_reg__parameterized59               |    17|
+|102   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl_57                         |    17|
+|103   |        reg_887                                                         |xsdbs_v1_0_2_reg__parameterized61               |     3|
+|104   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_56                        |     3|
+|105   |        reg_88d                                                         |xsdbs_v1_0_2_reg__parameterized63               |     6|
+|106   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_55                        |     6|
+|107   |        reg_9                                                           |xsdbs_v1_0_2_reg__parameterized36               |    25|
+|108   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat_54                        |    25|
+|109   |        reg_srl_fff                                                     |xsdbs_v1_0_2_reg_p2s__parameterized12           |    96|
+|110   |        reg_stream_ffd                                                  |xsdbs_v1_0_2_reg_stream                         |    28|
+|111   |          \I_EN_CTL_EQ1.U_CTL                                           |xsdbs_v1_0_2_reg_ctl                            |    28|
+|112   |        reg_stream_ffe                                                  |xsdbs_v1_0_2_reg_stream__parameterized0         |    23|
+|113   |          \I_EN_STAT_EQ1.U_STAT                                         |xsdbs_v1_0_2_reg_stat                           |    23|
+|114   |      u_ila_reset_ctrl                                                  |ila_v6_2_8_ila_reset_ctrl                       |    46|
+|115   |        arm_detection_inst                                              |ltlib_v1_0_0_rising_edge_detection              |     5|
+|116   |        \asyncrounous_transfer.arm_in_transfer_inst                     |ltlib_v1_0_0_async_edge_xfer                    |     7|
+|117   |        \asyncrounous_transfer.arm_out_transfer_inst                    |ltlib_v1_0_0_async_edge_xfer_50                 |     6|
+|118   |        \asyncrounous_transfer.halt_in_transfer_inst                    |ltlib_v1_0_0_async_edge_xfer_51                 |     7|
+|119   |        \asyncrounous_transfer.halt_out_transfer_inst                   |ltlib_v1_0_0_async_edge_xfer_52                 |     6|
+|120   |        halt_detection_inst                                             |ltlib_v1_0_0_rising_edge_detection_53           |     6|
+|121   |      u_trig                                                            |ila_v6_2_8_ila_trigger                          |   503|
+|122   |        \N_DDR_TC.N_DDR_TC_INST[0].U_TC                                 |ltlib_v1_0_0_match                              |    27|
+|123   |          \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst      |ltlib_v1_0_0_allx_typeA                         |    25|
+|124   |            DUT                                                         |ltlib_v1_0_0_all_typeA_47                       |    13|
+|125   |              \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE             |ltlib_v1_0_0_all_typeA_slice_48                 |     5|
+|126   |              \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE             |ltlib_v1_0_0_all_typeA_slice__parameterized0_49 |     6|
+|127   |        U_TM                                                            |ila_v6_2_8_ila_trig_match                       |   475|
+|128   |          \N_DDR_MODE.G_NMU[0].U_M                                      |ltlib_v1_0_0_match__parameterized0              |    67|
+|129   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized0         |    66|
+|130   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized0          |    18|
+|131   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_44                 |     5|
+|132   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_45                 |     5|
+|133   |                \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_46 |     6|
+|134   |          \N_DDR_MODE.G_NMU[10].U_M                                     |ltlib_v1_0_0_match__parameterized2              |    74|
+|135   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized2_38      |    73|
+|136   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized2_39       |    23|
+|137   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_40                 |     5|
+|138   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_41                 |     5|
+|139   |                \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_42                 |     5|
+|140   |                \I_WHOLE_SLICE.G_SLICE_IDX[3].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_43 |     6|
+|141   |          \N_DDR_MODE.G_NMU[11].U_M                                     |ltlib_v1_0_0_match__parameterized1              |    11|
+|142   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized1_35      |    10|
+|143   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized1_36       |     8|
+|144   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_37 |     6|
+|145   |          \N_DDR_MODE.G_NMU[1].U_M                                      |ltlib_v1_0_0_match__parameterized1_0            |    11|
+|146   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized1_32      |    10|
+|147   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized1_33       |     8|
+|148   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_34 |     6|
+|149   |          \N_DDR_MODE.G_NMU[2].U_M                                      |ltlib_v1_0_0_match__parameterized2_1            |    74|
+|150   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized2_26      |    73|
+|151   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized2_27       |    23|
+|152   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_28                 |     5|
+|153   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_29                 |     5|
+|154   |                \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_30                 |     5|
+|155   |                \I_WHOLE_SLICE.G_SLICE_IDX[3].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_31 |     6|
+|156   |          \N_DDR_MODE.G_NMU[3].U_M                                      |ltlib_v1_0_0_match__parameterized1_2            |    11|
+|157   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized1_23      |    10|
+|158   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized1_24       |     8|
+|159   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_25 |     6|
+|160   |          \N_DDR_MODE.G_NMU[4].U_M                                      |ltlib_v1_0_0_match__parameterized1_3            |    11|
+|161   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized1_20      |    10|
+|162   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized1_21       |     8|
+|163   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_22 |     6|
+|164   |          \N_DDR_MODE.G_NMU[5].U_M                                      |ltlib_v1_0_0_match__parameterized1_4            |    11|
+|165   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized1         |    10|
+|166   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized1_18       |     8|
+|167   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_19 |     6|
+|168   |          \N_DDR_MODE.G_NMU[6].U_M                                      |ltlib_v1_0_0_match__parameterized3              |    25|
+|169   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized3         |    24|
+|170   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized1          |     8|
+|171   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_17 |     6|
+|172   |          \N_DDR_MODE.G_NMU[7].U_M                                      |ltlib_v1_0_0_match__parameterized2_5            |    74|
+|173   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized2_11      |    73|
+|174   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized2_12       |    23|
+|175   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_13                 |     5|
+|176   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_14                 |     5|
+|177   |                \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_15                 |     5|
+|178   |                \I_WHOLE_SLICE.G_SLICE_IDX[3].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_16 |     6|
+|179   |          \N_DDR_MODE.G_NMU[8].U_M                                      |ltlib_v1_0_0_match__parameterized2_6            |    74|
+|180   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized2         |    73|
+|181   |              DUT                                                       |ltlib_v1_0_0_all_typeA__parameterized2          |    23|
+|182   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_7                  |     5|
+|183   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_8                  |     5|
+|184   |                \I_WHOLE_SLICE.G_SLICE_IDX[2].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice_9                  |     5|
+|185   |                \I_WHOLE_SLICE.G_SLICE_IDX[3].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0_10 |     6|
+|186   |          \N_DDR_MODE.G_NMU[9].U_M                                      |ltlib_v1_0_0_match__parameterized4              |    32|
+|187   |            \allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst    |ltlib_v1_0_0_allx_typeA__parameterized4         |    31|
+|188   |              DUT                                                       |ltlib_v1_0_0_all_typeA                          |    13|
+|189   |                \I_WHOLE_SLICE.G_SLICE_IDX[0].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice                    |     5|
+|190   |                \I_WHOLE_SLICE.G_SLICE_IDX[1].U_ALL_SRL_SLICE           |ltlib_v1_0_0_all_typeA_slice__parameterized0    |     6|
+|191   |      xsdb_memory_read_inst                                             |ltlib_v1_0_0_generic_memrd                      |   273|
 +------+------------------------------------------------------------------------+------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:31 ; elapsed = 00:03:03 . Memory (MB): peak = 1865.078 ; gain = 508.195 ; free physical = 1622 ; free virtual = 4698
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:51 ; elapsed = 00:02:09 . Memory (MB): peak = 1850.230 ; gain = 498.195 ; free physical = 3513 ; free virtual = 9046
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1165 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:24 ; elapsed = 00:02:55 . Memory (MB): peak = 1865.078 ; gain = 357.180 ; free physical = 1679 ; free virtual = 4753
-Synthesis Optimization Complete : Time (s): cpu = 00:02:31 ; elapsed = 00:03:03 . Memory (MB): peak = 1865.086 ; gain = 508.195 ; free physical = 1690 ; free virtual = 4764
+Synthesis finished with 0 errors, 0 critical warnings and 1161 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:45 ; elapsed = 00:02:01 . Memory (MB): peak = 1850.230 ; gain = 344.180 ; free physical = 3569 ; free virtual = 9102
+Synthesis Optimization Complete : Time (s): cpu = 00:01:51 ; elapsed = 00:02:09 . Memory (MB): peak = 1850.238 ; gain = 498.195 ; free physical = 3579 ; free virtual = 9112
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 235 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 220 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1865.086 ; gain = 0.000 ; free physical = 1640 ; free virtual = 4695
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1850.238 ; gain = 0.000 ; free physical = 3510 ; free virtual = 9043
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 116 instances were transformed.
-  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 104 instances
-  CFGLUT5 => SRLC32E: 12 instances
+  A total of 156 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 140 instances
+  CFGLUT5 => SRLC32E: 16 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-432 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+428 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:34 ; elapsed = 00:03:05 . Memory (MB): peak = 1865.086 ; gain = 508.312 ; free physical = 1703 ; free virtual = 4759
+synth_design: Time (s): cpu = 00:01:54 ; elapsed = 00:02:11 . Memory (MB): peak = 1850.238 ; gain = 498.312 ; free physical = 3570 ; free virtual = 9103
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1865.086 ; gain = 0.000 ; free physical = 1701 ; free virtual = 4757
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1850.238 ; gain = 0.000 ; free physical = 3570 ; free virtual = 9103
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_ila_0_0_synth_1/fourier_bram_ila_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP fourier_bram_ila_0_0, cache-ID = 6d9417b897e0134a
-INFO: [Coretcl 2-1174] Renamed 249 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1889.090 ; gain = 0.000 ; free physical = 1694 ; free virtual = 4760
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP fourier_bram_ila_0_0, cache-ID = 3c3e4149f758416e
+INFO: [Coretcl 2-1174] Renamed 190 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1874.242 ; gain = 0.000 ; free physical = 3552 ; free virtual = 9094
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_ila_0_0_synth_1/fourier_bram_ila_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file fourier_bram_ila_0_0_utilization_synth.rpt -pb fourier_bram_ila_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jan 23 00:30:24 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 24 18:58:13 2019...

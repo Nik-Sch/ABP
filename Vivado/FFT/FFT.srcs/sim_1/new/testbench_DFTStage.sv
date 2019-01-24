@@ -120,7 +120,9 @@ module testbench_DFTStage;
     .o_freqDataEn(dut_o_freqDataEn),
     .o_freqDataIndex(dut_o_freqDataIndex),
     .o_freqDataReal(dut_o_freqDataReal),
-    .o_freqDataImag(dut_o_freqDataImag)
+    .o_freqDataImag(dut_o_freqDataImag),
+    .o_r_f(),
+    .o_dataOld()
     );
 
 

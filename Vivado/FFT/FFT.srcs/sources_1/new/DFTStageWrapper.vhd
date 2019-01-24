@@ -42,7 +42,11 @@ entity DFTStageWrapper is
     -- o_freqDataIndex : out std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
     o_freqDataIndex : out std_ulogic_vector(7 downto 0);
     o_freqDataReal  : out std_ulogic_vector(24 downto 0);
-    o_freqDataImag  : out std_ulogic_vector(24 downto 0)
+    o_freqDataImag  : out std_ulogic_vector(24 downto 0);
+
+    -- debug
+    o_r_f   : out std_ulogic_vector(8 downto 0);
+    o_dataOld : out std_ulogic_vector(24 downto 0)
     );
 end DFTStageWrapper;
 
@@ -60,7 +64,7 @@ architecture rtl of DFTStageWrapper is
       doutb : out std_logic_vector(49 downto 0)
       );
   end component;
-  constant c_N2: integer := 256;
+  constant c_N2 : integer := 256;
 
   signal s_bramRaddr : std_ulogic_vector(integer(ceil(log2(real(c_N2))))-1 downto 0);
   signal s_bramRe    : std_ulogic;
@@ -81,6 +85,7 @@ architecture rtl of DFTStageWrapper is
   signal s_dataFifoFillLevel : integer;
 
 begin
+  o_dataOld <= s_dataOld;
 
   s_start <= i_dataValid and s_ready;
 
@@ -129,7 +134,9 @@ begin
 
       o_bramWe    => s_bramWe,
       o_bramWAddr => s_bramWAddr,
-      o_bramWData => s_bramWData
+      o_bramWData => s_bramWData,
+      -- debug
+      o_r_f       => o_r_f
       );
 
   s_bramWeVector(0) <= std_logic(s_bramWe);

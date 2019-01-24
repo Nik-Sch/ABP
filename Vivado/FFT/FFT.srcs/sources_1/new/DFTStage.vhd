@@ -46,7 +46,10 @@ entity DFTStage is
     -- write
     o_bramWe    : out std_ulogic;
     o_bramWAddr : out std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
-    o_bramWData : out std_ulogic_vector(49 downto 0)  -- 49 downto 25: real, 24 downto 0: imag
+    o_bramWData : out std_ulogic_vector(49 downto 0);  -- 49 downto 25: real, 24 downto 0: imag
+
+    -- debug
+    o_r_f : out std_ulogic_vector(8 downto 0)
     );
 end DFTStage;
 
@@ -71,7 +74,7 @@ architecture rtl of DFTStage is
   signal s_eReal    : std_ulogic_vector(17 downto 0);
   signal s_eImag    : std_ulogic_vector(17 downto 0);
 
-  signal r_f : integer range 0 to N2-1+10;
+  signal r_f : integer range 0 to N2+c_COMPLEX_MULTIPLY_LATANCY+c_BRAM_READ_LATANCY+3;
 
   signal r_bramRe    : std_ulogic;
   signal r_bramRaddr : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
@@ -79,8 +82,9 @@ architecture rtl of DFTStage is
   signal r_bramWaddr : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
   signal r_bramWdata : std_ulogic_vector(49 downto 0);  -- 49 downto 25: real, 24 downto 0: imag
 
-
 begin
+
+  o_r_f <= std_ulogic_vector(to_unsigned(r_f, 9));
 
   inst_eFunctionRom : entity work.eFunctionRom
     port map (
