@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 01.01.2019 15:43:13
+-- Create Date: 26.01.2019 08:41:09
 -- Design Name: 
--- Module Name: i2c_master - Behavioral
+-- Module Name: I2C_Master - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,188 +31,95 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity i2c_master is
-    generic (
-        -- data width of inputs
-        DATA_WIDTH : integer := 32;
-        
-        -- addr width of inputs
-        ADDR_WIDTH : integer := 4;
-        
-        -- input clock frequence
-        CLK_FREQ : integer := 100000;   -- 100 kHz
-        
-        -- number of bits per block
-        MAX_COUNTER : integer := 8
-    );
-    port ( 
-        -- Standard I2C Ports
-        sda  : inout std_logic;
-        scl : out std_logic;
-        
-        -- Input Clock signal
-        iclk : in std_logic;
-        
-        -- Input Register
-        reg_addr_in : in std_logic_vector((ADDR_WIDTH-1) downto 0);
-        reg_data_in : in std_logic_vector((DATA_WIDTH-1) downto 0);
-        
-        --Output Register
-        reg_addr_out : out std_logic_vector((ADDR_WIDTH-1) downto 0);
-        reg_data_out : out std_logic_vector((DATA_WIDTH-1) downto 0)
-        
-        
-    );
-end i2c_master;
+entity I2C_Master is
+    Port ( 
+           -- Input Clock Signal
+           clk : in std_logic;
+           
+           -- Output Register to AXI4 Lite Slave
+           control_out : out std_logic_vector(31 downto 0);
+           reg_out : out std_logic_vector(31 downto 0);
+           enable_out : out std_logic_vector(31 downto 0);
+           
+           -- Input Register from AXI4 Lite Slave
+           control_in : in std_logic_vector(31 downto 0);
+           reg_in : in std_logic_vector(31 downto 0);
+           enable_in : in std_logic_vector(31 downto 0);
+           
+           -- I2C Master Logic Signals
+           scl : out std_logic;
+           sda : inout std_logic
+           
+           );
+           
+end I2C_Master;
 
-architecture Behavioral of i2c_master is
+architecture Behavioral of I2C_Master is
 
--- byte type declaration
-subtype BYTE_VECTOR is std_logic_vector(7 downto 0);
+type STATE is (IDLE, START, WRITE, READ, ACK, STOP);
+signal cstate :  STATE := IDLE;
 
--- type for state machine 
-type ABSTRACT_STATE is (
-        IDLE,
-        START_SIGNAL,
-        REPEATED_START_SIGNAL,
-        WRITE_SLAVE,
-        WRITE_BASE,
-        WRITE_DATA,
-        READ_DATA,
-        STOP_SIGNAL);
-        
--- type for bus state machine
-type BUS_STATE is (
-        IDLE,
-        START,
-        WRITE, 
-        READ,
-        ACK, 
-        NO_ACK, 
-        STOP); 
-        
--- signal initialization
-signal slave_addr : BYTE_VECTOR := (others => '0');
-signal op_bit     : std_logic   := '0';
-signal base_addr  : BYTE_VECTOR := (others => '0');
-signal data       : BYTE_VECTOR := (others => '0');
+-- Signals dependent from input register signals
+signal slave_addr : std_logic_vector(6 downto 0);
+signal op_bit     : std_logic;
+signal reg_addr   : std_logic_vector(7 downto 0);
+signal enable     : std_logic;
 
-signal op_type    : std_logic   := '0';
+-- Signals independent from input register signals
+signal repeated_start : std_logic  := '0';
+signal counter  : integer := 0;
+signal byte_buffer : std_logic_vector(6 downto 0);
 
-signal cstate     : ABSTRACT_STATE := IDLE;
-signal bstate     : BUS_STATE      := IDLE;
+-- constants
+constant write_bit : std_logic := '1';
 
-signal clk        : std_logic   := '0';
+begin
 
-signal counter    : integer     := 0;
-signal completed  : std_logic   := '0';
-  
-begin 
-
-clk <= iclk;
+-- Logic SCL signal should always rely on input clock signal
 scl <= clk;
 
-process (reg_addr_in, reg_data_in)
+slave_addr <= reg_in(7 downto 1);
+op_bit <= reg_in(0);
+reg_addr <= reg_in(15 downto 8);
+enable <= enable_in(0);
+
+process(clk)
 begin
-    if cstate = IDLE then
-        -- assignment of register content
-        slave_addr <= reg_data_in(23 downto 17);
-        op_bit <= reg_data_in(16);
-        op_type <= op_bit;
-        base_addr <= reg_data_in(15 downto 8);
-        data <= reg_data_in(7 downto 0);
-        
-        cstate <= START_SIGNAL;
+    if(cstate = START and clk = '1' and sda = '1') then
+        sda <= '0';
+        cstate <= WRITE;
     end if;
 end process;
 
-process (bstate) 
+process(clk)
 begin
-   if bstate = IDLE then
+    if(cstate = WRITE and clk = '0') then
+        sda <= byte_buffer(counter);
+        counter <= counter + 1;
+    end if;
+end process;
+
+process(clk)
+begin
+    if(cstate = READ and clk = '0') then
+        if(counter = 0) then
+            sda <= 'Z';
+        end if;
+        
+        byte_buffer(counter) <= sda;
+        counter <= counter + 1;
+    end if;
+end process;
+
+process(clk)
+begin
+    if(cstate = STOP and clk = '1' and sda = '0') then
         sda <= '1';
-        scl <= '1';
-   end if;
-end process;
-
-process (clk)
-begin
-    case bstate is
-        when START =>
-            if clk = '1' then
-                sda <= '0';
-                completed <= '1';
-            end if; 
-        when STOP =>
-            if clk = '1' then
-                sda <= '1';
-                completed <= '1';
-            end if;
-        when WRITE =>
-            if clk = '0' then
-                sda <= data(counter);
-                counter <= counter + 1;
-            end if;
-        when READ =>
-           if clk = '1' then
-                sda <= 'Z';
-                data(counter) <= sda;
-                counter <= counter + 1;
-           end if;
-    end case;   
-end process;
-
-process (counter)
-begin
-    if counter = MAX_COUNTER-1 then
-        counter <= 0;
-        completed <= '1';
+        cstate <= START;
     end if;
 end process;
 
-process
-begin
-    case bstate is
-        when ACK =>
-            sda <= '0';
-            -- TODO: Wait for one more cycle
-        when NO_ACK =>
-            sda <= '1';
-            -- TODO: Wait for one more cycle
-    end case;
-end process;
 
-process (completed)
-begin
-    if completed = '1' then
-        case cstate is
-            when START_SIGNAL =>
-                cstate <= WRITE_SLAVE;
-            when WRITE_SLAVE  =>
-                cstate <= WRITE_BASE;
-            when WRITE_BASE   =>
-                if op_type = '1' then
-                    cstate <= WRITE_DATA;
-                else 
-                    if op_type = op_bit then
-                        cstate <= READ_DATA;
-                    else 
-                        cstate <= REPEATED_START_SIGNAL;
-                    end if;
-                end if;               
-            when WRITE_DATA   =>
-                cstate <= STOP_SIGNAL;
-            when REPEATED_START_SIGNAL => 
-                op_bit <= not op_bit;
-                cstate <= WRITE_SLAVE;
-            when READ_DATA    =>
-                cstate <= STOP_SIGNAL;
-            when STOP_SIGNAL  =>
-                cstate <= IDLE;
-        end case;
-        
-        completed <= '0';
-    end if;
-end process;
 
 
 

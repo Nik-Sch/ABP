@@ -1,6 +1,6 @@
 
 /***************************** Include Files *******************************/
-#include "i2c_master.h"
+#include "I2C_Master.h"
 #include "xparameters.h"
 #include "stdio.h"
 #include "xil_io.h"
