@@ -56,18 +56,23 @@ end I2C_Master;
 
 architecture Behavioral of I2C_Master is
 
-type STATE is (IDLE, START, WRITE, READ, ACK, STOP);
-signal cstate :  STATE := IDLE;
+type BUS_STATE is (IDLE, START, WRITE, READ, ACK, STOP);
+type ABSTRACT_STATE is(IDLE, START_SIGNAL, WRITE_SLAVE, WRITE_REG, WRITE_DATA, READ_DATA, ACK_SIGNAL, STOP_SIGNAL);
+
+signal bstate :  BUS_STATE := IDLE;
+signal astate :  ABSTRACT_STATE := IDLE;
 
 -- Signals dependent from input register signals
 signal slave_addr : std_logic_vector(6 downto 0);
 signal op_bit     : std_logic;
 signal reg_addr   : std_logic_vector(7 downto 0);
+signal data       : std_logic_vector(7 downto 0);
 signal enable     : std_logic;
 
 -- Signals independent from input register signals
 signal repeated_start : std_logic  := '0';
 signal counter  : integer := 0;
+signal completed : std_logic := '0';
 signal byte_buffer : std_logic_vector(6 downto 0);
 
 -- constants
@@ -81,19 +86,87 @@ scl <= clk;
 slave_addr <= reg_in(7 downto 1);
 op_bit <= reg_in(0);
 reg_addr <= reg_in(15 downto 8);
+data <= reg_in(23 downto 16);
 enable <= enable_in(0);
+
+
+reg_out(7 downto 1) <= slave_addr;
+reg_out(0) <= op_bit;
+reg_out(15 downto 8) <= reg_addr;
+reg_out(23 downto 16) <= data;
+enable_out(0) <= enable;
+
+
+
+process(astate)
+begin
+    case astate is
+        when IDLE =>
+            astate <= START_SIGNAL;
+        when START_SIGNAL =>
+            bstate <= START;
+        when WRITE_SLAVE =>
+            byte_buffer(7 downto 1) <= slave_addr;
+            byte_buffer(0) <= op_bit;
+            bstate <= WRITE;
+        when WRITE_REG =>
+            byte_buffer <= reg_addr;
+            bstate <= WRITE;
+        when WRITE_DATA =>
+            byte_buffer <= data;
+            bstate <= WRITE;
+        when READ_DATA =>
+            bstate <= READ;
+        when STOP_SIGNAL =>
+            bstate <= STOP;
+    end case; 
+end process;
+
+process(completed)
+begin
+    if(completed = '1') then
+        case astate is
+            when START_SIGNAL =>
+                astate <= WRITE_SLAVE;
+            when WRITE_SLAVE =>
+                if(repeated_start = '0') then
+                    astate <= WRITE_REG;
+                else
+                    astate <= READ_DATA;
+                end if;
+            when WRITE_REG =>
+                if(op_bit = '0') then
+                    astate <= WRITE_DATA;
+                else 
+                    astate <= START_SIGNAL;
+                end if;
+            when WRITE_DATA =>
+                 astate <= STOP_SIGNAL;
+            when READ_DATA =>
+                 data <= byte_buffer;
+                 astate <= STOP_SIGNAL;
+            when STOP_SIGNAL =>
+                 astate <= START_SIGNAL;
+        end case;         
+        completed <= '0';
+    end if;
+end process;
+
+
 
 process(clk)
 begin
-    if(cstate = START and clk = '1' and sda = '1') then
-        sda <= '0';
-        cstate <= WRITE;
+    if(bstate = START and clk = '1') then
+        if(sda = '1') then
+            sda <= '0';
+            completed <= '1';
+        end if;    
     end if;
 end process;
 
 process(clk)
 begin
-    if(cstate = WRITE and clk = '0') then
+    if(bstate = WRITE and clk = '0') then
         sda <= byte_buffer(counter);
         counter <= counter + 1;
     end if;
@@ -101,11 +174,7 @@ end process;
 
 process(clk)
 begin
-    if(cstate = READ and clk = '0') then
-        if(counter = 0) then
-            sda <= 'Z';
-        end if;
-        
+    if(bstate = READ and clk = '1') then
         byte_buffer(counter) <= sda;
         counter <= counter + 1;
     end if;
@@ -113,9 +182,22 @@ end process;
 
 process(clk)
 begin
-    if(cstate = STOP and clk = '1' and sda = '0') then
-        sda <= '1';
-        cstate <= START;
+    if(bstate = ACK and clk = '1') then
+        if(sda = '0') then
+            completed <= '1';
+        else 
+            astate <= STOP_SIGNAL;
+        end if;
+    end if;
+end process;
+
+process(clk)
+begin
+    if(bstate = STOP and clk = '1') then
+        if(sda = '0') then
+            sda <= '1';
+            completed <= '1';
+        end if;  
     end if;
 end process;
 
