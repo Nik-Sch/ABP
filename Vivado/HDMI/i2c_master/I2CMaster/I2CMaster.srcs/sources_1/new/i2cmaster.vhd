@@ -47,10 +47,10 @@ end i2cmaster;
 architecture Behavioral of i2cmaster is
 
 type BUS_STATE is (IDLE, START, WRITE, READ, ACK, STOP);
-type ABSTRACT_STATE is(IDLE, START_SIGNAL, WRITE_SLAVE, WRITE_BASE, WRITE_DATA, READ_DATA, ACK_SIGNAL, STOP_SIGNAL);
+type PROTO_STATE is(IDLE, START_SIGNAL, WRITE_SLAVE, WRITE_BASE, WRITE_DATA, READ_DATA, ACK_SIGNAL, STOP_SIGNAL);
 
 signal bstate :  BUS_STATE := IDLE;
-signal astate :  ABSTRACT_STATE := IDLE;
+signal pstate :  PROTO_STATE := IDLE;
 
 -- Signals for choice
 signal repeated_start : std_logic  := '0';
@@ -76,11 +76,11 @@ begin
 -- Logic SCL signal should always rely on input clock signal
 scl <= clk;
 
-process(astate)
+process(pstate)
 begin
-    case astate is
+    case pstate is
         when IDLE =>
-            astate <= START_SIGNAL;
+            pstate <= START_SIGNAL;
         when START_SIGNAL =>
             if(reg_in(OP_BIT_INDEX) = '1' and repeated_start = '0') then
                 repeated_start <= '1';
@@ -114,29 +114,31 @@ end process;
 process(completed)
 begin
     if(completed = '1') then
-        case astate is
+        case pstate is
             when START_SIGNAL =>
-                astate <= WRITE_SLAVE;
+                pstate <= WRITE_SLAVE;
             when WRITE_SLAVE =>
+            
                 if(reg_in(OP_BIT_INDEX) = '1' and repeated_start = '0') then
-                    astate <= READ_DATA;
+                    pstate <= READ_DATA;
                 else 
-                    astate <= WRITE_BASE;
+                    pstate <= WRITE_BASE;
                 end if;
+                
             when WRITE_BASE =>
                 if(reg_in(OP_BIT_INDEX) = '1') then
-                    astate <= START_SIGNAL;
+                    pstate <= START_SIGNAL;
                 else
-                    astate <= WRITE_DATA; 
+                    pstate <= WRITE_DATA; 
                 end if;
                 
             when WRITE_DATA =>
-                 astate <= STOP_SIGNAL;
+                 pstate <= STOP_SIGNAL;
             when READ_DATA =>
                  reg_out(DATA_BYTE_END downto DATA_BYTE_START) <= byte_buffer;
-                 astate <= STOP_SIGNAL;
+                 pstate <= STOP_SIGNAL;
             when STOP_SIGNAL =>
-                 astate <= START_SIGNAL;
+                 pstate <= START_SIGNAL;
         end case;         
         completed <= '0';
     end if;
@@ -176,7 +178,7 @@ begin
         if(sda = '0') then
             completed <= '1';
         else 
-            astate <= STOP_SIGNAL;
+            pstate <= STOP_SIGNAL;
         end if;
     end if;
 end process;
