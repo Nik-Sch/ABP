@@ -23,7 +23,7 @@ void print_double(double x) {
 
     long int fix = (long int) x;
     long int frac = abs((long int) (x*1000.0 - fix*1000));
-    xil_printf("%d.%d\n", fix, frac);
+    xil_printf("%3d.%03d", fix, frac);
 }
 
 void read_dft_data_right() {
@@ -39,8 +39,12 @@ void read_dft_data_right() {
     	int imag_i = XBram_In32(addr_imag);
     	double imag = ((double) imag_i) / (pow(2, 14));
     	double val = sqrt(pow(real, 2) + pow(imag, 2));
-    	xil_printf("bin[%3d]: (%9d, %9d) ", i, real, imag);
+    	xil_printf("bin[%3d]: (", i);
+    	print_double(real);
+    	xil_printf(", ");
+    	xil_printf(") ");
     	print_double(val);
+    	xil_printf("\n");
     	addr_real += 4;
     	addr_imag += 4;
     }
