@@ -55,6 +55,7 @@ module testbench_Freq2BRAM;
       dut_i_freqDataEn    = 1;
       @(negedge clk);
     end
+    dut_i_freqDataEn = 0;
   end
 
   // verification
@@ -63,26 +64,28 @@ module testbench_Freq2BRAM;
 
     while ((remainingReal !== 0) || (remainingImag !== 0)) begin
       if (dut_o_bramEn && dut_o_bramByteWe === 4'b1111) begin
-        if (dut_o_bramAddr[31-:24] === 0) begin
+        if (dut_o_bramAddr[31-:22] === 0) begin
           // real value
-          if (remainingReal[dut_o_bramAddr[7:0]] === 0) begin
-            $fatal(1, "[Freq2BRAM Testbench] real @ %h was already stored @%01t", dut_o_bramAddr[7:0], $time);
+          automatic integer value = {{7{X[dut_o_bramAddr[9:2]].r[24]}}, X[dut_o_bramAddr[9:2]].r};
+          if (remainingReal[dut_o_bramAddr[9:2]] === 0) begin
+            $fatal(1, "[Freq2BRAM Testbench] real @ %h was already stored @%01t", dut_o_bramAddr[9:2], $time);
           end
-          if (dut_o_bramDin !== X[dut_o_bramAddr[7:0]].r) begin
-            $fatal(1, "[Freq2BRAM Testbench] real @ %h is incorrect.\nval:\t%h\nref:\t%h\n @%01t", dut_o_bramAddr[7:0], dut_o_bramDin, X[dut_o_bramAddr[7:0]].r, $time);
+          if (dut_o_bramDin !== value) begin
+            $fatal(1, "[Freq2BRAM Testbench] real @ %h is incorrect.\nval:\t%h\nref:\t%h\n @%01t", dut_o_bramAddr[9:2], dut_o_bramDin, value, $time);
           end
-          remainingReal[dut_o_bramAddr[7:0]] = 0;
-          $display("[Freq2BRAM Testbench] real @ %h stored @%01t", dut_o_bramAddr[7:0], $time);
-        end else if (dut_o_bramAddr[31-:24] === 1) begin
+          remainingReal[dut_o_bramAddr[9:2]] = 0;
+          $display("[Freq2BRAM Testbench] real @ %h stored @%01t", dut_o_bramAddr[9:2], $time);
+        end else if (dut_o_bramAddr[31-:22] === 1) begin
           // imag value
-          if (remainingImag[dut_o_bramAddr[7:0]] === 0) begin
-            $fatal(1, "[Freq2BRAM Testbench] imag @ %h was already stored @%01t", dut_o_bramAddr[7:0], $time);
+          automatic integer value = {{7{X[dut_o_bramAddr[9:2]].i[24]}}, X[dut_o_bramAddr[9:2]].i};
+          if (remainingImag[dut_o_bramAddr[9:2]] === 0) begin
+            $fatal(1, "[Freq2BRAM Testbench] imag @ %h was already stored @%01t", dut_o_bramAddr[9:2], $time);
           end
-          if (dut_o_bramDin !== X[dut_o_bramAddr[7:0]].i) begin
-            $fatal(1, "[Freq2BRAM Testbench] imag @ %h is incorrect.\nval:\t%h\nref:\t%h\n @%01t", dut_o_bramAddr[7:0], dut_o_bramDin, X[dut_o_bramAddr[7:0]].i, $time);
+          if (dut_o_bramDin !== value) begin
+            $fatal(1, "[Freq2BRAM Testbench] imag @ %h is incorrect.\nval:\t%h\nref:\t%h\n @%01t", dut_o_bramAddr[9:2], dut_o_bramDin, value, $time);
           end
-          remainingImag[dut_o_bramAddr[7:0]] = 0;
-          $display("[Freq2BRAM Testbench] imag @ %h stored @%01t", dut_o_bramAddr[7:0], $time);
+          remainingImag[dut_o_bramAddr[9:2]] = 0;
+          $display("[Freq2BRAM Testbench] imag @ %h stored @%01t", dut_o_bramAddr[9:2], $time);
         end else begin
           $fatal(1, "[Freq2BRAM Testbench] %h is not a valid address @%01t", dut_o_bramAddr, $time);
         end

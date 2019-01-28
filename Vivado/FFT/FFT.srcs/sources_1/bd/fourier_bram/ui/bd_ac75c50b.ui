@@ -2,102 +2,71 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 1600 -defaultsOSRD
-preplace port btns_5bits -pg 1 -y 1870 -defaultsOSRD
-preplace port BCLK -pg 1 -y 1170 -defaultsOSRD
-preplace port led0 -pg 1 -y 1320 -defaultsOSRD
-preplace port FCLK_CLK2_0 -pg 1 -y 1780 -defaultsOSRD
-preplace port ADC_SDATA -pg 1 -y 1190 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 1620 -defaultsOSRD
-preplace port LRCLK -pg 1 -y 1150 -defaultsOSRD
-preplace port spi_rtl -pg 1 -y 2010 -defaultsOSRD
-preplace inst i2s2bram_0 -pg 1 -lvl 3 -y 1180 -defaultsOSRD
-preplace inst fifoDataInLeft -pg 1 -lvl 1 -y 730 -defaultsOSRD
-preplace inst ila_dft_domain -pg 1 -lvl 4 -y 700 -defaultsOSRD
-preplace inst fifoDataInRight -pg 1 -lvl 1 -y 990 -defaultsOSRD
-preplace inst fifoRight -pg 1 -lvl 4 -y 1270 -defaultsOSRD
-preplace inst fifoLeft -pg 1 -lvl 4 -y 1000 -defaultsOSRD
-preplace inst rstAxi -pg 1 -lvl 1 -y 1990 -defaultsOSRD
-preplace inst blkMemGenLeft -pg 1 -lvl 4 -y 400 -defaultsOSRD
-preplace inst ila_i2c_domain -pg 1 -lvl 3 -y 920 -defaultsOSRD
-preplace inst DFTStageWrapperLeft -pg 1 -lvl 2 -y 530 -defaultsOSRD
-preplace inst Freq2BRAMLeft -pg 1 -lvl 3 -y 440 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 3 -y 1870 -defaultsOSRD
-preplace inst axiSmc -pg 1 -lvl 2 -y 1720 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 4 -y 1530 -defaultsOSRD
-preplace inst axiBramCtrlRight -pg 1 -lvl 3 -y 1510 -defaultsOSRD
-preplace inst DFTStageWrapperRight -pg 1 -lvl 2 -y 960 -defaultsOSRD
-preplace inst I2S_receiver_0 -pg 1 -lvl 2 -y 1160 -defaultsOSRD
-preplace inst rstRTL -pg 1 -lvl 1 -y 1300 -defaultsOSRD
-preplace inst axiBramCtrlLeft -pg 1 -lvl 3 -y 1350 -defaultsOSRD
-preplace inst Freq2BRAMRight -pg 1 -lvl 3 -y 190 -defaultsOSRD
-preplace inst axi_bram_ctrl_0 -pg 1 -lvl 3 -y 1700 -defaultsOSRD
-preplace inst axi_quad_spi_0 -pg 1 -lvl 3 -y 2020 -defaultsOSRD
-preplace inst blkMemGenRight -pg 1 -lvl 4 -y 140 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -y 1710 -defaultsOSRD
-preplace netloc axi_quad_spi_0_SPI_0 1 3 2 NJ 2010 NJ
-preplace netloc axiSmc_M02_AXI 1 2 1 1230
-preplace netloc processing_system7_0_DDR 1 1 4 NJ 1600 NJ 1600 1680J 1670 2170J
-preplace netloc DFTStageWrapper_1_o_freqDataImag 1 2 2 1180 760 N
-preplace netloc axi_smc_M01_AXI 1 2 1 1230
-preplace netloc DFTStageWrapperRight_o_ready 1 0 4 30J 840 NJ 840 1190 680 N
-preplace netloc fifoDataInRight_o_fifoRdEn 1 1 3 700J 790 NJ 790 1850
-preplace netloc Freq2BRAM_1_o_bramEn 1 3 1 1730
-preplace netloc DFTStageWrapper_0_o_freqDataIndex 1 2 1 1130
-preplace netloc fifoRight_dout 1 0 4 40J 830 720J 780 NJ 780 1730
-preplace netloc I2S_receiver_0_WR_EN_LEFT 1 2 2 1230 1030 1820
-preplace netloc Freq2BRAM_1_o_bramDin 1 3 1 1710
-preplace netloc blk_mem_gen_1_doutb 1 2 2 1260 60 1730J
-preplace netloc Freq2BRAM_0_o_bramByteWe 1 3 1 1850
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 1770
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 700
-preplace netloc I2S_receiver_0_WR_EN_RIGHT 1 2 2 1240 1090 1800J
-preplace netloc DFTStageWrapper_0_o_freqDataImag 1 2 1 1170
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 3 730 1830 1270 1590 1850
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA1 1 3 1 1750
-preplace netloc axi_smc_M00_AXI 1 2 1 1140
-preplace netloc DFTStageWrapperRight_o_r_f 1 2 2 1200 800 1780J
-preplace netloc fifoDataInLeft_o_fifoRdEn 1 1 3 NJ 710 NJ 710 1810
-preplace netloc DFTStageWrapper_0_o_freqDataReal 1 2 1 1150
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 1890 670
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA2 1 3 1 1840
-preplace netloc i2s2bram_0_o_bramAddr 1 3 1 1740
-preplace netloc BCLK_1 1 0 2 NJ 1170 NJ
-preplace netloc DFTStageWrapper_1_o_freqDataIndex 1 2 2 1140 720 N
-preplace netloc DFTStageWrapper_0_o_freqDataEn 1 2 1 1110
-preplace netloc fifoDataInLeft_o_dftData 1 1 1 670
-preplace netloc fifoLeft_dout 1 0 4 20J 640 720J 730 NJ 730 1800
-preplace netloc fifoLeft_empty 1 0 4 40J 810 NJ 810 1210J 1020 1790
-preplace netloc axiSmc_M04_AXI 1 2 1 1260
-preplace netloc fifoDataInLeft_o_dftDataValid 1 1 1 660
-preplace netloc LRCLK_1 1 0 2 NJ 1150 NJ
-preplace netloc DFTStageWrapper_1_o_freqDataReal 1 2 2 1160 740 N
-preplace netloc processing_system7_0_FIXED_IO 1 1 4 NJ 1620 NJ 1620 1670J 1660 2180J
-preplace netloc fifoRight_full 1 2 2 1270 1080 1820
-preplace netloc DFTStageWrapperRight_o_dataOld 1 2 2 1220 810 1790J
-preplace netloc fifoDataInRight_o_dftData 1 1 3 730 670 1260 640 N
-preplace netloc ADC_SDATA_1 1 0 5 NJ 1190 710 1270 NJ 1270 1690J 1680 2160J
-preplace netloc Freq2BRAM_0_o_bramAddr 1 3 1 1710
-preplace netloc axi_gpio_0_GPIO 1 3 2 NJ 1870 NJ
-preplace netloc i2s2bram_0_o_bramByteWe 1 3 1 1700
-preplace netloc i2s2bram_0_o_bramEn 1 3 1 1710
-preplace netloc i2s2bram_0_o_bramDin 1 3 1 1720
-preplace netloc fifoRight_empty 1 0 4 20J 820 NJ 820 NJ 820 1830
-preplace netloc proc_sys_reset_0_peripheral_reset 1 1 3 690 400 1200 70 1850
-preplace netloc axiSmc_M03_AXI 1 2 1 1140
-preplace netloc blk_mem_gen_0_doutb 1 2 2 1260 320 1730J
-preplace netloc Net 1 0 4 40 1200 680 380 1250 310 1840
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 40 1880 720 1250 1250 1060 1810
-preplace netloc fifoDataInRight_o_dftDataValid 1 1 3 710 660 N 660 N
-preplace netloc DFTStageWrapperLeft_o_ready 1 0 3 30J 650 NJ 650 1100
-preplace netloc Freq2BRAM_1_o_bramByteWe 1 3 1 N
-preplace netloc DFTStageWrapper_1_o_freqDataEn 1 2 2 1120 700 N
-preplace netloc Freq2BRAM_0_o_bramEn 1 3 1 1760
-preplace netloc processing_system7_0_FCLK_CLK2 1 1 4 700J 1820 1260J 1780 NJ 1780 NJ
-preplace netloc I2S_receiver_0_SDATA_REC 1 2 2 1260 1040 1760
-preplace netloc Freq2BRAM_1_o_bramAddr 1 3 1 1700
-preplace netloc Freq2BRAM_0_o_bramDin 1 3 1 1760
-levelinfo -pg 1 0 450 920 1480 2010 2200 -top -10 -bot 2110
+preplace port DDR -pg 1 -y 1400 -defaultsOSRD
+preplace port btns_5bits -pg 1 -y 1080 -defaultsOSRD
+preplace port BCLK -pg 1 -y 590 -defaultsOSRD
+preplace port led0 -pg 1 -y 620 -defaultsOSRD
+preplace port FCLK_CLK2_0 -pg 1 -y 1560 -defaultsOSRD
+preplace port ADC_SDATA -pg 1 -y 610 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 1420 -defaultsOSRD
+preplace port LRCLK -pg 1 -y 570 -defaultsOSRD
+preplace port spi_rtl -pg 1 -y 1240 -defaultsOSRD
+preplace inst i2s2bram_0 -pg 1 -lvl 4 -y 630 -defaultsOSRD
+preplace inst ila_dft_domain -pg 1 -lvl 5 -y 470 -defaultsOSRD
+preplace inst rstAxi -pg 1 -lvl 2 -y 970 -defaultsOSRD
+preplace inst i2sDataInRight -pg 1 -lvl 2 -y 480 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 4 -y 1080 -defaultsOSRD
+preplace inst axiSmc -pg 1 -lvl 3 -y 1040 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 5 -y 950 -defaultsOSRD
+preplace inst axiBramCtrlRight -pg 1 -lvl 4 -y 800 -defaultsOSRD
+preplace inst DFTStageWrapperRight -pg 1 -lvl 3 -y 480 -defaultsOSRD
+preplace inst I2S_receiver_0 -pg 1 -lvl 1 -y 580 -defaultsOSRD
+preplace inst rstRTL -pg 1 -lvl 2 -y 770 -defaultsOSRD
+preplace inst Freq2BRAMRight -pg 1 -lvl 4 -y 270 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -y 940 -defaultsOSRD
+preplace inst axi_quad_spi_0 -pg 1 -lvl 4 -y 1250 -defaultsOSRD
+preplace inst blkMemGenRight -pg 1 -lvl 5 -y 140 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 4 -y 1490 -defaultsOSRD
+preplace netloc axi_quad_spi_0_SPI_0 1 4 2 NJ 1240 NJ
+preplace netloc axiSmc_M02_AXI 1 3 1 1140
+preplace netloc processing_system7_0_DDR 1 4 2 NJ 1400 NJ
+preplace netloc DFTStageWrapper_1_o_freqDataImag 1 3 2 1210 500 NJ
+preplace netloc axi_smc_M01_AXI 1 3 1 1200
+preplace netloc DFTStageWrapperRight_o_ready 1 1 4 320 600 NJ 600 1120 420 NJ
+preplace netloc Freq2BRAM_1_o_bramEn 1 4 1 1800
+preplace netloc Freq2BRAM_1_o_bramDin 1 4 1 1790
+preplace netloc blk_mem_gen_1_doutb 1 3 2 1220 140 1770J
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 3 740 360 1180J 410 1660
+preplace netloc I2S_receiver_0_WR_EN_RIGHT 1 1 4 290 350 N 350 1200 390 1740
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 2 3 730 940 1150 1160 1800
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA1 1 4 1 1700
+preplace netloc DFTStageWrapperRight_o_r_f 1 3 2 N 520 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 4 320 870 NJ 870 1120J 1340 1650
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA2 1 4 1 1700
+preplace netloc i2s2bram_0_o_bramAddr 1 4 1 1710
+preplace netloc BCLK_1 1 0 1 NJ
+preplace netloc DFTStageWrapper_1_o_freqDataIndex 1 3 2 1170 460 NJ
+preplace netloc axiSmc_M04_AXI 1 3 1 1130
+preplace netloc LRCLK_1 1 0 1 NJ
+preplace netloc DFTStageWrapper_1_o_freqDataReal 1 3 2 1190 480 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 4 2 NJ 1420 NJ
+preplace netloc DFTStageWrapperRight_o_dataOld 1 3 2 N 540 NJ
+preplace netloc fifoDataInRight_o_dftData 1 2 3 690 130 NJ 130 1750J
+preplace netloc ADC_SDATA_1 1 0 6 20 490 300J 560 710J 720 NJ 720 NJ 720 2030J
+preplace netloc axi_gpio_0_GPIO 1 4 2 NJ 1080 NJ
+preplace netloc i2s2bram_0_o_bramByteWe 1 4 1 1670
+preplace netloc i2s2bram_0_o_bramDin 1 4 1 1690
+preplace netloc i2s2bram_0_o_bramEn 1 4 1 1680
+preplace netloc proc_sys_reset_0_peripheral_reset 1 2 3 700 230 1130 150 1740J
+preplace netloc axiSmc_M03_AXI 1 3 1 N
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 30 670 300 670 720 620 1160 120 1720
+preplace netloc fifoDataInRight_o_dftDataValid 1 2 3 680 110 NJ 110 1760J
+preplace netloc Freq2BRAM_1_o_bramByteWe 1 4 1 1810
+preplace netloc DFTStageWrapper_1_o_freqDataEn 1 3 2 1130 440 N
+preplace netloc processing_system7_0_FCLK_CLK2 1 4 2 NJ 1560 NJ
+preplace netloc I2S_receiver_0_SDATA_REC 1 1 4 310 610 N 610 1220J 400 1730
+preplace netloc Freq2BRAM_1_o_bramAddr 1 4 1 1780
+levelinfo -pg 1 0 160 500 940 1440 1920 2050 -top 0 -bot 1650
 "
 }
 {

@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Thu Jan 24 18:55:28 2019
+--Date        : Mon Jan 28 18:56:12 2019
 --Host        : niklas-desktop running 64-bit Ubuntu 18.10
 --Command     : generate_target fourier_bram_wrapper.bd
 --Design      : fourier_bram_wrapper

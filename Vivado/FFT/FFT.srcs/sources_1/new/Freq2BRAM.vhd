@@ -76,21 +76,24 @@ architecture rtl of Freq2BRAM is
 
   signal r_fifoImagDin   : std_ulogic_vector(24 downto 0);
   signal s_fifoImagDout  : std_ulogic_vector(24 downto 0);
+  signal r_fifoImagDout  : std_ulogic_vector(24 downto 0);
   signal r_fifoImagRe    : std_ulogic;
   signal r_fifoImagWe    : std_ulogic;
   signal s_fifoImagEmpty : std_ulogic;
   signal r_fifoAddrDin   : std_ulogic_vector(7 downto 0);
   signal s_fifoAddrDout  : std_ulogic_vector(7 downto 0);
+  signal r_fifoAddrDout  : std_ulogic_vector(7 downto 0);
   signal r_fifoAddrRe    : std_ulogic;
   signal r_fifoAddrWe    : std_ulogic;
 
   signal r_freqDataReal  : std_ulogic_vector(24 downto 0);
   signal r_freqDataImag  : std_ulogic_vector(24 downto 0);
   signal r_freqDataIndex : std_ulogic_vector(7 downto 0);
+  signal r_freqDataEn    : std_ulogic;
 
-  constant c_BASE_ADDR_REAL : std_logic_vector(23 downto 0)    := x"000000";
-  constant c_BASE_ADDR_IMAG : std_logic_vector(23 downto 0)    := x"000001";
-  constant c_DATA_PADDING   : std_logic_vector(31-25 downto 0) := (others => '0');
+  -- stupid byte aligned addresses
+  constant c_BASE_ADDR_REAL : std_logic_vector(21 downto 0)    := "0000000000000000000000";
+  constant c_BASE_ADDR_IMAG : std_logic_vector(21 downto 0)    := "0000000000000000000001";
 begin
 
   inst_imagFifo : data_fifo
@@ -118,6 +121,9 @@ begin
   p_fsm : process(i_clk, i_reset)
   begin
     if i_reset = '1' then
+      r_fifoAddrDout  <= (others => '0');
+      r_fifoImagDout  <= (others => '0');
+      r_freqDataEn    <= '0';
       r_fifoAddrRe    <= '0';
       r_fifoAddrDin   <= (others => '0');
       o_bramByteWe    <= (others => '0');
@@ -144,6 +150,9 @@ begin
       r_freqDataReal  <= i_freqDataReal;
       r_freqDataImag  <= i_freqDataImag;
       r_freqDataIndex <= i_freqDataIndex;
+      r_freqDataEn    <= i_freqDataEn;
+      r_fifoImagDout  <= s_fifoImagDout;
+      r_fifoAddrDout  <= s_fifoAddrDout;
 
 
       case r_state is
@@ -152,28 +161,34 @@ begin
             r_state <= s_OUTPUT_REAL;
           end if;
         when s_OUTPUT_REAL =>  -- store real value to bram and imag value to fifo
-          if i_freqDataEn = '1' then
-            o_bramEn     <= '1';
-            o_bramByteWe <= "1111";
-            o_bramAddr   <= c_BASE_ADDR_REAL & std_logic_vector(r_freqDataIndex);
-            o_bramDin    <= c_DATA_PADDING & std_logic_vector(r_freqDataReal);
+          if r_freqDataEn = '1' then
+            o_bramEn                <= '1';
+            o_bramByteWe            <= "1111";
+            o_bramAddr              <= c_BASE_ADDR_REAL & std_logic_vector(r_freqDataIndex) & "00";
+            -- sign extend to 32 bit
+            o_bramDin(24 downto 0)  <= std_logic_vector(r_freqDataReal);
+            o_bramDin(31 downto 25) <= (others => std_logic(r_freqDataReal(24)));
 
             r_fifoImagWe  <= '1';
             r_fifoImagDin <= r_freqDataImag;
             r_fifoAddrWe  <= '1';
             r_fifoAddrDin <= r_freqDataIndex;
 
-            if r_freqDataIndex = x"ff" then
-              r_state <= s_OUTPUT_IMAG;
+            if r_freqDataIndex >= x"fe" then
               r_fifoAddrRe <= '1';
               r_fifoImagRe <= '1';
             end if;
+            if r_freqDataIndex = x"ff" then
+              r_state <= s_OUTPUT_IMAG;
+            end if;
           end if;
         when s_OUTPUT_IMAG =>           -- store imag value from fifo to bram
-          o_bramEn     <= '1';
-          o_bramByteWe <= "1111";
-          o_bramAddr   <= c_BASE_ADDR_IMAG & std_logic_vector(s_fifoAddrDout);
-          o_bramDin    <= c_DATA_PADDING & std_logic_vector(s_fifoImagDout);
+          o_bramEn                <= '1';
+          o_bramByteWe            <= "1111";
+          o_bramAddr              <= c_BASE_ADDR_IMAG & std_logic_vector(r_fifoAddrDout) & "00";
+          -- sign extend to 32 bit
+          o_bramDin(24 downto 0)  <= std_logic_vector(r_fifoImagDout);
+          o_bramDin(31 downto 25) <= (others => std_logic(r_fifoImagDout(24)));
 
           r_fifoAddrRe <= '1';
           r_fifoImagRe <= '1';

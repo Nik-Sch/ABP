@@ -1,11 +1,11 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Wed Jan 16 21:56:42 2019
+// Date        : Wed Jan 16 21:55:07 2019
 // Host        : niklas-desktop running 64-bit Ubuntu 18.10
 // Command     : write_verilog -force -mode synth_stub -rename_top fourier_bram_proc_sys_reset_0_0 -prefix
-//               fourier_bram_proc_sys_reset_0_0_ fourier_bram_proc_sys_reset_0_0_stub.v
-// Design      : fourier_bram_proc_sys_reset_0_0
+//               fourier_bram_proc_sys_reset_0_0_ fourier_bram_rst_ps7_0_100M_0_stub.v
+// Design      : fourier_bram_rst_ps7_0_100M_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
 // --------------------------------------------------------------------------------

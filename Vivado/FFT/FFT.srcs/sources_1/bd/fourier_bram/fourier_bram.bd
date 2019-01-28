@@ -10,29 +10,21 @@
     },
     "design_tree": {
       "processing_system7_0": "",
-      "axiBramCtrlLeft": "",
       "axiSmc": "",
       "rstAxi": "",
       "rstRTL": "",
-      "blkMemGenLeft": "",
       "blkMemGenRight": "",
       "axiBramCtrlRight": "",
       "I2S_receiver_0": "",
-      "fifoLeft": "",
-      "fifoRight": "",
       "axi_quad_spi_0": "",
-      "fifoDataInRight": "",
-      "fifoDataInLeft": "",
       "axi_gpio_0": "",
       "blk_mem_gen_0": "",
-      "axi_bram_ctrl_0": "",
       "ila_dft_domain": "",
+      "DFTStageWrapperRight": "",
+      "axi_bram_ctrl_0": "",
+      "i2sDataInRight": "",
       "i2s2bram_0": "",
-      "ila_i2c_domain": "",
-      "Freq2BRAMLeft": "",
-      "Freq2BRAMRight": "",
-      "DFTStageWrapperLeft": "",
-      "DFTStageWrapperRight": ""
+      "Freq2BRAMRight": ""
     },
     "interface_ports": {
       "DDR": {
@@ -167,13 +159,13 @@
             "value": "100.000000"
           },
           "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
-            "value": "142.857132"
+            "value": "10.000000"
           },
           "PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ": {
             "value": "10.000000"
           },
           "PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ": {
-            "value": "200.000000"
+            "value": "10.000000"
           },
           "PCW_ACT_PCAP_PERIPHERAL_FREQMHZ": {
             "value": "200.000000"
@@ -224,13 +216,13 @@
             "value": "100000000"
           },
           "PCW_CLK1_FREQ": {
-            "value": "142857132"
+            "value": "10000000"
           },
           "PCW_CLK2_FREQ": {
             "value": "10000000"
           },
           "PCW_CLK3_FREQ": {
-            "value": "200000000"
+            "value": "10000000"
           },
           "PCW_DDR_RAM_HIGHADDR": {
             "value": "0x1FFFFFFF"
@@ -260,13 +252,13 @@
             "value": "Share reset pin"
           },
           "PCW_EN_CLK1_PORT": {
-            "value": "1"
+            "value": "0"
           },
           "PCW_EN_CLK2_PORT": {
             "value": "1"
           },
           "PCW_EN_CLK3_PORT": {
-            "value": "1"
+            "value": "0"
           },
           "PCW_EN_EMIO_TTC0": {
             "value": "1"
@@ -292,14 +284,8 @@
           "PCW_EN_USB0": {
             "value": "1"
           },
-          "PCW_FCLK_CLK1_BUF": {
-            "value": "TRUE"
-          },
           "PCW_FCLK_CLK2_BUF": {
             "value": "TRUE"
-          },
-          "PCW_FCLK_CLK3_BUF": {
-            "value": "FALSE"
           },
           "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
             "value": "100.000000"
@@ -316,13 +302,7 @@
           "PCW_FPGA_FCLK0_ENABLE": {
             "value": "1"
           },
-          "PCW_FPGA_FCLK1_ENABLE": {
-            "value": "1"
-          },
           "PCW_FPGA_FCLK2_ENABLE": {
-            "value": "1"
-          },
-          "PCW_FPGA_FCLK3_ENABLE": {
             "value": "1"
           },
           "PCW_GPIO_MIO_GPIO_ENABLE": {
@@ -967,29 +947,7 @@
         },
         "hdl_attributes": {
           "BMM_INFO_PROCESSOR": {
-            "value": "arm > fourier_bram axiBramCtrlLeft fourier_bram axiBramCtrlRight fourier_bram axi_bram_ctrl_0",
-            "value_src": "default"
-          },
-          "KEEP_HIERARCHY": {
-            "value": "yes",
-            "value_src": "default"
-          }
-        }
-      },
-      "axiBramCtrlLeft": {
-        "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
-        "xci_name": "fourier_bram_axi_bram_ctrl_0_0",
-        "parameters": {
-          "DATA_WIDTH": {
-            "value": "32"
-          },
-          "SINGLE_PORT_BRAM": {
-            "value": "1"
-          }
-        },
-        "hdl_attributes": {
-          "BMM_INFO_ADDRESS_SPACE": {
-            "value": "byte  0x40000000 32 > fourier_bram blkMemGenLeft",
+            "value": "arm > fourier_bram axiBramCtrlRight fourier_bram axi_bram_ctrl_0",
             "value_src": "default"
           },
           "KEEP_HIERARCHY": {
@@ -1051,33 +1009,6 @@
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "xci_name": "fourier_bram_proc_sys_reset_0_0"
       },
-      "blkMemGenLeft": {
-        "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
-        "xci_name": "fourier_bram_blk_mem_gen_0_1",
-        "parameters": {
-          "EN_SAFETY_CKT": {
-            "value": "false"
-          },
-          "Enable_B": {
-            "value": "Use_ENB_Pin"
-          },
-          "Memory_Type": {
-            "value": "True_Dual_Port_RAM"
-          },
-          "Port_B_Clock": {
-            "value": "100"
-          },
-          "Port_B_Enable_Rate": {
-            "value": "100"
-          },
-          "Port_B_Write_Rate": {
-            "value": "50"
-          },
-          "Use_RSTB_Pin": {
-            "value": "true"
-          }
-        }
-      },
       "blkMemGenRight": {
         "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
         "xci_name": "fourier_bram_blk_mem_gen_1_0",
@@ -1128,54 +1059,6 @@
         "vlnv": "xilinx.com:user:I2S_receiver:1.0",
         "xci_name": "fourier_bram_I2S_receiver_0_0"
       },
-      "fifoLeft": {
-        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
-        "xci_name": "fourier_bram_fifo_generator_0_0",
-        "parameters": {
-          "Fifo_Implementation": {
-            "value": "Independent_Clocks_Block_RAM"
-          },
-          "Input_Data_Width": {
-            "value": "24"
-          },
-          "Input_Depth": {
-            "value": "512"
-          },
-          "Output_Data_Width": {
-            "value": "24"
-          },
-          "Performance_Options": {
-            "value": "First_Word_Fall_Through"
-          },
-          "Reset_Pin": {
-            "value": "false"
-          }
-        }
-      },
-      "fifoRight": {
-        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
-        "xci_name": "fourier_bram_fifo_generator_0_1",
-        "parameters": {
-          "Fifo_Implementation": {
-            "value": "Independent_Clocks_Block_RAM"
-          },
-          "Input_Data_Width": {
-            "value": "24"
-          },
-          "Input_Depth": {
-            "value": "512"
-          },
-          "Output_Data_Width": {
-            "value": "24"
-          },
-          "Performance_Options": {
-            "value": "First_Word_Fall_Through"
-          },
-          "Reset_Pin": {
-            "value": "false"
-          }
-        }
-      },
       "axi_quad_spi_0": {
         "vlnv": "xilinx.com:ip:axi_quad_spi:3.2",
         "xci_name": "fourier_bram_axi_quad_spi_0_0",
@@ -1188,72 +1071,6 @@
           },
           "FIFO_INCLUDED": {
             "value": "0"
-          }
-        }
-      },
-      "fifoDataInRight": {
-        "vlnv": "xilinx.com:module_ref:fifoDataIn:1.0",
-        "xci_name": "fourier_bram_fifoDataInLeft_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "fifoDataIn",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_fifoData": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "o_fifoRdEn": {
-            "direction": "O"
-          },
-          "i_fifoEmpty": {
-            "direction": "I"
-          },
-          "o_dftData": {
-            "direction": "O",
-            "left": "24",
-            "right": "0"
-          },
-          "o_dftDataValid": {
-            "direction": "O"
-          },
-          "i_dftReady": {
-            "direction": "I"
-          }
-        }
-      },
-      "fifoDataInLeft": {
-        "vlnv": "xilinx.com:module_ref:fifoDataIn:1.0",
-        "xci_name": "fourier_bram_fifoDataIn_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "fifoDataIn",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_fifoData": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "o_fifoRdEn": {
-            "direction": "O"
-          },
-          "i_fifoEmpty": {
-            "direction": "I"
-          },
-          "o_dftData": {
-            "direction": "O",
-            "left": "24",
-            "right": "0"
-          },
-          "o_dftDataValid": {
-            "direction": "O"
-          },
-          "i_dftReady": {
-            "direction": "I"
           }
         }
       },
@@ -1296,31 +1113,12 @@
           }
         }
       },
-      "axi_bram_ctrl_0": {
-        "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
-        "xci_name": "fourier_bram_axi_bram_ctrl_0_2",
-        "parameters": {
-          "SINGLE_PORT_BRAM": {
-            "value": "1"
-          }
-        },
-        "hdl_attributes": {
-          "BMM_INFO_ADDRESS_SPACE": {
-            "value": "byte  0x44000000 32 > fourier_bram blk_mem_gen_0",
-            "value_src": "default"
-          },
-          "KEEP_HIERARCHY": {
-            "value": "yes",
-            "value_src": "default"
-          }
-        }
-      },
       "ila_dft_domain": {
         "vlnv": "xilinx.com:ip:ila:6.2",
         "xci_name": "fourier_bram_ila_0_0",
         "parameters": {
           "C_DATA_DEPTH": {
-            "value": "2048"
+            "value": "4096"
           },
           "C_ENABLE_ILA_AXI_MON": {
             "value": "false"
@@ -1332,13 +1130,22 @@
             "value": "Native"
           },
           "C_NUM_OF_PROBES": {
-            "value": "12"
+            "value": "15"
           },
           "C_PROBE0_WIDTH": {
             "value": "24"
           },
           "C_PROBE10_WIDTH": {
             "value": "25"
+          },
+          "C_PROBE11_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE12_WIDTH": {
+            "value": "32"
+          },
+          "C_PROBE14_WIDTH": {
+            "value": "4"
           },
           "C_PROBE1_WIDTH": {
             "value": "1"
@@ -1369,6 +1176,133 @@
           },
           "C_TRIGIN_EN": {
             "value": "false"
+          }
+        }
+      },
+      "DFTStageWrapperRight": {
+        "vlnv": "xilinx.com:module_ref:DFTStageWrapper:1.0",
+        "xci_name": "fourier_bram_DFTStageWrapper_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "DFTStageWrapper",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "i_reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "fourier_bram_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "i_reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "o_ready": {
+            "direction": "O"
+          },
+          "i_dataValid": {
+            "direction": "I"
+          },
+          "i_dataNew": {
+            "direction": "I",
+            "left": "24",
+            "right": "0"
+          },
+          "o_freqDataEn": {
+            "direction": "O"
+          },
+          "o_freqDataIndex": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "o_freqDataReal": {
+            "direction": "O",
+            "left": "24",
+            "right": "0"
+          },
+          "o_freqDataImag": {
+            "direction": "O",
+            "left": "24",
+            "right": "0"
+          },
+          "o_r_f": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "o_dataOld": {
+            "direction": "O",
+            "left": "24",
+            "right": "0"
+          }
+        }
+      },
+      "axi_bram_ctrl_0": {
+        "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
+        "xci_name": "fourier_bram_axi_bram_ctrl_0_2",
+        "parameters": {
+          "SINGLE_PORT_BRAM": {
+            "value": "1"
+          }
+        },
+        "hdl_attributes": {
+          "BMM_INFO_ADDRESS_SPACE": {
+            "value": "byte  0x44000000 32 > fourier_bram blk_mem_gen_0",
+            "value_src": "default"
+          },
+          "KEEP_HIERARCHY": {
+            "value": "yes",
+            "value_src": "default"
+          }
+        }
+      },
+      "i2sDataInRight": {
+        "vlnv": "xilinx.com:module_ref:i2sDataIn:1.0",
+        "xci_name": "fourier_bram_i2sDataIn_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "i2sDataIn",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_i2sData": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "i_i2sEn": {
+            "direction": "I"
+          },
+          "o_dftData": {
+            "direction": "O",
+            "left": "24",
+            "right": "0"
+          },
+          "o_dftDataValid": {
+            "direction": "O"
+          },
+          "i_dftReady": {
+            "direction": "I"
           }
         }
       },
@@ -1406,107 +1340,6 @@
           }
         }
       },
-      "ila_i2c_domain": {
-        "vlnv": "xilinx.com:ip:ila:6.2",
-        "xci_name": "fourier_bram_ila_0_1",
-        "parameters": {
-          "C_DATA_DEPTH": {
-            "value": "2048"
-          },
-          "C_ENABLE_ILA_AXI_MON": {
-            "value": "false"
-          },
-          "C_MONITOR_TYPE": {
-            "value": "Native"
-          },
-          "C_NUM_OF_PROBES": {
-            "value": "4"
-          },
-          "C_PROBE2_WIDTH": {
-            "value": "24"
-          }
-        }
-      },
-      "Freq2BRAMLeft": {
-        "vlnv": "xilinx.com:module_ref:Freq2BRAM:1.0",
-        "xci_name": "fourier_bram_Freq2BRAM_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Freq2BRAM",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "i_reset",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "fourier_bram_processing_system7_0_0_FCLK_CLK1",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "142857132",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "i_reset": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_HIGH",
-                "value_src": "const_prop"
-              }
-            }
-          },
-          "i_freqDataEn": {
-            "direction": "I"
-          },
-          "i_freqDataIndex": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "i_freqDataReal": {
-            "direction": "I",
-            "left": "24",
-            "right": "0"
-          },
-          "i_freqDataImag": {
-            "direction": "I",
-            "left": "24",
-            "right": "0"
-          },
-          "o_bramAddr": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "o_bramDin": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "i_bramDout": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "o_bramEn": {
-            "direction": "O"
-          },
-          "o_bramByteWe": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
       "Freq2BRAMRight": {
         "vlnv": "xilinx.com:module_ref:Freq2BRAM:1.0",
         "xci_name": "fourier_bram_Freq2BRAM_1_0",
@@ -1525,11 +1358,11 @@
                 "value_src": "constant"
               },
               "CLK_DOMAIN": {
-                "value": "fourier_bram_processing_system7_0_0_FCLK_CLK1",
+                "value": "fourier_bram_processing_system7_0_0_FCLK_CLK0",
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "142857132",
+                "value": "100000000",
                 "value_src": "user_prop"
               }
             }
@@ -1583,162 +1416,6 @@
           "o_bramByteWe": {
             "direction": "O",
             "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "DFTStageWrapperLeft": {
-        "vlnv": "xilinx.com:module_ref:DFTStageWrapper:1.0",
-        "xci_name": "fourier_bram_DFTStageWrapper_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "DFTStageWrapper",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "i_reset",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "fourier_bram_processing_system7_0_0_FCLK_CLK1",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "142857132",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "i_reset": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_HIGH",
-                "value_src": "const_prop"
-              }
-            }
-          },
-          "o_ready": {
-            "direction": "O"
-          },
-          "i_dataValid": {
-            "direction": "I"
-          },
-          "i_dataNew": {
-            "direction": "I",
-            "left": "24",
-            "right": "0"
-          },
-          "o_freqDataEn": {
-            "direction": "O"
-          },
-          "o_freqDataIndex": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "o_freqDataReal": {
-            "direction": "O",
-            "left": "24",
-            "right": "0"
-          },
-          "o_freqDataImag": {
-            "direction": "O",
-            "left": "24",
-            "right": "0"
-          },
-          "o_r_f": {
-            "direction": "O",
-            "left": "8",
-            "right": "0"
-          },
-          "o_dataOld": {
-            "direction": "O",
-            "left": "24",
-            "right": "0"
-          }
-        }
-      },
-      "DFTStageWrapperRight": {
-        "vlnv": "xilinx.com:module_ref:DFTStageWrapper:1.0",
-        "xci_name": "fourier_bram_DFTStageWrapper_1_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "DFTStageWrapper",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "i_reset",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "fourier_bram_processing_system7_0_0_FCLK_CLK1",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "142857132",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "i_reset": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_HIGH",
-                "value_src": "const_prop"
-              }
-            }
-          },
-          "o_ready": {
-            "direction": "O"
-          },
-          "i_dataValid": {
-            "direction": "I"
-          },
-          "i_dataNew": {
-            "direction": "I",
-            "left": "24",
-            "right": "0"
-          },
-          "o_freqDataEn": {
-            "direction": "O"
-          },
-          "o_freqDataIndex": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "o_freqDataReal": {
-            "direction": "O",
-            "left": "24",
-            "right": "0"
-          },
-          "o_freqDataImag": {
-            "direction": "O",
-            "left": "24",
-            "right": "0"
-          },
-          "o_r_f": {
-            "direction": "O",
-            "left": "8",
-            "right": "0"
-          },
-          "o_dataOld": {
-            "direction": "O",
-            "left": "24",
             "right": "0"
           }
         }
@@ -1775,22 +1452,10 @@
           "axi_bram_ctrl_0/S_AXI"
         ]
       },
-      "axi_smc_M00_AXI": {
-        "interface_ports": [
-          "axiSmc/M00_AXI",
-          "axiBramCtrlLeft/S_AXI"
-        ]
-      },
       "axi_gpio_0_GPIO": {
         "interface_ports": [
           "btns_5bits",
           "axi_gpio_0/GPIO"
-        ]
-      },
-      "axi_bram_ctrl_0_BRAM_PORTA": {
-        "interface_ports": [
-          "axiBramCtrlLeft/BRAM_PORTA",
-          "blkMemGenLeft/BRAM_PORTA"
         ]
       },
       "axiSmc_M02_AXI": {
@@ -1830,18 +1495,19 @@
           "processing_system7_0/FCLK_CLK0",
           "processing_system7_0/M_AXI_GP0_ACLK",
           "axiSmc/aclk",
-          "axiBramCtrlLeft/s_axi_aclk",
           "rstAxi/slowest_sync_clk",
           "axiBramCtrlRight/s_axi_aclk",
           "I2S_receiver_0/CLK",
-          "fifoRight/wr_clk",
-          "fifoLeft/wr_clk",
           "axi_quad_spi_0/s_axi_aclk",
           "axi_quad_spi_0/ext_spi_clk",
           "axi_gpio_0/s_axi_aclk",
-          "axi_bram_ctrl_0/s_axi_aclk",
           "blk_mem_gen_0/clkb",
-          "ila_i2c_domain/clk"
+          "rstRTL/slowest_sync_clk",
+          "blkMemGenRight/clkb",
+          "ila_dft_domain/clk",
+          "DFTStageWrapperRight/i_clk",
+          "axi_bram_ctrl_0/s_axi_aclk",
+          "Freq2BRAMRight/i_clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1854,93 +1520,20 @@
       "rst_ps7_0_100M_peripheral_aresetn": {
         "ports": [
           "rstAxi/peripheral_aresetn",
-          "axiBramCtrlLeft/s_axi_aresetn",
           "axiSmc/aresetn",
           "axiBramCtrlRight/s_axi_aresetn",
           "axi_quad_spi_0/s_axi_aresetn",
           "axi_gpio_0/s_axi_aresetn",
-          "axi_bram_ctrl_0/s_axi_aresetn",
-          "blk_mem_gen_0/rstb"
-        ]
-      },
-      "Net": {
-        "ports": [
-          "processing_system7_0/FCLK_CLK1",
-          "rstRTL/slowest_sync_clk",
-          "blkMemGenLeft/clkb",
-          "blkMemGenRight/clkb",
-          "fifoRight/rd_clk",
-          "fifoLeft/rd_clk",
-          "ila_dft_domain/clk",
-          "Freq2BRAMLeft/i_clk",
-          "Freq2BRAMRight/i_clk",
-          "DFTStageWrapperLeft/i_clk",
-          "DFTStageWrapperRight/i_clk"
-        ]
-      },
-      "DFTStageWrapper_0_o_freqDataEn": {
-        "ports": [
-          "DFTStageWrapperLeft/o_freqDataEn",
-          "Freq2BRAMLeft/i_freqDataEn"
-        ]
-      },
-      "DFTStageWrapper_0_o_freqDataIndex": {
-        "ports": [
-          "DFTStageWrapperLeft/o_freqDataIndex",
-          "Freq2BRAMLeft/i_freqDataIndex"
-        ]
-      },
-      "DFTStageWrapper_0_o_freqDataReal": {
-        "ports": [
-          "DFTStageWrapperLeft/o_freqDataReal",
-          "Freq2BRAMLeft/i_freqDataReal"
-        ]
-      },
-      "DFTStageWrapper_0_o_freqDataImag": {
-        "ports": [
-          "DFTStageWrapperLeft/o_freqDataImag",
-          "Freq2BRAMLeft/i_freqDataImag"
+          "blk_mem_gen_0/rstb",
+          "axi_bram_ctrl_0/s_axi_aresetn"
         ]
       },
       "proc_sys_reset_0_peripheral_reset": {
         "ports": [
           "rstRTL/peripheral_reset",
-          "blkMemGenLeft/rstb",
           "blkMemGenRight/rstb",
-          "Freq2BRAMLeft/i_reset",
-          "Freq2BRAMRight/i_reset",
-          "DFTStageWrapperLeft/i_reset",
-          "DFTStageWrapperRight/i_reset"
-        ]
-      },
-      "Freq2BRAM_0_o_bramAddr": {
-        "ports": [
-          "Freq2BRAMLeft/o_bramAddr",
-          "blkMemGenLeft/addrb"
-        ]
-      },
-      "Freq2BRAM_0_o_bramDin": {
-        "ports": [
-          "Freq2BRAMLeft/o_bramDin",
-          "blkMemGenLeft/dinb"
-        ]
-      },
-      "Freq2BRAM_0_o_bramEn": {
-        "ports": [
-          "Freq2BRAMLeft/o_bramEn",
-          "blkMemGenLeft/enb"
-        ]
-      },
-      "Freq2BRAM_0_o_bramByteWe": {
-        "ports": [
-          "Freq2BRAMLeft/o_bramByteWe",
-          "blkMemGenLeft/web"
-        ]
-      },
-      "blk_mem_gen_0_doutb": {
-        "ports": [
-          "blkMemGenLeft/doutb",
-          "Freq2BRAMLeft/i_bramDout"
+          "DFTStageWrapperRight/i_reset",
+          "Freq2BRAMRight/i_reset"
         ]
       },
       "DFTStageWrapper_1_o_freqDataEn": {
@@ -1980,25 +1573,29 @@
       "Freq2BRAM_1_o_bramAddr": {
         "ports": [
           "Freq2BRAMRight/o_bramAddr",
-          "blkMemGenRight/addrb"
+          "blkMemGenRight/addrb",
+          "ila_dft_domain/probe11"
         ]
       },
       "Freq2BRAM_1_o_bramDin": {
         "ports": [
           "Freq2BRAMRight/o_bramDin",
-          "blkMemGenRight/dinb"
+          "blkMemGenRight/dinb",
+          "ila_dft_domain/probe12"
         ]
       },
       "Freq2BRAM_1_o_bramEn": {
         "ports": [
           "Freq2BRAMRight/o_bramEn",
-          "blkMemGenRight/enb"
+          "blkMemGenRight/enb",
+          "ila_dft_domain/probe13"
         ]
       },
       "Freq2BRAM_1_o_bramByteWe": {
         "ports": [
           "Freq2BRAMRight/o_bramByteWe",
-          "blkMemGenRight/web"
+          "blkMemGenRight/web",
+          "ila_dft_domain/probe14"
         ]
       },
       "ADC_SDATA_1": {
@@ -2020,27 +1617,19 @@
           "I2S_receiver_0/LRCLK"
         ]
       },
-      "I2S_receiver_0_WR_EN_LEFT": {
-        "ports": [
-          "I2S_receiver_0/WR_EN_LEFT",
-          "fifoLeft/wr_en",
-          "ila_i2c_domain/probe0"
-        ]
-      },
       "I2S_receiver_0_SDATA_REC": {
         "ports": [
           "I2S_receiver_0/SDATA_REC",
-          "fifoRight/din",
-          "fifoLeft/din",
-          "i2s2bram_0/i_i2sData",
-          "ila_i2c_domain/probe2"
+          "ila_dft_domain/probe0",
+          "i2sDataInRight/i_i2sData",
+          "i2s2bram_0/i_i2sData"
         ]
       },
       "I2S_receiver_0_WR_EN_RIGHT": {
         "ports": [
           "I2S_receiver_0/WR_EN_RIGHT",
-          "fifoRight/wr_en",
-          "ila_i2c_domain/probe1"
+          "ila_dft_domain/probe1",
+          "i2sDataInRight/i_i2sEn"
         ]
       },
       "processing_system7_0_FCLK_CLK2": {
@@ -2049,106 +1638,25 @@
           "FCLK_CLK2_0"
         ]
       },
-      "fifoLeft_empty": {
-        "ports": [
-          "fifoLeft/empty",
-          "fifoDataInLeft/i_fifoEmpty"
-        ]
-      },
-      "fifoLeft_dout": {
-        "ports": [
-          "fifoLeft/dout",
-          "fifoDataInLeft/i_fifoData"
-        ]
-      },
-      "fifoDataInLeft_o_fifoRdEn": {
-        "ports": [
-          "fifoDataInLeft/o_fifoRdEn",
-          "fifoLeft/rd_en"
-        ]
-      },
-      "fifoDataInLeft_o_dftDataValid": {
-        "ports": [
-          "fifoDataInLeft/o_dftDataValid",
-          "DFTStageWrapperLeft/i_dataValid"
-        ]
-      },
-      "fifoDataInLeft_o_dftData": {
-        "ports": [
-          "fifoDataInLeft/o_dftData",
-          "DFTStageWrapperLeft/i_dataNew"
-        ]
-      },
-      "DFTStageWrapperLeft_o_ready": {
-        "ports": [
-          "DFTStageWrapperLeft/o_ready",
-          "fifoDataInLeft/i_dftReady"
-        ]
-      },
-      "fifoRight_dout": {
-        "ports": [
-          "fifoRight/dout",
-          "fifoDataInRight/i_fifoData",
-          "ila_dft_domain/probe0"
-        ]
-      },
-      "fifoRight_empty": {
-        "ports": [
-          "fifoRight/empty",
-          "fifoDataInRight/i_fifoEmpty",
-          "ila_dft_domain/probe11"
-        ]
-      },
-      "fifoDataInRight_o_fifoRdEn": {
-        "ports": [
-          "fifoDataInRight/o_fifoRdEn",
-          "fifoRight/rd_en",
-          "ila_dft_domain/probe1"
-        ]
-      },
       "DFTStageWrapperRight_o_ready": {
         "ports": [
           "DFTStageWrapperRight/o_ready",
-          "fifoDataInRight/i_dftReady",
-          "ila_dft_domain/probe4"
+          "ila_dft_domain/probe4",
+          "i2sDataInRight/i_dftReady"
         ]
       },
       "fifoDataInRight_o_dftDataValid": {
         "ports": [
-          "fifoDataInRight/o_dftDataValid",
+          "i2sDataInRight/o_dftDataValid",
           "ila_dft_domain/probe3",
           "DFTStageWrapperRight/i_dataValid"
         ]
       },
       "fifoDataInRight_o_dftData": {
         "ports": [
-          "fifoDataInRight/o_dftData",
+          "i2sDataInRight/o_dftData",
           "ila_dft_domain/probe2",
           "DFTStageWrapperRight/i_dataNew"
-        ]
-      },
-      "i2s2bram_0_o_bramAddr": {
-        "ports": [
-          "i2s2bram_0/o_bramAddr",
-          "blk_mem_gen_0/addrb"
-        ]
-      },
-      "i2s2bram_0_o_bramDin": {
-        "ports": [
-          "i2s2bram_0/o_bramDin",
-          "blk_mem_gen_0/dinb"
-        ]
-      },
-      "i2s2bram_0_o_bramEn": {
-        "ports": [
-          "i2s2bram_0/o_bramEn",
-          "blk_mem_gen_0/enb"
-        ]
-      },
-      "i2s2bram_0_o_bramByteWe": {
-        "ports": [
-          "i2s2bram_0/o_bramByteWe",
-          "blk_mem_gen_0/web"
         ]
       },
       "DFTStageWrapperRight_o_r_f": {
@@ -2163,10 +1671,28 @@
           "ila_dft_domain/probe10"
         ]
       },
-      "fifoRight_full": {
+      "i2s2bram_0_o_bramEn": {
         "ports": [
-          "fifoRight/full",
-          "ila_i2c_domain/probe3"
+          "i2s2bram_0/o_bramEn",
+          "blk_mem_gen_0/enb"
+        ]
+      },
+      "i2s2bram_0_o_bramDin": {
+        "ports": [
+          "i2s2bram_0/o_bramDin",
+          "blk_mem_gen_0/dinb"
+        ]
+      },
+      "i2s2bram_0_o_bramByteWe": {
+        "ports": [
+          "i2s2bram_0/o_bramByteWe",
+          "blk_mem_gen_0/web"
+        ]
+      },
+      "i2s2bram_0_o_bramAddr": {
+        "ports": [
+          "i2s2bram_0/o_bramAddr",
+          "blk_mem_gen_0/addrb"
         ]
       }
     },
@@ -2191,11 +1717,6 @@
                 "address_block": "/axi_quad_spi_0/AXI_LITE/Reg",
                 "offset": "0x41E00000",
                 "range": "64K"
-              },
-              "axiBramLeft": {
-                "address_block": "/axiBramCtrlLeft/S_AXI/Mem0",
-                "offset": "0x40000000",
-                "range": "8K"
               },
               "axiBramRight": {
                 "address_block": "/axiBramCtrlRight/S_AXI/Mem0",

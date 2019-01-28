@@ -41,7 +41,7 @@ architecture rtl of i2s2bram is
 begin
   o_bramByteWe <= "1111";
   o_bramEn <= '1';
-  o_bramDin(23 downto 0) <= i_i2sData;
+  o_bramDin <= x"00" & i_i2sData;
   o_bramAddr <= (others => '0');
 
 end rtl;

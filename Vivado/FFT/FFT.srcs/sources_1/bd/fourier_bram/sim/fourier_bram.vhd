@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Thu Jan 24 18:55:27 2019
+--Date        : Mon Jan 28 18:56:12 2019
 --Host        : niklas-desktop running 64-bit Ubuntu 18.10
 --Command     : generate_target fourier_bram.bd
 --Design      : fourier_bram
@@ -54,7 +54,7 @@ entity fourier_bram is
     spi_rtl_ss_t : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of fourier_bram : entity is "fourier_bram,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=fourier_bram,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=24,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=3,da_bram_cntlr_cnt=5,da_clkrst_cnt=4,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of fourier_bram : entity is "fourier_bram,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=fourier_bram,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=16,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=5,da_board_cnt=3,da_bram_cntlr_cnt=5,da_clkrst_cnt=4,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of fourier_bram : entity is "fourier_bram.hwdef";
 end fourier_bram;
@@ -108,9 +108,7 @@ architecture STRUCTURE of fourier_bram is
     M_AXI_GP0_RRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M_AXI_GP0_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
     FCLK_CLK0 : out STD_LOGIC;
-    FCLK_CLK1 : out STD_LOGIC;
     FCLK_CLK2 : out STD_LOGIC;
-    FCLK_CLK3 : out STD_LOGIC;
     FCLK_RESET0_N : out STD_LOGIC;
     MIO : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     DDR_CAS_n : inout STD_LOGIC;
@@ -135,50 +133,6 @@ architecture STRUCTURE of fourier_bram is
     PS_PORB : inout STD_LOGIC
   );
   end component fourier_bram_processing_system7_0_0;
-  component fourier_bram_axi_bram_ctrl_0_0 is
-  port (
-    s_axi_aclk : in STD_LOGIC;
-    s_axi_aresetn : in STD_LOGIC;
-    s_axi_awaddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_awlock : in STD_LOGIC;
-    s_axi_awcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_awvalid : in STD_LOGIC;
-    s_axi_awready : out STD_LOGIC;
-    s_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_wlast : in STD_LOGIC;
-    s_axi_wvalid : in STD_LOGIC;
-    s_axi_wready : out STD_LOGIC;
-    s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_bvalid : out STD_LOGIC;
-    s_axi_bready : in STD_LOGIC;
-    s_axi_araddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
-    s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_arburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_arlock : in STD_LOGIC;
-    s_axi_arcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s_axi_arvalid : in STD_LOGIC;
-    s_axi_arready : out STD_LOGIC;
-    s_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_rlast : out STD_LOGIC;
-    s_axi_rvalid : out STD_LOGIC;
-    s_axi_rready : in STD_LOGIC;
-    bram_rst_a : out STD_LOGIC;
-    bram_clk_a : out STD_LOGIC;
-    bram_en_a : out STD_LOGIC;
-    bram_we_a : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    bram_addr_a : out STD_LOGIC_VECTOR ( 12 downto 0 );
-    bram_wrdata_a : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component fourier_bram_axi_bram_ctrl_0_0;
   component fourier_bram_axi_smc_0 is
   port (
     aclk : in STD_LOGIC;
@@ -388,24 +342,6 @@ architecture STRUCTURE of fourier_bram is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component fourier_bram_proc_sys_reset_0_0;
-  component fourier_bram_blk_mem_gen_0_1 is
-  port (
-    clka : in STD_LOGIC;
-    rsta : in STD_LOGIC;
-    ena : in STD_LOGIC;
-    wea : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    addra : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    douta : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    clkb : in STD_LOGIC;
-    rstb : in STD_LOGIC;
-    enb : in STD_LOGIC;
-    web : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    addrb : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    dinb : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    doutb : out STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  end component fourier_bram_blk_mem_gen_0_1;
   component fourier_bram_blk_mem_gen_1_0 is
   port (
     clka : in STD_LOGIC;
@@ -479,30 +415,6 @@ architecture STRUCTURE of fourier_bram is
     SDATA_REC : out STD_LOGIC_VECTOR ( 23 downto 0 )
   );
   end component fourier_bram_I2S_receiver_0_0;
-  component fourier_bram_fifo_generator_0_0 is
-  port (
-    wr_clk : in STD_LOGIC;
-    rd_clk : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    wr_en : in STD_LOGIC;
-    rd_en : in STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 23 downto 0 );
-    full : out STD_LOGIC;
-    empty : out STD_LOGIC
-  );
-  end component fourier_bram_fifo_generator_0_0;
-  component fourier_bram_fifo_generator_0_1 is
-  port (
-    wr_clk : in STD_LOGIC;
-    rd_clk : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    wr_en : in STD_LOGIC;
-    rd_en : in STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 23 downto 0 );
-    full : out STD_LOGIC;
-    empty : out STD_LOGIC
-  );
-  end component fourier_bram_fifo_generator_0_1;
   component fourier_bram_axi_quad_spi_0_0 is
   port (
     ext_spi_clk : in STD_LOGIC;
@@ -540,26 +452,6 @@ architecture STRUCTURE of fourier_bram is
     ip2intc_irpt : out STD_LOGIC
   );
   end component fourier_bram_axi_quad_spi_0_0;
-  component fourier_bram_fifoDataInLeft_0 is
-  port (
-    i_fifoData : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    o_fifoRdEn : out STD_LOGIC;
-    i_fifoEmpty : in STD_LOGIC;
-    o_dftData : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_dftDataValid : out STD_LOGIC;
-    i_dftReady : in STD_LOGIC
-  );
-  end component fourier_bram_fifoDataInLeft_0;
-  component fourier_bram_fifoDataIn_0_0 is
-  port (
-    i_fifoData : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    o_fifoRdEn : out STD_LOGIC;
-    i_fifoEmpty : in STD_LOGIC;
-    o_dftData : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_dftDataValid : out STD_LOGIC;
-    i_dftReady : in STD_LOGIC
-  );
-  end component fourier_bram_fifoDataIn_0_0;
   component fourier_bram_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -602,6 +494,41 @@ architecture STRUCTURE of fourier_bram is
     doutb : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component fourier_bram_blk_mem_gen_0_0;
+  component fourier_bram_ila_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe7 : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    probe8 : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    probe9 : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    probe10 : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    probe11 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe12 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe13 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe14 : in STD_LOGIC_VECTOR ( 3 downto 0 )
+  );
+  end component fourier_bram_ila_0_0;
+  component fourier_bram_DFTStageWrapper_1_0 is
+  port (
+    i_clk : in STD_LOGIC;
+    i_reset : in STD_LOGIC;
+    o_ready : out STD_LOGIC;
+    i_dataValid : in STD_LOGIC;
+    i_dataNew : in STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_freqDataEn : out STD_LOGIC;
+    o_freqDataIndex : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    o_freqDataReal : out STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_freqDataImag : out STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_r_f : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    o_dataOld : out STD_LOGIC_VECTOR ( 24 downto 0 )
+  );
+  end component fourier_bram_DFTStageWrapper_1_0;
   component fourier_bram_axi_bram_ctrl_0_2 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -646,23 +573,15 @@ architecture STRUCTURE of fourier_bram is
     bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component fourier_bram_axi_bram_ctrl_0_2;
-  component fourier_bram_ila_0_0 is
+  component fourier_bram_i2sDataIn_0_0 is
   port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    probe7 : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    probe8 : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    probe9 : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    probe10 : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    probe11 : in STD_LOGIC_VECTOR ( 0 to 0 )
+    i_i2sData : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    i_i2sEn : in STD_LOGIC;
+    o_dftData : out STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_dftDataValid : out STD_LOGIC;
+    i_dftReady : in STD_LOGIC
   );
-  end component fourier_bram_ila_0_0;
+  end component fourier_bram_i2sDataIn_0_0;
   component fourier_bram_i2s2bram_0_0 is
   port (
     i_i2sData : in STD_LOGIC_VECTOR ( 23 downto 0 );
@@ -672,30 +591,6 @@ architecture STRUCTURE of fourier_bram is
     o_bramByteWe : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component fourier_bram_i2s2bram_0_0;
-  component fourier_bram_ila_0_1 is
-  port (
-    clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component fourier_bram_ila_0_1;
-  component fourier_bram_Freq2BRAM_0_0 is
-  port (
-    i_clk : in STD_LOGIC;
-    i_reset : in STD_LOGIC;
-    i_freqDataEn : in STD_LOGIC;
-    i_freqDataIndex : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    i_freqDataReal : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    i_freqDataImag : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_bramAddr : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    o_bramDin : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    i_bramDout : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    o_bramEn : out STD_LOGIC;
-    o_bramByteWe : out STD_LOGIC_VECTOR ( 3 downto 0 )
-  );
-  end component fourier_bram_Freq2BRAM_0_0;
   component fourier_bram_Freq2BRAM_1_0 is
   port (
     i_clk : in STD_LOGIC;
@@ -711,63 +606,22 @@ architecture STRUCTURE of fourier_bram is
     o_bramByteWe : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component fourier_bram_Freq2BRAM_1_0;
-  component fourier_bram_DFTStageWrapper_0_0 is
-  port (
-    i_clk : in STD_LOGIC;
-    i_reset : in STD_LOGIC;
-    o_ready : out STD_LOGIC;
-    i_dataValid : in STD_LOGIC;
-    i_dataNew : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_freqDataEn : out STD_LOGIC;
-    o_freqDataIndex : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    o_freqDataReal : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_freqDataImag : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_r_f : out STD_LOGIC_VECTOR ( 8 downto 0 );
-    o_dataOld : out STD_LOGIC_VECTOR ( 24 downto 0 )
-  );
-  end component fourier_bram_DFTStageWrapper_0_0;
-  component fourier_bram_DFTStageWrapper_1_0 is
-  port (
-    i_clk : in STD_LOGIC;
-    i_reset : in STD_LOGIC;
-    o_ready : out STD_LOGIC;
-    i_dataValid : in STD_LOGIC;
-    i_dataNew : in STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_freqDataEn : out STD_LOGIC;
-    o_freqDataIndex : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    o_freqDataReal : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_freqDataImag : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_r_f : out STD_LOGIC_VECTOR ( 8 downto 0 );
-    o_dataOld : out STD_LOGIC_VECTOR ( 24 downto 0 )
-  );
-  end component fourier_bram_DFTStageWrapper_1_0;
   signal ADC_SDATA_1 : STD_LOGIC;
   signal BCLK_1 : STD_LOGIC;
-  signal DFTStageWrapperLeft_o_ready : STD_LOGIC;
   signal DFTStageWrapperRight_o_dataOld : STD_LOGIC_VECTOR ( 24 downto 0 );
   signal DFTStageWrapperRight_o_r_f : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal DFTStageWrapperRight_o_ready : STD_LOGIC;
-  signal DFTStageWrapper_0_o_freqDataEn : STD_LOGIC;
-  signal DFTStageWrapper_0_o_freqDataImag : STD_LOGIC_VECTOR ( 24 downto 0 );
-  signal DFTStageWrapper_0_o_freqDataIndex : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal DFTStageWrapper_0_o_freqDataReal : STD_LOGIC_VECTOR ( 24 downto 0 );
   signal DFTStageWrapper_1_o_freqDataEn : STD_LOGIC;
   signal DFTStageWrapper_1_o_freqDataImag : STD_LOGIC_VECTOR ( 24 downto 0 );
   signal DFTStageWrapper_1_o_freqDataIndex : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal DFTStageWrapper_1_o_freqDataReal : STD_LOGIC_VECTOR ( 24 downto 0 );
-  signal Freq2BRAM_0_o_bramAddr : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal Freq2BRAM_0_o_bramByteWe : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal Freq2BRAM_0_o_bramDin : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal Freq2BRAM_0_o_bramEn : STD_LOGIC;
   signal Freq2BRAM_1_o_bramAddr : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal Freq2BRAM_1_o_bramByteWe : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal Freq2BRAM_1_o_bramDin : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal Freq2BRAM_1_o_bramEn : STD_LOGIC;
   signal I2S_receiver_0_SDATA_REC : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal I2S_receiver_0_WR_EN_LEFT : STD_LOGIC;
   signal I2S_receiver_0_WR_EN_RIGHT : STD_LOGIC;
   signal LRCLK_1 : STD_LOGIC;
-  signal Net : STD_LOGIC;
   signal axiSmc_M02_AXI_ARADDR : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal axiSmc_M02_AXI_ARREADY : STD_LOGIC;
   signal axiSmc_M02_AXI_ARVALID : STD_LOGIC;
@@ -847,13 +701,6 @@ architecture STRUCTURE of fourier_bram is
   signal axi_bram_ctrl_0_BRAM_PORTA2_EN : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA2_RST : STD_LOGIC;
   signal axi_bram_ctrl_0_BRAM_PORTA2_WE : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal axi_bram_ctrl_0_BRAM_PORTA_ADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
-  signal axi_bram_ctrl_0_BRAM_PORTA_CLK : STD_LOGIC;
-  signal axi_bram_ctrl_0_BRAM_PORTA_DIN : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_bram_ctrl_0_BRAM_PORTA_DOUT : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_bram_ctrl_0_BRAM_PORTA_EN : STD_LOGIC;
-  signal axi_bram_ctrl_0_BRAM_PORTA_RST : STD_LOGIC;
-  signal axi_bram_ctrl_0_BRAM_PORTA_WE : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_gpio_0_GPIO_TRI_I : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal axi_quad_spi_0_SPI_0_IO0_I : STD_LOGIC;
   signal axi_quad_spi_0_SPI_0_IO0_O : STD_LOGIC;
@@ -867,37 +714,6 @@ architecture STRUCTURE of fourier_bram is
   signal axi_quad_spi_0_SPI_0_SS_I : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_quad_spi_0_SPI_0_SS_O : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_quad_spi_0_SPI_0_SS_T : STD_LOGIC;
-  signal axi_smc_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
-  signal axi_smc_M00_AXI_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal axi_smc_M00_AXI_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal axi_smc_M00_AXI_ARLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal axi_smc_M00_AXI_ARLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal axi_smc_M00_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal axi_smc_M00_AXI_ARREADY : STD_LOGIC;
-  signal axi_smc_M00_AXI_ARSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal axi_smc_M00_AXI_ARVALID : STD_LOGIC;
-  signal axi_smc_M00_AXI_AWADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
-  signal axi_smc_M00_AXI_AWBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal axi_smc_M00_AXI_AWCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal axi_smc_M00_AXI_AWLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal axi_smc_M00_AXI_AWLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal axi_smc_M00_AXI_AWPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal axi_smc_M00_AXI_AWREADY : STD_LOGIC;
-  signal axi_smc_M00_AXI_AWSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal axi_smc_M00_AXI_AWVALID : STD_LOGIC;
-  signal axi_smc_M00_AXI_BREADY : STD_LOGIC;
-  signal axi_smc_M00_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal axi_smc_M00_AXI_BVALID : STD_LOGIC;
-  signal axi_smc_M00_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_smc_M00_AXI_RLAST : STD_LOGIC;
-  signal axi_smc_M00_AXI_RREADY : STD_LOGIC;
-  signal axi_smc_M00_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal axi_smc_M00_AXI_RVALID : STD_LOGIC;
-  signal axi_smc_M00_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal axi_smc_M00_AXI_WLAST : STD_LOGIC;
-  signal axi_smc_M00_AXI_WREADY : STD_LOGIC;
-  signal axi_smc_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal axi_smc_M00_AXI_WVALID : STD_LOGIC;
   signal axi_smc_M01_AXI_ARADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
   signal axi_smc_M01_AXI_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal axi_smc_M01_AXI_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -929,19 +745,9 @@ architecture STRUCTURE of fourier_bram is
   signal axi_smc_M01_AXI_WREADY : STD_LOGIC;
   signal axi_smc_M01_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal axi_smc_M01_AXI_WVALID : STD_LOGIC;
-  signal blk_mem_gen_0_doutb : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal blk_mem_gen_1_doutb : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal fifoDataInLeft_o_dftData : STD_LOGIC_VECTOR ( 24 downto 0 );
-  signal fifoDataInLeft_o_dftDataValid : STD_LOGIC;
-  signal fifoDataInLeft_o_fifoRdEn : STD_LOGIC;
   signal fifoDataInRight_o_dftData : STD_LOGIC_VECTOR ( 24 downto 0 );
   signal fifoDataInRight_o_dftDataValid : STD_LOGIC;
-  signal fifoDataInRight_o_fifoRdEn : STD_LOGIC;
-  signal fifoLeft_dout : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal fifoLeft_empty : STD_LOGIC;
-  signal fifoRight_dout : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal fifoRight_empty : STD_LOGIC;
-  signal fifoRight_full : STD_LOGIC;
   signal i2s2bram_0_o_bramAddr : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal i2s2bram_0_o_bramByteWe : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal i2s2bram_0_o_bramDin : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1010,10 +816,31 @@ architecture STRUCTURE of fourier_bram is
   signal processing_system7_0_M_AXI_GP0_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal processing_system7_0_M_AXI_GP0_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_DFTStageWrapperLeft_o_dataOld_UNCONNECTED : STD_LOGIC_VECTOR ( 24 downto 0 );
-  signal NLW_DFTStageWrapperLeft_o_r_f_UNCONNECTED : STD_LOGIC_VECTOR ( 8 downto 0 );
+  signal NLW_I2S_receiver_0_WR_EN_LEFT_UNCONNECTED : STD_LOGIC;
+  signal NLW_axiSmc_M00_AXI_arvalid_UNCONNECTED : STD_LOGIC;
+  signal NLW_axiSmc_M00_AXI_awvalid_UNCONNECTED : STD_LOGIC;
+  signal NLW_axiSmc_M00_AXI_bready_UNCONNECTED : STD_LOGIC;
+  signal NLW_axiSmc_M00_AXI_rready_UNCONNECTED : STD_LOGIC;
+  signal NLW_axiSmc_M00_AXI_wlast_UNCONNECTED : STD_LOGIC;
+  signal NLW_axiSmc_M00_AXI_wvalid_UNCONNECTED : STD_LOGIC;
+  signal NLW_axiSmc_M00_AXI_araddr_UNCONNECTED : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal NLW_axiSmc_M00_AXI_arburst_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_axiSmc_M00_AXI_arcache_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_axiSmc_M00_AXI_arlen_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal NLW_axiSmc_M00_AXI_arlock_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_axiSmc_M00_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axiSmc_M00_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_axiSmc_M00_AXI_arsize_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_axiSmc_M00_AXI_awaddr_UNCONNECTED : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal NLW_axiSmc_M00_AXI_awburst_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_axiSmc_M00_AXI_awcache_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_axiSmc_M00_AXI_awlen_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal NLW_axiSmc_M00_AXI_awlock_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_axiSmc_M00_AXI_awprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_axiSmc_M00_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_axiSmc_M00_AXI_awsize_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_axiSmc_M00_AXI_wdata_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal NLW_axiSmc_M00_AXI_wstrb_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axiSmc_M01_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axiSmc_M01_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axiSmc_M02_AXI_arprot_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -1024,8 +851,6 @@ architecture STRUCTURE of fourier_bram is
   signal NLW_axiSmc_M04_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_axi_quad_spi_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_blk_mem_gen_0_doutb_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal NLW_fifoLeft_full_UNCONNECTED : STD_LOGIC;
-  signal NLW_processing_system7_0_FCLK_CLK3_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE0_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE1_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
@@ -1040,15 +865,13 @@ architecture STRUCTURE of fourier_bram is
   signal NLW_rstRTL_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rstRTL_peripheral_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute BMM_INFO_ADDRESS_SPACE : string;
-  attribute BMM_INFO_ADDRESS_SPACE of axiBramCtrlLeft : label is "byte  0x40000000 32 > fourier_bram blkMemGenLeft";
-  attribute KEEP_HIERARCHY : string;
-  attribute KEEP_HIERARCHY of axiBramCtrlLeft : label is "yes";
   attribute BMM_INFO_ADDRESS_SPACE of axiBramCtrlRight : label is "byte  0x42000000 32 > fourier_bram blkMemGenRight";
+  attribute KEEP_HIERARCHY : string;
   attribute KEEP_HIERARCHY of axiBramCtrlRight : label is "yes";
   attribute BMM_INFO_ADDRESS_SPACE of axi_bram_ctrl_0 : label is "byte  0x44000000 32 > fourier_bram blk_mem_gen_0";
   attribute KEEP_HIERARCHY of axi_bram_ctrl_0 : label is "yes";
   attribute BMM_INFO_PROCESSOR : string;
-  attribute BMM_INFO_PROCESSOR of processing_system7_0 : label is "arm > fourier_bram axiBramCtrlLeft fourier_bram axiBramCtrlRight fourier_bram axi_bram_ctrl_0";
+  attribute BMM_INFO_PROCESSOR of processing_system7_0 : label is "arm > fourier_bram axiBramCtrlRight fourier_bram axi_bram_ctrl_0";
   attribute KEEP_HIERARCHY of processing_system7_0 : label is "yes";
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of DDR_cas_n : signal is "xilinx.com:interface:ddrx:1.0 DDR CAS_N";
@@ -1109,23 +932,9 @@ begin
   spi_rtl_sck_t <= axi_quad_spi_0_SPI_0_SCK_T;
   spi_rtl_ss_o(0) <= axi_quad_spi_0_SPI_0_SS_O(0);
   spi_rtl_ss_t <= axi_quad_spi_0_SPI_0_SS_T;
-DFTStageWrapperLeft: component fourier_bram_DFTStageWrapper_0_0
-     port map (
-      i_clk => Net,
-      i_dataNew(24 downto 0) => fifoDataInLeft_o_dftData(24 downto 0),
-      i_dataValid => fifoDataInLeft_o_dftDataValid,
-      i_reset => proc_sys_reset_0_peripheral_reset(0),
-      o_dataOld(24 downto 0) => NLW_DFTStageWrapperLeft_o_dataOld_UNCONNECTED(24 downto 0),
-      o_freqDataEn => DFTStageWrapper_0_o_freqDataEn,
-      o_freqDataImag(24 downto 0) => DFTStageWrapper_0_o_freqDataImag(24 downto 0),
-      o_freqDataIndex(7 downto 0) => DFTStageWrapper_0_o_freqDataIndex(7 downto 0),
-      o_freqDataReal(24 downto 0) => DFTStageWrapper_0_o_freqDataReal(24 downto 0),
-      o_r_f(8 downto 0) => NLW_DFTStageWrapperLeft_o_r_f_UNCONNECTED(8 downto 0),
-      o_ready => DFTStageWrapperLeft_o_ready
-    );
 DFTStageWrapperRight: component fourier_bram_DFTStageWrapper_1_0
      port map (
-      i_clk => Net,
+      i_clk => processing_system7_0_FCLK_CLK0,
       i_dataNew(24 downto 0) => fifoDataInRight_o_dftData(24 downto 0),
       i_dataValid => fifoDataInRight_o_dftDataValid,
       i_reset => proc_sys_reset_0_peripheral_reset(0),
@@ -1137,24 +946,10 @@ DFTStageWrapperRight: component fourier_bram_DFTStageWrapper_1_0
       o_r_f(8 downto 0) => DFTStageWrapperRight_o_r_f(8 downto 0),
       o_ready => DFTStageWrapperRight_o_ready
     );
-Freq2BRAMLeft: component fourier_bram_Freq2BRAM_0_0
-     port map (
-      i_bramDout(31 downto 0) => blk_mem_gen_0_doutb(31 downto 0),
-      i_clk => Net,
-      i_freqDataEn => DFTStageWrapper_0_o_freqDataEn,
-      i_freqDataImag(24 downto 0) => DFTStageWrapper_0_o_freqDataImag(24 downto 0),
-      i_freqDataIndex(7 downto 0) => DFTStageWrapper_0_o_freqDataIndex(7 downto 0),
-      i_freqDataReal(24 downto 0) => DFTStageWrapper_0_o_freqDataReal(24 downto 0),
-      i_reset => proc_sys_reset_0_peripheral_reset(0),
-      o_bramAddr(31 downto 0) => Freq2BRAM_0_o_bramAddr(31 downto 0),
-      o_bramByteWe(3 downto 0) => Freq2BRAM_0_o_bramByteWe(3 downto 0),
-      o_bramDin(31 downto 0) => Freq2BRAM_0_o_bramDin(31 downto 0),
-      o_bramEn => Freq2BRAM_0_o_bramEn
-    );
 Freq2BRAMRight: component fourier_bram_Freq2BRAM_1_0
      port map (
       i_bramDout(31 downto 0) => blk_mem_gen_1_doutb(31 downto 0),
-      i_clk => Net,
+      i_clk => processing_system7_0_FCLK_CLK0,
       i_freqDataEn => DFTStageWrapper_1_o_freqDataEn,
       i_freqDataImag(24 downto 0) => DFTStageWrapper_1_o_freqDataImag(24 downto 0),
       i_freqDataIndex(7 downto 0) => DFTStageWrapper_1_o_freqDataIndex(7 downto 0),
@@ -1172,51 +967,8 @@ I2S_receiver_0: component fourier_bram_I2S_receiver_0_0
       LRCLK => LRCLK_1,
       SDATA => ADC_SDATA_1,
       SDATA_REC(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
-      WR_EN_LEFT => I2S_receiver_0_WR_EN_LEFT,
+      WR_EN_LEFT => NLW_I2S_receiver_0_WR_EN_LEFT_UNCONNECTED,
       WR_EN_RIGHT => I2S_receiver_0_WR_EN_RIGHT
-    );
-axiBramCtrlLeft: component fourier_bram_axi_bram_ctrl_0_0
-     port map (
-      bram_addr_a(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(12 downto 0),
-      bram_clk_a => axi_bram_ctrl_0_BRAM_PORTA_CLK,
-      bram_en_a => axi_bram_ctrl_0_BRAM_PORTA_EN,
-      bram_rddata_a(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DOUT(31 downto 0),
-      bram_rst_a => axi_bram_ctrl_0_BRAM_PORTA_RST,
-      bram_we_a(3 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_WE(3 downto 0),
-      bram_wrdata_a(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DIN(31 downto 0),
-      s_axi_aclk => processing_system7_0_FCLK_CLK0,
-      s_axi_araddr(12 downto 0) => axi_smc_M00_AXI_ARADDR(12 downto 0),
-      s_axi_arburst(1 downto 0) => axi_smc_M00_AXI_ARBURST(1 downto 0),
-      s_axi_arcache(3 downto 0) => axi_smc_M00_AXI_ARCACHE(3 downto 0),
-      s_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
-      s_axi_arlen(7 downto 0) => axi_smc_M00_AXI_ARLEN(7 downto 0),
-      s_axi_arlock => axi_smc_M00_AXI_ARLOCK(0),
-      s_axi_arprot(2 downto 0) => axi_smc_M00_AXI_ARPROT(2 downto 0),
-      s_axi_arready => axi_smc_M00_AXI_ARREADY,
-      s_axi_arsize(2 downto 0) => axi_smc_M00_AXI_ARSIZE(2 downto 0),
-      s_axi_arvalid => axi_smc_M00_AXI_ARVALID,
-      s_axi_awaddr(12 downto 0) => axi_smc_M00_AXI_AWADDR(12 downto 0),
-      s_axi_awburst(1 downto 0) => axi_smc_M00_AXI_AWBURST(1 downto 0),
-      s_axi_awcache(3 downto 0) => axi_smc_M00_AXI_AWCACHE(3 downto 0),
-      s_axi_awlen(7 downto 0) => axi_smc_M00_AXI_AWLEN(7 downto 0),
-      s_axi_awlock => axi_smc_M00_AXI_AWLOCK(0),
-      s_axi_awprot(2 downto 0) => axi_smc_M00_AXI_AWPROT(2 downto 0),
-      s_axi_awready => axi_smc_M00_AXI_AWREADY,
-      s_axi_awsize(2 downto 0) => axi_smc_M00_AXI_AWSIZE(2 downto 0),
-      s_axi_awvalid => axi_smc_M00_AXI_AWVALID,
-      s_axi_bready => axi_smc_M00_AXI_BREADY,
-      s_axi_bresp(1 downto 0) => axi_smc_M00_AXI_BRESP(1 downto 0),
-      s_axi_bvalid => axi_smc_M00_AXI_BVALID,
-      s_axi_rdata(31 downto 0) => axi_smc_M00_AXI_RDATA(31 downto 0),
-      s_axi_rlast => axi_smc_M00_AXI_RLAST,
-      s_axi_rready => axi_smc_M00_AXI_RREADY,
-      s_axi_rresp(1 downto 0) => axi_smc_M00_AXI_RRESP(1 downto 0),
-      s_axi_rvalid => axi_smc_M00_AXI_RVALID,
-      s_axi_wdata(31 downto 0) => axi_smc_M00_AXI_WDATA(31 downto 0),
-      s_axi_wlast => axi_smc_M00_AXI_WLAST,
-      s_axi_wready => axi_smc_M00_AXI_WREADY,
-      s_axi_wstrb(3 downto 0) => axi_smc_M00_AXI_WSTRB(3 downto 0),
-      s_axi_wvalid => axi_smc_M00_AXI_WVALID
     );
 axiBramCtrlRight: component fourier_bram_axi_bram_ctrl_0_1
      port map (
@@ -1263,39 +1015,39 @@ axiBramCtrlRight: component fourier_bram_axi_bram_ctrl_0_1
     );
 axiSmc: component fourier_bram_axi_smc_0
      port map (
-      M00_AXI_araddr(12 downto 0) => axi_smc_M00_AXI_ARADDR(12 downto 0),
-      M00_AXI_arburst(1 downto 0) => axi_smc_M00_AXI_ARBURST(1 downto 0),
-      M00_AXI_arcache(3 downto 0) => axi_smc_M00_AXI_ARCACHE(3 downto 0),
-      M00_AXI_arlen(7 downto 0) => axi_smc_M00_AXI_ARLEN(7 downto 0),
-      M00_AXI_arlock(0) => axi_smc_M00_AXI_ARLOCK(0),
-      M00_AXI_arprot(2 downto 0) => axi_smc_M00_AXI_ARPROT(2 downto 0),
+      M00_AXI_araddr(12 downto 0) => NLW_axiSmc_M00_AXI_araddr_UNCONNECTED(12 downto 0),
+      M00_AXI_arburst(1 downto 0) => NLW_axiSmc_M00_AXI_arburst_UNCONNECTED(1 downto 0),
+      M00_AXI_arcache(3 downto 0) => NLW_axiSmc_M00_AXI_arcache_UNCONNECTED(3 downto 0),
+      M00_AXI_arlen(7 downto 0) => NLW_axiSmc_M00_AXI_arlen_UNCONNECTED(7 downto 0),
+      M00_AXI_arlock(0) => NLW_axiSmc_M00_AXI_arlock_UNCONNECTED(0),
+      M00_AXI_arprot(2 downto 0) => NLW_axiSmc_M00_AXI_arprot_UNCONNECTED(2 downto 0),
       M00_AXI_arqos(3 downto 0) => NLW_axiSmc_M00_AXI_arqos_UNCONNECTED(3 downto 0),
-      M00_AXI_arready => axi_smc_M00_AXI_ARREADY,
-      M00_AXI_arsize(2 downto 0) => axi_smc_M00_AXI_ARSIZE(2 downto 0),
-      M00_AXI_arvalid => axi_smc_M00_AXI_ARVALID,
-      M00_AXI_awaddr(12 downto 0) => axi_smc_M00_AXI_AWADDR(12 downto 0),
-      M00_AXI_awburst(1 downto 0) => axi_smc_M00_AXI_AWBURST(1 downto 0),
-      M00_AXI_awcache(3 downto 0) => axi_smc_M00_AXI_AWCACHE(3 downto 0),
-      M00_AXI_awlen(7 downto 0) => axi_smc_M00_AXI_AWLEN(7 downto 0),
-      M00_AXI_awlock(0) => axi_smc_M00_AXI_AWLOCK(0),
-      M00_AXI_awprot(2 downto 0) => axi_smc_M00_AXI_AWPROT(2 downto 0),
+      M00_AXI_arready => '0',
+      M00_AXI_arsize(2 downto 0) => NLW_axiSmc_M00_AXI_arsize_UNCONNECTED(2 downto 0),
+      M00_AXI_arvalid => NLW_axiSmc_M00_AXI_arvalid_UNCONNECTED,
+      M00_AXI_awaddr(12 downto 0) => NLW_axiSmc_M00_AXI_awaddr_UNCONNECTED(12 downto 0),
+      M00_AXI_awburst(1 downto 0) => NLW_axiSmc_M00_AXI_awburst_UNCONNECTED(1 downto 0),
+      M00_AXI_awcache(3 downto 0) => NLW_axiSmc_M00_AXI_awcache_UNCONNECTED(3 downto 0),
+      M00_AXI_awlen(7 downto 0) => NLW_axiSmc_M00_AXI_awlen_UNCONNECTED(7 downto 0),
+      M00_AXI_awlock(0) => NLW_axiSmc_M00_AXI_awlock_UNCONNECTED(0),
+      M00_AXI_awprot(2 downto 0) => NLW_axiSmc_M00_AXI_awprot_UNCONNECTED(2 downto 0),
       M00_AXI_awqos(3 downto 0) => NLW_axiSmc_M00_AXI_awqos_UNCONNECTED(3 downto 0),
-      M00_AXI_awready => axi_smc_M00_AXI_AWREADY,
-      M00_AXI_awsize(2 downto 0) => axi_smc_M00_AXI_AWSIZE(2 downto 0),
-      M00_AXI_awvalid => axi_smc_M00_AXI_AWVALID,
-      M00_AXI_bready => axi_smc_M00_AXI_BREADY,
-      M00_AXI_bresp(1 downto 0) => axi_smc_M00_AXI_BRESP(1 downto 0),
-      M00_AXI_bvalid => axi_smc_M00_AXI_BVALID,
-      M00_AXI_rdata(31 downto 0) => axi_smc_M00_AXI_RDATA(31 downto 0),
-      M00_AXI_rlast => axi_smc_M00_AXI_RLAST,
-      M00_AXI_rready => axi_smc_M00_AXI_RREADY,
-      M00_AXI_rresp(1 downto 0) => axi_smc_M00_AXI_RRESP(1 downto 0),
-      M00_AXI_rvalid => axi_smc_M00_AXI_RVALID,
-      M00_AXI_wdata(31 downto 0) => axi_smc_M00_AXI_WDATA(31 downto 0),
-      M00_AXI_wlast => axi_smc_M00_AXI_WLAST,
-      M00_AXI_wready => axi_smc_M00_AXI_WREADY,
-      M00_AXI_wstrb(3 downto 0) => axi_smc_M00_AXI_WSTRB(3 downto 0),
-      M00_AXI_wvalid => axi_smc_M00_AXI_WVALID,
+      M00_AXI_awready => '0',
+      M00_AXI_awsize(2 downto 0) => NLW_axiSmc_M00_AXI_awsize_UNCONNECTED(2 downto 0),
+      M00_AXI_awvalid => NLW_axiSmc_M00_AXI_awvalid_UNCONNECTED,
+      M00_AXI_bready => NLW_axiSmc_M00_AXI_bready_UNCONNECTED,
+      M00_AXI_bresp(1 downto 0) => B"00",
+      M00_AXI_bvalid => '0',
+      M00_AXI_rdata(31 downto 0) => B"00000000000000000000000000000000",
+      M00_AXI_rlast => '0',
+      M00_AXI_rready => NLW_axiSmc_M00_AXI_rready_UNCONNECTED,
+      M00_AXI_rresp(1 downto 0) => B"00",
+      M00_AXI_rvalid => '0',
+      M00_AXI_wdata(31 downto 0) => NLW_axiSmc_M00_AXI_wdata_UNCONNECTED(31 downto 0),
+      M00_AXI_wlast => NLW_axiSmc_M00_AXI_wlast_UNCONNECTED,
+      M00_AXI_wready => '0',
+      M00_AXI_wstrb(3 downto 0) => NLW_axiSmc_M00_AXI_wstrb_UNCONNECTED(3 downto 0),
+      M00_AXI_wvalid => NLW_axiSmc_M00_AXI_wvalid_UNCONNECTED,
       M01_AXI_araddr(12 downto 0) => axi_smc_M01_AXI_ARADDR(12 downto 0),
       M01_AXI_arburst(1 downto 0) => axi_smc_M01_AXI_ARBURST(1 downto 0),
       M01_AXI_arcache(3 downto 0) => axi_smc_M01_AXI_ARCACHE(3 downto 0),
@@ -1543,31 +1295,13 @@ axi_quad_spi_0: component fourier_bram_axi_quad_spi_0_0
       ss_o(0) => axi_quad_spi_0_SPI_0_SS_O(0),
       ss_t => axi_quad_spi_0_SPI_0_SS_T
     );
-blkMemGenLeft: component fourier_bram_blk_mem_gen_0_1
-     port map (
-      addra(31 downto 13) => B"0000000000000000000",
-      addra(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_ADDR(12 downto 0),
-      addrb(31 downto 0) => Freq2BRAM_0_o_bramAddr(31 downto 0),
-      clka => axi_bram_ctrl_0_BRAM_PORTA_CLK,
-      clkb => Net,
-      dina(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DIN(31 downto 0),
-      dinb(31 downto 0) => Freq2BRAM_0_o_bramDin(31 downto 0),
-      douta(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DOUT(31 downto 0),
-      doutb(31 downto 0) => blk_mem_gen_0_doutb(31 downto 0),
-      ena => axi_bram_ctrl_0_BRAM_PORTA_EN,
-      enb => Freq2BRAM_0_o_bramEn,
-      rsta => axi_bram_ctrl_0_BRAM_PORTA_RST,
-      rstb => proc_sys_reset_0_peripheral_reset(0),
-      wea(3 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_WE(3 downto 0),
-      web(3 downto 0) => Freq2BRAM_0_o_bramByteWe(3 downto 0)
-    );
 blkMemGenRight: component fourier_bram_blk_mem_gen_1_0
      port map (
       addra(31 downto 13) => B"0000000000000000000",
       addra(12 downto 0) => axi_bram_ctrl_0_BRAM_PORTA1_ADDR(12 downto 0),
       addrb(31 downto 0) => Freq2BRAM_1_o_bramAddr(31 downto 0),
       clka => axi_bram_ctrl_0_BRAM_PORTA1_CLK,
-      clkb => Net,
+      clkb => processing_system7_0_FCLK_CLK0,
       dina(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA1_DIN(31 downto 0),
       dinb(31 downto 0) => Freq2BRAM_1_o_bramDin(31 downto 0),
       douta(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA1_DOUT(31 downto 0),
@@ -1597,46 +1331,6 @@ blk_mem_gen_0: component fourier_bram_blk_mem_gen_0_0
       wea(3 downto 0) => axi_bram_ctrl_0_BRAM_PORTA2_WE(3 downto 0),
       web(3 downto 0) => i2s2bram_0_o_bramByteWe(3 downto 0)
     );
-fifoDataInLeft: component fourier_bram_fifoDataIn_0_0
-     port map (
-      i_dftReady => DFTStageWrapperLeft_o_ready,
-      i_fifoData(23 downto 0) => fifoLeft_dout(23 downto 0),
-      i_fifoEmpty => fifoLeft_empty,
-      o_dftData(24 downto 0) => fifoDataInLeft_o_dftData(24 downto 0),
-      o_dftDataValid => fifoDataInLeft_o_dftDataValid,
-      o_fifoRdEn => fifoDataInLeft_o_fifoRdEn
-    );
-fifoDataInRight: component fourier_bram_fifoDataInLeft_0
-     port map (
-      i_dftReady => DFTStageWrapperRight_o_ready,
-      i_fifoData(23 downto 0) => fifoRight_dout(23 downto 0),
-      i_fifoEmpty => fifoRight_empty,
-      o_dftData(24 downto 0) => fifoDataInRight_o_dftData(24 downto 0),
-      o_dftDataValid => fifoDataInRight_o_dftDataValid,
-      o_fifoRdEn => fifoDataInRight_o_fifoRdEn
-    );
-fifoLeft: component fourier_bram_fifo_generator_0_0
-     port map (
-      din(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
-      dout(23 downto 0) => fifoLeft_dout(23 downto 0),
-      empty => fifoLeft_empty,
-      full => NLW_fifoLeft_full_UNCONNECTED,
-      rd_clk => Net,
-      rd_en => fifoDataInLeft_o_fifoRdEn,
-      wr_clk => processing_system7_0_FCLK_CLK0,
-      wr_en => I2S_receiver_0_WR_EN_LEFT
-    );
-fifoRight: component fourier_bram_fifo_generator_0_1
-     port map (
-      din(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
-      dout(23 downto 0) => fifoRight_dout(23 downto 0),
-      empty => fifoRight_empty,
-      full => fifoRight_full,
-      rd_clk => Net,
-      rd_en => fifoDataInRight_o_fifoRdEn,
-      wr_clk => processing_system7_0_FCLK_CLK0,
-      wr_en => I2S_receiver_0_WR_EN_RIGHT
-    );
 i2s2bram_0: component fourier_bram_i2s2bram_0_0
      port map (
       i_i2sData(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
@@ -1645,13 +1339,24 @@ i2s2bram_0: component fourier_bram_i2s2bram_0_0
       o_bramDin(31 downto 0) => i2s2bram_0_o_bramDin(31 downto 0),
       o_bramEn => i2s2bram_0_o_bramEn
     );
+i2sDataInRight: component fourier_bram_i2sDataIn_0_0
+     port map (
+      i_dftReady => DFTStageWrapperRight_o_ready,
+      i_i2sData(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
+      i_i2sEn => I2S_receiver_0_WR_EN_RIGHT,
+      o_dftData(24 downto 0) => fifoDataInRight_o_dftData(24 downto 0),
+      o_dftDataValid => fifoDataInRight_o_dftDataValid
+    );
 ila_dft_domain: component fourier_bram_ila_0_0
      port map (
-      clk => Net,
-      probe0(23 downto 0) => fifoRight_dout(23 downto 0),
-      probe1(0) => fifoDataInRight_o_fifoRdEn,
+      clk => processing_system7_0_FCLK_CLK0,
+      probe0(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
+      probe1(0) => I2S_receiver_0_WR_EN_RIGHT,
       probe10(24 downto 0) => DFTStageWrapperRight_o_dataOld(24 downto 0),
-      probe11(0) => fifoRight_empty,
+      probe11(31 downto 0) => Freq2BRAM_1_o_bramAddr(31 downto 0),
+      probe12(31 downto 0) => Freq2BRAM_1_o_bramDin(31 downto 0),
+      probe13(0) => Freq2BRAM_1_o_bramEn,
+      probe14(3 downto 0) => Freq2BRAM_1_o_bramByteWe(3 downto 0),
       probe2(24 downto 0) => fifoDataInRight_o_dftData(24 downto 0),
       probe3(0) => fifoDataInRight_o_dftDataValid,
       probe4(0) => DFTStageWrapperRight_o_ready,
@@ -1660,14 +1365,6 @@ ila_dft_domain: component fourier_bram_ila_0_0
       probe7(24 downto 0) => DFTStageWrapper_1_o_freqDataReal(24 downto 0),
       probe8(24 downto 0) => DFTStageWrapper_1_o_freqDataImag(24 downto 0),
       probe9(8 downto 0) => DFTStageWrapperRight_o_r_f(8 downto 0)
-    );
-ila_i2c_domain: component fourier_bram_ila_0_1
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe0(0) => I2S_receiver_0_WR_EN_LEFT,
-      probe1(0) => I2S_receiver_0_WR_EN_RIGHT,
-      probe2(23 downto 0) => I2S_receiver_0_SDATA_REC(23 downto 0),
-      probe3(0) => fifoRight_full
     );
 processing_system7_0: component fourier_bram_processing_system7_0_0
      port map (
@@ -1689,9 +1386,7 @@ processing_system7_0: component fourier_bram_processing_system7_0_0
       DDR_VRP => FIXED_IO_ddr_vrp,
       DDR_WEB => DDR_we_n,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
-      FCLK_CLK1 => Net,
       FCLK_CLK2 => processing_system7_0_FCLK_CLK2,
-      FCLK_CLK3 => NLW_processing_system7_0_FCLK_CLK3_UNCONNECTED,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
       MIO(53 downto 0) => FIXED_IO_mio(53 downto 0),
       M_AXI_GP0_ACLK => processing_system7_0_FCLK_CLK0,
@@ -1767,6 +1462,6 @@ rstRTL: component fourier_bram_proc_sys_reset_0_0
       mb_reset => NLW_rstRTL_mb_reset_UNCONNECTED,
       peripheral_aresetn(0) => NLW_rstRTL_peripheral_aresetn_UNCONNECTED(0),
       peripheral_reset(0) => proc_sys_reset_0_peripheral_reset(0),
-      slowest_sync_clk => Net
+      slowest_sync_clk => processing_system7_0_FCLK_CLK0
     );
 end STRUCTURE;

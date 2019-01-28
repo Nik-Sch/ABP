@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Wed Jan 23 00:28:02 2019
+// Date        : Fri Jan 25 01:16:18 2019
 // Host        : niklas-desktop running 64-bit Ubuntu 18.10
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ fourier_bram_i2s2bram_0_0_sim_netlist.v
@@ -67,6 +67,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   assign o_bramByteWe[2] = \<const1> ;
   assign o_bramByteWe[1] = \<const1> ;
   assign o_bramByteWe[0] = \<const1> ;
+  assign o_bramDin[31] = \<const0> ;
+  assign o_bramDin[30] = \<const0> ;
+  assign o_bramDin[29] = \<const0> ;
+  assign o_bramDin[28] = \<const0> ;
+  assign o_bramDin[27] = \<const0> ;
+  assign o_bramDin[26] = \<const0> ;
+  assign o_bramDin[25] = \<const0> ;
+  assign o_bramDin[24] = \<const0> ;
   assign o_bramDin[23:0] = i_i2sData;
   assign o_bramEn = \<const1> ;
   GND GND

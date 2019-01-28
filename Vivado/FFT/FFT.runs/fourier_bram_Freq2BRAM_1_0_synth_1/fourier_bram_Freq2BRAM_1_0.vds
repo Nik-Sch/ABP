@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Thu Jan 24 18:10:34 2019
-# Process ID: 26531
+# Start of session at: Mon Jan 28 18:56:30 2019
+# Process ID: 8126
 # Current directory: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAM_1_0_synth_1
 # Command line: vivado -log fourier_bram_Freq2BRAM_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fourier_bram_Freq2BRAM_1_0.tcl
 # Log file: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAM_1_0_synth_1/fourier_bram_Freq2BRAM_1_0.vds
@@ -18,14 +18,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27384 
+INFO: Helper process launched with PID 9535 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1387.402 ; gain = 54.891 ; free physical = 3640 ; free virtual = 8757
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 1404.594 ; gain = 85.895 ; free physical = 212 ; free virtual = 4492
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'fourier_bram_Freq2BRAM_1_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAM_1_0/synth/fourier_bram_Freq2BRAM_1_0.vhd:72]
 INFO: [Synth 8-3491] module 'Freq2BRAM' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:27' bound to instance 'U0' of component 'Freq2BRAM' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAM_1_0/synth/fourier_bram_Freq2BRAM_1_0.vhd:105]
 INFO: [Synth 8-638] synthesizing module 'Freq2BRAM' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:49]
-INFO: [Synth 8-3491] module 'data_fifo' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:59' bound to instance 'inst_imagFifo' of component 'data_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:96]
+INFO: [Synth 8-3491] module 'data_fifo' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:59' bound to instance 'inst_imagFifo' of component 'data_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:99]
 INFO: [Synth 8-638] synthesizing module 'data_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
 	Parameter C_COMMON_CLOCK bound to: 1 - type: integer 
 	Parameter C_SELECT_XPM bound to: 0 - type: integer 
@@ -231,7 +231,7 @@ INFO: [Synth 8-638] synthesizing module 'data_fifo' [/home/niklas/dev/uni/ABP/gi
 	Parameter C_REG_SLICE_MODE_AXIS bound to: 0 - type: integer 
 INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:539]
 INFO: [Synth 8-256] done synthesizing module 'data_fifo' (25#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
-INFO: [Synth 8-3491] module 'index_fifo' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:59' bound to instance 'inst_addrFifo' of component 'index_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:107]
+INFO: [Synth 8-3491] module 'index_fifo' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:59' bound to instance 'inst_addrFifo' of component 'index_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:110]
 INFO: [Synth 8-638] synthesizing module 'index_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:71]
 	Parameter C_COMMON_CLOCK bound to: 1 - type: integer 
 	Parameter C_SELECT_XPM bound to: 0 - type: integer 
@@ -541,7 +541,7 @@ WARNING: [Synth 8-3331] design rd_logic has unconnected port PROG_EMPTY_THRESH[1
 WARNING: [Synth 8-3331] design rd_logic has unconnected port PROG_EMPTY_THRESH[0]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:53 ; elapsed = 00:02:22 . Memory (MB): peak = 1671.488 ; gain = 338.977 ; free physical = 5208 ; free virtual = 10343
+Finished RTL Elaboration : Time (s): cpu = 00:01:49 ; elapsed = 00:02:04 . Memory (MB): peak = 1688.680 ; gain = 369.980 ; free physical = 420 ; free virtual = 4476
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -554,10 +554,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:53 ; elapsed = 00:02:22 . Memory (MB): peak = 1671.488 ; gain = 338.977 ; free physical = 5219 ; free virtual = 10353
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:49 ; elapsed = 00:02:04 . Memory (MB): peak = 1688.680 ; gain = 369.980 ; free physical = 431 ; free virtual = 4487
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:53 ; elapsed = 00:02:22 . Memory (MB): peak = 1671.488 ; gain = 338.977 ; free physical = 5219 ; free virtual = 10353
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:49 ; elapsed = 00:02:04 . Memory (MB): peak = 1688.680 ; gain = 369.980 ; free physical = 431 ; free virtual = 4487
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 42 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -576,26 +576,26 @@ Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_
 Finished Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAM_1_0_synth_1/dont_touch.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAM_1_0_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fourier_bram_Freq2BRAM_1_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/fourier_bram_Freq2BRAM_1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1758.492 ; gain = 0.000 ; free physical = 4983 ; free virtual = 10116
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1769.684 ; gain = 0.000 ; free physical = 167 ; free virtual = 4233
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1759.492 ; gain = 0.000 ; free physical = 4981 ; free virtual = 10115
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1771.684 ; gain = 0.000 ; free physical = 165 ; free virtual = 4231
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1759.492 ; gain = 0.000 ; free physical = 4980 ; free virtual = 10114
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1759.492 ; gain = 0.000 ; free physical = 4983 ; free virtual = 10117
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1771.684 ; gain = 0.000 ; free physical = 165 ; free virtual = 4231
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.06 . Memory (MB): peak = 1771.684 ; gain = 0.000 ; free physical = 163 ; free virtual = 4230
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:02:00 ; elapsed = 00:02:30 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 5058 ; free virtual = 10192
+Finished Constraint Validation : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 253 ; free virtual = 4321
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:02:00 ; elapsed = 00:02:30 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 5058 ; free virtual = 10192
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 251 ; free virtual = 4319
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -606,13 +606,13 @@ Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/niklas/de
 Applied set_property DONT_TOUCH = true for U0/inst_addrFifo. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U0/inst_imagFifo. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:00 ; elapsed = 00:02:30 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 5058 ; free virtual = 10192
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:57 ; elapsed = 00:02:15 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 253 ; free virtual = 4321
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "leaving_empty_fwft" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-4471] merging register 'r_fifoAddrRe_reg' into 'r_fifoImagRe_reg' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:112]
-INFO: [Synth 8-4471] merging register 'r_fifoAddrWe_reg' into 'r_fifoImagWe_reg' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:111]
+INFO: [Synth 8-4471] merging register 'r_fifoAddrRe_reg' into 'r_fifoImagRe_reg' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:115]
+INFO: [Synth 8-4471] merging register 'r_fifoAddrWe_reg' into 'r_fifoImagWe_reg' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:114]
 INFO: [Synth 8-802] inferred FSM for state register 'r_state_reg' in module 'Freq2BRAM'
-INFO: [Synth 8-5546] ROM "r_fifoAddrRe" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r_state" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -622,7 +622,7 @@ INFO: [Synth 8-5546] ROM "r_fifoAddrRe" won't be mapped to RAM because it is too
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'r_state_reg' using encoding 'one-hot' in module 'Freq2BRAM'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:01 ; elapsed = 00:02:31 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 5050 ; free virtual = 10185
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:57 ; elapsed = 00:02:16 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 243 ; free virtual = 4312
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -640,12 +640,12 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 72    
 +---Registers : 
 	               32 Bit    Registers := 2     
-	               25 Bit    Registers := 4     
+	               25 Bit    Registers := 5     
 	                9 Bit    Registers := 8     
-	                8 Bit    Registers := 3     
+	                8 Bit    Registers := 4     
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 23    
+	                1 Bit    Registers := 24    
 +---Muxes : 
 	   3 Input     32 Bit        Muxes := 2     
 	   3 Input      4 Bit        Muxes := 1     
@@ -708,10 +708,10 @@ Module Freq2BRAM
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 2     
-	               25 Bit    Registers := 3     
-	                8 Bit    Registers := 2     
+	               25 Bit    Registers := 4     
+	                8 Bit    Registers := 3     
 	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
 +---Muxes : 
 	   3 Input     32 Bit        Muxes := 2     
 	   3 Input      4 Bit        Muxes := 1     
@@ -733,19 +733,19 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5546] ROM "r_fifoAddrRe" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r_state" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-3886] merging instance 'U0/o_bramByteWe_reg[0]' (FDC) to 'U0/o_bramByteWe_reg[1]'
 INFO: [Synth 8-3886] merging instance 'U0/o_bramByteWe_reg[1]' (FDC) to 'U0/o_bramByteWe_reg[2]'
 INFO: [Synth 8-3886] merging instance 'U0/o_bramByteWe_reg[2]' (FDC) to 'U0/o_bramByteWe_reg[3]'
-INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[25]' (FDCE) to 'U0/o_bramAddr_reg[9]'
-INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[26]' (FDCE) to 'U0/o_bramAddr_reg[9]'
-INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[27]' (FDCE) to 'U0/o_bramAddr_reg[9]'
-INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[28]' (FDCE) to 'U0/o_bramAddr_reg[9]'
-INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[29]' (FDCE) to 'U0/o_bramAddr_reg[9]'
-INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[30]' (FDCE) to 'U0/o_bramAddr_reg[9]'
-INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[31]' (FDCE) to 'U0/o_bramAddr_reg[9]'
-INFO: [Synth 8-3886] merging instance 'U0/o_bramAddr_reg[9]' (FDCE) to 'U0/o_bramAddr_reg[10]'
-INFO: [Synth 8-3886] merging instance 'U0/o_bramAddr_reg[10]' (FDCE) to 'U0/o_bramAddr_reg[11]'
+INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[24]' (FDCE) to 'U0/o_bramDin_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[25]' (FDCE) to 'U0/o_bramDin_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[26]' (FDCE) to 'U0/o_bramDin_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[27]' (FDCE) to 'U0/o_bramDin_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[28]' (FDCE) to 'U0/o_bramDin_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[29]' (FDCE) to 'U0/o_bramDin_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U0/o_bramDin_reg[30]' (FDCE) to 'U0/o_bramDin_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U0/o_bramAddr_reg[0]' (FDCE) to 'U0/o_bramAddr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'U0/o_bramAddr_reg[1]' (FDCE) to 'U0/o_bramAddr_reg[11]'
 INFO: [Synth 8-3886] merging instance 'U0/o_bramAddr_reg[11]' (FDCE) to 'U0/o_bramAddr_reg[12]'
 INFO: [Synth 8-3886] merging instance 'U0/o_bramAddr_reg[12]' (FDCE) to 'U0/o_bramAddr_reg[13]'
 INFO: [Synth 8-3886] merging instance 'U0/o_bramAddr_reg[13]' (FDCE) to 'U0/o_bramAddr_reg[14]'
@@ -769,7 +769,7 @@ INFO: [Synth 8-3886] merging instance 'U0/o_bramAddr_reg[30]' (FDCE) to 'U0/o_br
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\o_bramAddr_reg[31] )
 INFO: [Synth 8-3886] merging instance 'U0/o_bramByteWe_reg[3]' (FDC) to 'U0/o_bramEn_reg'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:01 ; elapsed = 00:02:32 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 5028 ; free virtual = 10173
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:58 ; elapsed = 00:02:17 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 223 ; free virtual = 4305
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -781,13 +781,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:07 ; elapsed = 00:02:37 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4890 ; free virtual = 10035
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:04 ; elapsed = 00:02:23 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 155 ; free virtual = 4168
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:07 ; elapsed = 00:02:38 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4890 ; free virtual = 10035
+Finished Timing Optimization : Time (s): cpu = 00:02:04 ; elapsed = 00:02:23 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 155 ; free virtual = 4164
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -799,7 +799,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:07 ; elapsed = 00:02:38 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4889 ; free virtual = 10034
+Finished Technology Mapping : Time (s): cpu = 00:02:04 ; elapsed = 00:02:23 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 159 ; free virtual = 4138
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -823,7 +823,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:08 ; elapsed = 00:02:38 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4889 ; free virtual = 10034
+Finished IO Insertion : Time (s): cpu = 00:02:04 ; elapsed = 00:02:23 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 150 ; free virtual = 4129
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -836,7 +836,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:08 ; elapsed = 00:02:38 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4889 ; free virtual = 10034
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:04 ; elapsed = 00:02:23 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 150 ; free virtual = 4130
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -848,25 +848,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:08 ; elapsed = 00:02:38 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4885 ; free virtual = 10030
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:05 ; elapsed = 00:02:24 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 149 ; free virtual = 4122
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:08 ; elapsed = 00:02:38 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4885 ; free virtual = 10030
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:05 ; elapsed = 00:02:24 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 149 ; free virtual = 4122
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:08 ; elapsed = 00:02:38 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4887 ; free virtual = 10032
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:05 ; elapsed = 00:02:24 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 149 ; free virtual = 4122
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:08 ; elapsed = 00:02:38 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4887 ; free virtual = 10032
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:05 ; elapsed = 00:02:24 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 147 ; free virtual = 4120
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -886,11 +886,11 @@ Report Cell Usage:
 |2     |LUT2     |    19|
 |3     |LUT3     |    16|
 |4     |LUT4     |    52|
-|5     |LUT5     |    41|
-|6     |LUT6     |    14|
+|5     |LUT5     |    42|
+|6     |LUT6     |    13|
 |7     |MUXCY    |    40|
 |8     |RAMB18E1 |     2|
-|9     |FDCE     |   130|
+|9     |FDCE     |   164|
 |10    |FDPE     |     1|
 |11    |FDRE     |   129|
 +------+---------+------+
@@ -899,8 +899,8 @@ Report Instance Areas:
 +------+-----------------------------------------------------------+---------------------------------------------+------+
 |      |Instance                                                   |Module                                       |Cells |
 +------+-----------------------------------------------------------+---------------------------------------------+------+
-|1     |top                                                        |                                             |   452|
-|2     |  U0                                                       |Freq2BRAM                                    |   452|
+|1     |top                                                        |                                             |   486|
+|2     |  U0                                                       |Freq2BRAM                                    |   486|
 |3     |    inst_imagFifo                                          |data_fifo                                    |   147|
 |4     |      U0                                                   |fifo_generator_v13_2_3                       |   147|
 |5     |        inst_fifo_gen                                      |fifo_generator_v13_2_3_synth                 |   147|
@@ -949,17 +949,17 @@ Report Instance Areas:
 |48    |                          \prim_noinit.ram                 |blk_mem_gen_prim_wrapper__parameterized0     |     1|
 +------+-----------------------------------------------------------+---------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:08 ; elapsed = 00:02:38 . Memory (MB): peak = 1759.492 ; gain = 426.980 ; free physical = 4889 ; free virtual = 10034
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:05 ; elapsed = 00:02:24 . Memory (MB): peak = 1771.684 ; gain = 452.984 ; free physical = 148 ; free virtual = 4121
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 972 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:02 ; elapsed = 00:02:33 . Memory (MB): peak = 1759.492 ; gain = 338.977 ; free physical = 4942 ; free virtual = 10088
-Synthesis Optimization Complete : Time (s): cpu = 00:02:08 ; elapsed = 00:02:39 . Memory (MB): peak = 1759.500 ; gain = 426.980 ; free physical = 4942 ; free virtual = 10088
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:59 ; elapsed = 00:02:15 . Memory (MB): peak = 1771.684 ; gain = 369.980 ; free physical = 191 ; free virtual = 4174
+Synthesis Optimization Complete : Time (s): cpu = 00:02:05 ; elapsed = 00:02:24 . Memory (MB): peak = 1771.691 ; gain = 452.984 ; free physical = 190 ; free virtual = 4173
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 42 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1759.500 ; gain = 0.000 ; free physical = 4913 ; free virtual = 10059
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1771.691 ; gain = 0.000 ; free physical = 162 ; free virtual = 4091
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 16 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 16 instances
@@ -967,17 +967,17 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 72 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:09 ; elapsed = 00:02:40 . Memory (MB): peak = 1759.500 ; gain = 427.098 ; free physical = 4970 ; free virtual = 10116
+synth_design: Time (s): cpu = 00:02:06 ; elapsed = 00:02:25 . Memory (MB): peak = 1771.691 ; gain = 464.551 ; free physical = 221 ; free virtual = 4148
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1759.500 ; gain = 0.000 ; free physical = 4970 ; free virtual = 10116
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1771.691 ; gain = 0.000 ; free physical = 221 ; free virtual = 4148
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAM_1_0_synth_1/fourier_bram_Freq2BRAM_1_0.dcp' has been generated.
 INFO: [Coretcl 2-1174] Renamed 47 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1783.504 ; gain = 0.000 ; free physical = 4960 ; free virtual = 10105
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1795.695 ; gain = 0.000 ; free physical = 229 ; free virtual = 4153
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAM_1_0_synth_1/fourier_bram_Freq2BRAM_1_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file fourier_bram_Freq2BRAM_1_0_utilization_synth.rpt -pb fourier_bram_Freq2BRAM_1_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jan 24 18:13:29 2019...
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 28 18:59:23 2019...
