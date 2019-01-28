@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity i2c_master_v1_0_S00_AXI is
+entity I2C_Master_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
 
@@ -81,9 +81,9 @@ entity i2c_master_v1_0_S00_AXI is
     		-- accept the read data and response information.
 		S_AXI_RREADY	: in std_logic
 	);
-end i2c_master_v1_0_S00_AXI;
+end I2C_Master_v1_0_S00_AXI;
 
-architecture arch_imp of i2c_master_v1_0_S00_AXI is
+architecture arch_imp of I2C_Master_v1_0_S00_AXI is
 
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);

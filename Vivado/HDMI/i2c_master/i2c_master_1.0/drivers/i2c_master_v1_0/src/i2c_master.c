@@ -1,6 +1,6 @@
 
 
 /***************************** Include Files *******************************/
-#include "i2c_master.h"
+#include "I2C_Master.h"
 
 /************************** Function Definitions ***************************/
