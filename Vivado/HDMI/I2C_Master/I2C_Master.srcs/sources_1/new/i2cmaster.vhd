@@ -32,13 +32,21 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity i2cmaster is
-    Port ( clk : in STD_LOGIC;
-           status_in : in STD_LOGIC_VECTOR(31 downto 0);
-           reg_in : in STD_LOGIC_VECTOR(31 downto 0);
-           enable_in : in STD_LOGIC_VECTOR(31 downto 0);
-           status_out : out STD_LOGIC_VECTOR(31 downto 0);
-           reg_out : out STD_LOGIC_VECTOR(31 downto 0);
-           enable_out : out STD_LOGIC_VECTOR(31 downto 0);
+    Generic (
+            BYTE_WIDTH : integer := 8
+            );
+    Port ( 
+    
+           -- Input Clock
+           clk : in STD_LOGIC;
+           
+           -- Input Register
+           status_in, addr_in, data_in, enable_in : in STD_LOGIC_VECTOR(31 downto 0);
+           
+           -- Output Register
+           status_out, addr_out, data_out, enable_out : out STD_LOGIC_VECTOR(31 downto 0);
+           
+           -- I2C signals
            scl : out STD_LOGIC;
            sda : inout STD_LOGIC
           );
@@ -46,7 +54,7 @@ end i2cmaster;
 
 architecture Behavioral of i2cmaster is
 
-type BUS_STATE_TYPE is (IDLE, START, WRITE, READ, ACK, STOP, DONE);
+type BUS_STATE_TYPE is (IDLE, START, WRITE, READ, NO_ACK, ACK, STOP, DONE);
 type PROTO_STATE_TYPE is(IDLE, START_SIGNAL, WRITE_SLAVE, WRITE_BASE, WRITE_DATA, READ_DATA, ACK_SIGNAL, STOP_SIGNAL);
 
 -- States
@@ -60,60 +68,73 @@ signal repeated_start : std_logic  := '0';
 signal counter  : integer := 0;
 signal byte_buffer : std_logic_vector(7 downto 0);
 
+
 -- constants
 constant OP_BIT_INDEX : integer := 0;
-
 constant SLAVE_ADDR_START : integer := 1;
 constant SLAVE_ADDR_END : integer := 7;
-
 constant REG_ADDR_START : integer := 8;
 constant REG_ADDR_END   : integer := 15;
-
-constant DATA_BYTE_START : integer := 16;
-constant DATA_BYTE_END  : integer := 23;
+constant DATA_BYTE_START : integer := 0;
+constant DATA_BYTE_END  : integer := 7;
 
 begin
 
 -- Logic SCL signal is always Input Clock signal
 scl <= clk;
 
+idle_state : process(PROTO_STATE)
+begin
+    if(PROTO_STATE = IDLE) then
+        sda <= '1';
+        
+        if(enable_in(0) = '1') then
+            PROTO_STATE <= START_SIGNAL;
+        end if;
+    end if;
+end process idle_state;
+
 proto_state_prepare : process(PROTO_STATE)
 begin
     case PROTO_STATE is
         when START_SIGNAL =>
-            BUS_STATE <= START;
             PROTO_NEXT_STATE <= WRITE_SLAVE;
+            BUS_STATE <= START; 
         when WRITE_SLAVE =>
-            byte_buffer(7 downto 1) <= reg_in(SLAVE_ADDR_END downto SLAVE_ADDR_START);
+            byte_buffer(7 downto 1) <= addr_in(SLAVE_ADDR_END downto SLAVE_ADDR_START);
             byte_buffer(0) <= repeated_start;
-            BUS_STATE <= WRITE;
             
             if(repeated_start = '1') then
                 PROTO_NEXT_STATE <= READ_DATA;
             else
                 PROTO_NEXT_STATE <= WRITE_BASE;
             end if;
-        when WRITE_BASE =>
-            byte_buffer <= reg_in(REG_ADDR_END downto REG_ADDR_START);
-            BUS_STATE <= WRITE;
+                      
+            BUS_STATE <= WRITE;   
             
-            if(reg_in(OP_BIT_INDEX) = '1') then
+        when WRITE_BASE =>
+            byte_buffer <= addr_in(REG_ADDR_END downto REG_ADDR_START);
+            
+            if(addr_in(OP_BIT_INDEX) = '1') then
                 repeated_start <= '1';
                 PROTO_NEXT_STATE <= START_SIGNAL;
             else
                 PROTO_NEXT_STATE <= WRITE_DATA;
             end if;
-        when WRITE_DATA =>
-            byte_buffer <= reg_in(DATA_BYTE_END downto DATA_BYTE_START);
+            
             BUS_STATE <= WRITE;
+        when WRITE_DATA =>
+            byte_buffer <= data_in(DATA_BYTE_END downto DATA_BYTE_START);
             PROTO_NEXT_STATE <= STOP_SIGNAL;
-        when READ_DATA =>
+            BUS_STATE <= WRITE;
+        when READ_DATA =>        
             BUS_STATE <= READ;
             PROTO_NEXT_STATE <= STOP_SIGNAL;
-        when STOP_SIGNAL =>
-            BUS_STATE <= STOP;
+        when STOP_SIGNAL =>  
+            enable_out(0) <= '0';
             repeated_start <= '0';
-            PROTO_NEXT_STATE <= START_SIGNAL;
+            PROTO_NEXT_STATE <= IDLE;
+            BUS_STATE <= STOP;
     end case;
 end process proto_state_prepare;
 
@@ -143,15 +164,19 @@ begin
                 if sda = '0' then
                     BUS_STATE <= DONE;
                 else
-                    PROTO_STATE <= START_SIGNAL;
+                    PROTO_STATE <= STOP_SIGNAL;
                 end if; 
             end if;
+        when NO_ACK =>
+            if falling_edge(clk) then
+                sda <= '1';
+            elsif rising_edge(clk) then
+                BUS_STATE <= DONE;
+            end if;
         when STOP =>
-            if(clk = '1') then
+            if(rising_edge(clk)) then
                 sda <= '1';
                 BUS_STATE <= DONE;
-            elsif(clk = '0') then
-                sda <= '0';
             end if; 
     end case;
 
@@ -159,11 +184,13 @@ end process bus_state_exec;
 
 read_write_done : process(counter)
 begin
-    if(BUS_STATE = WRITE or BUS_STATE = READ) then
-        if counter = 7 then
-             counter <= 0;
-             BUS_STATE <= ACK;
+    if counter = (BYTE_WIDTH-1) then
+        if(BUS_STATE = WRITE) then
+            BUS_STATE <= ACK;
+        elsif (BUS_STATE = READ) then
+            BUS_STATE <= NO_ACK;
         end if;
+        counter <= 0;
     end if;
 end process read_write_done;
 
@@ -171,9 +198,8 @@ bus_state_done : process(BUS_STATE)
 begin
     if(BUS_STATE = DONE) then
         if(PROTO_STATE = READ_DATA) then
-            reg_out(DATA_BYTE_END downto DATA_BYTE_START) <= byte_buffer;
+            addr_out(DATA_BYTE_END downto DATA_BYTE_START) <= byte_buffer;
         end if;
-        
         PROTO_STATE <= PROTO_NEXT_STATE;
     end if;
 end process bus_state_done;
