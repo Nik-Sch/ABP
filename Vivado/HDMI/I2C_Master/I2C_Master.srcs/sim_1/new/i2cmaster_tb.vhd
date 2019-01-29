@@ -148,4 +148,72 @@ begin
     
 end process i2cslave_write;
 
+
+--i2cslave_read : process
+--begin
+--    -- Wait for start signal
+--    wait until rising_edge(scl) and sda = '0';
+    
+--    -- Read slave addr from master
+--    for i in 0 to (BYTE_WIDTH-1) loop
+--        wait until rising_edge(scl);
+--        slave_addr_test(i) <= sda;
+--    end loop;
+    
+--    -- ACK
+--    wait until falling_edge(scl);
+--    sda <= '0';
+--    wait until rising_edge(scl);
+    
+--    -- Read base addr from master
+--    for i in 0 to (BYTE_WIDTH-1) loop
+--        wait until rising_edge(scl);
+--        base_addr_test(i) <= sda;
+--    end loop;
+    
+--    -- ACK
+--    wait until falling_edge(scl);
+--    sda <= '0';
+--    wait until rising_edge(scl);
+    
+--    -- Wait for repeated start signal
+--    wait until rising_edge(scl) and sda = '0'; 
+    
+--     -- Read slave addr from master
+--    for i in 0 to (BYTE_WIDTH-1) loop
+--        wait until rising_edge(scl);
+--        slave_addr_test(i) <= sda;
+--    end loop;
+    
+--    -- ACK
+--    wait until falling_edge(scl);
+--    sda <= '0';
+--    wait until rising_edge(scl);
+    
+--    -- Read base addr from master
+--    for i in 0 to (BYTE_WIDTH-1) loop
+--        wait until rising_edge(scl);
+--        base_addr_test(i) <= sda;
+--    end loop;
+    
+--    -- ACK
+--    wait until falling_edge(scl);
+--    sda <= '0';
+--    wait until rising_edge(scl);
+    
+--    -- Write data to master
+--    for i in 0 to (BYTE_WIDTH-1) loop
+--        wait until falling_edge(scl);
+--        sda <= base_addr_test(i);
+--        wait until rising_edge(scl);
+--    end loop;
+    
+--    -- No ACK
+--    wait until rising_edge(scl) and sda = '1';
+    
+--    -- Wait for stop signal
+--    wait until rising_edge(scl) and sda = '1';   
+    
+--end process i2cslave_read;
+
 end Behavioral;
