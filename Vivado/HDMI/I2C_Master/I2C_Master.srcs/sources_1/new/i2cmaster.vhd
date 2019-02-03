@@ -67,7 +67,7 @@ signal repeated_start : std_logic  := '0';
 
 -- constants
 constant OP_BIT_INDEX : integer := 0;
-constant SLAVE_ADDR_START : integer := 1;
+constant SLAVE_ADDR_START : integer := 0;
 constant SLAVE_ADDR_END : integer := 7;
 constant BASE_ADDR_START : integer := 8;
 constant BASE_ADDR_END   : integer := 15;
@@ -80,22 +80,29 @@ begin
 scl <= clk;
 
 proto_state_exec : process(clk)
-variable counter : integer := 0;
+variable counter : integer := BYTE_WIDTH-1;
 begin
     case PROTO_STATE is
         when START_SIGNAL =>
-            if rising_edge(clk) then
+            if falling_edge(clk) then
+                sda <= '1';
+            elsif rising_edge(clk) then
                 sda <= '0';
                 PROTO_NEXT_STATE <= WRITE_SLAVE;
             end if;
         when WRITE_SLAVE =>
             if falling_edge(clk) then
-                sda <= addr_in(SLAVE_ADDR_START + counter);
-            elsif rising_edge(clk) then
-                counter := counter + 1;
+                if counter = 0 then
+                    sda <= repeated_start;
+                else
+                    sda <= addr_in(SLAVE_ADDR_START + counter);
+                end if;
                 
-                if(counter = 7) then
-                    counter := 0;
+            elsif rising_edge(clk) then
+                counter := counter - 1;
+                
+                if(counter = -1) then
+                    counter := BYTE_WIDTH-1;
                     PROTO_NEXT_STATE <= ACK_SIGNAL;
                     if(repeated_start = '1') then
                         PROTO_FOLLOW_STATE <= READ_DATA;
@@ -108,10 +115,10 @@ begin
             if falling_edge(clk) then
                 sda <= addr_in(BASE_ADDR_START + counter);
             elsif rising_edge(clk) then
-                counter := counter + 1;
+                counter := counter - 1;
                 
-                if(counter = 8) then
-                    counter := 0;
+                if(counter = -1) then
+                    counter := BYTE_WIDTH-1;
                     PROTO_NEXT_STATE <= ACK_SIGNAL;
                     if(addr_in(OP_BIT_INDEX) = '1') then
                         repeated_start <= '1';
@@ -125,10 +132,10 @@ begin
             if falling_edge(clk) then
                 sda <= addr_in(BASE_ADDR_START + counter);
             elsif rising_edge(clk) then
-                counter := counter + 1;
+                counter := counter - 1;
                 
-                if(counter = 8) then
-                    counter := 0;
+                if(counter = -1) then
+                    counter := BYTE_WIDTH-1;
                     PROTO_NEXT_STATE <= ACK_SIGNAL;
                     PROTO_FOLLOW_STATE <= STOP_SIGNAL;
                 end if;
@@ -138,10 +145,10 @@ begin
                 sda <= 'Z'; 
             elsif rising_edge(clk) then
                 data_out(DATA_BYTE_START + counter) <= sda;
-                counter := counter + 1;
+                counter := counter - 1;
                 
-                if(counter = 8) then
-                    counter := 0;
+                if(counter = -1) then
+                    counter := BYTE_WIDTH-1;
                     PROTO_NEXT_STATE <= NO_ACK_SIGNAL;
                     PROTO_FOLLOW_STATE <= STOP_SIGNAL;
                 end if;
@@ -162,14 +169,17 @@ begin
             elsif rising_edge(clk) then
                PROTO_NEXT_STATE <= PROTO_FOLLOW_STATE;
             end if;
-        when STOP_SIGNAL =>  
-            if rising_edge(clk) then
+        when STOP_SIGNAL =>
+            if falling_edge(clk) then
                 sda <= '0';
+            elsif rising_edge(clk) then
+                sda <= '1';
                 enable_out(0) <= '0';
                 repeated_start <= '0';
                 PROTO_NEXT_STATE <= IDLE;
             end if;
         when others => 
+            sda <= '1';
             if enable_in(0) = '1' then
                 PROTO_NEXT_STATE <= START_SIGNAL;
             end if;           

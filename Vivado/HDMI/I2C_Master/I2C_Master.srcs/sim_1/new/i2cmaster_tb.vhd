@@ -67,10 +67,10 @@ component i2cmaster
            clk : in STD_LOGIC;
            
            -- Input Register
-           status_in, addr_in, data_in, enable_in : in STD_LOGIC_VECTOR(31 downto 0);
+           addr_in, data_in, enable_in : in STD_LOGIC_VECTOR(31 downto 0);
            
            -- Output Register
-           status_out, addr_out, data_out, enable_out : out STD_LOGIC_VECTOR(31 downto 0);
+           status_out, data_out, enable_out : out STD_LOGIC_VECTOR(31 downto 0);
            
            -- I2C signals
            scl : out STD_LOGIC;
@@ -84,12 +84,10 @@ master_test : i2cmaster
     generic map(BYTE_WIDTH => BYTE_WIDTH)
     port map(
         clk => clk,
-        status_in => status_in,
         addr_in => addr_in,
         data_in => data_in,
         enable_in => enable_in,
         status_out => status_out,
-        addr_out => addr_out,
         data_out => data_out,
         enable_out => enable_out,
         scl => scl,
@@ -97,123 +95,17 @@ master_test : i2cmaster
 
 clockgen : process
 begin
-    wait for 500 ms;
+    wait for 10 ps;
     clk <= not clk;
 end process clockgen;
 
-addr_in(7 downto 0) <= "10101010";
+addr_in(7 downto 0) <= "11111111";
 addr_in(15 downto 8) <= "10101010";
 enable_in(0) <= '1';
 
-i2cslave_write : process
-begin
-    -- Wait for start signal
-    wait until rising_edge(scl) and sda = '0';
-    
-    -- Read slave addr from master
-    for i in 0 to (BYTE_WIDTH-1) loop
-        wait until rising_edge(scl);
-        slave_addr_test(i) <= sda;
-    end loop;
-    
-    -- ACK
-    wait until falling_edge(scl);
-    sda <= '0';
-    wait until rising_edge(scl);
-    
-    -- Read base addr from master
-    for i in 0 to (BYTE_WIDTH-1) loop
-        wait until rising_edge(scl);
-        base_addr_test(i) <= sda;
-    end loop;
-    
-    -- ACK
-    wait until falling_edge(scl);
-    sda <= '0';
-    wait until rising_edge(scl);
-    
-    -- Read data from master
-    for i in 0 to (BYTE_WIDTH-1) loop
-        wait until rising_edge(scl);
-        data_test(i) <= sda;
-    end loop;
-    
-    -- ACK
-    wait until falling_edge(scl);
-    sda <= '0';
-    wait until rising_edge(scl);
-    
-    -- Wait for stop signal
-    wait until rising_edge(scl) and sda = '1';   
-    
-end process i2cslave_write;
-
-
---i2cslave_read : process
---begin
---    -- Wait for start signal
---    wait until rising_edge(scl) and sda = '0';
-    
---    -- Read slave addr from master
---    for i in 0 to (BYTE_WIDTH-1) loop
---        wait until rising_edge(scl);
---        slave_addr_test(i) <= sda;
---    end loop;
-    
---    -- ACK
---    wait until falling_edge(scl);
---    sda <= '0';
---    wait until rising_edge(scl);
-    
---    -- Read base addr from master
---    for i in 0 to (BYTE_WIDTH-1) loop
---        wait until rising_edge(scl);
---        base_addr_test(i) <= sda;
---    end loop;
-    
---    -- ACK
---    wait until falling_edge(scl);
---    sda <= '0';
---    wait until rising_edge(scl);
-    
---    -- Wait for repeated start signal
---    wait until rising_edge(scl) and sda = '0'; 
-    
---     -- Read slave addr from master
---    for i in 0 to (BYTE_WIDTH-1) loop
---        wait until rising_edge(scl);
---        slave_addr_test(i) <= sda;
---    end loop;
-    
---    -- ACK
---    wait until falling_edge(scl);
---    sda <= '0';
---    wait until rising_edge(scl);
-    
---    -- Read base addr from master
---    for i in 0 to (BYTE_WIDTH-1) loop
---        wait until rising_edge(scl);
---        base_addr_test(i) <= sda;
---    end loop;
-    
---    -- ACK
---    wait until falling_edge(scl);
---    sda <= '0';
---    wait until rising_edge(scl);
-    
---    -- Write data to master
---    for i in 0 to (BYTE_WIDTH-1) loop
---        wait until falling_edge(scl);
---        sda <= base_addr_test(i);
---        wait until rising_edge(scl);
---    end loop;
-    
---    -- No ACK
---    wait until rising_edge(scl) and sda = '1';
-    
---    -- Wait for stop signal
---    wait until rising_edge(scl) and sda = '1';   
-    
---end process i2cslave_read;
+--i2creceiver : process
+--    wait until sda = 'Z';
+--    sda <= '1';
+--end process i2creceiver;
 
 end Behavioral;
