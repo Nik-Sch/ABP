@@ -34,7 +34,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="zed"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="870"/>
+    <Option Name="WTXSimLaunchSim" Val="875"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -165,14 +165,14 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_processing_system7_0_0/fourier_bram_processing_system7_0_0.xci">
-          <Proxy FileSetName="fourier_bram_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_Freq2BRAM_1_0/fourier_bram_Freq2BRAM_1_0.xci">
+          <Proxy FileSetName="fourier_bram_Freq2BRAM_1_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_DFTStageWrapper_1_0/fourier_bram_DFTStageWrapper_1_0.xci">
           <Proxy FileSetName="fourier_bram_DFTStageWrapper_1_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_Freq2BRAM_1_0/fourier_bram_Freq2BRAM_1_0.xci">
-          <Proxy FileSetName="fourier_bram_Freq2BRAM_1_0"/>
+        <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_processing_system7_0_0/fourier_bram_processing_system7_0_0.xci">
+          <Proxy FileSetName="fourier_bram_processing_system7_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="fourier_bram.bd" FileRelPathName="ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0.xci">
           <Proxy FileSetName="fourier_bram_i2s2bram_0_0"/>
@@ -254,8 +254,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/testbench_i2sDataIn.sv">
+      <File Path="$PSRCDIR/sim_1/new/reference_dft.sv">
         <FileInfo>
+          <Attr Name="Library" Val="work"/>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -271,10 +272,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/reference_dft.sv">
+      <File Path="$PSRCDIR/sim_1/new/testbench_i2sDataIn.sv">
         <FileInfo>
-          <Attr Name="Library" Val="work"/>
-          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -414,9 +414,7 @@
     </Run>
     <Run Id="fourier_bram_DFTStageWrapper_1_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_DFTStageWrapper_1_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_DFTStageWrapper_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_DFTStageWrapper_1_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -425,9 +423,7 @@
     </Run>
     <Run Id="fourier_bram_i2sDataIn_0_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_i2sDataIn_0_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_i2sDataIn_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_i2sDataIn_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -436,9 +432,7 @@
     </Run>
     <Run Id="fourier_bram_i2s2bram_0_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_i2s2bram_0_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_i2s2bram_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_i2s2bram_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -447,9 +441,7 @@
     </Run>
     <Run Id="fourier_bram_Freq2BRAM_1_0_synth_1" Type="Ft3:Synth" SrcSet="fourier_bram_Freq2BRAM_1_0" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_Freq2BRAM_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/fourier_bram_Freq2BRAM_1_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -523,9 +515,7 @@
     </Run>
     <Run Id="fourier_bram_DFTStageWrapper_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_DFTStageWrapper_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_DFTStageWrapper_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -541,9 +531,7 @@
     </Run>
     <Run Id="fourier_bram_i2sDataIn_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_i2sDataIn_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_i2sDataIn_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -559,9 +547,7 @@
     </Run>
     <Run Id="fourier_bram_i2s2bram_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_i2s2bram_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_i2s2bram_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -577,9 +563,7 @@
     </Run>
     <Run Id="fourier_bram_Freq2BRAM_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg484-1" ConstrsSet="fourier_bram_Freq2BRAM_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="fourier_bram_Freq2BRAM_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

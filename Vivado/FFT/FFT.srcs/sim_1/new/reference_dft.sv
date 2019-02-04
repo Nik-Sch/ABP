@@ -32,6 +32,7 @@ parameter integer testF1 = 550;
 parameter integer testF2 = 1100;
 parameter integer testTime = 1;
 
+
 typedef struct {
   logic signed [24:0] data[testFs*testTime-1:0];
   } t_testData;
@@ -75,12 +76,12 @@ initial begin
     @(negedge clk);
   end
 
-  for (integer f = 0; f < N/2; f++) begin
-    X[f].r = 0;
-    X[f].i = 0;
-  end
-
-
+  // for (integer f = 0; f < N/2; f++) begin
+  //   X[f].r = 0;
+  //   X[f].i = 0;
+  // end
+  //
+  //
   // // load sample data from file
   // file = $fopen("sample_guitar.wav", "r");
   // $fseek(file, 'h18, 0);
@@ -152,12 +153,23 @@ initial begin
     end
 
     // status output
-    if (i % (N / 2) == 0) begin
+    // if (i % (N / 2) == 0) begin
+    //   automatic string file_name;
+    //   $sformat(file_name, "25bit/%02d.txt", i / (N / 2));
+    //
+    //   out_file = $fopen(file_name, "w");
+    //   $fwrite(out_file, "real, imaginary\n");
+    //   for (integer i = 0; i < N/2; i++) begin
+    //     $fwrite(out_file, "%d, %d\n", X[i].r, X[i].i);
+    //   end
+    //   $fclose(out_file);
+    //   @(negedge clk);
+    // end
+    if (i == 3200 || i == 4350) begin
       automatic string file_name;
-      $sformat(file_name, "25bit/%02d.txt", i / (N / 2));
+      $sformat(file_name, "data_%04d.txt", i);
 
       out_file = $fopen(file_name, "w");
-      $fwrite(out_file, "real, imaginary\n");
       for (integer i = 0; i < N/2; i++) begin
         $fwrite(out_file, "%d, %d\n", X[i].r, X[i].i);
       end

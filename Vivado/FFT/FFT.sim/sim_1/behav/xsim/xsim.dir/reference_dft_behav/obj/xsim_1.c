@@ -44,8 +44,9 @@
 #endif
 typedef void (*funcp)(char *, char *);
 extern void execute_7(char*, char *);
+extern void execute_12(char*, char *);
 extern void execute_13(char*, char *);
-extern void execute_14(char*, char *);
+extern void execute_15(char*, char *);
 extern void execute_16(char*, char *);
 extern void execute_17(char*, char *);
 extern void execute_18(char*, char *);
@@ -53,10 +54,9 @@ extern void execute_19(char*, char *);
 extern void execute_20(char*, char *);
 extern void execute_21(char*, char *);
 extern void execute_22(char*, char *);
-extern void execute_23(char*, char *);
 extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
 extern void vlog_transfunc_eventcallback_2state(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[13] = {(funcp)execute_7, (funcp)execute_13, (funcp)execute_14, (funcp)execute_16, (funcp)execute_17, (funcp)execute_18, (funcp)execute_19, (funcp)execute_20, (funcp)execute_21, (funcp)execute_22, (funcp)execute_23, (funcp)vlog_transfunc_eventcallback, (funcp)vlog_transfunc_eventcallback_2state};
+funcp funcTab[13] = {(funcp)execute_7, (funcp)execute_12, (funcp)execute_13, (funcp)execute_15, (funcp)execute_16, (funcp)execute_17, (funcp)execute_18, (funcp)execute_19, (funcp)execute_20, (funcp)execute_21, (funcp)execute_22, (funcp)vlog_transfunc_eventcallback, (funcp)vlog_transfunc_eventcallback_2state};
 const int NumRelocateId= 13;
 
 void relocate(char *dp)
@@ -73,7 +73,7 @@ void sensitize(char *dp)
 
 void simulate(char *dp)
 {
-iki_register_root_pointers(1, 169040, -5,0) ; 
+iki_register_root_pointers(1, 168872, -5,0) ; 
 		iki_schedule_processes_at_time_zero(dp, "xsim.dir/reference_dft_behav/xsim.reloc");
 	// Initialize Verilog nets in mixed simulation, for the cases when the value at time 0 should be propagated from the mixed language Vhdl net
 	iki_execute_processes();

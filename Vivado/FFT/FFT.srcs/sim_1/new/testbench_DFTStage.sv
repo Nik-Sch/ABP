@@ -9,7 +9,7 @@ module testbench_DFTStage;
   `define PI 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862
 
   parameter integer testFs = 8000;
-  parameter integer testF1 = 550;
+  parameter integer testF1 = 440;
   parameter integer testF2 = 1100;
   parameter integer testTime = 1;
 
