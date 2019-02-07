@@ -1,29 +1,12 @@
-----------------------------------------------------------------------------------
--- Company:
--- Engineer:
---
--- Create Date: 12/23/2018 11:47:51 PM
--- Design Name:
--- Module Name: eFunctionRom - rtl
--- Project Name:
--- Target Devices:
--- Tool Versions:
--- Description:
---
--- Dependencies:
---
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
-----------------------------------------------------------------------------------
-
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
 
+-- Author: Niklas
+-- Description: wrapper of eFunctionRom
+-- (legacy: was previously self-written rom which simulated but did not synthesize
+-- due to file io for initialization)
 entity eFunctionRom is
   port (
     i_clk     : in  std_ulogic;

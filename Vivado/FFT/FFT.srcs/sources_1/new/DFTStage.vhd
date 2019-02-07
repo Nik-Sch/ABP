@@ -1,29 +1,10 @@
-----------------------------------------------------------------------------------
--- Company:
--- Engineer:
---
--- Create Date: 12/23/2018 11:32:28 PM
--- Design Name:
--- Module Name: DFTStage - Behavioral
--- Project Name:
--- Target Devices:
--- Tool Versions:
--- Description:
---
--- Dependencies:
---
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
-----------------------------------------------------------------------------------
-
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
 
+-- Author: Niklas
+-- Description: calculate one sdft stage taks N2 + 11 cycles
 entity DFTStage is
   generic (
     N2 : integer := 256                 -- #bins/2
@@ -31,13 +12,13 @@ entity DFTStage is
   port (
     i_clk   : in  std_ulogic;
     i_reset : in  std_ulogic;
-    i_start : in  std_ulogic;
-    o_ready : out std_ulogic;
+    i_start : in  std_ulogic;  -- start calculations with current dataNew and dataOld
+    o_ready : out std_ulogic;  -- '1' if the entity is idle and can start
 
-    i_dataNew : in std_ulogic_vector(24 downto 0);
-    i_dataOld : in std_ulogic_vector(24 downto 0);
+    i_dataNew : in std_ulogic_vector(24 downto 0);  -- new time domain data
+    i_dataOld : in std_ulogic_vector(24 downto 0);  -- old time domain data
 
-    -- bram interface
+    -- FreqBram interface
     -- read
     o_bramRe    : out std_ulogic;
     o_bramRaddr : out std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
@@ -46,10 +27,7 @@ entity DFTStage is
     -- write
     o_bramWe    : out std_ulogic;
     o_bramWAddr : out std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
-    o_bramWData : out std_ulogic_vector(49 downto 0);  -- 49 downto 25: real, 24 downto 0: imag
-
-    -- debug
-    o_r_f : out std_ulogic_vector(8 downto 0)
+    o_bramWData : out std_ulogic_vector(49 downto 0)  -- 49 downto 25: real, 24 downto 0: imag
     );
 end DFTStage;
 
@@ -60,8 +38,10 @@ architecture rtl of DFTStage is
   type t_state is (s_IDLE, s_COMPUTE);
   signal r_state : t_state;
 
-  signal r_data : std_ulogic_vector(24 downto 0);
+  -- current bin index
+  signal r_k : integer range 0 to N2+c_COMPLEX_MULTIPLY_LATANCY+c_BRAM_READ_LATANCY+3;
 
+  -- ComplexMultiply inputs/outputs
   signal r_aReal : std_ulogic_vector(24 downto 0);
   signal r_aImag : std_ulogic_vector(24 downto 0);
   signal r_bReal : std_ulogic_vector(17 downto 0);
@@ -69,22 +49,21 @@ architecture rtl of DFTStage is
   signal s_qReal : std_ulogic_vector(24 downto 0);
   signal s_qImag : std_ulogic_vector(24 downto 0);
 
+  -- eFunction data
   signal r_eAddress : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
   signal s_eData    : std_ulogic_vector(35 downto 0);
   signal s_eReal    : std_ulogic_vector(17 downto 0);
   signal s_eImag    : std_ulogic_vector(17 downto 0);
 
-  signal r_f : integer range 0 to N2+c_COMPLEX_MULTIPLY_LATANCY+c_BRAM_READ_LATANCY+3;
+  signal r_data : std_ulogic_vector(24 downto 0);
 
+  -- FreqOutput BRAM
   signal r_bramRe    : std_ulogic;
   signal r_bramRaddr : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
   signal r_bramWe    : std_ulogic;
   signal r_bramWaddr : std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
   signal r_bramWdata : std_ulogic_vector(49 downto 0);  -- 49 downto 25: real, 24 downto 0: imag
-
 begin
-
-  o_r_f <= std_ulogic_vector(to_unsigned(r_f, 9));
 
   inst_eFunctionRom : entity work.eFunctionRom
     port map (
@@ -104,11 +83,11 @@ begin
       o_qImag => s_qImag
       );
 
-  s_eReal <= s_eData(35 downto 18);
-  s_eImag <= s_eData(17 downto 0);
-
   o_ready <= '1' when r_state = s_IDLE else
              '0';
+
+  s_eReal <= s_eData(35 downto 18);
+  s_eImag <= s_eData(17 downto 0);
 
   o_bramRaddr <= r_bramRaddr;
   o_bramRe    <= r_bramRe;
@@ -130,37 +109,40 @@ begin
       r_aImag     <= (others => '0');
       r_aReal     <= (others => '0');
       r_eAddress  <= (others => '0');
-      r_f         <= 0;
+      r_k         <= 0;
       r_state     <= s_IDLE;
     elsif rising_edge(i_clk) then
+      -- default: disable enables
       r_bramWe <= '0';
       r_bramRe <= '0';
 
       case r_state is
         when s_IDLE =>
+          -- when starting, init index and store old/new data
           if i_start = '1' then
             r_state <= s_COMPUTE;
-            r_f     <= 0;
+            r_k     <= 0;
             r_data  <= std_ulogic_vector(signed(i_dataNew) - signed(i_dataOld));
           end if;
 
         when s_COMPUTE =>
           -- bin selection
-          r_f <= r_f + 1;
-          if r_f = N2 + c_BRAM_READ_LATANCY + c_COMPLEX_MULTIPLY_LATANCY then  -- complex multiply takes 6 reg stages and e function rom 2
-            -- if r_f = 20 then
+          r_k <= r_k + 1;
+          -- last bin finished
+          if r_k = N2 + c_BRAM_READ_LATANCY + c_COMPLEX_MULTIPLY_LATANCY then
             r_state <= s_IDLE;
           end if;
 
-          if r_f < N2 then
+          -- last bin input
+          if r_k < N2 then
             -- e function and old X address
-            r_eAddress  <= std_ulogic_vector(to_unsigned(r_f, integer(ceil(log2(real(N2))))));
-            r_bramRaddr <= std_ulogic_vector(to_unsigned(r_f, integer(ceil(log2(real(N2))))));
+            r_eAddress  <= std_ulogic_vector(to_unsigned(r_k, integer(ceil(log2(real(N2))))));
+            r_bramRaddr <= std_ulogic_vector(to_unsigned(r_k, integer(ceil(log2(real(N2))))));
             r_bramRe    <= '1';
           end if;
 
           -- if first bram (e and old_X) read is ready, start multiply
-          if r_f >= c_BRAM_READ_LATANCY then
+          if r_k >= c_BRAM_READ_LATANCY then
             r_aReal <= std_ulogic_vector(signed(r_data) + signed(i_bramRdata(49 downto 25)));
             r_aImag <= i_bramRdata(24 downto 0);
             r_bReal <= s_eReal;
@@ -168,13 +150,11 @@ begin
           end if;
 
           -- if complex multiply is ready output its value
-          if r_f > c_BRAM_READ_LATANCY + c_COMPLEX_MULTIPLY_LATANCY then
+          if r_k > c_BRAM_READ_LATANCY + c_COMPLEX_MULTIPLY_LATANCY then
             r_bramWe    <= '1';
-            r_bramWaddr <= std_ulogic_vector(to_unsigned(r_f - c_BRAM_READ_LATANCY - c_COMPLEX_MULTIPLY_LATANCY - 1, integer(ceil(log2(real(N2))))));
+            r_bramWaddr <= std_ulogic_vector(to_unsigned(r_k - c_BRAM_READ_LATANCY - c_COMPLEX_MULTIPLY_LATANCY - 1, integer(ceil(log2(real(N2))))));
             r_bramWdata <= s_qReal & s_qImag;
           end if;
-
-
       end case;
     end if;
   end process;

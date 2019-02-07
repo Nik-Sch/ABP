@@ -1,27 +1,8 @@
-----------------------------------------------------------------------------------
--- Company:
--- Engineer:
---
--- Create Date: 01/02/2019 04:31:12 PM
--- Design Name:
--- Module Name: dataFifoFillLevel - Behavioral
--- Project Name:
--- Target Devices:
--- Tool Versions:
--- Description:
---
--- Dependencies:
---
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
-----------------------------------------------------------------------------------
-
-
 library ieee;
 use ieee.std_logic_1164.all;
 
+-- Author: Niklas
+-- Description: look ahead fifo wrapper with fillLevel
 entity dataFifoFillLevel is
   port(
     i_clk       : in  std_ulogic;

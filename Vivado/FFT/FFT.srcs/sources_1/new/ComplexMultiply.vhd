@@ -1,40 +1,20 @@
-----------------------------------------------------------------------------------
--- Company:
--- Engineer:
---
--- Create Date: 11/05/2018 11:54:20 PM
--- Design Name:
--- Module Name: ComplexMultiply - rtl
--- Project Name:
--- Target Devices:
--- Tool Versions:
--- Description:
---
--- Dependencies:
---
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
-----------------------------------------------------------------------------------
-
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-
+-- Author: Niklas
+-- Description: complex multiplication with 4 DSPs, 6 cycles latency and fully pipelined
 entity ComplexMultiply is
   port (
     i_clk   : in  std_ulogic;
     i_reset : in  std_ulogic;
-    i_aReal : in  std_ulogic_vector(24 downto 0);  -- Q11.14
-    i_aImag : in  std_ulogic_vector(24 downto 0);  -- Q11.14
+    i_aReal : in  std_ulogic_vector(24 downto 0);
+    i_aImag : in  std_ulogic_vector(24 downto 0);
     i_bReal : in  std_ulogic_vector(17 downto 0);  -- Q2.16
     i_bImag : in  std_ulogic_vector(17 downto 0);  -- Q2.16
-    -- takes 6 cycles
-    o_qReal : out std_ulogic_vector(24 downto 0);  -- Q11.14
-    o_qImag : out std_ulogic_vector(24 downto 0)   -- Q11.14
+    -- 6 cycles latency
+    o_qReal : out std_ulogic_vector(24 downto 0);
+    o_qImag : out std_ulogic_vector(24 downto 0)
     );
 end ComplexMultiply;
 
@@ -158,7 +138,7 @@ begin
       rrr_aImag <= rr_aImag;
       rrr_bImag <= rr_bImag;
 
-      -- make Q13.30 to Q11.14 again
+      -- remove two MSBs and take 25bit
       o_qReal <= r_qReal(r_qReal'high - 2 downto r_qReal'length - 2 - 25);
       o_qImag <= r_qImag(r_qImag'high - 2 downto r_qImag'length - 2 - 25);
     end if;
