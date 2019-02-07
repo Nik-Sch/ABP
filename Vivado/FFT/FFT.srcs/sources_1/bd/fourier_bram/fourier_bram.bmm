@@ -1,17 +1,23 @@
 WORKFLOW_OPERATION simulation,dialog;
 
-DEFINE_MEMORY_TYPE blkMemGenRight_8K_11_MEM_DEVICE [0x00002000] 32;
-DEFINE_MEMORY_TYPE blk_mem_gen_0_8K_11_MEM_DEVICE [0x00002000] 32;
+DEFINE_MEMORY_TYPE blkMemGenLeft_MEM_DEVICE [0x00002000] 32;
+DEFINE_MEMORY_TYPE blkMemGenRight_MEM_DEVICE [0x00002000] 32;
+DEFINE_MEMORY_TYPE blk_mem_gen_0_MEM_DEVICE [0x00002000] 32;
 
 ADDRESS_MAP processing_system7_0 ARM 100 processing_system7_0
-   ADDRESS_SPACE blkMemGenRight_8K_11_ADDR_SPACE blkMemGenRight_8K_11_MEM_DEVICE  [0x42000000:0x42001FFF] axiBramCtrlRight
+   ADDRESS_SPACE blkMemGenLeft_ADDR_SPACE blkMemGenLeft_MEM_DEVICE  [0x40000000:0x40001FFF] axiBramCtrlLeft
      BUS_BLOCK
-      blkMemGenRight_8K_11_BUS_BLK [31:0] INPUT = "fourier_bram_blk_mem_gen_1_0.mem";
+      blkMemGenLeft_BUS_BLK [31:0] INPUT = "fourier_bram_blkMemGenRight_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE blk_mem_gen_0_8K_11_ADDR_SPACE blk_mem_gen_0_8K_11_MEM_DEVICE  [0x44000000:0x44001FFF] axi_bram_ctrl_0
+   ADDRESS_SPACE blkMemGenRight_ADDR_SPACE blkMemGenRight_MEM_DEVICE  [0x42000000:0x42001FFF] axiBramCtrlRight
      BUS_BLOCK
-      blk_mem_gen_0_8K_11_BUS_BLK [31:0] INPUT = "fourier_bram_blk_mem_gen_0_0.mem";
+      blkMemGenRight_BUS_BLK [31:0] INPUT = "fourier_bram_blk_mem_gen_1_0.mem";
+     END_BUS_BLOCK;
+   END_ADDRESS_SPACE;
+   ADDRESS_SPACE blk_mem_gen_0_ADDR_SPACE blk_mem_gen_0_MEM_DEVICE  [0x44000000:0x44001FFF] axi_bram_ctrl_0
+     BUS_BLOCK
+      blk_mem_gen_0_BUS_BLK [31:0] INPUT = "fourier_bram_blk_mem_gen_0_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
 END_ADDRESS_MAP;

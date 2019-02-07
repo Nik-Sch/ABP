@@ -17,9 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
-set_param tcl.collectionResultDisplayLimit 0
-set_msg_config -id {Common 17-41} -limit 10000000
 set_param project.vivado.isBlockSynthRun true
 create_project -in_memory -part xc7z020clg484-1
 
@@ -27,18 +24,18 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.cache/wt [current_project]
-set_property parent.project_path /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.xpr [current_project]
+set_property webtalk.parent_dir D:/Uni/Tauschordner/FFT/FFT.cache/wt [current_project]
+set_property parent.project_path D:/Uni/Tauschordner/FFT/FFT.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
-set_property ip_repo_paths /home/niklas/dev/uni/ABP/git/Vivado/I2S_receiver [current_project]
+set_property ip_repo_paths d:/Uni/Tauschordner/I2S_receiver [current_project]
 update_ip_catalog
-set_property ip_output_repo /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.cache/ip [current_project]
+set_property ip_output_repo d:/Uni/Tauschordner/FFT/FFT.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/i2s2bram.vhd
-read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0.xci
+read_vhdl -library xil_defaultlib D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/new/i2s2bram.vhd
+read_ip -quiet D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -50,7 +47,7 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 set_param ips.enableIPCacheLiteLoad 1
 
-set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1 -new_name fourier_bram_i2s2bram_0_0 -ip [get_ips fourier_bram_i2s2bram_0_0]]
+set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1 -new_name fourier_bram_i2s2bram_0_0 -ip [get_ips fourier_bram_i2s2bram_0_0]]
 
 if { $cached_ip eq {} } {
 close [open __synthesis_is_running__ w]
@@ -91,32 +88,32 @@ write_checkpoint -force -noxdef fourier_bram_i2s2bram_0_0.dcp
 create_report "fourier_bram_i2s2bram_0_0_synth_1_synth_report_utilization_0" "report_utilization -file fourier_bram_i2s2bram_0_0_utilization_synth.rpt -pb fourier_bram_i2s2bram_0_0_utilization_synth.pb"
 
 if { [catch {
-  file copy -force /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0.dcp /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0.dcp
+  file copy -force D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0.dcp D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.v
+  write_verilog -force -mode synth_stub D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.vhdl
+  write_vhdl -force -mode synth_stub D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_sim_netlist.v
+  write_verilog -force -mode funcsim D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -126,47 +123,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0.dcp /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0.dcp
+  file copy -force D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0.dcp D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0_stub.v /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.v
+  file rename -force D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0_stub.v D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0_stub.vhdl /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.vhdl
+  file rename -force D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0_stub.vhdl D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0_sim_netlist.v /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_sim_netlist.v
+  file rename -force D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0_sim_netlist.v D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0_sim_netlist.vhdl /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_sim_netlist.vhdl
+  file rename -force D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_i2s2bram_0_0_synth_1/fourier_bram_i2s2bram_0_0_sim_netlist.vhdl D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.ip_user_files/ip/fourier_bram_i2s2bram_0_0]} {
+if {[file isdir D:/Uni/Tauschordner/FFT/FFT.ip_user_files/ip/fourier_bram_i2s2bram_0_0]} {
   catch { 
-    file copy -force /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.v /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.ip_user_files/ip/fourier_bram_i2s2bram_0_0
+    file copy -force D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.v D:/Uni/Tauschordner/FFT/FFT.ip_user_files/ip/fourier_bram_i2s2bram_0_0
   }
 }
 
-if {[file isdir /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.ip_user_files/ip/fourier_bram_i2s2bram_0_0]} {
+if {[file isdir D:/Uni/Tauschordner/FFT/FFT.ip_user_files/ip/fourier_bram_i2s2bram_0_0]} {
   catch { 
-    file copy -force /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.vhdl /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.ip_user_files/ip/fourier_bram_i2s2bram_0_0
+    file copy -force D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0_stub.vhdl D:/Uni/Tauschordner/FFT/FFT.ip_user_files/ip/fourier_bram_i2s2bram_0_0
   }
 }
 file delete __synthesis_is_running__

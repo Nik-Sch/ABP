@@ -41,9 +41,9 @@ architecture rtl of i2sDataIn is
 begin
   o_dftDataValid <= '1' when (i_i2sEn = '1' and i_dftReady = '1') else
                     '0';
-  -- input data is unsigned 24bit
+  -- input data is signed 24bit
   -- I want signed between -16384 and 16383 (4000 and 3fff, 14bit)
-  s_tmp <= std_logic_vector(signed(shift_right(unsigned(i_i2sData), 9)) - c_OFFSET);
+  s_tmp <= std_logic_vector(signed(shift_right(signed(i_i2sData), 9)));-- - c_OFFSET);
   o_dftData <= s_tmp(23) & s_tmp;
 
 end rtl;

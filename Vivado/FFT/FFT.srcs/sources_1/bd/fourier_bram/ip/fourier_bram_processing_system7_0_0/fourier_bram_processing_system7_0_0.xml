@@ -12249,7 +12249,7 @@
         <spirit:name>local_memory_map</spirit:name>
         <spirit:addressBlock>
           <spirit:name>microblaze_0</spirit:name>
-          <spirit:baseAddress spirit:format="long">1140850688</spirit:baseAddress>
+          <spirit:baseAddress spirit:format="long">1073741824</spirit:baseAddress>
           <spirit:range spirit:format="long">8192</spirit:range>
           <spirit:width spirit:format="long">32</spirit:width>
           <spirit:parameters>
@@ -12263,25 +12263,25 @@
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>workflow</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_0.workflow">implementation</spirit:value>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_0.workflow">simulation</spirit:value>
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>controlpaths</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_0.controlpaths">axi_bram_ctrl_0=blk_mem_gen_0</spirit:value>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_0.controlpaths">axiBramCtrlLeft=blkMemGenLeft</spirit:value>
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>memorytypename</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_0.memorytypename"/>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_0.memorytypename">blkMemGenLeft_MEM_DEVICE</spirit:value>
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>simmemfile</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_0.simmemfile"/>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_0.simmemfile">fourier_bram_blkMemGenRight_0.mem</spirit:value>
             </spirit:parameter>
           </spirit:parameters>
         </spirit:addressBlock>
         <spirit:addressBlock>
           <spirit:name>microblaze_1</spirit:name>
-          <spirit:baseAddress spirit:format="long">1107296256</spirit:baseAddress>
+          <spirit:baseAddress spirit:format="long">1073741824</spirit:baseAddress>
           <spirit:range spirit:format="long">8192</spirit:range>
           <spirit:width spirit:format="long">32</spirit:width>
           <spirit:parameters>
@@ -12295,19 +12295,19 @@
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>workflow</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_1.workflow">simulation</spirit:value>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_1.workflow">implementation</spirit:value>
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>controlpaths</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_1.controlpaths">axiBramCtrlRight=blkMemGenRight</spirit:value>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_1.controlpaths">axiBramCtrlLeft=blkMemGenLeft</spirit:value>
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>memorytypename</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_1.memorytypename">blkMemGenRight_MEM_DEVICE</spirit:value>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_1.memorytypename"/>
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>simmemfile</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_1.simmemfile">fourier_bram_blk_mem_gen_1_0.mem</spirit:value>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_1.simmemfile"/>
             </spirit:parameter>
           </spirit:parameters>
         </spirit:addressBlock>
@@ -12345,7 +12345,7 @@
         </spirit:addressBlock>
         <spirit:addressBlock>
           <spirit:name>microblaze_3</spirit:name>
-          <spirit:baseAddress spirit:format="long">1140850688</spirit:baseAddress>
+          <spirit:baseAddress spirit:format="long">1107296256</spirit:baseAddress>
           <spirit:range spirit:format="long">8192</spirit:range>
           <spirit:width spirit:format="long">32</spirit:width>
           <spirit:parameters>
@@ -12363,15 +12363,79 @@
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>controlpaths</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_3.controlpaths">axi_bram_ctrl_0=blk_mem_gen_0</spirit:value>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_3.controlpaths">axiBramCtrlRight=blkMemGenRight</spirit:value>
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>memorytypename</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_3.memorytypename">blk_mem_gen_0_MEM_DEVICE</spirit:value>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_3.memorytypename">blkMemGenRight_MEM_DEVICE</spirit:value>
             </spirit:parameter>
             <spirit:parameter>
               <spirit:name>simmemfile</spirit:name>
-              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_3.simmemfile">fourier_bram_blk_mem_gen_0_0.mem</spirit:value>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_3.simmemfile">fourier_bram_blk_mem_gen_1_0.mem</spirit:value>
+            </spirit:parameter>
+          </spirit:parameters>
+        </spirit:addressBlock>
+        <spirit:addressBlock>
+          <spirit:name>microblaze_4</spirit:name>
+          <spirit:baseAddress spirit:format="long">1140850688</spirit:baseAddress>
+          <spirit:range spirit:format="long">8192</spirit:range>
+          <spirit:width spirit:format="long">32</spirit:width>
+          <spirit:parameters>
+            <spirit:parameter>
+              <spirit:name>lsb</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_4.lsb">0</spirit:value>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>msb</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_4.msb">31</spirit:value>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>workflow</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_4.workflow">simulation</spirit:value>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>controlpaths</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_4.controlpaths">axi_bram_ctrl_0=blk_mem_gen_0</spirit:value>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>memorytypename</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_4.memorytypename">blk_mem_gen_0_MEM_DEVICE</spirit:value>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>simmemfile</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_4.simmemfile">fourier_bram_blk_mem_gen_0_0.mem</spirit:value>
+            </spirit:parameter>
+          </spirit:parameters>
+        </spirit:addressBlock>
+        <spirit:addressBlock>
+          <spirit:name>microblaze_5</spirit:name>
+          <spirit:baseAddress spirit:format="long">1140850688</spirit:baseAddress>
+          <spirit:range spirit:format="long">8192</spirit:range>
+          <spirit:width spirit:format="long">32</spirit:width>
+          <spirit:parameters>
+            <spirit:parameter>
+              <spirit:name>lsb</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_5.lsb">0</spirit:value>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>msb</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_5.msb">31</spirit:value>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>workflow</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_5.workflow">implementation</spirit:value>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>controlpaths</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_5.controlpaths">axi_bram_ctrl_0=blk_mem_gen_0</spirit:value>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>memorytypename</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_5.memorytypename"/>
+            </spirit:parameter>
+            <spirit:parameter>
+              <spirit:name>simmemfile</spirit:name>
+              <spirit:value spirit:id="ADDRSPACE_ADDRBLOCKPARAM_VALUE.DATA.LOCAL_MEMORY_MAP.MICROBLAZE_5.simmemfile"/>
             </spirit:parameter>
           </spirit:parameters>
         </spirit:addressBlock>
@@ -14533,7 +14597,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 24 18:26:05 UTC 2019</spirit:value>
+            <spirit:value>Tue Feb 05 18:52:24 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -14553,7 +14617,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 24 18:26:05 UTC 2019</spirit:value>
+            <spirit:value>Tue Feb 05 18:52:24 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -14593,7 +14657,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 24 18:26:05 UTC 2019</spirit:value>
+            <spirit:value>Tue Feb 05 18:52:24 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -14620,7 +14684,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 24 18:26:06 UTC 2019</spirit:value>
+            <spirit:value>Tue Feb 05 18:52:24 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -14639,7 +14703,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 24 18:26:08 UTC 2019</spirit:value>
+            <spirit:value>Tue Feb 05 18:52:28 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -14661,7 +14725,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 24 18:27:05 UTC 2019</spirit:value>
+            <spirit:value>Tue Feb 05 20:07:30 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
