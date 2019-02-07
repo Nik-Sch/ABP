@@ -1,8 +1,8 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Thu Jan 24 23:29:41 2019
-// Host        : niklas-desktop running 64-bit Ubuntu 18.10
+// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+// Date        : Wed Feb  6 22:43:41 2019
+// Host        : Jannes-PC running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ fourier_bram_i2sDataIn_0_0_sim_netlist.v
 // Design      : fourier_bram_i2sDataIn_0_0
@@ -30,32 +30,25 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   wire i_dftReady;
   wire [23:0]i_i2sData;
   wire i_i2sEn;
-  wire [23:23]\^o_dftData ;
   wire o_dftDataValid;
 
-  assign o_dftData[24] = \^o_dftData [23];
-  assign o_dftData[23] = \^o_dftData [23];
-  assign o_dftData[22] = \^o_dftData [23];
-  assign o_dftData[21] = \^o_dftData [23];
-  assign o_dftData[20] = \^o_dftData [23];
-  assign o_dftData[19] = \^o_dftData [23];
-  assign o_dftData[18] = \^o_dftData [23];
-  assign o_dftData[17] = \^o_dftData [23];
-  assign o_dftData[16] = \^o_dftData [23];
-  assign o_dftData[15] = \^o_dftData [23];
-  assign o_dftData[14] = \^o_dftData [23];
-  assign o_dftData[13:0] = i_i2sData[22:9];
+  assign o_dftData[24] = i_i2sData[23];
+  assign o_dftData[23] = i_i2sData[23];
+  assign o_dftData[22] = i_i2sData[23];
+  assign o_dftData[21] = i_i2sData[23];
+  assign o_dftData[20] = i_i2sData[23];
+  assign o_dftData[19] = i_i2sData[23];
+  assign o_dftData[18] = i_i2sData[23];
+  assign o_dftData[17] = i_i2sData[23];
+  assign o_dftData[16] = i_i2sData[23];
+  assign o_dftData[15] = i_i2sData[23];
+  assign o_dftData[14:0] = i_i2sData[23:9];
   LUT2 #(
     .INIT(4'h8)) 
     o_dftDataValid_INST_0
        (.I0(i_i2sEn),
         .I1(i_dftReady),
         .O(o_dftDataValid));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \o_dftData[14]_INST_0 
-       (.I0(i_i2sData[23]),
-        .O(\^o_dftData ));
 endmodule
 `ifndef GLBL
 `define GLBL

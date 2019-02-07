@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date                      : Mon Feb  4 16:24:59 2019
-| Host                      : niklas-desktop running 64-bit Ubuntu 18.10
+| Tool Version              : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date                      : Wed Feb  6 22:55:24 2019
+| Host                      : Jannes-PC running 64-bit Service Pack 1  (build 7601)
 | Command                   : report_io -file fourier_bram_wrapper_io_placed.rpt
 | Design                    : fourier_bram_wrapper
 | Device                    : xc7z020

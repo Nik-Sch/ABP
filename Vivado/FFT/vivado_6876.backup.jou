@@ -1,0 +1,88 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Feb  5 18:55:00 2019
+# Process ID: 6876
+# Current directory: D:/Uni/Tauschordner/FFT
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1508 D:\Uni\Tauschordner\FFT\FFT.xpr
+# Log file: D:/Uni/Tauschordner/FFT/vivado.log
+# Journal file: D:/Uni/Tauschordner/FFT\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Uni/Tauschordner/FFT/FFT.xpr
+update_compile_order -fileset sources_1
+open_bd_design {D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/fourier_bram.bd}
+import_files -norecurse D:/Uni/AES_PROJEKT/audio_1_0/audio_1_0.srcs/sources_1/imports/AES_PROJEKT/I2S_receiver.vhd
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference I2S_receiver I2S_receiver_1
+set_property location {1 224 669} [get_bd_cells I2S_receiver_1]
+connect_bd_net [get_bd_ports LRCLK] [get_bd_pins I2S_receiver_1/LRCLK]
+connect_bd_net [get_bd_ports BCLK] [get_bd_pins I2S_receiver_1/BCLK]
+connect_bd_net [get_bd_ports ADC_SDATA] [get_bd_pins I2S_receiver_1/SDATA]
+connect_bd_net [get_bd_pins I2S_receiver_1/CLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+disconnect_bd_net /I2S_receiver_0_WR_EN_RIGHT [get_bd_pins I2S_receiver_0/WR_EN_RIGHT]
+connect_bd_net [get_bd_pins I2S_receiver_1/WR_EN_RIGHT] [get_bd_pins ila_dft_domain/probe1]
+disconnect_bd_net /I2S_receiver_0_SDATA_REC [get_bd_pins I2S_receiver_0/SDATA_REC]
+connect_bd_net [get_bd_pins I2S_receiver_1/SDATA_REC] [get_bd_pins ila_dft_domain/probe0]
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins I2S_receiver_0/CLK]
+disconnect_bd_net /LRCLK_1 [get_bd_pins I2S_receiver_0/LRCLK]
+disconnect_bd_net /BCLK_1 [get_bd_pins I2S_receiver_0/BCLK]
+disconnect_bd_net /ADC_SDATA_1 [get_bd_pins I2S_receiver_0/SDATA]
+delete_bd_objs [get_bd_cells I2S_receiver_0]
+copy_bd_objs /  [get_bd_cells {i2sDataInRight}]
+set_property name i2sDataInLeft [get_bd_cells i2sDataInRight1]
+connect_bd_net [get_bd_pins i2sDataInLeft/i_i2sData] [get_bd_pins I2S_receiver_1/SDATA_REC]
+connect_bd_net [get_bd_pins i2sDataInLeft/i_i2sEn] [get_bd_pins I2S_receiver_1/WR_EN_LEFT]
+copy_bd_objs /  [get_bd_cells {DFTStageWrapperRight}]
+set_property name DFTStageWrapperLeft [get_bd_cells DFTStageWrapperRight1]
+connect_bd_net [get_bd_pins i2sDataInLeft/o_dftData] [get_bd_pins DFTStageWrapperLeft/i_dataNew]
+set_property location {3 1336 647} [get_bd_cells DFTStageWrapperLeft]
+connect_bd_net [get_bd_pins i2sDataInLeft/o_dftDataValid] [get_bd_pins DFTStageWrapperLeft/i_dataValid]
+connect_bd_net [get_bd_pins DFTStageWrapperLeft/o_ready] [get_bd_pins i2sDataInLeft/i_dftReady]
+copy_bd_objs /  [get_bd_cells {Freq2BRAMRight}]
+set_property location {3 1237 360} [get_bd_cells DFTStageWrapperRight]
+connect_bd_net [get_bd_pins DFTStageWrapperLeft/i_clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins DFTStageWrapperLeft/i_reset] [get_bd_pins rstRTL/peripheral_reset]
+set_property location {4 1598 343} [get_bd_cells Freq2BRAMRight]
+set_property name Freq2BRAMLeft [get_bd_cells Freq2BRAMRight1]
+connect_bd_net [get_bd_pins Freq2BRAMLeft/i_clk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins Freq2BRAMLeft/i_reset] [get_bd_pins rstRTL/peripheral_reset]
+connect_bd_net [get_bd_pins DFTStageWrapperLeft/o_freqDataEn] [get_bd_pins Freq2BRAMLeft/i_freqDataEn]
+set_property location {4 1567 603} [get_bd_cells Freq2BRAMLeft]
+set_property location {4 1566 625} [get_bd_cells Freq2BRAMLeft]
+set_property location {4 1565 637} [get_bd_cells Freq2BRAMLeft]
+set_property location {4 1563 622} [get_bd_cells Freq2BRAMLeft]
+connect_bd_net [get_bd_pins DFTStageWrapperLeft/o_freqDataEn] [get_bd_pins Freq2BRAMLeft/i_freqDataIndex]
+undo
+connect_bd_net [get_bd_pins DFTStageWrapperLeft/o_freqDataIndex] [get_bd_pins Freq2BRAMLeft/i_freqDataIndex]
+connect_bd_net [get_bd_pins DFTStageWrapperLeft/o_freqDataReal] [get_bd_pins Freq2BRAMLeft/i_freqDataReal]
+connect_bd_net [get_bd_pins DFTStageWrapperLeft/o_freqDataImag] [get_bd_pins Freq2BRAMLeft/i_freqDataImag]
+copy_bd_objs /  [get_bd_cells {blkMemGenRight}]
+set_property name blkMemGenLeft [get_bd_cells blkMemGenRight1]
+set_property location {3 1143 85} [get_bd_cells DFTStageWrapperRight]
+set_property location {4 1599 80} [get_bd_cells Freq2BRAMRight]
+set_property location {4 1653 76} [get_bd_cells Freq2BRAMRight]
+set_property location {4 1756 52} [get_bd_cells Freq2BRAMRight]
+set_property location {5 2268 47} [get_bd_cells blkMemGenRight]
+set_property location {6 2627 -364} [get_bd_cells ila_dft_domain]
+set_property location {5 2155 302} [get_bd_cells blkMemGenLeft]
+copy_bd_objs /  [get_bd_cells {axiBramCtrlRight}]
+set_property location {5 2145 411} [get_bd_cells axiBramCtrlRight1]
+set_property name axiBramCtrlLeft [get_bd_cells axiBramCtrlRight1]
+connect_bd_intf_net [get_bd_intf_pins blkMemGenLeft/BRAM_PORTA] [get_bd_intf_pins axiBramCtrlLeft/BRAM_PORTA]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/axiBramCtrlLeft/S_AXI} intc_ip {/axiSmc} master_apm {0}}  [get_bd_intf_pins axiBramCtrlLeft/S_AXI]
+set_property location {5 2165 740} [get_bd_cells axiBramCtrlLeft]
+connect_bd_net [get_bd_pins Freq2BRAMLeft/o_bramAddr] [get_bd_pins blkMemGenLeft/addrb]
+connect_bd_net [get_bd_pins blkMemGenLeft/clkb] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net [get_bd_pins blkMemGenLeft/dinb] [get_bd_pins Freq2BRAMLeft/o_bramDin]
+connect_bd_net [get_bd_pins blkMemGenLeft/enb] [get_bd_pins Freq2BRAMLeft/o_bramEn]
+connect_bd_net [get_bd_pins blkMemGenLeft/web] [get_bd_pins Freq2BRAMLeft/o_bramByteWe]
+connect_bd_net [get_bd_pins blkMemGenLeft/rstb] [get_bd_pins rstRTL/peripheral_reset]
+connect_bd_net [get_bd_pins blkMemGenLeft/doutb] [get_bd_pins Freq2BRAMLeft/i_bramDout]
+regenerate_bd_layout
+validate_bd_design
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1

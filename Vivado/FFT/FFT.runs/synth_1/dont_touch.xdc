@@ -69,9 +69,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_bl
 # IP: bd/fourier_bram/ip/fourier_bram_axi_bram_ctrl_0_1/fourier_bram_axi_bram_ctrl_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_axi_bram_ctrl_0_1 || ORIG_REF_NAME==fourier_bram_axi_bram_ctrl_0_1} -quiet] -quiet
 
-# IP: bd/fourier_bram/ip/fourier_bram_I2S_receiver_0_0/fourier_bram_I2S_receiver_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_I2S_receiver_0_0 || ORIG_REF_NAME==fourier_bram_I2S_receiver_0_0} -quiet] -quiet
-
 # IP: bd/fourier_bram/ip/fourier_bram_axi_quad_spi_0_0/fourier_bram_axi_quad_spi_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_axi_quad_spi_0_0 || ORIG_REF_NAME==fourier_bram_axi_quad_spi_0_0} -quiet] -quiet
 
@@ -93,6 +90,45 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_il
 # IP: bd/fourier_bram/ip/fourier_bram_i2sDataIn_0_0/fourier_bram_i2sDataIn_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_i2sDataIn_0_0 || ORIG_REF_NAME==fourier_bram_i2sDataIn_0_0} -quiet] -quiet
 
+# IP: bd/fourier_bram/ip/fourier_bram_I2S_receiver_1_0/fourier_bram_I2S_receiver_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_I2S_receiver_1_0 || ORIG_REF_NAME==fourier_bram_I2S_receiver_1_0} -quiet] -quiet
+
+# IP: bd/fourier_bram/ip/fourier_bram_i2sDataInRight_0/fourier_bram_i2sDataInRight_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_i2sDataInRight_0 || ORIG_REF_NAME==fourier_bram_i2sDataInRight_0} -quiet] -quiet
+
+# IP: bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/fourier_bram_DFTStageWrapperRight_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_DFTStageWrapperRight_0 || ORIG_REF_NAME==fourier_bram_DFTStageWrapperRight_0} -quiet] -quiet
+
+# IP: ip/blk_mem_gen_0_2/blk_mem_gen_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==blk_mem_gen_0 || ORIG_REF_NAME==blk_mem_gen_0} -quiet] -quiet
+
+# IP: ip/xbip_multadd_0/xbip_multadd_0.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==xbip_multadd_0 || ORIG_REF_NAME==xbip_multadd_0} -quiet] -quiet
+
+# IP: ip/blk_rom_e_imag/blk_rom_e_imag.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==blk_rom_e_imag || ORIG_REF_NAME==blk_rom_e_imag} -quiet] -quiet
+
+# IP: ip/blk_rom_e_real/blk_rom_e_real.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==blk_rom_e_real || ORIG_REF_NAME==blk_rom_e_real} -quiet] -quiet
+
+# IP: ip/data_fifo/data_fifo.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_fifo || ORIG_REF_NAME==data_fifo} -quiet] -quiet
+
+# IP: bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/fourier_bram_Freq2BRAMRight_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_Freq2BRAMRight_0 || ORIG_REF_NAME==fourier_bram_Freq2BRAMRight_0} -quiet] -quiet
+
+# IP: ip/index_fifo/index_fifo.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==index_fifo || ORIG_REF_NAME==index_fifo} -quiet] -quiet
+
+# IP: ip/data_fifo/data_fifo.xci
+#dup# set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_fifo || ORIG_REF_NAME==data_fifo} -quiet] -quiet
+
+# IP: bd/fourier_bram/ip/fourier_bram_blkMemGenRight_0/fourier_bram_blkMemGenRight_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_blkMemGenRight_0 || ORIG_REF_NAME==fourier_bram_blkMemGenRight_0} -quiet] -quiet
+
+# IP: bd/fourier_bram/ip/fourier_bram_axiBramCtrlRight_0/fourier_bram_axiBramCtrlRight_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==fourier_bram_axiBramCtrlRight_0 || ORIG_REF_NAME==fourier_bram_axiBramCtrlRight_0} -quiet] -quiet
+
 # XDC: ip/blk_mem_gen_0_2/blk_mem_gen_0_ooc.xdc
 
 # XDC: ip/blk_rom_e_imag/blk_rom_e_imag_ooc.xdc
@@ -104,6 +140,21 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 
 # XDC: ip/index_fifo/index_fifo.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==index_fifo || ORIG_REF_NAME==index_fifo} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: ip/blk_mem_gen_0_2/blk_mem_gen_0_ooc.xdc
+
+# XDC: ip/blk_rom_e_imag/blk_rom_e_imag_ooc.xdc
+
+# XDC: ip/blk_rom_e_real/blk_rom_e_real_ooc.xdc
+
+# XDC: ip/data_fifo/data_fifo.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==data_fifo || ORIG_REF_NAME==data_fifo} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: ip/index_fifo/index_fifo.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==index_fifo || ORIG_REF_NAME==index_fifo} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: ip/data_fifo/data_fifo.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==data_fifo || ORIG_REF_NAME==data_fifo} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: ip/blk_mem_gen_0_2/blk_mem_gen_0_ooc.xdc
 

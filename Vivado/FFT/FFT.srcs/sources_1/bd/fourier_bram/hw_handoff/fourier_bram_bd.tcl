@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# DFTStageWrapper, Freq2BRAM, i2s2bram, i2sDataIn
+# DFTStageWrapper, DFTStageWrapper, Freq2BRAM, Freq2BRAM, I2S_receiver, i2s2bram, i2sDataIn, i2sDataIn
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -178,6 +178,17 @@ proc create_root_design { parentCell } {
   set LRCLK [ create_bd_port -dir I LRCLK ]
   set led0 [ create_bd_port -dir O led0 ]
 
+  # Create instance: DFTStageWrapperLeft, and set properties
+  set block_name DFTStageWrapper
+  set block_cell_name DFTStageWrapperLeft
+  if { [catch {set DFTStageWrapperLeft [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $DFTStageWrapperLeft eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: DFTStageWrapperRight, and set properties
   set block_name DFTStageWrapper
   set block_cell_name DFTStageWrapperRight
@@ -185,6 +196,17 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $DFTStageWrapperRight eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: Freq2BRAMLeft, and set properties
+  set block_name Freq2BRAM
+  set block_cell_name Freq2BRAMLeft
+  if { [catch {set Freq2BRAMLeft [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Freq2BRAMLeft eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -200,8 +222,22 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: I2S_receiver_0, and set properties
-  set I2S_receiver_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:I2S_receiver:1.0 I2S_receiver_0 ]
+  # Create instance: I2S_receiver_1, and set properties
+  set block_name I2S_receiver
+  set block_cell_name I2S_receiver_1
+  if { [catch {set I2S_receiver_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $I2S_receiver_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: axiBramCtrlLeft, and set properties
+  set axiBramCtrlLeft [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axiBramCtrlLeft ]
+  set_property -dict [ list \
+   CONFIG.SINGLE_PORT_BRAM {1} \
+ ] $axiBramCtrlLeft
 
   # Create instance: axiBramCtrlRight, and set properties
   set axiBramCtrlRight [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axiBramCtrlRight ]
@@ -238,6 +274,18 @@ proc create_root_design { parentCell } {
    CONFIG.FIFO_INCLUDED {0} \
  ] $axi_quad_spi_0
 
+  # Create instance: blkMemGenLeft, and set properties
+  set blkMemGenLeft [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blkMemGenLeft ]
+  set_property -dict [ list \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_B {Use_ENB_Pin} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Use_RSTB_Pin {true} \
+ ] $blkMemGenLeft
+
   # Create instance: blkMemGenRight, and set properties
   set blkMemGenRight [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blkMemGenRight ]
   set_property -dict [ list \
@@ -269,6 +317,17 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $i2s2bram_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: i2sDataInLeft, and set properties
+  set block_name i2sDataIn
+  set block_cell_name i2sDataInLeft
+  if { [catch {set i2sDataInLeft [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $i2sDataInLeft eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -718,6 +777,8 @@ proc create_root_design { parentCell } {
   set rstRTL [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rstRTL ]
 
   # Create interface connections
+  connect_bd_intf_net -intf_net axiBramCtrlLeft_BRAM_PORTA [get_bd_intf_pins axiBramCtrlLeft/BRAM_PORTA] [get_bd_intf_pins blkMemGenLeft/BRAM_PORTA]
+  connect_bd_intf_net -intf_net axiSmc_M00_AXI [get_bd_intf_pins axiBramCtrlLeft/S_AXI] [get_bd_intf_pins axiSmc/M00_AXI]
   connect_bd_intf_net -intf_net axiSmc_M02_AXI [get_bd_intf_pins axiSmc/M02_AXI] [get_bd_intf_pins axi_quad_spi_0/AXI_LITE]
   connect_bd_intf_net -intf_net axiSmc_M03_AXI [get_bd_intf_pins axiSmc/M03_AXI] [get_bd_intf_pins axi_gpio_0/S_AXI]
   connect_bd_intf_net -intf_net axiSmc_M04_AXI [get_bd_intf_pins axiSmc/M04_AXI] [get_bd_intf_pins axi_bram_ctrl_0/S_AXI]
@@ -731,8 +792,13 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins axiSmc/S00_AXI] [get_bd_intf_pins processing_system7_0/M_AXI_GP0]
 
   # Create port connections
-  connect_bd_net -net ADC_SDATA_1 [get_bd_ports ADC_SDATA] [get_bd_ports led0] [get_bd_pins I2S_receiver_0/SDATA]
-  connect_bd_net -net BCLK_1 [get_bd_ports BCLK] [get_bd_pins I2S_receiver_0/BCLK]
+  connect_bd_net -net ADC_SDATA_1 [get_bd_ports ADC_SDATA] [get_bd_ports led0] [get_bd_pins I2S_receiver_1/SDATA]
+  connect_bd_net -net BCLK_1 [get_bd_ports BCLK] [get_bd_pins I2S_receiver_1/BCLK]
+  connect_bd_net -net DFTStageWrapperLeft_o_freqDataEn [get_bd_pins DFTStageWrapperLeft/o_freqDataEn] [get_bd_pins Freq2BRAMLeft/i_freqDataEn]
+  connect_bd_net -net DFTStageWrapperLeft_o_freqDataImag [get_bd_pins DFTStageWrapperLeft/o_freqDataImag] [get_bd_pins Freq2BRAMLeft/i_freqDataImag]
+  connect_bd_net -net DFTStageWrapperLeft_o_freqDataIndex [get_bd_pins DFTStageWrapperLeft/o_freqDataIndex] [get_bd_pins Freq2BRAMLeft/i_freqDataIndex]
+  connect_bd_net -net DFTStageWrapperLeft_o_freqDataReal [get_bd_pins DFTStageWrapperLeft/o_freqDataReal] [get_bd_pins Freq2BRAMLeft/i_freqDataReal]
+  connect_bd_net -net DFTStageWrapperLeft_o_ready [get_bd_pins DFTStageWrapperLeft/o_ready] [get_bd_pins i2sDataInLeft/i_dftReady]
   connect_bd_net -net DFTStageWrapperRight_o_dataOld [get_bd_pins DFTStageWrapperRight/o_dataOld] [get_bd_pins ila_dft_domain/probe10]
   connect_bd_net -net DFTStageWrapperRight_o_r_f [get_bd_pins DFTStageWrapperRight/o_r_f] [get_bd_pins ila_dft_domain/probe9]
   connect_bd_net -net DFTStageWrapperRight_o_ready [get_bd_pins DFTStageWrapperRight/o_ready] [get_bd_pins i2sDataInRight/i_dftReady] [get_bd_pins ila_dft_domain/probe4]
@@ -740,13 +806,19 @@ proc create_root_design { parentCell } {
   connect_bd_net -net DFTStageWrapper_1_o_freqDataImag [get_bd_pins DFTStageWrapperRight/o_freqDataImag] [get_bd_pins Freq2BRAMRight/i_freqDataImag] [get_bd_pins ila_dft_domain/probe8]
   connect_bd_net -net DFTStageWrapper_1_o_freqDataIndex [get_bd_pins DFTStageWrapperRight/o_freqDataIndex] [get_bd_pins Freq2BRAMRight/i_freqDataIndex] [get_bd_pins ila_dft_domain/probe6]
   connect_bd_net -net DFTStageWrapper_1_o_freqDataReal [get_bd_pins DFTStageWrapperRight/o_freqDataReal] [get_bd_pins Freq2BRAMRight/i_freqDataReal] [get_bd_pins ila_dft_domain/probe7]
+  connect_bd_net -net Freq2BRAMLeft_o_bramAddr [get_bd_pins Freq2BRAMLeft/o_bramAddr] [get_bd_pins blkMemGenLeft/addrb]
+  connect_bd_net -net Freq2BRAMLeft_o_bramByteWe [get_bd_pins Freq2BRAMLeft/o_bramByteWe] [get_bd_pins blkMemGenLeft/web]
+  connect_bd_net -net Freq2BRAMLeft_o_bramDin [get_bd_pins Freq2BRAMLeft/o_bramDin] [get_bd_pins blkMemGenLeft/dinb]
+  connect_bd_net -net Freq2BRAMLeft_o_bramEn [get_bd_pins Freq2BRAMLeft/o_bramEn] [get_bd_pins blkMemGenLeft/enb]
   connect_bd_net -net Freq2BRAM_1_o_bramAddr [get_bd_pins Freq2BRAMRight/o_bramAddr] [get_bd_pins blkMemGenRight/addrb] [get_bd_pins ila_dft_domain/probe11]
   connect_bd_net -net Freq2BRAM_1_o_bramByteWe [get_bd_pins Freq2BRAMRight/o_bramByteWe] [get_bd_pins blkMemGenRight/web] [get_bd_pins ila_dft_domain/probe14]
   connect_bd_net -net Freq2BRAM_1_o_bramDin [get_bd_pins Freq2BRAMRight/o_bramDin] [get_bd_pins blkMemGenRight/dinb] [get_bd_pins ila_dft_domain/probe12]
   connect_bd_net -net Freq2BRAM_1_o_bramEn [get_bd_pins Freq2BRAMRight/o_bramEn] [get_bd_pins blkMemGenRight/enb] [get_bd_pins ila_dft_domain/probe13]
-  connect_bd_net -net I2S_receiver_0_SDATA_REC [get_bd_pins I2S_receiver_0/SDATA_REC] [get_bd_pins i2s2bram_0/i_i2sData] [get_bd_pins i2sDataInRight/i_i2sData] [get_bd_pins ila_dft_domain/probe0]
-  connect_bd_net -net I2S_receiver_0_WR_EN_RIGHT [get_bd_pins I2S_receiver_0/WR_EN_RIGHT] [get_bd_pins i2sDataInRight/i_i2sEn] [get_bd_pins ila_dft_domain/probe1]
-  connect_bd_net -net LRCLK_1 [get_bd_ports LRCLK] [get_bd_pins I2S_receiver_0/LRCLK]
+  connect_bd_net -net I2S_receiver_0_SDATA_REC [get_bd_pins I2S_receiver_1/SDATA_REC] [get_bd_pins i2s2bram_0/i_i2sData] [get_bd_pins i2sDataInLeft/i_i2sData] [get_bd_pins i2sDataInRight/i_i2sData] [get_bd_pins ila_dft_domain/probe0]
+  connect_bd_net -net I2S_receiver_0_WR_EN_RIGHT [get_bd_pins I2S_receiver_1/WR_EN_RIGHT] [get_bd_pins i2sDataInRight/i_i2sEn] [get_bd_pins ila_dft_domain/probe1]
+  connect_bd_net -net I2S_receiver_1_WR_EN_LEFT [get_bd_pins I2S_receiver_1/WR_EN_LEFT] [get_bd_pins i2sDataInLeft/i_i2sEn]
+  connect_bd_net -net LRCLK_1 [get_bd_ports LRCLK] [get_bd_pins I2S_receiver_1/LRCLK]
+  connect_bd_net -net blkMemGenLeft_doutb [get_bd_pins Freq2BRAMLeft/i_bramDout] [get_bd_pins blkMemGenLeft/doutb]
   connect_bd_net -net blk_mem_gen_1_doutb [get_bd_pins Freq2BRAMRight/i_bramDout] [get_bd_pins blkMemGenRight/doutb]
   connect_bd_net -net fifoDataInRight_o_dftData [get_bd_pins DFTStageWrapperRight/i_dataNew] [get_bd_pins i2sDataInRight/o_dftData] [get_bd_pins ila_dft_domain/probe2]
   connect_bd_net -net fifoDataInRight_o_dftDataValid [get_bd_pins DFTStageWrapperRight/i_dataValid] [get_bd_pins i2sDataInRight/o_dftDataValid] [get_bd_pins ila_dft_domain/probe3]
@@ -754,13 +826,16 @@ proc create_root_design { parentCell } {
   connect_bd_net -net i2s2bram_0_o_bramByteWe [get_bd_pins blk_mem_gen_0/web] [get_bd_pins i2s2bram_0/o_bramByteWe]
   connect_bd_net -net i2s2bram_0_o_bramDin [get_bd_pins blk_mem_gen_0/dinb] [get_bd_pins i2s2bram_0/o_bramDin]
   connect_bd_net -net i2s2bram_0_o_bramEn [get_bd_pins blk_mem_gen_0/enb] [get_bd_pins i2s2bram_0/o_bramEn]
-  connect_bd_net -net proc_sys_reset_0_peripheral_reset [get_bd_pins DFTStageWrapperRight/i_reset] [get_bd_pins Freq2BRAMRight/i_reset] [get_bd_pins blkMemGenRight/rstb] [get_bd_pins rstRTL/peripheral_reset]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DFTStageWrapperRight/i_clk] [get_bd_pins Freq2BRAMRight/i_clk] [get_bd_pins I2S_receiver_0/CLK] [get_bd_pins axiBramCtrlRight/s_axi_aclk] [get_bd_pins axiSmc/aclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins blkMemGenRight/clkb] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins ila_dft_domain/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rstAxi/slowest_sync_clk] [get_bd_pins rstRTL/slowest_sync_clk]
+  connect_bd_net -net i2sDataInLeft_o_dftData [get_bd_pins DFTStageWrapperLeft/i_dataNew] [get_bd_pins i2sDataInLeft/o_dftData]
+  connect_bd_net -net i2sDataInLeft_o_dftDataValid [get_bd_pins DFTStageWrapperLeft/i_dataValid] [get_bd_pins i2sDataInLeft/o_dftDataValid]
+  connect_bd_net -net proc_sys_reset_0_peripheral_reset [get_bd_pins DFTStageWrapperLeft/i_reset] [get_bd_pins DFTStageWrapperRight/i_reset] [get_bd_pins Freq2BRAMLeft/i_reset] [get_bd_pins Freq2BRAMRight/i_reset] [get_bd_pins blkMemGenLeft/rstb] [get_bd_pins blkMemGenRight/rstb] [get_bd_pins rstRTL/peripheral_reset]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DFTStageWrapperLeft/i_clk] [get_bd_pins DFTStageWrapperRight/i_clk] [get_bd_pins Freq2BRAMLeft/i_clk] [get_bd_pins Freq2BRAMRight/i_clk] [get_bd_pins I2S_receiver_1/CLK] [get_bd_pins axiBramCtrlLeft/s_axi_aclk] [get_bd_pins axiBramCtrlRight/s_axi_aclk] [get_bd_pins axiSmc/aclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins blkMemGenLeft/clkb] [get_bd_pins blkMemGenRight/clkb] [get_bd_pins blk_mem_gen_0/clkb] [get_bd_pins ila_dft_domain/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins rstAxi/slowest_sync_clk] [get_bd_pins rstRTL/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_CLK2 [get_bd_ports FCLK_CLK2_0] [get_bd_pins processing_system7_0/FCLK_CLK2]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rstAxi/ext_reset_in] [get_bd_pins rstRTL/ext_reset_in]
-  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axiBramCtrlRight/s_axi_aresetn] [get_bd_pins axiSmc/aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_quad_spi_0/s_axi_aresetn] [get_bd_pins blk_mem_gen_0/rstb] [get_bd_pins rstAxi/peripheral_aresetn]
+  connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins axiBramCtrlLeft/s_axi_aresetn] [get_bd_pins axiBramCtrlRight/s_axi_aresetn] [get_bd_pins axiSmc/aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_quad_spi_0/s_axi_aresetn] [get_bd_pins blk_mem_gen_0/rstb] [get_bd_pins rstAxi/peripheral_aresetn]
 
   # Create address segments
+  create_bd_addr_seg -range 0x00002000 -offset 0x40000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axiBramCtrlLeft/S_AXI/Mem0] SEG_axiBramCtrlLeft_Mem0
   create_bd_addr_seg -range 0x00002000 -offset 0x44000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0
   create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41E00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_quad_spi_0/AXI_LITE/Reg] SEG_axi_quad_spi_0_Reg

@@ -3,24 +3,24 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+      <db_ref path="D:/Uni/Tauschordner/FFT/FFT.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="9985001fs"></ZoomEndTime>
-      <Cursor1Time time="140000fs"></Cursor1Time>
+      <ZoomEndTime time="6295875fs"></ZoomEndTime>
+      <Cursor1Time time="3268000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="678"></NameColumnWidth>
-      <ValueColumnWidth column_width="109"></ValueColumnWidth>
+      <NameColumnWidth column_width="486"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="17" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="array" fp_name="fourier_bram_i/fifoDataInRight_o_dftData">
+   <wvobject fp_name="fourier_bram_i/fifoDataInRight_o_dftData" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/fifoDataInRight_o_dftData[24:0]</obj_property>
       <obj_property name="ObjectShortName">fifoDataInRight_o_dftData[24:0]</obj_property>
@@ -28,7 +28,7 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fourier_bram_i/DFTStageWrapperRight_o_dataOld">
+   <wvobject fp_name="fourier_bram_i/DFTStageWrapperRight_o_dataOld" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapperRight_o_dataOld[24:0]</obj_property>
       <obj_property name="ObjectShortName">DFTStageWrapperRight_o_dataOld[24:0]</obj_property>
@@ -36,7 +36,7 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fourier_bram_i/I2S_receiver_0_SDATA_REC">
+   <wvobject fp_name="fourier_bram_i/I2S_receiver_0_SDATA_REC" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/I2S_receiver_0_SDATA_REC[23:0]</obj_property>
       <obj_property name="ObjectShortName">I2S_receiver_0_SDATA_REC[23:0]</obj_property>
@@ -44,14 +44,14 @@
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataEn">
+   <wvobject fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataEn" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapper_1_o_freqDataEn</obj_property>
       <obj_property name="ObjectShortName">DFTStageWrapper_1_o_freqDataEn</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataImag">
+   <wvobject fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataImag" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapper_1_o_freqDataImag[24:0]</obj_property>
       <obj_property name="ObjectShortName">DFTStageWrapper_1_o_freqDataImag[24:0]</obj_property>
@@ -59,7 +59,7 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataIndex">
+   <wvobject fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataIndex" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapper_1_o_freqDataIndex[7:0]</obj_property>
       <obj_property name="ObjectShortName">DFTStageWrapper_1_o_freqDataIndex[7:0]</obj_property>
@@ -67,7 +67,7 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataReal">
+   <wvobject fp_name="fourier_bram_i/DFTStageWrapper_1_o_freqDataReal" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapper_1_o_freqDataReal[24:0]</obj_property>
       <obj_property name="ObjectShortName">DFTStageWrapper_1_o_freqDataReal[24:0]</obj_property>
@@ -75,7 +75,7 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fourier_bram_i/DFTStageWrapperRight_o_r_f">
+   <wvobject fp_name="fourier_bram_i/DFTStageWrapperRight_o_r_f" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapperRight_o_r_f[8:0]</obj_property>
       <obj_property name="ObjectShortName">DFTStageWrapperRight_o_r_f[8:0]</obj_property>
@@ -83,28 +83,28 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="fourier_bram_i/DFTStageWrapperRight_o_ready">
+   <wvobject fp_name="fourier_bram_i/DFTStageWrapperRight_o_ready" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/DFTStageWrapperRight_o_ready</obj_property>
       <obj_property name="ObjectShortName">DFTStageWrapperRight_o_ready</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="fourier_bram_i/fifoDataInRight_o_dftDataValid">
+   <wvobject fp_name="fourier_bram_i/fifoDataInRight_o_dftDataValid" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/fifoDataInRight_o_dftDataValid</obj_property>
       <obj_property name="ObjectShortName">fifoDataInRight_o_dftDataValid</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="fourier_bram_i/I2S_receiver_0_WR_EN_RIGHT">
+   <wvobject fp_name="fourier_bram_i/I2S_receiver_0_WR_EN_RIGHT" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/I2S_receiver_0_WR_EN_RIGHT</obj_property>
       <obj_property name="ObjectShortName">I2S_receiver_0_WR_EN_RIGHT</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr">
+   <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/Freq2BRAM_1_o_bramAddr[31:0]</obj_property>
       <obj_property name="ObjectShortName">Freq2BRAM_1_o_bramAddr[31:0]</obj_property>
@@ -112,7 +112,7 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramByteWe">
+   <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramByteWe" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/Freq2BRAM_1_o_bramByteWe[3:0]</obj_property>
       <obj_property name="ObjectShortName">Freq2BRAM_1_o_bramByteWe[3:0]</obj_property>
@@ -120,7 +120,7 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin">
+   <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/Freq2BRAM_1_o_bramDin[31:0]</obj_property>
       <obj_property name="ObjectShortName">Freq2BRAM_1_o_bramDin[31:0]</obj_property>
@@ -128,155 +128,154 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramEn">
+   <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramEn" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">fourier_bram_i/Freq2BRAM_1_o_bramEn</obj_property>
       <obj_property name="ObjectShortName">Freq2BRAM_1_o_bramEn</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="vbus" fp_name="vbus282">
+   <wvobject fp_name="vbus282" type="vbus">
       <obj_property name="label">value</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[24]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[24]" type="logic">
          <obj_property name="ElementShortName">[24]</obj_property>
          <obj_property name="ObjectShortName">[24]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[23]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[23]" type="logic">
          <obj_property name="ElementShortName">[23]</obj_property>
          <obj_property name="ObjectShortName">[23]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[22]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[22]" type="logic">
          <obj_property name="ElementShortName">[22]</obj_property>
          <obj_property name="ObjectShortName">[22]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[21]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[21]" type="logic">
          <obj_property name="ElementShortName">[21]</obj_property>
          <obj_property name="ObjectShortName">[21]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[20]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[20]" type="logic">
          <obj_property name="ElementShortName">[20]</obj_property>
          <obj_property name="ObjectShortName">[20]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[19]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[19]" type="logic">
          <obj_property name="ElementShortName">[19]</obj_property>
          <obj_property name="ObjectShortName">[19]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[18]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[18]" type="logic">
          <obj_property name="ElementShortName">[18]</obj_property>
          <obj_property name="ObjectShortName">[18]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[17]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[17]" type="logic">
          <obj_property name="ElementShortName">[17]</obj_property>
          <obj_property name="ObjectShortName">[17]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[16]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[16]" type="logic">
          <obj_property name="ElementShortName">[16]</obj_property>
          <obj_property name="ObjectShortName">[16]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[15]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[15]" type="logic">
          <obj_property name="ElementShortName">[15]</obj_property>
          <obj_property name="ObjectShortName">[15]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[14]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[14]" type="logic">
          <obj_property name="ElementShortName">[14]</obj_property>
          <obj_property name="ObjectShortName">[14]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[13]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[13]" type="logic">
          <obj_property name="ElementShortName">[13]</obj_property>
          <obj_property name="ObjectShortName">[13]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[12]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[12]" type="logic">
          <obj_property name="ElementShortName">[12]</obj_property>
          <obj_property name="ObjectShortName">[12]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[11]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[11]" type="logic">
          <obj_property name="ElementShortName">[11]</obj_property>
          <obj_property name="ObjectShortName">[11]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[10]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[10]" type="logic">
          <obj_property name="ElementShortName">[10]</obj_property>
          <obj_property name="ObjectShortName">[10]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[9]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[9]" type="logic">
          <obj_property name="ElementShortName">[9]</obj_property>
          <obj_property name="ObjectShortName">[9]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[8]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[8]" type="logic">
          <obj_property name="ElementShortName">[8]</obj_property>
          <obj_property name="ObjectShortName">[8]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[7]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[7]" type="logic">
          <obj_property name="ElementShortName">[7]</obj_property>
          <obj_property name="ObjectShortName">[7]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[6]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[6]" type="logic">
          <obj_property name="ElementShortName">[6]</obj_property>
          <obj_property name="ObjectShortName">[6]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[5]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[5]" type="logic">
          <obj_property name="ElementShortName">[5]</obj_property>
          <obj_property name="ObjectShortName">[5]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[4]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[4]" type="logic">
          <obj_property name="ElementShortName">[4]</obj_property>
          <obj_property name="ObjectShortName">[4]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[3]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[3]" type="logic">
          <obj_property name="ElementShortName">[3]</obj_property>
          <obj_property name="ObjectShortName">[3]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[2]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[2]" type="logic">
          <obj_property name="ElementShortName">[2]</obj_property>
          <obj_property name="ObjectShortName">[2]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[1]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[1]" type="logic">
          <obj_property name="ElementShortName">[1]</obj_property>
          <obj_property name="ObjectShortName">[1]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[0]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramDin[0]" type="logic">
          <obj_property name="ElementShortName">[0]</obj_property>
          <obj_property name="ObjectShortName">[0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject type="vbus" fp_name="vbus340">
+   <wvobject fp_name="vbus340" type="vbus">
       <obj_property name="label">addr</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[10]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[10]" type="logic">
          <obj_property name="ElementShortName">[10]</obj_property>
          <obj_property name="ObjectShortName">[10]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[9]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[9]" type="logic">
          <obj_property name="ElementShortName">[9]</obj_property>
          <obj_property name="ObjectShortName">[9]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[8]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[8]" type="logic">
          <obj_property name="ElementShortName">[8]</obj_property>
          <obj_property name="ObjectShortName">[8]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[7]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[7]" type="logic">
          <obj_property name="ElementShortName">[7]</obj_property>
          <obj_property name="ObjectShortName">[7]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[6]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[6]" type="logic">
          <obj_property name="ElementShortName">[6]</obj_property>
          <obj_property name="ObjectShortName">[6]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[5]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[5]" type="logic">
          <obj_property name="ElementShortName">[5]</obj_property>
          <obj_property name="ObjectShortName">[5]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[4]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[4]" type="logic">
          <obj_property name="ElementShortName">[4]</obj_property>
          <obj_property name="ObjectShortName">[4]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[3]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[3]" type="logic">
          <obj_property name="ElementShortName">[3]</obj_property>
          <obj_property name="ObjectShortName">[3]</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[2]">
+      <wvobject fp_name="fourier_bram_i/Freq2BRAM_1_o_bramAddr[2]" type="logic">
          <obj_property name="ElementShortName">[2]</obj_property>
          <obj_property name="ObjectShortName">[2]</obj_property>
       </wvobject>

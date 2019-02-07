@@ -2,12 +2,12 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="fourier_bram" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1548698180"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1548698180"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1548698180"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1548698180"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1549489349"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1549489349"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1549489349"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1549489349"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="ip/fourier_bram_processing_system7_0_0/fourier_bram_processing_system7_0_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_processing_system7_0_0\fourier_bram_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -15,7 +15,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_axi_smc_0/fourier_bram_axi_smc_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_axi_smc_0\fourier_bram_axi_smc_0.xci" Type="IP">
         <Instance HierarchyPath="axiSmc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -23,7 +23,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_rst_ps7_0_100M_0/fourier_bram_rst_ps7_0_100M_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_rst_ps7_0_100M_0\fourier_bram_rst_ps7_0_100M_0.xci" Type="IP">
         <Instance HierarchyPath="rstAxi"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -31,7 +31,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_proc_sys_reset_0_0/fourier_bram_proc_sys_reset_0_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_proc_sys_reset_0_0\fourier_bram_proc_sys_reset_0_0.xci" Type="IP">
         <Instance HierarchyPath="rstRTL"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -39,7 +39,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_DFTStageWrapper_1_0/fourier_bram_DFTStageWrapper_1_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_DFTStageWrapper_1_0\fourier_bram_DFTStageWrapper_1_0.xci" Type="IP">
         <Instance HierarchyPath="DFTStageWrapperRight"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -47,7 +47,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_Freq2BRAM_1_0/fourier_bram_Freq2BRAM_1_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_Freq2BRAM_1_0\fourier_bram_Freq2BRAM_1_0.xci" Type="IP">
         <Instance HierarchyPath="Freq2BRAMRight"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -55,7 +55,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_blk_mem_gen_1_0/fourier_bram_blk_mem_gen_1_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_blk_mem_gen_1_0\fourier_bram_blk_mem_gen_1_0.xci" Type="IP">
         <Instance HierarchyPath="blkMemGenRight"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -63,7 +63,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_axi_bram_ctrl_0_1/fourier_bram_axi_bram_ctrl_0_1.xci" Type="IP">
+      <File Name="ip\fourier_bram_axi_bram_ctrl_0_1\fourier_bram_axi_bram_ctrl_0_1.xci" Type="IP">
         <Instance HierarchyPath="axiBramCtrlRight"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -71,15 +71,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_I2S_receiver_0_0/fourier_bram_I2S_receiver_0_0.xci" Type="IP">
-        <Instance HierarchyPath="I2S_receiver_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/fourier_bram_axi_quad_spi_0_0/fourier_bram_axi_quad_spi_0_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_axi_quad_spi_0_0\fourier_bram_axi_quad_spi_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_quad_spi_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -87,7 +79,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_axi_gpio_0_0/fourier_bram_axi_gpio_0_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_axi_gpio_0_0\fourier_bram_axi_gpio_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_gpio_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -95,7 +87,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_blk_mem_gen_0_0/fourier_bram_blk_mem_gen_0_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_blk_mem_gen_0_0\fourier_bram_blk_mem_gen_0_0.xci" Type="IP">
         <Instance HierarchyPath="blk_mem_gen_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -103,7 +95,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_axi_bram_ctrl_0_2/fourier_bram_axi_bram_ctrl_0_2.xci" Type="IP">
+      <File Name="ip\fourier_bram_axi_bram_ctrl_0_2\fourier_bram_axi_bram_ctrl_0_2.xci" Type="IP">
         <Instance HierarchyPath="axi_bram_ctrl_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -111,7 +103,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_i2s2bram_0_0/fourier_bram_i2s2bram_0_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_i2s2bram_0_0\fourier_bram_i2s2bram_0_0.xci" Type="IP">
         <Instance HierarchyPath="i2s2bram_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -119,7 +111,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_ila_0_0/fourier_bram_ila_0_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_ila_0_0\fourier_bram_ila_0_0.xci" Type="IP">
         <Instance HierarchyPath="ila_dft_domain"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -127,18 +119,66 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="synth/fourier_bram.vhd" Type="VHDL">
+      <File Name="synth\fourier_bram.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
       </File>
-      <File Name="sim/fourier_bram.vhd" Type="VHDL">
+      <File Name="sim\fourier_bram.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/fourier_bram_i2sDataIn_0_0/fourier_bram_i2sDataIn_0_0.xci" Type="IP">
+      <File Name="ip\fourier_bram_i2sDataIn_0_0\fourier_bram_i2sDataIn_0_0.xci" Type="IP">
         <Instance HierarchyPath="i2sDataInRight"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\fourier_bram_I2S_receiver_1_0\fourier_bram_I2S_receiver_1_0.xci" Type="IP">
+        <Instance HierarchyPath="I2S_receiver_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\fourier_bram_i2sDataInRight_0\fourier_bram_i2sDataInRight_0.xci" Type="IP">
+        <Instance HierarchyPath="i2sDataInLeft"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\fourier_bram_DFTStageWrapperRight_0\fourier_bram_DFTStageWrapperRight_0.xci" Type="IP">
+        <Instance HierarchyPath="DFTStageWrapperLeft"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\fourier_bram_Freq2BRAMRight_0\fourier_bram_Freq2BRAMRight_0.xci" Type="IP">
+        <Instance HierarchyPath="Freq2BRAMLeft"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\fourier_bram_blkMemGenRight_0\fourier_bram_blkMemGenRight_0.xci" Type="IP">
+        <Instance HierarchyPath="blkMemGenLeft"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\fourier_bram_axiBramCtrlRight_0\fourier_bram_axiBramCtrlRight_0.xci" Type="IP">
+        <Instance HierarchyPath="axiBramCtrlLeft"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -158,22 +198,22 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="OUT_OF_CONTEXT"/>
       </File>
-      <File Name="hw_handoff/fourier_bram.hwh" Type="HwHandoff">
+      <File Name="hw_handoff\fourier_bram.hwh" Type="HwHandoff">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
       </File>
-      <File Name="hw_handoff/fourier_bram_bd.tcl">
+      <File Name="hw_handoff\fourier_bram_bd.tcl">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
       </File>
-      <File Name="synth/fourier_bram.hwdef">
+      <File Name="synth\fourier_bram.hwdef">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
       </File>
-      <File Name="sim/fourier_bram.protoinst">
+      <File Name="sim\fourier_bram.protoinst">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>

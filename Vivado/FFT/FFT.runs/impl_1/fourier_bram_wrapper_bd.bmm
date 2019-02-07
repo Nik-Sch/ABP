@@ -1,6 +1,6 @@
 // BMM LOC annotation file.
 //
-// SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+// SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 // Vivado v2018.3 (64-bit)
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
@@ -15,14 +15,28 @@ ADDRESS_MAP fourier_bram_i_processing_system7_0 ARM 100 fourier_bram_i/processin
 
     ///////////////////////////////////////////////////////////////////////////////
     //
+    // Processor 'fourier_bram_i_processing_system7_0' address space 'fourier_bram_i_axiBramCtrlLeft' 0X0000000040000000:0X0000000040001FFF (8 KBytes).
+    //
+    ///////////////////////////////////////////////////////////////////////////////
+
+    ADDRESS_SPACE fourier_bram_i_axiBramCtrlLeft RAMB32 [0X0000000040000000:0X0000000040001FFF] fourier_bram_i/axiBramCtrlLeft
+        BUS_BLOCK
+            fourier_bram_i/blkMemGenLeft/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [31:16] [0:2047] PLACED = X3Y14;
+            fourier_bram_i/blkMemGenLeft/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [15:0] [0:2047] PLACED = X3Y13;
+        END_BUS_BLOCK;
+    END_ADDRESS_SPACE;
+
+
+    ///////////////////////////////////////////////////////////////////////////////
+    //
     // Processor 'fourier_bram_i_processing_system7_0' address space 'fourier_bram_i_axiBramCtrlRight' 0X0000000042000000:0X0000000042001FFF (8 KBytes).
     //
     ///////////////////////////////////////////////////////////////////////////////
 
     ADDRESS_SPACE fourier_bram_i_axiBramCtrlRight RAMB32 [0X0000000042000000:0X0000000042001FFF] fourier_bram_i/axiBramCtrlRight
         BUS_BLOCK
-            fourier_bram_i/blkMemGenRight/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [31:16] [0:2047] PLACED = X3Y14;
-            fourier_bram_i/blkMemGenRight/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [15:0] [0:2047] PLACED = X2Y14;
+            fourier_bram_i/blkMemGenRight/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [31:16] [0:2047] PLACED = X2Y11;
+            fourier_bram_i/blkMemGenRight/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [15:0] [0:2047] PLACED = X2Y10;
         END_BUS_BLOCK;
     END_ADDRESS_SPACE;
 
@@ -35,8 +49,8 @@ ADDRESS_MAP fourier_bram_i_processing_system7_0 ARM 100 fourier_bram_i/processin
 
     ADDRESS_SPACE fourier_bram_i_axi_bram_ctrl_0 RAMB32 [0X0000000044000000:0X0000000044001FFF] fourier_bram_i/axi_bram_ctrl_0
         BUS_BLOCK
-            fourier_bram_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [31:16] [0:2047] PLACED = X3Y15;
-            fourier_bram_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [15:0] [0:2047] PLACED = X2Y15;
+            fourier_bram_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [31:16] [0:2047] PLACED = X2Y14;
+            fourier_bram_i/blk_mem_gen_0/U0/inst_blk_mem_gen/gnbram.gnative_mem_map_bmg.native_mem_map_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram RAMB32 [15:0] [0:2047] PLACED = X2Y13;
         END_BUS_BLOCK;
     END_ADDRESS_SPACE;
 
