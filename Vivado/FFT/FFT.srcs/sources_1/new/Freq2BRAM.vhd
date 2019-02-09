@@ -1,43 +1,25 @@
-----------------------------------------------------------------------------------
--- Company:
--- Engineer:
---
--- Create Date: 12/23/2018 11:32:28 PM
--- Design Name:
--- Module Name: Freq2BRAM - Behavioral
--- Project Name:
--- Target Devices:
--- Tool Versions:
--- Description:
---
--- Dependencies:
---
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
-----------------------------------------------------------------------------------
-
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
 
+-- Author: Niklas
+-- Description: outputs frequency data to bram
+-- writes 32bit (4byte) two's complement integers
+-- real values address: 0x00000000-0x000003fc
+-- imag values address: 0x00004000-0x000007fc
 entity Freq2BRAM is
-  -- generic (
-  --   N2 : integer := 256                 -- #bins/2
-  --   );
   port (
     i_clk   : in std_ulogic;
     i_reset : in std_ulogic;
 
+    -- frequency data in
     i_freqDataEn    : in std_ulogic;
-    -- i_freqDataIndex : in std_ulogic_vector(integer(ceil(log2(real(N2))))-1 downto 0);
     i_freqDataIndex : in std_ulogic_vector(7 downto 0);
     i_freqDataReal  : in std_ulogic_vector(24 downto 0);
     i_freqDataImag  : in std_ulogic_vector(24 downto 0);
 
+    -- output bram interface
     o_bramAddr   : out std_logic_vector(31 downto 0);
     o_bramDin    : out std_logic_vector(31 downto 0);
     i_bramDout   : in  std_logic_vector(31 downto 0);
@@ -74,6 +56,7 @@ architecture rtl of Freq2BRAM is
   type t_state is (s_IDLE, s_OUTPUT_REAL, s_OUTPUT_IMAG);
   signal r_state : t_state;
 
+  -- fifo signals
   signal r_fifoImagDin   : std_ulogic_vector(24 downto 0);
   signal s_fifoImagDout  : std_ulogic_vector(24 downto 0);
   signal r_fifoImagDout  : std_ulogic_vector(24 downto 0);
@@ -91,9 +74,9 @@ architecture rtl of Freq2BRAM is
   signal r_freqDataIndex : std_ulogic_vector(7 downto 0);
   signal r_freqDataEn    : std_ulogic;
 
-  -- stupid byte aligned addresses
-  constant c_BASE_ADDR_REAL : std_logic_vector(21 downto 0)    := "0000000000000000000000";
-  constant c_BASE_ADDR_IMAG : std_logic_vector(21 downto 0)    := "0000000000000000000001";
+  -- stupid byte aligned addresses (2 lsb always 0)
+  constant c_BASE_ADDR_REAL : std_logic_vector(21 downto 0) := "0000000000000000000000";
+  constant c_BASE_ADDR_IMAG : std_logic_vector(21 downto 0) := "0000000000000000000001";
 begin
 
   inst_imagFifo : data_fifo
@@ -140,6 +123,7 @@ begin
       r_freqDataReal  <= (others => '0');
       r_state         <= s_IDLE;
     elsif rising_edge(i_clk) then
+      -- default: disable all enables
       r_fifoImagRe <= '0';
       r_fifoImagWe <= '0';
       r_fifoAddrRe <= '0';
@@ -157,23 +141,28 @@ begin
 
       case r_state is
         when s_IDLE =>
+          -- start when freqData is at address 0
           if i_freqDataEn = '1' and i_freqDataIndex = x"00" then
             r_state <= s_OUTPUT_REAL;
           end if;
         when s_OUTPUT_REAL =>  -- store real value to bram and imag value to fifo
           if r_freqDataEn = '1' then
-            o_bramEn                <= '1';
-            o_bramByteWe            <= "1111";
-            o_bramAddr              <= c_BASE_ADDR_REAL & std_logic_vector(r_freqDataIndex) & "00";
+            -- write to bram
+            o_bramEn     <= '1';
+            o_bramByteWe <= "1111";
+            o_bramAddr   <= c_BASE_ADDR_REAL & std_logic_vector(r_freqDataIndex) & "00";
+
             -- sign extend to 32 bit
             o_bramDin(24 downto 0)  <= std_logic_vector(r_freqDataReal);
             o_bramDin(31 downto 25) <= (others => std_logic(r_freqDataReal(24)));
 
+            -- store imag value in fifo
             r_fifoImagWe  <= '1';
             r_fifoImagDin <= r_freqDataImag;
             r_fifoAddrWe  <= '1';
             r_fifoAddrDin <= r_freqDataIndex;
 
+            -- fifo output is registered -> read a cycle before using it
             if r_freqDataIndex >= x"fe" then
               r_fifoAddrRe <= '1';
               r_fifoImagRe <= '1';
@@ -183,17 +172,16 @@ begin
             end if;
           end if;
         when s_OUTPUT_IMAG =>           -- store imag value from fifo to bram
-          o_bramEn                <= '1';
-          o_bramByteWe            <= "1111";
-          o_bramAddr              <= c_BASE_ADDR_IMAG & std_logic_vector(r_fifoAddrDout) & "00";
+          o_bramEn     <= '1';
+          o_bramByteWe <= "1111";
+          o_bramAddr   <= c_BASE_ADDR_IMAG & std_logic_vector(r_fifoAddrDout) & "00";
+
           -- sign extend to 32 bit
           o_bramDin(24 downto 0)  <= std_logic_vector(r_fifoImagDout);
           o_bramDin(31 downto 25) <= (others => std_logic(r_fifoImagDout(24)));
 
           r_fifoAddrRe <= '1';
           r_fifoImagRe <= '1';
-
-
           if s_fifoImagEmpty = '1' then
             r_state <= s_IDLE;
           end if;

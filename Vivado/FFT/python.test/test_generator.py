@@ -25,39 +25,39 @@ def sliding_dft(data, N, Fs):
             for f in range(int(N/2)):
                 X[f] = ((X[f] + data[i]) * np.complex(np.cos(2*np.pi*f/N), -np.sin(2*np.pi*f/N)))
 
-        if i == 3200 or i == 4350:
-            print('plotting')
-            f = open(f'data_{i:d}.txt', 'r')
-            lines = f.readlines()
-            f.close()
-            X_fpga = np.zeros(int(N/2), dtype=np.complex)
-            for f, line in enumerate(lines):
-                values = np.fromstring(line, dtype=np.int64, sep=',')
-                X_fpga.real[f] = values[0].astype(np.double) / np.double(1 << 14)
-                X_fpga.imag[f] = values[1].astype(np.double) / np.double(1 << 14)
-            mse = sum((np.abs(X_fpga) - np.abs(X)) ** 2)/X.size
-            print(f'mean squared error {i:d}: {mse:f}')
-            plt.figure()
-            plt.ylim((0, 512))
-            plt.plot(freq[0:int(len(freq)/2)], np.abs(X), label='abs python')
-            plt.plot(freq[0:int(len(freq)/2)], np.abs(X_fpga), 'x', label='abs fpga', markersize=2)
-            plt.legend()
-            plt.title(f'{i:d} with mse: {mse:f}')
-            plt.xlabel('Frequency [Hz]')
-            plt.ylabel('freq amplitude (no real unit)')
-            plt.savefig(f'compare_{i:d}.pdf')
-        # if i % (N / 4) == 0:
-        #     fig = plt.figure()
-        #     plt.ylim((0, 512))
-        #     plt.plot(freq[0:int(len(freq)/2)], np.abs(X))
-        #     plt.title(f't={i:d}')
+        # if i == 3200 or i == 4350:
+        #     print('plotting')
+        #     f = open(f'data_{i:d}.txt', 'r')
+        #     lines = f.readlines()
+        #     f.close()
+        #     X_fpga = np.zeros(int(N/2), dtype=np.complex)
+        #     for f, line in enumerate(lines):
+        #         values = np.fromstring(line, dtype=np.int64, sep=',')
+        #         X_fpga.real[f] = values[0].astype(np.double) / np.double(1 << 15)
+        #         X_fpga.imag[f] = values[1].astype(np.double) / np.double(1 << 15)
+        #     mse = sum((np.abs(X_fpga) - np.abs(X)) ** 2)/X.size
+        #     print(f'mean squared error {i:d}: {mse:f}')
+        #     plt.figure()
+        #     plt.ylim((0, 256))
+        #     plt.plot(freq[0:int(len(freq)/2)], np.abs(X), label='abs python')
+        #     plt.plot(freq[0:int(len(freq)/2)], np.abs(X_fpga), 'x', label='abs fpga', markersize=2)
+        #     plt.legend()
+        #     plt.title(f'Mean Squared Error: {mse:f}')
         #     plt.xlabel('Frequency [Hz]')
         #     plt.ylabel('freq amplitude (no real unit)')
-        #     plt.savefig(f'plt_{plotCount:04d}.jpg')
-        #     plt.close(fig)
-        #     # print(X[0], X[1])
-        #     print(plotCount)
-        #     plotCount+=1
+        #     plt.savefig(f'compare_{i:d}.pdf')
+        if i % (N / 4) == 0:
+            fig = plt.figure()
+            plt.ylim((0, 512))
+            plt.plot(freq[0:int(len(freq)/2)], np.abs(X))
+            plt.title(f't={i:d}')
+            plt.xlabel('Frequency [Hz]')
+            plt.ylabel('freq amplitude (no real unit)')
+            plt.savefig(f'plt_{plotCount:04d}.jpg')
+            plt.close(fig)
+            # print(X[0], X[1])
+            print(plotCount)
+            plotCount+=1
     return X
 
 

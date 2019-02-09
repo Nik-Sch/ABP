@@ -63,9 +63,7 @@ ENTITY fourier_bram_DFTStageWrapperRight_0 IS
     o_freqDataEn : OUT STD_LOGIC;
     o_freqDataIndex : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     o_freqDataReal : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-    o_freqDataImag : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-    o_r_f : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-    o_dataOld : OUT STD_LOGIC_VECTOR(24 DOWNTO 0)
+    o_freqDataImag : OUT STD_LOGIC_VECTOR(24 DOWNTO 0)
   );
 END fourier_bram_DFTStageWrapperRight_0;
 
@@ -82,9 +80,7 @@ ARCHITECTURE fourier_bram_DFTStageWrapperRight_0_arch OF fourier_bram_DFTStageWr
       o_freqDataEn : OUT STD_LOGIC;
       o_freqDataIndex : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       o_freqDataReal : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-      o_freqDataImag : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-      o_r_f : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-      o_dataOld : OUT STD_LOGIC_VECTOR(24 DOWNTO 0)
+      o_freqDataImag : OUT STD_LOGIC_VECTOR(24 DOWNTO 0)
     );
   END COMPONENT DFTStageWrapper;
   ATTRIBUTE X_CORE_INFO : STRING;
@@ -112,8 +108,6 @@ BEGIN
       o_freqDataEn => o_freqDataEn,
       o_freqDataIndex => o_freqDataIndex,
       o_freqDataReal => o_freqDataReal,
-      o_freqDataImag => o_freqDataImag,
-      o_r_f => o_r_f,
-      o_dataOld => o_dataOld
+      o_freqDataImag => o_freqDataImag
     );
 END fourier_bram_DFTStageWrapperRight_0_arch;

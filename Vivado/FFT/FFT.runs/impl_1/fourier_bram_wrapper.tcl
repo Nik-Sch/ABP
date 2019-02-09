@@ -69,25 +69,25 @@ set rc [catch {
   set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir D:/Uni/Tauschordner/FFT/FFT.cache/wt [current_project]
-  set_property parent.project_path D:/Uni/Tauschordner/FFT/FFT.xpr [current_project]
-  set_property ip_repo_paths D:/Uni/Tauschordner/I2S_receiver [current_project]
+  set_property webtalk.parent_dir /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.cache/wt [current_project]
+  set_property parent.project_path /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.xpr [current_project]
+  set_property ip_repo_paths /home/niklas/dev/uni/ABP/git/Vivado/I2S_receiver [current_project]
   update_ip_catalog
-  set_property ip_output_repo D:/Uni/Tauschordner/FFT/FFT.cache/ip [current_project]
+  set_property ip_output_repo /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet D:/Uni/Tauschordner/FFT/FFT.runs/synth_1/fourier_bram_wrapper.dcp
+  add_files -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/synth_1/fourier_bram_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  read_ip -quiet D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/blk_mem_gen_0.xci
-  read_ip -quiet D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/xbip_multadd_0.xci
-  read_ip -quiet D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/blk_rom_e_imag.xci
-  read_ip -quiet D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/blk_rom_e_real.xci
-  read_ip -quiet D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xci
-  read_ip -quiet D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/index_fifo/index_fifo.xci
-  add_files D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/fourier_bram.bd
+  read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/xbip_multadd_0.xci
+  read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/blk_rom_e_imag.xci
+  read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/blk_rom_e_real.xci
+  read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/blk_mem_gen_0.xci
+  read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xci
+  read_ip -quiet /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/index_fifo.xci
+  add_files /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/fourier_bram.bd
   set_param project.isImplRun false
-  read_xdc D:/Uni/Tauschordner/FFT/FFT.srcs/constrs_1/imports/new/constraints_1.xdc
+  read_xdc /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/constrs_1/imports/new/constraints_1.xdc
   set_param project.isImplRun true
   link_design -top fourier_bram_wrapper -part xc7z020clg484-1
   set_param project.isImplRun false

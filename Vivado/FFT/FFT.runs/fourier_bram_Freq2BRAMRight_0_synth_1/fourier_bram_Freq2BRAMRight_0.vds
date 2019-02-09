@@ -1,33 +1,32 @@
 #-----------------------------------------------------------
 # Vivado v2018.3 (64-bit)
-# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Feb  5 19:55:37 2019
-# Process ID: 9108
-# Current directory: D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1
-# Command line: vivado.exe -log fourier_bram_Freq2BRAMRight_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fourier_bram_Freq2BRAMRight_0.tcl
-# Log file: D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/fourier_bram_Freq2BRAMRight_0.vds
-# Journal file: D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1\vivado.jou
+# Start of session at: Fri Feb  8 12:29:33 2019
+# Process ID: 12282
+# Current directory: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1
+# Command line: vivado -log fourier_bram_Freq2BRAMRight_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fourier_bram_Freq2BRAMRight_0.tcl
+# Log file: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/fourier_bram_Freq2BRAMRight_0.vds
+# Journal file: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/vivado.jou
 #-----------------------------------------------------------
 source fourier_bram_Freq2BRAMRight_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/Uni/Tauschordner/I2S_receiver'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programme/Vivado/2018.3/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/niklas/dev/uni/ABP/git/Vivado/I2S_receiver'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/niklas/Xilinx/Vivado/2018.3/data/ip'.
 Command: synth_design -top fourier_bram_Freq2BRAMRight_0 -part xc7z020clg484-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8968 
+INFO: Helper process launched with PID 13030 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 394.078 ; gain = 97.266
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1389.371 ; gain = 2.887 ; free physical = 740 ; free virtual = 8643
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'fourier_bram_Freq2BRAMRight_0' [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/synth/fourier_bram_Freq2BRAMRight_0.vhd:72]
-INFO: [Synth 8-3491] module 'Freq2BRAM' declared at 'D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:27' bound to instance 'U0' of component 'Freq2BRAM' [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/synth/fourier_bram_Freq2BRAMRight_0.vhd:105]
-INFO: [Synth 8-638] synthesizing module 'Freq2BRAM' [D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:49]
-INFO: [Synth 8-3491] module 'data_fifo' declared at 'd:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:59' bound to instance 'inst_imagFifo' of component 'data_fifo' [D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:99]
-INFO: [Synth 8-638] synthesizing module 'data_fifo' [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'fourier_bram_Freq2BRAMRight_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/synth/fourier_bram_Freq2BRAMRight_0.vhd:72]
+INFO: [Synth 8-3491] module 'Freq2BRAM' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:11' bound to instance 'U0' of component 'Freq2BRAM' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/synth/fourier_bram_Freq2BRAMRight_0.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'Freq2BRAM' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:31]
+INFO: [Synth 8-3491] module 'data_fifo' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:59' bound to instance 'inst_imagFifo' of component 'data_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'data_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
 	Parameter C_COMMON_CLOCK bound to: 1 - type: integer 
 	Parameter C_SELECT_XPM bound to: 0 - type: integer 
 	Parameter C_COUNT_TYPE bound to: 0 - type: integer 
@@ -230,10 +229,10 @@ INFO: [Synth 8-638] synthesizing module 'data_fifo' [d:/Uni/Tauschordner/FFT/FFT
 	Parameter C_REG_SLICE_MODE_RACH bound to: 0 - type: integer 
 	Parameter C_REG_SLICE_MODE_RDCH bound to: 0 - type: integer 
 	Parameter C_REG_SLICE_MODE_AXIS bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at 'd:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/index_fifo/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:539]
-INFO: [Synth 8-256] done synthesizing module 'data_fifo' (25#1) [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
-INFO: [Synth 8-3491] module 'index_fifo' declared at 'd:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:59' bound to instance 'inst_addrFifo' of component 'index_fifo' [D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:110]
-INFO: [Synth 8-638] synthesizing module 'index_fifo' [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:71]
+INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:539]
+INFO: [Synth 8-256] done synthesizing module 'data_fifo' (25#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
+INFO: [Synth 8-3491] module 'index_fifo' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:59' bound to instance 'inst_addrFifo' of component 'index_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'index_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:71]
 	Parameter C_COMMON_CLOCK bound to: 1 - type: integer 
 	Parameter C_SELECT_XPM bound to: 0 - type: integer 
 	Parameter C_COUNT_TYPE bound to: 0 - type: integer 
@@ -436,10 +435,10 @@ INFO: [Synth 8-638] synthesizing module 'index_fifo' [d:/Uni/Tauschordner/FFT/FF
 	Parameter C_REG_SLICE_MODE_RACH bound to: 0 - type: integer 
 	Parameter C_REG_SLICE_MODE_RDCH bound to: 0 - type: integer 
 	Parameter C_REG_SLICE_MODE_AXIS bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at 'd:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/index_fifo/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:539]
-INFO: [Synth 8-256] done synthesizing module 'index_fifo' (26#1) [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:71]
-INFO: [Synth 8-256] done synthesizing module 'Freq2BRAM' (27#1) [D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:49]
-INFO: [Synth 8-256] done synthesizing module 'fourier_bram_Freq2BRAMRight_0' (28#1) [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/synth/fourier_bram_Freq2BRAMRight_0.vhd:72]
+INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:539]
+INFO: [Synth 8-256] done synthesizing module 'index_fifo' (26#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/synth/index_fifo.vhd:71]
+INFO: [Synth 8-256] done synthesizing module 'Freq2BRAM' (27#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'fourier_bram_Freq2BRAMRight_0' (28#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/synth/fourier_bram_Freq2BRAMRight_0.vhd:72]
 WARNING: [Synth 8-3331] design wr_status_flags_ss has unconnected port RST_FULL_FF
 WARNING: [Synth 8-3331] design wr_status_flags_ss has unconnected port SRST_FULL_FF
 WARNING: [Synth 8-3331] design wr_status_flags_ss has unconnected port WR_RST
@@ -542,7 +541,7 @@ WARNING: [Synth 8-3331] design rd_logic has unconnected port PROG_EMPTY_THRESH[1
 WARNING: [Synth 8-3331] design rd_logic has unconnected port PROG_EMPTY_THRESH[0]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 728.570 ; gain = 431.758
+Finished RTL Elaboration : Time (s): cpu = 00:01:54 ; elapsed = 00:02:19 . Memory (MB): peak = 1672.457 ; gain = 285.973 ; free physical = 655 ; free virtual = 8554
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -555,10 +554,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 728.570 ; gain = 431.758
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:54 ; elapsed = 00:02:19 . Memory (MB): peak = 1672.457 ; gain = 285.973 ; free physical = 661 ; free virtual = 8560
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 728.570 ; gain = 431.758
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:54 ; elapsed = 00:02:19 . Memory (MB): peak = 1672.457 ; gain = 285.973 ; free physical = 661 ; free virtual = 8560
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 42 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -567,51 +566,51 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/fourier_bram_Freq2BRAMRight_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/fourier_bram_Freq2BRAMRight_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/index_fifo/index_fifo.xdc] for cell 'U0/inst_addrFifo/U0'
-Finished Parsing XDC File [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/index_fifo/index_fifo.xdc] for cell 'U0/inst_addrFifo/U0'
-Parsing XDC File [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xdc] for cell 'U0/inst_imagFifo/U0'
-Finished Parsing XDC File [d:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xdc] for cell 'U0/inst_imagFifo/U0'
-Parsing XDC File [D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fourier_bram_Freq2BRAMRight_0_propImpl.xdc].
+Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/fourier_bram_Freq2BRAMRight_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_Freq2BRAMRight_0/fourier_bram_Freq2BRAMRight_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/index_fifo.xdc] for cell 'U0/inst_addrFifo/U0'
+Finished Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/index_fifo/index_fifo.xdc] for cell 'U0/inst_addrFifo/U0'
+Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xdc] for cell 'U0/inst_imagFifo/U0'
+Finished Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xdc] for cell 'U0/inst_imagFifo/U0'
+Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fourier_bram_Freq2BRAMRight_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/fourier_bram_Freq2BRAMRight_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 806.230 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1754.461 ; gain = 0.000 ; free physical = 1106 ; free virtual = 8700
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 808.746 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1755.461 ; gain = 0.000 ; free physical = 1093 ; free virtual = 8687
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 808.746 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 808.746 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1755.461 ; gain = 0.000 ; free physical = 1092 ; free virtual = 8686
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1755.461 ; gain = 0.000 ; free physical = 1088 ; free virtual = 8682
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:57 ; elapsed = 00:02:03 . Memory (MB): peak = 808.746 ; gain = 511.934
+Finished Constraint Validation : Time (s): cpu = 00:02:02 ; elapsed = 00:02:29 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 1004 ; free virtual = 8598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:57 ; elapsed = 00:02:03 . Memory (MB): peak = 808.746 ; gain = 511.934
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:02 ; elapsed = 00:02:29 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 1003 ; free virtual = 8597
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0/inst_addrFifo/U0. (constraint file  D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc, line 14).
-Applied set_property DONT_TOUCH = true for U0/inst_imagFifo/U0. (constraint file  D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc, line 17).
-Applied set_property DONT_TOUCH = true for U0. (constraint file  D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc, line 21).
+Applied set_property DONT_TOUCH = true for U0/inst_addrFifo/U0. (constraint file  /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc, line 14).
+Applied set_property DONT_TOUCH = true for U0/inst_imagFifo/U0. (constraint file  /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc, line 17).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/dont_touch.xdc, line 21).
 Applied set_property DONT_TOUCH = true for U0/inst_addrFifo. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U0/inst_imagFifo. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:57 ; elapsed = 00:02:03 . Memory (MB): peak = 808.746 ; gain = 511.934
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:02 ; elapsed = 00:02:29 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 1002 ; free virtual = 8596
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "leaving_empty_fwft" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-4471] merging register 'r_fifoAddrRe_reg' into 'r_fifoImagRe_reg' [D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:115]
-INFO: [Synth 8-4471] merging register 'r_fifoAddrWe_reg' into 'r_fifoImagWe_reg' [D:/Uni/Tauschordner/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:114]
+INFO: [Synth 8-4471] merging register 'r_fifoAddrRe_reg' into 'r_fifoImagRe_reg' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:98]
+INFO: [Synth 8-4471] merging register 'r_fifoAddrWe_reg' into 'r_fifoImagWe_reg' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/Freq2BRAM.vhd:97]
 INFO: [Synth 8-802] inferred FSM for state register 'r_state_reg' in module 'Freq2BRAM'
 INFO: [Synth 8-5546] ROM "r_state" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------------------------
@@ -623,7 +622,7 @@ INFO: [Synth 8-5546] ROM "r_state" won't be mapped to RAM because it is too spar
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'r_state_reg' using encoding 'one-hot' in module 'Freq2BRAM'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:58 ; elapsed = 00:02:05 . Memory (MB): peak = 808.746 ; gain = 511.934
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:03 ; elapsed = 00:02:30 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 948 ; free virtual = 8554
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -770,7 +769,7 @@ INFO: [Synth 8-3886] merging instance 'U0/o_bramAddr_reg[30]' (FDCE) to 'U0/o_br
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0/\o_bramAddr_reg[31] )
 INFO: [Synth 8-3886] merging instance 'U0/o_bramByteWe_reg[3]' (FDC) to 'U0/o_bramEn_reg'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:59 ; elapsed = 00:02:06 . Memory (MB): peak = 808.746 ; gain = 511.934
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:04 ; elapsed = 00:02:31 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 851 ; free virtual = 8467
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -782,13 +781,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:09 ; elapsed = 00:02:16 . Memory (MB): peak = 818.691 ; gain = 521.879
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:09 ; elapsed = 00:02:37 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 211 ; free virtual = 7955
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:09 ; elapsed = 00:02:16 . Memory (MB): peak = 819.098 ; gain = 522.285
+Finished Timing Optimization : Time (s): cpu = 00:02:09 ; elapsed = 00:02:37 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 179 ; free virtual = 7923
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -800,7 +799,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:09 ; elapsed = 00:02:16 . Memory (MB): peak = 838.633 ; gain = 541.820
+Finished Technology Mapping : Time (s): cpu = 00:02:10 ; elapsed = 00:02:37 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 198 ; free virtual = 7916
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -824,7 +823,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:12 ; elapsed = 00:02:20 . Memory (MB): peak = 838.633 ; gain = 541.820
+Finished IO Insertion : Time (s): cpu = 00:02:10 ; elapsed = 00:02:38 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 178 ; free virtual = 7907
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -837,7 +836,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:12 ; elapsed = 00:02:20 . Memory (MB): peak = 838.633 ; gain = 541.820
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:10 ; elapsed = 00:02:38 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 178 ; free virtual = 7907
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -849,25 +848,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:12 ; elapsed = 00:02:20 . Memory (MB): peak = 838.633 ; gain = 541.820
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:10 ; elapsed = 00:02:38 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 177 ; free virtual = 7906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:12 ; elapsed = 00:02:20 . Memory (MB): peak = 838.633 ; gain = 541.820
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:10 ; elapsed = 00:02:38 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 177 ; free virtual = 7906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:12 ; elapsed = 00:02:20 . Memory (MB): peak = 838.633 ; gain = 541.820
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:10 ; elapsed = 00:02:38 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 177 ; free virtual = 7906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:12 ; elapsed = 00:02:20 . Memory (MB): peak = 838.633 ; gain = 541.820
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:10 ; elapsed = 00:02:38 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 177 ; free virtual = 7906
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -950,33 +949,33 @@ Report Instance Areas:
 |48    |                          \prim_noinit.ram                 |blk_mem_gen_prim_wrapper__parameterized0     |     1|
 +------+-----------------------------------------------------------+---------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:12 ; elapsed = 00:02:20 . Memory (MB): peak = 838.633 ; gain = 541.820
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:10 ; elapsed = 00:02:38 . Memory (MB): peak = 1755.461 ; gain = 368.977 ; free physical = 177 ; free virtual = 7906
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 972 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:02:11 . Memory (MB): peak = 838.633 ; gain = 461.645
-Synthesis Optimization Complete : Time (s): cpu = 00:02:12 ; elapsed = 00:02:20 . Memory (MB): peak = 838.633 ; gain = 541.820
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:05 ; elapsed = 00:02:31 . Memory (MB): peak = 1755.461 ; gain = 285.973 ; free physical = 191 ; free virtual = 7920
+Synthesis Optimization Complete : Time (s): cpu = 00:02:10 ; elapsed = 00:02:38 . Memory (MB): peak = 1755.469 ; gain = 368.977 ; free physical = 201 ; free virtual = 7930
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 42 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 843.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1755.469 ; gain = 0.000 ; free physical = 195 ; free virtual = 7783
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 16 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 16 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-71 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+72 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:15 ; elapsed = 00:02:24 . Memory (MB): peak = 843.215 ; gain = 557.777
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 843.215 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:12 ; elapsed = 00:02:39 . Memory (MB): peak = 1755.469 ; gain = 369.098 ; free physical = 252 ; free virtual = 7839
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1755.469 ; gain = 0.000 ; free physical = 251 ; free virtual = 7839
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/fourier_bram_Freq2BRAMRight_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/fourier_bram_Freq2BRAMRight_0.dcp' has been generated.
 INFO: [Coretcl 2-1174] Renamed 47 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 843.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1779.473 ; gain = 0.000 ; free physical = 216 ; free virtual = 7818
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'D:/Uni/Tauschordner/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/fourier_bram_Freq2BRAMRight_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_Freq2BRAMRight_0_synth_1/fourier_bram_Freq2BRAMRight_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file fourier_bram_Freq2BRAMRight_0_utilization_synth.rpt -pb fourier_bram_Freq2BRAMRight_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Feb  5 19:58:13 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  8 12:32:27 2019...

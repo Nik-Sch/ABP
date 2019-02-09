@@ -63,9 +63,7 @@ ENTITY fourier_bram_DFTStageWrapper_1_0 IS
     o_freqDataEn : OUT STD_LOGIC;
     o_freqDataIndex : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
     o_freqDataReal : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-    o_freqDataImag : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-    o_r_f : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-    o_dataOld : OUT STD_LOGIC_VECTOR(24 DOWNTO 0)
+    o_freqDataImag : OUT STD_LOGIC_VECTOR(24 DOWNTO 0)
   );
 END fourier_bram_DFTStageWrapper_1_0;
 
@@ -82,9 +80,7 @@ ARCHITECTURE fourier_bram_DFTStageWrapper_1_0_arch OF fourier_bram_DFTStageWrapp
       o_freqDataEn : OUT STD_LOGIC;
       o_freqDataIndex : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
       o_freqDataReal : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-      o_freqDataImag : OUT STD_LOGIC_VECTOR(24 DOWNTO 0);
-      o_r_f : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
-      o_dataOld : OUT STD_LOGIC_VECTOR(24 DOWNTO 0)
+      o_freqDataImag : OUT STD_LOGIC_VECTOR(24 DOWNTO 0)
     );
   END COMPONENT DFTStageWrapper;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -93,7 +89,7 @@ ARCHITECTURE fourier_bram_DFTStageWrapper_1_0_arch OF fourier_bram_DFTStageWrapp
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF i_reset: SIGNAL IS "XIL_INTERFACENAME i_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF i_reset: SIGNAL IS "xilinx.com:signal:reset:1.0 i_reset RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF i_clk: SIGNAL IS "XIL_INTERFACENAME i_clk, ASSOCIATED_RESET i_reset, FREQ_HZ 142857132, PHASE 0.000, CLK_DOMAIN fourier_bram_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF i_clk: SIGNAL IS "XIL_INTERFACENAME i_clk, ASSOCIATED_RESET i_reset, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN fourier_bram_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF i_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 i_clk CLK";
 BEGIN
   U0 : DFTStageWrapper
@@ -106,8 +102,6 @@ BEGIN
       o_freqDataEn => o_freqDataEn,
       o_freqDataIndex => o_freqDataIndex,
       o_freqDataReal => o_freqDataReal,
-      o_freqDataImag => o_freqDataImag,
-      o_r_f => o_r_f,
-      o_dataOld => o_dataOld
+      o_freqDataImag => o_freqDataImag
     );
 END fourier_bram_DFTStageWrapper_1_0_arch;
