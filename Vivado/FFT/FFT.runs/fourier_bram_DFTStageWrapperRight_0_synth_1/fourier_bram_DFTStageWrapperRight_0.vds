@@ -1,34 +1,34 @@
 #-----------------------------------------------------------
 # Vivado v2018.3 (64-bit)
-# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Thu Feb  7 13:30:27 2019
-# Process ID: 10669
-# Current directory: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1
-# Command line: vivado -log fourier_bram_DFTStageWrapperRight_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fourier_bram_DFTStageWrapperRight_0.tcl
-# Log file: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/fourier_bram_DFTStageWrapperRight_0.vds
-# Journal file: /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/vivado.jou
+# Start of session at: Mon Feb 11 18:53:40 2019
+# Process ID: 10028
+# Current directory: D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1
+# Command line: vivado.exe -log fourier_bram_DFTStageWrapperRight_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fourier_bram_DFTStageWrapperRight_0.tcl
+# Log file: D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/fourier_bram_DFTStageWrapperRight_0.vds
+# Journal file: D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source fourier_bram_DFTStageWrapperRight_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/niklas/dev/uni/ABP/git/Vivado/I2S_receiver'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/niklas/Xilinx/Vivado/2018.3/data/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Uni/git/ABP/Vivado/I2S_receiver'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programme/Vivado/2018.3/data/ip'.
 Command: synth_design -top fourier_bram_DFTStageWrapperRight_0 -part xc7z020clg484-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12315 
+INFO: Helper process launched with PID 10232 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:26 . Memory (MB): peak = 1416.395 ; gain = 0.000 ; free physical = 910 ; free virtual = 9391
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 394.953 ; gain = 98.770
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-1565] actual for formal port wea is neither a static name nor a globally static expression [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:96]
-INFO: [Synth 8-638] synthesizing module 'fourier_bram_DFTStageWrapperRight_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/synth/fourier_bram_DFTStageWrapperRight_0.vhd:70]
-INFO: [Synth 8-3491] module 'DFTStageWrapper' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:8' bound to instance 'U0' of component 'DFTStageWrapper' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/synth/fourier_bram_DFTStageWrapperRight_0.vhd:101]
-INFO: [Synth 8-638] synthesizing module 'DFTStageWrapper' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:26]
-INFO: [Synth 8-638] synthesizing module 'dataFifoFillLevel' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/dataFifoFillLevel.vhd:20]
-INFO: [Synth 8-3491] module 'data_fifo' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:59' bound to instance 'inst_fifo' of component 'data_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/dataFifoFillLevel.vhd:42]
-INFO: [Synth 8-638] synthesizing module 'data_fifo' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
+WARNING: [Synth 8-1565] actual for formal port wea is neither a static name nor a globally static expression [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'fourier_bram_DFTStageWrapperRight_0' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/synth/fourier_bram_DFTStageWrapperRight_0.vhd:70]
+INFO: [Synth 8-3491] module 'DFTStageWrapper' declared at 'D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:8' bound to instance 'U0' of component 'DFTStageWrapper' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/synth/fourier_bram_DFTStageWrapperRight_0.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'DFTStageWrapper' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:26]
+INFO: [Synth 8-638] synthesizing module 'dataFifoFillLevel' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/dataFifoFillLevel.vhd:20]
+INFO: [Synth 8-3491] module 'data_fifo' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:59' bound to instance 'inst_fifo' of component 'data_fifo' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/dataFifoFillLevel.vhd:42]
+INFO: [Synth 8-638] synthesizing module 'data_fifo' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
 	Parameter C_COMMON_CLOCK bound to: 1 - type: integer 
 	Parameter C_SELECT_XPM bound to: 0 - type: integer 
 	Parameter C_COUNT_TYPE bound to: 0 - type: integer 
@@ -231,11 +231,11 @@ INFO: [Synth 8-638] synthesizing module 'data_fifo' [/home/niklas/dev/uni/ABP/gi
 	Parameter C_REG_SLICE_MODE_RACH bound to: 0 - type: integer 
 	Parameter C_REG_SLICE_MODE_RDCH bound to: 0 - type: integer 
 	Parameter C_REG_SLICE_MODE_AXIS bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:539]
-INFO: [Synth 8-256] done synthesizing module 'data_fifo' (25#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
-INFO: [Synth 8-256] done synthesizing module 'dataFifoFillLevel' (26#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/dataFifoFillLevel.vhd:20]
-INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/synth/blk_mem_gen_0.vhd:59' bound to instance 'inst_BlockRam' of component 'blk_mem_gen_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:92]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/synth/blk_mem_gen_0.vhd:73]
+INFO: [Synth 8-3491] module 'fifo_generator_v13_2_3' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd:38578' bound to instance 'U0' of component 'fifo_generator_v13_2_3' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:539]
+INFO: [Synth 8-256] done synthesizing module 'data_fifo' (25#1) [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/synth/data_fifo.vhd:71]
+INFO: [Synth 8-256] done synthesizing module 'dataFifoFillLevel' (26#1) [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/dataFifoFillLevel.vhd:20]
+INFO: [Synth 8-3491] module 'blk_mem_gen_0' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/synth/blk_mem_gen_0.vhd:59' bound to instance 'inst_BlockRam' of component 'blk_mem_gen_0' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:92]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/synth/blk_mem_gen_0.vhd:73]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -311,13 +311,13 @@ INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [/home/niklas/dev/uni/AB
 	Parameter C_COUNT_36K_BRAM bound to: 1 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     6.4733 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_2' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_2' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/synth/blk_mem_gen_0.vhd:243]
-INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (28#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/synth/blk_mem_gen_0.vhd:73]
-INFO: [Synth 8-638] synthesizing module 'DFTStage' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/DFTStage.vhd:34]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_2' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_2' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/synth/blk_mem_gen_0.vhd:243]
+INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (28#1) [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_mem_gen_0_2/synth/blk_mem_gen_0.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'DFTStage' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/DFTStage.vhd:34]
 	Parameter N2 bound to: 256 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'eFunctionRom' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/eFunctionRom.vhd:18]
-INFO: [Synth 8-3491] module 'blk_rom_e_real' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/synth/blk_rom_e_real.vhd:59' bound to instance 'inst_rom_e_real' of component 'blk_rom_e_real' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/eFunctionRom.vhd:41]
-INFO: [Synth 8-638] synthesizing module 'blk_rom_e_real' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/synth/blk_rom_e_real.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'eFunctionRom' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/eFunctionRom.vhd:18]
+INFO: [Synth 8-3491] module 'blk_rom_e_real' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/synth/blk_rom_e_real.vhd:59' bound to instance 'inst_rom_e_real' of component 'blk_rom_e_real' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/eFunctionRom.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'blk_rom_e_real' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/synth/blk_rom_e_real.vhd:67]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -393,10 +393,10 @@ INFO: [Synth 8-638] synthesizing module 'blk_rom_e_real' [/home/niklas/dev/uni/A
 	Parameter C_COUNT_36K_BRAM bound to: 0 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     2.7928 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_2' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_2' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/synth/blk_rom_e_real.vhd:230]
-INFO: [Synth 8-256] done synthesizing module 'blk_rom_e_real' (29#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/synth/blk_rom_e_real.vhd:67]
-INFO: [Synth 8-3491] module 'blk_rom_e_imag' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/synth/blk_rom_e_imag.vhd:59' bound to instance 'inst_rom_e_imag' of component 'blk_rom_e_imag' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/eFunctionRom.vhd:48]
-INFO: [Synth 8-638] synthesizing module 'blk_rom_e_imag' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/synth/blk_rom_e_imag.vhd:67]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_2' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_2' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/synth/blk_rom_e_real.vhd:230]
+INFO: [Synth 8-256] done synthesizing module 'blk_rom_e_real' (29#1) [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_real/synth/blk_rom_e_real.vhd:67]
+INFO: [Synth 8-3491] module 'blk_rom_e_imag' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/synth/blk_rom_e_imag.vhd:59' bound to instance 'inst_rom_e_imag' of component 'blk_rom_e_imag' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/eFunctionRom.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'blk_rom_e_imag' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/synth/blk_rom_e_imag.vhd:67]
 	Parameter C_FAMILY bound to: zynq - type: string 
 	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -472,12 +472,12 @@ INFO: [Synth 8-638] synthesizing module 'blk_rom_e_imag' [/home/niklas/dev/uni/A
 	Parameter C_COUNT_36K_BRAM bound to: 0 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 1 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     2.7928 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_2' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_2' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/synth/blk_rom_e_imag.vhd:230]
-INFO: [Synth 8-256] done synthesizing module 'blk_rom_e_imag' (30#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/synth/blk_rom_e_imag.vhd:67]
-INFO: [Synth 8-256] done synthesizing module 'eFunctionRom' (31#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/eFunctionRom.vhd:18]
-INFO: [Synth 8-638] synthesizing module 'ComplexMultiply' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:21]
-INFO: [Synth 8-3491] module 'xbip_multadd_0' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:59' bound to instance 'inst_real_mul_1' of component 'xbip_multadd_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:56]
-INFO: [Synth 8-638] synthesizing module 'xbip_multadd_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:73]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_2' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_2' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/synth/blk_rom_e_imag.vhd:230]
+INFO: [Synth 8-256] done synthesizing module 'blk_rom_e_imag' (30#1) [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/blk_rom_e_imag/synth/blk_rom_e_imag.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'eFunctionRom' (31#1) [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/eFunctionRom.vhd:18]
+INFO: [Synth 8-638] synthesizing module 'ComplexMultiply' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:21]
+INFO: [Synth 8-3491] module 'xbip_multadd_0' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:59' bound to instance 'inst_real_mul_1' of component 'xbip_multadd_0' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:56]
+INFO: [Synth 8-638] synthesizing module 'xbip_multadd_0' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:73]
 	Parameter C_VERBOSITY bound to: 0 - type: integer 
 	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
 	Parameter C_A_WIDTH bound to: 25 - type: integer 
@@ -493,15 +493,15 @@ INFO: [Synth 8-638] synthesizing module 'xbip_multadd_0' [/home/niklas/dev/uni/A
 	Parameter C_OUT_LOW bound to: 0 - type: integer 
 	Parameter C_USE_PCIN bound to: 0 - type: integer 
 	Parameter C_TEST_CORE bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xbip_multadd_v3_0_13' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/hdl/xbip_multadd_v3_0_vh_rfs.vhd:2155' bound to instance 'U0' of component 'xbip_multadd_v3_0_13' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:134]
-INFO: [Synth 8-256] done synthesizing module 'xbip_multadd_0' (38#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:73]
-INFO: [Synth 8-3491] module 'xbip_multadd_0' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:59' bound to instance 'inst_real_mul_2' of component 'xbip_multadd_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:72]
-INFO: [Synth 8-3491] module 'xbip_multadd_0' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:59' bound to instance 'inst_imaginary_mul_1' of component 'xbip_multadd_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:86]
-INFO: [Synth 8-3491] module 'xbip_multadd_0' declared at '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:59' bound to instance 'inst_imaginary_mul_2' of component 'xbip_multadd_0' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:99]
-INFO: [Synth 8-256] done synthesizing module 'ComplexMultiply' (39#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:21]
-INFO: [Synth 8-256] done synthesizing module 'DFTStage' (40#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/DFTStage.vhd:34]
-INFO: [Synth 8-256] done synthesizing module 'DFTStageWrapper' (41#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:26]
-INFO: [Synth 8-256] done synthesizing module 'fourier_bram_DFTStageWrapperRight_0' (42#1) [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/synth/fourier_bram_DFTStageWrapperRight_0.vhd:70]
+INFO: [Synth 8-3491] module 'xbip_multadd_v3_0_13' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/hdl/xbip_multadd_v3_0_vh_rfs.vhd:2155' bound to instance 'U0' of component 'xbip_multadd_v3_0_13' [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'xbip_multadd_0' (38#1) [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:73]
+INFO: [Synth 8-3491] module 'xbip_multadd_0' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:59' bound to instance 'inst_real_mul_2' of component 'xbip_multadd_0' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:72]
+INFO: [Synth 8-3491] module 'xbip_multadd_0' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:59' bound to instance 'inst_imaginary_mul_1' of component 'xbip_multadd_0' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:86]
+INFO: [Synth 8-3491] module 'xbip_multadd_0' declared at 'd:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/xbip_multadd_0/synth/xbip_multadd_0.vhd:59' bound to instance 'inst_imaginary_mul_2' of component 'xbip_multadd_0' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:99]
+INFO: [Synth 8-256] done synthesizing module 'ComplexMultiply' (39#1) [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/ComplexMultiply.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'DFTStage' (40#1) [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/DFTStage.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'DFTStageWrapper' (41#1) [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/DFTStageWrapper.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'fourier_bram_DFTStageWrapperRight_0' (42#1) [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/synth/fourier_bram_DFTStageWrapperRight_0.vhd:70]
 WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEA1
 WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEA2
 WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEB1
@@ -604,7 +604,7 @@ WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper_init__parameterized1 has
 WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper_init__parameterized1 has unconnected port DINB[22]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:03:44 ; elapsed = 00:04:42 . Memory (MB): peak = 1847.145 ; gain = 430.750 ; free physical = 1098 ; free virtual = 9665
+Finished RTL Elaboration : Time (s): cpu = 00:03:32 ; elapsed = 00:03:56 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -617,10 +617,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:44 ; elapsed = 00:04:42 . Memory (MB): peak = 1847.145 ; gain = 430.750 ; free physical = 1209 ; free virtual = 9797
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:33 ; elapsed = 00:03:57 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:03:44 ; elapsed = 00:04:42 . Memory (MB): peak = 1847.145 ; gain = 430.750 ; free physical = 1209 ; free virtual = 9797
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:03:33 ; elapsed = 00:03:57 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -629,40 +629,40 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/fourier_bram_DFTStageWrapperRight_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/fourier_bram_DFTStageWrapperRight_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xdc] for cell 'U0/inst_dataFifoFillLevel/inst_fifo/U0'
-Finished Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xdc] for cell 'U0/inst_dataFifoFillLevel/inst_fifo/U0'
-Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fourier_bram_DFTStageWrapperRight_0_propImpl.xdc].
+Parsing XDC File [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/fourier_bram_DFTStageWrapperRight_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_DFTStageWrapperRight_0/fourier_bram_DFTStageWrapperRight_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xdc] for cell 'U0/inst_dataFifoFillLevel/inst_fifo/U0'
+Finished Parsing XDC File [d:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/ip/data_fifo/data_fifo.xdc] for cell 'U0/inst_dataFifoFillLevel/inst_fifo/U0'
+Parsing XDC File [D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/fourier_bram_DFTStageWrapperRight_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/fourier_bram_DFTStageWrapperRight_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1847.148 ; gain = 0.000 ; free physical = 768 ; free virtual = 9335
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 935.680 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1847.148 ; gain = 0.000 ; free physical = 765 ; free virtual = 9332
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 935.680 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1847.148 ; gain = 0.000 ; free physical = 765 ; free virtual = 9332
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1847.148 ; gain = 0.000 ; free physical = 764 ; free virtual = 9331
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 935.680 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 935.680 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:03:53 ; elapsed = 00:04:53 . Memory (MB): peak = 1847.148 ; gain = 430.754 ; free physical = 904 ; free virtual = 9473
+Finished Constraint Validation : Time (s): cpu = 00:03:46 ; elapsed = 00:04:12 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:03:53 ; elapsed = 00:04:53 . Memory (MB): peak = 1847.148 ; gain = 430.754 ; free physical = 904 ; free virtual = 9473
+Finished Loading Part and Timing Information : Time (s): cpu = 00:03:46 ; elapsed = 00:04:12 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0/inst_dataFifoFillLevel/inst_fifo/U0. (constraint file  /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc, line 29).
-Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc, line 33).
+Applied set_property DONT_TOUCH = true for U0/inst_dataFifoFillLevel/inst_fifo/U0. (constraint file  D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc, line 29).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/dont_touch.xdc, line 33).
 Applied set_property DONT_TOUCH = true for U0/inst_DFTStage/inst_ComplexMultiply/inst_imaginary_mul_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U0/inst_DFTStage/inst_ComplexMultiply/inst_imaginary_mul_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U0/inst_DFTStage/inst_ComplexMultiply/inst_real_mul_1. (constraint file  auto generated constraint, line ).
@@ -672,14 +672,14 @@ Applied set_property DONT_TOUCH = true for U0/inst_DFTStage/inst_eFunctionRom/in
 Applied set_property DONT_TOUCH = true for U0/inst_BlockRam. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U0/inst_dataFifoFillLevel/inst_fifo. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:03:53 ; elapsed = 00:04:53 . Memory (MB): peak = 1847.148 ; gain = 430.754 ; free physical = 906 ; free virtual = 9474
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:03:46 ; elapsed = 00:04:12 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "leaving_empty_fwft" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/dataFifoFillLevel.vhd:58]
-INFO: [Synth 8-4471] merging register 'r_bramRaddr_reg[7:0]' into 'r_eAddress_reg[7:0]' [/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/new/DFTStage.vhd:92]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/dataFifoFillLevel.vhd:58]
+INFO: [Synth 8-4471] merging register 'r_bramRaddr_reg[7:0]' into 'r_eAddress_reg[7:0]' [D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/new/DFTStage.vhd:92]
 INFO: [Synth 8-5546] ROM "r_state" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:54 ; elapsed = 00:04:54 . Memory (MB): peak = 1847.148 ; gain = 430.754 ; free physical = 896 ; free virtual = 9464
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:47 ; elapsed = 00:04:13 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -713,7 +713,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:55 ; elapsed = 00:04:55 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 836 ; free virtual = 9443
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:48 ; elapsed = 00:04:15 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -725,13 +725,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:02 ; elapsed = 00:05:03 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 452 ; free virtual = 9063
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:05 ; elapsed = 00:04:33 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:03 ; elapsed = 00:05:03 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 533 ; free virtual = 9145
+Finished Timing Optimization : Time (s): cpu = 00:04:05 ; elapsed = 00:04:33 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -743,7 +743,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:03 ; elapsed = 00:05:04 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 538 ; free virtual = 9150
+Finished Technology Mapping : Time (s): cpu = 00:04:05 ; elapsed = 00:04:34 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -767,7 +767,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:04 ; elapsed = 00:05:04 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 537 ; free virtual = 9149
+Finished IO Insertion : Time (s): cpu = 00:04:07 ; elapsed = 00:04:35 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -780,7 +780,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:04 ; elapsed = 00:05:04 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 537 ; free virtual = 9149
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:07 ; elapsed = 00:04:35 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -792,25 +792,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:04 ; elapsed = 00:05:04 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 536 ; free virtual = 9148
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:07 ; elapsed = 00:04:35 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:04 ; elapsed = 00:05:04 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 536 ; free virtual = 9148
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:07 ; elapsed = 00:04:35 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:04 ; elapsed = 00:05:05 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 536 ; free virtual = 9148
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:07 ; elapsed = 00:04:35 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:04 ; elapsed = 00:05:05 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 536 ; free virtual = 9148
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:07 ; elapsed = 00:04:35 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -843,17 +843,17 @@ Report Cell Usage:
 |15    |FDRE       |    73|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:04 ; elapsed = 00:05:05 . Memory (MB): peak = 1871.168 ; gain = 454.773 ; free physical = 536 ; free virtual = 9148
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:07 ; elapsed = 00:04:35 . Memory (MB): peak = 935.680 ; gain = 639.496
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1111 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:57 ; elapsed = 00:04:57 . Memory (MB): peak = 1871.168 ; gain = 454.770 ; free physical = 601 ; free virtual = 9213
-Synthesis Optimization Complete : Time (s): cpu = 00:04:04 ; elapsed = 00:05:05 . Memory (MB): peak = 1871.176 ; gain = 454.773 ; free physical = 601 ; free virtual = 9213
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:04:23 . Memory (MB): peak = 935.680 ; gain = 639.496
+Synthesis Optimization Complete : Time (s): cpu = 00:04:07 ; elapsed = 00:04:35 . Memory (MB): peak = 935.680 ; gain = 639.496
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 53 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1871.176 ; gain = 0.000 ; free physical = 450 ; free virtual = 9063
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 935.680 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 8 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 8 instances
@@ -861,15 +861,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 58 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:06 ; elapsed = 00:05:07 . Memory (MB): peak = 1871.176 ; gain = 454.781 ; free physical = 468 ; free virtual = 9081
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1871.176 ; gain = 0.000 ; free physical = 465 ; free virtual = 9078
+synth_design: Time (s): cpu = 00:04:11 ; elapsed = 00:04:40 . Memory (MB): peak = 935.680 ; gain = 650.902
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 935.680 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/fourier_bram_DFTStageWrapperRight_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/fourier_bram_DFTStageWrapperRight_0.dcp' has been generated.
 INFO: [Coretcl 2-1174] Renamed 77 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1895.180 ; gain = 0.000 ; free physical = 766 ; free virtual = 9246
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 935.680 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/fourier_bram_DFTStageWrapperRight_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'D:/Uni/git/ABP/Vivado/FFT/FFT.runs/fourier_bram_DFTStageWrapperRight_0_synth_1/fourier_bram_DFTStageWrapperRight_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file fourier_bram_DFTStageWrapperRight_0_utilization_synth.rpt -pb fourier_bram_DFTStageWrapperRight_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Feb  7 13:36:02 2019...
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 11 18:58:34 2019...

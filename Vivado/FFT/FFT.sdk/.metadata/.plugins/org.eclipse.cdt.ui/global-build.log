@@ -1,0 +1,1418 @@
+19:11:25 **** Build of project audio_fft_praesi_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/bram_v4_2/src"
+make -C ps7_cortexa9_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_8/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_10/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/spi_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_8/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/bram_v4_2/src"
+make -C ps7_cortexa9_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling bram"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_8/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_8/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_10/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_10/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/spi_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling spi"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_8/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_8/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from usleep.c:56:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:51:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:49:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from sleep.c:53:0:
+xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+
+**** Build of configuration Debug for project audio_fft_praesi ****
+
+Nothing to build for project audio_fft_praesi
+19:19:21 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/audio_driver.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio_driver.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/audio_driver.d" -MT"src/audio_driver.o" -o "src/audio_driver.o" "../src/audio_driver.c"
+'Finished building: ../src/audio_driver.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+../src/read_bram.c: In function 'read_i2c_data':
+../src/read_bram.c:44:25: error: 'XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR' undeclared (first use in this function); did you mean 'XPAR_AXIBRAMCTRLLEFT_S_AXI_BASEADDR'?
+     unsigned int addr = XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR;
+                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                         XPAR_AXIBRAMCTRLLEFT_S_AXI_BASEADDR
+../src/read_bram.c:44:25: note: each undeclared identifier is reported only once for each function it appears in
+../src/read_bram.c:51:8: warning: unused variable 'z' [-Wunused-variable]
+    int z = j+i;
+        ^
+make: *** [src/subdir.mk:41: src/read_bram.o] Error 1
+19:19:26 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+../src/read_bram.c: In function 'read_i2c_data':
+../src/read_bram.c:44:25: error: 'XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR' undeclared (first use in this function); did you mean 'XPAR_AXIBRAMCTRLLEFT_S_AXI_BASEADDR'?
+     unsigned int addr = XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR;
+                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                         XPAR_AXIBRAMCTRLLEFT_S_AXI_BASEADDR
+../src/read_bram.c:44:25: note: each undeclared identifier is reported only once for each function it appears in
+../src/read_bram.c:51:8: warning: unused variable 'z' [-Wunused-variable]
+    int z = j+i;
+        ^
+make: *** [src/subdir.mk:41: src/read_bram.o] Error 1
+19:20:05 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building file: ../src/spi_driver.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_driver.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_driver.d" -MT"src/spi_driver.o" -o "src/spi_driver.o" "../src/spi_driver.c"
+../src/spi_driver.c: In function '_spi_send_command_and_address':
+../src/spi_driver.c:73:18: warning: unused variable 'garbage' [-Wunused-variable]
+     unsigned int garbage = spi_port->SPI_DDR;
+                  ^~~~~~~
+'Finished building: ../src/spi_driver.c'
+' '
+'Building file: ../src/wave_gen.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/wave_gen.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/wave_gen.d" -MT"src/wave_gen.o" -o "src/wave_gen.o" "../src/wave_gen.c"
+'Finished building: ../src/wave_gen.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/main.o: In function `main':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/main.c:26: undefined reference to `read_i2c_data'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/main.c:26: undefined reference to `read_i2c_data'
+./src/read_bram.o: In function `read_dft_data_right':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:29: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:29: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:29: undefined reference to `sqrt'
+./src/read_bram.o: In function `read_dft_data_left':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:58: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:58: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:58: undefined reference to `sqrt'
+./src/read_bram.o: In function `get_dft_amplitude_left':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:86: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:86: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:86: undefined reference to `sqrt'
+./src/read_bram.o: In function `get_dft_amplitude_right':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:108: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:108: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:108: undefined reference to `sqrt'
+./src/wave_gen.o: In function `_print_matrix_calculate_and_set_val':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/wave_gen.c:127: undefined reference to `log10'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/wave_gen.c:129: undefined reference to `round'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: audio_fft_praesi.elf] Error 1
+19:20:16 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/read_bram.o: In function `read_dft_data_right':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:29: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:29: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:29: undefined reference to `sqrt'
+./src/read_bram.o: In function `read_dft_data_left':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:58: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:58: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:58: undefined reference to `sqrt'
+./src/read_bram.o: In function `get_dft_amplitude_left':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:86: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:86: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:86: undefined reference to `sqrt'
+./src/read_bram.o: In function `get_dft_amplitude_right':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:108: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:108: undefined reference to `pow'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/read_bram.c:108: undefined reference to `sqrt'
+./src/wave_gen.o: In function `_print_matrix_calculate_and_set_val':
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/wave_gen.c:127: undefined reference to `log10'
+D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug/../src/wave_gen.c:129: undefined reference to `round'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: audio_fft_praesi.elf] Error 1
+19:21:06 **** Clean-only build of configuration Debug for project audio_fft_praesi ****
+make clean 
+rm -rf  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o  ./src/audio_driver.d ./src/main.d ./src/menu.d ./src/menu_navigation.d ./src/read_bram.d ./src/spi_driver.d ./src/wave_gen.d  audio_fft_praesi.elf.size  audio_fft_praesi.elf
+' '
+19:21:06 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/audio_driver.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio_driver.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/audio_driver.d" -MT"src/audio_driver.o" -o "src/audio_driver.o" "../src/audio_driver.c"
+'Finished building: ../src/audio_driver.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building file: ../src/spi_driver.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_driver.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_driver.d" -MT"src/spi_driver.o" -o "src/spi_driver.o" "../src/spi_driver.c"
+../src/spi_driver.c: In function '_spi_send_command_and_address':
+../src/spi_driver.c:73:18: warning: unused variable 'garbage' [-Wunused-variable]
+     unsigned int garbage = spi_port->SPI_DDR;
+                  ^~~~~~~
+'Finished building: ../src/spi_driver.c'
+' '
+'Building file: ../src/wave_gen.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/wave_gen.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/wave_gen.d" -MT"src/wave_gen.o" -o "src/wave_gen.o" "../src/wave_gen.c"
+'Finished building: ../src/wave_gen.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  30256	 123044	  1e0a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+19:23:58 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:24:20 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+19:24:35 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:29:20 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+19:29:25 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+19:39:56 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+19:40:14 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:07:57 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+../src/menu_navigation.c: In function 'print_menu':
+../src/menu_navigation.c:80:18: error: 'cursor_postionion' undeclared (first use in this function); did you mean 'cursor_position'?
+         if (i == cursor_postionion +1) {
+                  ^~~~~~~~~~~~~~~~~
+                  cursor_position
+../src/menu_navigation.c:80:18: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:41: src/menu_navigation.o] Error 1
+20:08:07 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+../src/menu_navigation.c: In function 'print_menu':
+../src/menu_navigation.c:80:18: error: 'cursor_positonion' undeclared (first use in this function); did you mean 'cursor_position'?
+         if (i == cursor_positonion +1) {
+                  ^~~~~~~~~~~~~~~~~
+                  cursor_position
+../src/menu_navigation.c:80:18: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:41: src/menu_navigation.o] Error 1
+20:08:20 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:08:29 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:09:19 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90128	   2580	  46640	 139348	  22054	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:09:24 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:11:06 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+../src/menu_navigation.c: In function 'print_menu':
+../src/menu_navigation.c:87:10: error: 'cursor_postion' undeclared (first use in this function); did you mean 'cursor_position'?
+      if (cursor_postion = menu->length) {
+          ^~~~~~~~~~~~~~
+          cursor_position
+../src/menu_navigation.c:87:10: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:41: src/menu_navigation.o] Error 1
+20:11:14 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+../src/menu_navigation.c: In function 'print_menu':
+../src/menu_navigation.c:87:10: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+      if (cursor_position = menu->length) {
+          ^~~~~~~~~~~~~~~
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90192	   2580	  46640	 139412	  22094	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:11:22 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+../src/menu_navigation.c: In function 'print_menu':
+../src/menu_navigation.c:87:10: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+      if (cursor_position = menu->length) {
+          ^~~~~~~~~~~~~~~
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:11:31 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:11:38 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:12:52 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90200	   2580	  46640	 139420	  2209c	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:12:58 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:16:12 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90200	   2580	  46640	 139420	  2209c	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:16:22 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90200	   2580	  46640	 139420	  2209c	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:17:22 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90200	   2580	  46640	 139420	  2209c	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:18:52 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:23:15 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:24:22 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90200	   2580	  46640	 139420	  2209c	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:25:11 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+../src/menu_navigation.c: In function 'print_menu':
+../src/menu_navigation.c:78:2: error: expected ';' before 'printf'
+  printf("%s\n", menu->header);
+  ^~~~~~
+make: *** [src/subdir.mk:41: src/menu_navigation.o] Error 1
+20:25:18 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90200	   2580	  46640	 139420	  2209c	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:25:24 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:26:19 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90192	   2580	  46640	 139412	  22094	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:26:24 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:28:07 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90200	   2580	  46640	 139420	  2209c	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:34:21 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:38:18 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:38:28 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:38:40 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:38:53 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:48:35 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90464	   2580	  46640	 139684	  221a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:49:04 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90464	   2580	  46640	 139684	  221a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:49:27 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90464	   2580	  46640	 139684	  221a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:49:32 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:50:33 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90472	   2580	  46640	 139692	  221ac	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:50:53 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+20:58:15 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+../src/menu_navigation.c: In function 'print_menu1':
+../src/menu_navigation.c:108:13: error: 'i' undeclared (first use in this function)
+         if (i  == menu->length +1 ){
+             ^
+../src/menu_navigation.c:108:13: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:41: src/menu_navigation.o] Error 1
+20:58:30 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+../src/menu_navigation.c: In function 'print_menu1':
+../src/menu_navigation.c:108:13: error: 'cursor_postion' undeclared (first use in this function); did you mean 'cursor_position'?
+         if (cursor_postion  == menu->length +1 ){
+             ^~~~~~~~~~~~~~
+             cursor_position
+../src/menu_navigation.c:108:13: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/subdir.mk:41: src/menu_navigation.o] Error 1
+20:58:34 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90488	   2580	  46640	 139708	  221bc	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+20:58:39 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:00:16 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90488	   2580	  46640	 139708	  221bc	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+21:00:21 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:04:56 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+21:05:15 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/menu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu.d" -MT"src/menu.o" -o "src/menu.o" "../src/menu.c"
+'Finished building: ../src/menu.c'
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90208	   2580	  46640	 139428	  220a4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+21:16:53 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90224	   2580	  46640	 139444	  220b4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+21:17:24 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:18:24 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90224	   2580	  46640	 139444	  220b4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+21:18:29 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+21:19:02 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90224	   2580	  46640	 139444	  220b4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+21:19:08 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+22:03:13 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90224	   2580	  46640	 139444	  220b4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+22:03:20 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+22:03:58 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90224	   2580	  46640	 139444	  220b4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+22:04:10 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+22:04:48 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90224	   2580	  46640	 139444	  220b4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+22:04:54 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+22:05:46 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90224	   2580	  46640	 139444	  220b4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+22:05:51 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+22:54:10 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/menu_navigation.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/menu_navigation.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/menu_navigation.d" -MT"src/menu_navigation.o" -o "src/menu_navigation.o" "../src/menu_navigation.c"
+'Finished building: ../src/menu_navigation.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90224	   2580	  46640	 139444	  220b4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+22:54:35 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90224	   2580	  46640	 139444	  220b4	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+22:55:37 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90296	   2580	  46640	 139516	  220fc	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+23:17:32 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+23:19:22 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90128	   2580	  46640	 139348	  22054	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+23:19:26 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+23:22:30 **** Auto Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/read_bram.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/read_bram.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../audio_fft_praesi_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/read_bram.d" -MT"src/read_bram.o" -o "src/read_bram.o" "../src/read_bram.c"
+'Finished building: ../src/read_bram.c'
+' '
+'Building target: audio_fft_praesi.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../audio_fft_praesi_bsp/ps7_cortexa9_0/lib -o "audio_fft_praesi.elf"  ./src/audio_driver.o ./src/main.o ./src/menu.o ./src/menu_navigation.o ./src/read_bram.o ./src/spi_driver.o ./src/wave_gen.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: audio_fft_praesi.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size audio_fft_praesi.elf  |tee "audio_fft_praesi.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  90128	   2580	  46640	 139348	  22054	audio_fft_praesi.elf
+'Finished building: audio_fft_praesi.elf.size'
+' '
+23:22:40 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.

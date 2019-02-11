@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Thu Feb  7 13:31:43 2019
-// Host        : niklas-desktop running 64-bit Ubuntu 18.10
+// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+// Date        : Mon Feb 11 18:49:18 2019
+// Host        : Jannes-PC running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim
-//               /home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2sDataInRight_0/fourier_bram_i2sDataInRight_0_sim_netlist.v
+//               D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/sources_1/bd/fourier_bram/ip/fourier_bram_i2sDataInRight_0/fourier_bram_i2sDataInRight_0_sim_netlist.v
 // Design      : fourier_bram_i2sDataInRight_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -41,8 +41,7 @@ module fourier_bram_i2sDataInRight_0
   assign o_dftData[18] = i_i2sData[23];
   assign o_dftData[17] = i_i2sData[23];
   assign o_dftData[16] = i_i2sData[23];
-  assign o_dftData[15] = i_i2sData[23];
-  assign o_dftData[14:0] = i_i2sData[23:9];
+  assign o_dftData[15:0] = i_i2sData[23:8];
   LUT2 #(
     .INIT(4'h8)) 
     o_dftDataValid_INST_0

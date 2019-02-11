@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Fri Feb  8 12:36:56 2019
-| Host             : niklas-desktop running 64-bit Ubuntu 18.10
+| Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date             : Mon Feb 11 19:07:10 2019
+| Host             : Jannes-PC running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file fourier_bram_wrapper_power_routed.rpt -pb fourier_bram_wrapper_power_summary_routed.pb -rpx fourier_bram_wrapper_power_routed.rpx
 | Design           : fourier_bram_wrapper
 | Device           : xc7z020clg484-1
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.032 |        4 |       --- |             --- |
-| Slice Logic              |     0.021 |    19331 |       --- |             --- |
-|   LUT as Logic           |     0.018 |     6475 |     53200 |           12.17 |
+| Slice Logic              |     0.021 |    19335 |       --- |             --- |
+|   LUT as Logic           |     0.017 |     6465 |     53200 |           12.15 |
 |   LUT as Distributed RAM |     0.002 |      652 |     17400 |            3.75 |
-|   Register               |     0.001 |     8524 |    106400 |            8.01 |
+|   Register               |     0.001 |     8527 |    106400 |            8.01 |
 |   LUT as Shift Register  |    <0.001 |      368 |     17400 |            2.11 |
 |   CARRY4                 |    <0.001 |      164 |     13300 |            1.23 |
 |   F7/F8 Muxes            |    <0.001 |       11 |     53200 |            0.02 |
 |   Others                 |     0.000 |     1029 |       --- |             --- |
-| Signals                  |     0.025 |    12952 |       --- |             --- |
+| Signals                  |     0.026 |    12963 |       --- |             --- |
 | Block RAM                |     0.014 |       11 |       140 |            7.86 |
 | DSPs                     |     0.007 |        8 |       220 |            3.64 |
 | I/O                      |     0.002 |       14 |       200 |            7.00 |

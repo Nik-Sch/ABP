@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/niklas/dev/uni/ABP/git/Vivado/FFT/FFT.srcs/constrs_1/imports/new/constraints_1.xdc rfile:../../../FFT.srcs/constrs_1/imports/new/constraints_1.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/Uni/git/ABP/Vivado/FFT/FFT.srcs/constrs_1/imports/new/constraints_1.xdc rfile:../../../FFT.srcs/constrs_1/imports/new/constraints_1.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN AB2 [get_ports FCLK_CLK2_0]
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]

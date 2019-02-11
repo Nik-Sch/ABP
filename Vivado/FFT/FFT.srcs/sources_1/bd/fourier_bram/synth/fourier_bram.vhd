@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Fri Feb  8 12:28:50 2019
---Host        : niklas-desktop running 64-bit Ubuntu 18.10
+--Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+--Date        : Mon Feb 11 18:45:58 2019
+--Host        : Jannes-PC running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target fourier_bram.bd
 --Design      : fourier_bram
 --Purpose     : IP block netlist
@@ -538,24 +538,6 @@ architecture STRUCTURE of fourier_bram is
     bram_rddata_a : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   end component fourier_bram_axiBramCtrlRight_0;
-  component fourier_bram_i2sDataInRight_0 is
-  port (
-    i_i2sData : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    i_i2sEn : in STD_LOGIC;
-    o_dftData : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_dftDataValid : out STD_LOGIC;
-    i_dftReady : in STD_LOGIC
-  );
-  end component fourier_bram_i2sDataInRight_0;
-  component fourier_bram_i2sDataIn_0_0 is
-  port (
-    i_i2sData : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    i_i2sEn : in STD_LOGIC;
-    o_dftData : out STD_LOGIC_VECTOR ( 24 downto 0 );
-    o_dftDataValid : out STD_LOGIC;
-    i_dftReady : in STD_LOGIC
-  );
-  end component fourier_bram_i2sDataIn_0_0;
   component fourier_bram_DFTStageWrapperRight_0 is
   port (
     i_clk : in STD_LOGIC;
@@ -612,6 +594,24 @@ architecture STRUCTURE of fourier_bram is
     o_bramByteWe : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component fourier_bram_Freq2BRAM_1_0;
+  component fourier_bram_i2sDataInRight_0 is
+  port (
+    i_i2sData : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    i_i2sEn : in STD_LOGIC;
+    o_dftData : out STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_dftDataValid : out STD_LOGIC;
+    i_dftReady : in STD_LOGIC
+  );
+  end component fourier_bram_i2sDataInRight_0;
+  component fourier_bram_i2sDataIn_0_0 is
+  port (
+    i_i2sData : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    i_i2sEn : in STD_LOGIC;
+    o_dftData : out STD_LOGIC_VECTOR ( 24 downto 0 );
+    o_dftDataValid : out STD_LOGIC;
+    i_dftReady : in STD_LOGIC
+  );
+  end component fourier_bram_i2sDataIn_0_0;
   signal ADC_SDATA_1 : STD_LOGIC;
   signal BCLK_1 : STD_LOGIC;
   signal DFTStageWrapperLeft_o_freqDataEn : STD_LOGIC;

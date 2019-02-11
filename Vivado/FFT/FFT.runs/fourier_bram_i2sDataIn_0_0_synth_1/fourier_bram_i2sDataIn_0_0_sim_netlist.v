@@ -1,8 +1,8 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Thu Feb  7 13:31:24 2019
-// Host        : niklas-desktop running 64-bit Ubuntu 18.10
+// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+// Date        : Mon Feb 11 18:49:17 2019
+// Host        : Jannes-PC running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ fourier_bram_i2sDataIn_0_0_sim_netlist.v
 // Design      : fourier_bram_i2sDataIn_0_0
@@ -41,8 +41,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
   assign o_dftData[18] = i_i2sData[23];
   assign o_dftData[17] = i_i2sData[23];
   assign o_dftData[16] = i_i2sData[23];
-  assign o_dftData[15] = i_i2sData[23];
-  assign o_dftData[14:0] = i_i2sData[23:9];
+  assign o_dftData[15:0] = i_i2sData[23:8];
   LUT2 #(
     .INIT(4'h8)) 
     o_dftDataValid_INST_0

@@ -20,12 +20,12 @@
       "I2S_receiver_1": "",
       "blkMemGenLeft": "",
       "axiBramCtrlLeft": "",
-      "i2sDataInLeft": "",
-      "i2sDataInRight": "",
       "DFTStageWrapperLeft": "",
       "DFTStageWrapperRight": "",
       "Freq2BRAMLeft": "",
-      "Freq2BRAMRight": ""
+      "Freq2BRAMRight": "",
+      "i2sDataInLeft": "",
+      "i2sDataInRight": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1174,66 +1174,6 @@
           }
         }
       },
-      "i2sDataInLeft": {
-        "vlnv": "xilinx.com:module_ref:i2sDataIn:1.0",
-        "xci_name": "fourier_bram_i2sDataInRight_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "i2sDataIn",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_i2sData": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "i_i2sEn": {
-            "direction": "I"
-          },
-          "o_dftData": {
-            "direction": "O",
-            "left": "24",
-            "right": "0"
-          },
-          "o_dftDataValid": {
-            "direction": "O"
-          },
-          "i_dftReady": {
-            "direction": "I"
-          }
-        }
-      },
-      "i2sDataInRight": {
-        "vlnv": "xilinx.com:module_ref:i2sDataIn:1.0",
-        "xci_name": "fourier_bram_i2sDataIn_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "i2sDataIn",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "i_i2sData": {
-            "direction": "I",
-            "left": "23",
-            "right": "0"
-          },
-          "i_i2sEn": {
-            "direction": "I"
-          },
-          "o_dftData": {
-            "direction": "O",
-            "left": "24",
-            "right": "0"
-          },
-          "o_dftDataValid": {
-            "direction": "O"
-          },
-          "i_dftReady": {
-            "direction": "I"
-          }
-        }
-      },
       "DFTStageWrapperLeft": {
         "vlnv": "xilinx.com:module_ref:DFTStageWrapper:1.0",
         "xci_name": "fourier_bram_DFTStageWrapperRight_0",
@@ -1529,6 +1469,66 @@
             "right": "0"
           }
         }
+      },
+      "i2sDataInLeft": {
+        "vlnv": "xilinx.com:module_ref:i2sDataIn:1.0",
+        "xci_name": "fourier_bram_i2sDataInRight_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "i2sDataIn",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_i2sData": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "i_i2sEn": {
+            "direction": "I"
+          },
+          "o_dftData": {
+            "direction": "O",
+            "left": "24",
+            "right": "0"
+          },
+          "o_dftDataValid": {
+            "direction": "O"
+          },
+          "i_dftReady": {
+            "direction": "I"
+          }
+        }
+      },
+      "i2sDataInRight": {
+        "vlnv": "xilinx.com:module_ref:i2sDataIn:1.0",
+        "xci_name": "fourier_bram_i2sDataIn_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "i2sDataIn",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "i_i2sData": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "i_i2sEn": {
+            "direction": "I"
+          },
+          "o_dftData": {
+            "direction": "O",
+            "left": "24",
+            "right": "0"
+          },
+          "o_dftDataValid": {
+            "direction": "O"
+          },
+          "i_dftReady": {
+            "direction": "I"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1580,6 +1580,12 @@
           "processing_system7_0/FIXED_IO"
         ]
       },
+      "processing_system7_0_M_AXI_GP0": {
+        "interface_ports": [
+          "processing_system7_0/M_AXI_GP0",
+          "axiSmc/S00_AXI"
+        ]
+      },
       "axiSmc_M02_AXI": {
         "interface_ports": [
           "axiSmc/M02_AXI",
@@ -1590,12 +1596,6 @@
         "interface_ports": [
           "spi_rtl",
           "axi_quad_spi_0/SPI_0"
-        ]
-      },
-      "processing_system7_0_M_AXI_GP0": {
-        "interface_ports": [
-          "processing_system7_0/M_AXI_GP0",
-          "axiSmc/S00_AXI"
         ]
       }
     },
