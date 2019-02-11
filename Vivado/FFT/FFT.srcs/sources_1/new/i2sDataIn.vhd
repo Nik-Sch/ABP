@@ -24,8 +24,8 @@ begin
   o_dftDataValid <= '1' when (i_i2sEn = '1' and i_dftReady = '1') else
                     '0';
   -- input data is signed 24bit
-  -- output should be 15bit but sign extended to 25bit
-  s_tmp <= std_logic_vector(signed(shift_right(signed(i_i2sData), 9)));
+  -- output should be 16bit but sign extended to 25bit
+  s_tmp <= std_logic_vector(signed(shift_right(signed(i_i2sData), 8)));
   o_dftData <= s_tmp(23) & s_tmp;
 
 end rtl;

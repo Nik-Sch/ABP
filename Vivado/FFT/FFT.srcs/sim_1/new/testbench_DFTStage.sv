@@ -18,15 +18,15 @@ module testbench_DFTStage;
     } t_testData;
 
   function t_testData createTestData();
-    // out: Q11.14
+    // out: Q10.15
     t_testData result;
     logic signed [24:0] test;
 
     for (int i = 0; i < testFs * testTime / 2; i++) begin
-      result.data[i] = $rtoi((1 << 14) * $sin(2*`PI*testF1 * i/testFs));
+      result.data[i] = $rtoi((1 << 15) * $sin(2*`PI*testF1 * i/testFs));
     end
     for (int i = testFs * testTime / 2; i < testFs * testTime; i++) begin
-      result.data[i] = $rtoi((1 << 14) * $sin(2*`PI*testF2 * i/testFs));
+      result.data[i] = $rtoi((1 << 15) * $sin(2*`PI*testF2 * i/testFs));
     end
     return result;
   endfunction;

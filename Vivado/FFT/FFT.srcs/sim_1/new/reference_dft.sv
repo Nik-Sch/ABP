@@ -39,7 +39,7 @@ typedef struct {
 integer out_file;
 
 function t_testData createTestData();
-  // out: Q11.14
+  // out: Q10.15
   t_testData result;
   logic signed [24:0] test;
 

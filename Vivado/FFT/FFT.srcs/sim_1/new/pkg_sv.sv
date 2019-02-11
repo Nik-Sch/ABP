@@ -10,11 +10,10 @@ package pkg_sv;
 
   typedef struct packed {
     logic signed [24:0] r, i;
-  } complex_25; // Q11.14
+  } complex_25;
 
   function complex_25 complex_multiply(complex_25 a, complex_18 b);
-    // a: Q11.14, b: Q2.16
-    // out: Q11.14
+    // b: Q2.16
 
     complex_25 result;
     automatic logic signed [(25+18)-1:0] r = (a.r * b.r) - (a.i * b.i);
@@ -34,7 +33,6 @@ package pkg_sv;
     return result;
   endfunction;
 
-  // Q11.14
   function complex_25 [N/2-1:0] dft_stage(
                     logic signed [24:0] data_new,
                     logic signed [24:0] data_old,
@@ -43,7 +41,7 @@ package pkg_sv;
     for (integer f = 0; f < N/2; f++) begin
       automatic complex_18 e = e_function(f, N); // Q2.16
       automatic complex_25 new_x;
-      new_x.r = X[f].r + data_new - data_old; // Q11.14
+      new_x.r = X[f].r + data_new - data_old;
       new_x.i = X[f].i;
       X[f] = complex_multiply(new_x, e);
     end
