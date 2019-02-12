@@ -94,8 +94,5 @@ void get_dft_amplitude_right(double amplitude[]) {
     	double imag = ((double) imag_i[i]) / (pow(2, 15));
     	double val = sqrt(pow(real, 2) + pow(imag, 2));
     	amplitude[i] = val;
-    	printf("%d;",(int)val);
     }
-    printf("\n");
-
 }

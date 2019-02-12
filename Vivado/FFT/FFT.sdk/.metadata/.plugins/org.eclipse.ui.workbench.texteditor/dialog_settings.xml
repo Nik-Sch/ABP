@@ -2,21 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="print_menu" key="selection"/>
+		<item value="menu" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="menue"/>
+			<item value="menues"/>
 			<item value="print_menu1"/>
 			<item value="print_menu"/>
 			<item value="R8"/>
 			<item value="i++"/>
 			<item value="biggest_val"/>
 			<item value="sqrt"/>
-			<item value=""/>
 		</list>
 		<list key="replacehistory">
+			<item value="menu"/>
 			<item value="print_menu"/>
 			<item value="print_menu1"/>
 		</list>

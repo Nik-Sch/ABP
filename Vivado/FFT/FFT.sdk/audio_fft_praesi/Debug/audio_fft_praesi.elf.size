@@ -1,2 +1,2 @@
    text	   data	    bss	    dec	    hex	filename
-  90128	   2580	  46640	 139348	  22054	audio_fft_praesi.elf
+  90016	   2580	  46640	 139236	  21fe4	audio_fft_praesi.elf

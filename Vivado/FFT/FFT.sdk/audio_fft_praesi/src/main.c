@@ -15,15 +15,12 @@ int main() {
 
     menu_create_main_menu(&main_menu,"ADAU1761 Configuration");
 
-    // create main menue submenues
-    char *main_menu_submenus_titles[main_menu_size] = {"Input Signal options", "Output Signal options", "ADC / Serial Port options", "standard configuration", "debug dft left", "debug dft right", "print wave left", "print wave right","debug i2s"};
+    // create main menu submenus
+    char *main_menu_submenus_titles[main_menu_size] = {"Input Signal options", "Output Signal options", "ADC / Serial Port options", "standard configuration", "print wave left", "print wave right",};
     menu_create_submenus(&main_menu, main_menu_size, main_menu_submenus_titles);
     menu_set_function(main_menu.submenus[3], &set_audio_std_configuration);
-    menu_set_function(main_menu.submenus[4], &read_dft_data_left);
-    menu_set_function(main_menu.submenus[5], &read_dft_data_right);
-    menu_set_function(main_menu.submenus[6], &print_wave_left);
-    menu_set_function(main_menu.submenus[7], &print_wave_right);
-    //menu_set_function(main_menu.submenus[8], &read_i2c_data);
+    menu_set_function(main_menu.submenus[4], &print_wave_left);
+    menu_set_function(main_menu.submenus[5], &print_wave_right);
 
     // create input signal submenus
     char *input_signal_options[Input_Signal_options_size] = {"Mixer 1 Left Record Mixer (MX1AUXG config)", "Mixer 2 Right Record Mixer (MX2AUXG config)",
@@ -43,7 +40,7 @@ int main() {
 
 
 
-    // create input and output subsubmenues
+    // create input and output subsubmenus
     menu * Mixer1 = main_menu.submenus[0]->submenus[0];
     menu * Mixer2 = main_menu.submenus[0]->submenus[1];
     menu * Mixer1_1 = main_menu.submenus[0]->submenus[2];
@@ -183,8 +180,6 @@ int main() {
     uint8_t adc_control_options_values[adc_options_size] = {0x0,0x33,0x73,0x13};
     menu_set_submenu_reg_config_values(adc_control, adc_control_options_values, adc_options_size);
     menu_set_submenu_reg_config_addresses(adc_control, R19_ADC_CTRL, adc_options_size);
-
-
 
     menu_navigation();
 }

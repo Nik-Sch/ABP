@@ -20,27 +20,15 @@ clients =
 	{ client_name = "sdk"; 
 		rules = (
 			{
-				context="sdk\\\\hardware/1549908597259";
-				xml_map="sdk\\\\hardware/1549908597259";
-				html_map="sdk\\\\hardware/1549908597259";
+				context="sdk\\\\application/1549999361101";
+				xml_map="sdk\\\\application/1549999361101";
+				html_map="sdk\\\\application/1549999361101";
 				html_format="UnisimStatsStyle";
 			},
 			{
-				context="sdk\\\\bsp/1549908669798";
-				xml_map="sdk\\\\bsp/1549908669798";
-				html_map="sdk\\\\bsp/1549908669798";
-				html_format="UnisimStatsStyle";
-			},
-			{
-				context="sdk\\\\application/1549908684203";
-				xml_map="sdk\\\\application/1549908684203";
-				html_map="sdk\\\\application/1549908684203";
-				html_format="UnisimStatsStyle";
-			},
-			{
-				context="sdk\\\\bsp/1549924719982";
-				xml_map="sdk\\\\bsp/1549924719982";
-				html_map="sdk\\\\bsp/1549924719982";
+				context="sdk\\\\bsp/1550001513669";
+				xml_map="sdk\\\\bsp/1550001513669";
+				html_map="sdk\\\\bsp/1550001513669";
 				html_format="UnisimStatsStyle";
 			}
 		);

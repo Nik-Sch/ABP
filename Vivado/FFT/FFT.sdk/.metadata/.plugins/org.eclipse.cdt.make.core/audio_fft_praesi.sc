@@ -853,6 +853,8 @@
 </instance>
 <instance id="xilinx.gnu.armv7.exe.debug.232046342;xilinx.gnu.armv7.exe.debug.232046342.;xilinx.gnu.armv7.c.toolchain.compiler.debug.630701130;xilinx.gnu.armv7.c.compiler.input.136230510">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="#undef __ARM_FEATURE_IDIV" removed="true"/>
+<includePath path="#undef __ARM_ASM_SYNTAX_UNIFIED__" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_UNALIGNED" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_QRDMX" removed="true"/>
 <includePath path="#undef __ARM_FEATURE_FP16_VECTOR_ARITHMETIC" removed="true"/>

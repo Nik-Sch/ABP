@@ -11,7 +11,7 @@
 #define max_header_size 50
 
 
-#define main_menu_size 9
+#define main_menu_size 6
 
 //main menue submenus size
 #define Input_Signal_options_size 4

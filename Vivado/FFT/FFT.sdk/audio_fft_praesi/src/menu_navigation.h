@@ -15,7 +15,6 @@
 #define cursor_hide() printf("\033[?25l")
 
 void menu_navigation();
-int getch();
 void print_menu(menu *menu, int cursor_position);
 void initialize_navigation(menu* menu);
 void push_buttons_test();

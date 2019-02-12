@@ -137,7 +137,7 @@ void print_wave_left() {
     clear_matrix();
     fill_left();
     _print_matrix_calculate_and_set_val();
-    printf("\n");
+    printf("\n\n");
     printf("left channel scaled by 1/%d:\n\n",scale_rate);
     print_the_matrix();
 }

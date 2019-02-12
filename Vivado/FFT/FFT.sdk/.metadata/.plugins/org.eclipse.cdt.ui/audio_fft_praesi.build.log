@@ -1,8 +1,8 @@
-23:22:40 **** Incremental Build of configuration Debug for project audio_fft_praesi ****
+20:23:55 **** Auto Build of configuration Debug for project audio_fft_praesi ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for 'main-build'.
 
-23:22:41 Build Finished (took 477ms)
+20:23:55 Build Finished (took 675ms)
 

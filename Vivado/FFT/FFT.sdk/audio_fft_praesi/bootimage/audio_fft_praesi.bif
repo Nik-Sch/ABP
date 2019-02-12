@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\fsbl\Debug\fsbl.elf
+	D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\fourier_bram_wrapper_hw_platform_0\fourier_bram_wrapper.bit
+	D:\Uni\git\ABP\Vivado\FFT\FFT.sdk\audio_fft_praesi\Debug\audio_fft_praesi.elf
+}
