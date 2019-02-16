@@ -3,9 +3,9 @@ sv work  --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/ec67
 "../../../../FFT.srcs/sim_1/new/pkg_sv.sv" \
 
 verilog xil_defaultlib  --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/ec67/hdl" --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/70cf/hdl" --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/979d/hdl/verilog" --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/b2d0/hdl/verilog" --include "/home/niklas/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
-"../../../../FFT.srcs/sources_1/ip/blk_mem_gen_0_2/sim/blk_mem_gen_0.v" \
 "../../../../FFT.srcs/sources_1/ip/blk_rom_e_imag/sim/blk_rom_e_imag.v" \
 "../../../../FFT.srcs/sources_1/ip/blk_rom_e_real/sim/blk_rom_e_real.v" \
+"../../../../FFT.srcs/sources_1/ip/blk_mem_gen_0_2/sim/blk_mem_gen_0.v" \
 "../../../../FFT.srcs/sources_1/ip/data_fifo/sim/data_fifo.v" \
 
 sv work  --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/ec67/hdl" --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/70cf/hdl" --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/979d/hdl/verilog" --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/b2d0/hdl/verilog" --include "/home/niklas/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \

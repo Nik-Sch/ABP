@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+sv work  --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/ec67/hdl" --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/70cf/hdl" --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/979d/hdl/verilog" --include "../../../../FFT.srcs/sources_1/bd/fourier_bram/ipshared/b2d0/hdl/verilog" --include "/home/niklas/Xilinx/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../../FFT.srcs/sim_1/new/pkg_sv.sv" \
+"../../../../FFT.srcs/sim_1/new/testbench_complexMul.sv" \
+
+# compile glbl module
+verilog work "glbl.v"
+
+# Do not sort compile order
+nosort

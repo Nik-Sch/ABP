@@ -1,3 +1,5 @@
+// Author: Niklas
+// Description: generates the .coe files for the e function roms
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>

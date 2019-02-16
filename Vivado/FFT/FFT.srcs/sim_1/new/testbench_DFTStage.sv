@@ -1,9 +1,7 @@
-
-// Date         Version Author          Description
-//--------------------------------------------------------------
-// 2018-07-11   1.0     Schelten        initial TB
-//--------------------------------------------------------------
+// Author: Niklas
+// Description: testbench for the DFTStage_Wrapper entity
 module testbench_DFTStage;
+  // essentially the same as reference_dft but compares results and doesn't write them to file
 
   import pkg_sv::*;
   `define PI 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862
@@ -48,6 +46,7 @@ module testbench_DFTStage;
 
 
   initial begin
+    // initial reset
     reset = 1;
     @(negedge clk);
     reset = 0;
@@ -74,7 +73,7 @@ module testbench_DFTStage;
       automatic int bin = 0;
 
       data_new = testData.data[i];
-      // reference
+      // create reference
       if (i >= N) begin
         data_old = testData.data[i - N];
       end else begin
@@ -82,7 +81,7 @@ module testbench_DFTStage;
       end
       X = dft_stage(data_new, data_old, X);
 
-      // dut
+      // validate dut
       dut_i_dataValid = 1;
       dut_i_dataNew = data_new;
       $display("count %0d/%0d starting @ %01t", i, $size(testData.data), $time);
@@ -90,10 +89,12 @@ module testbench_DFTStage;
       dut_i_dataValid = 0;
       while (!dut_o_ready) begin
         if (dut_o_freqDataEn) begin
+          // check if the bin is correct
           if (bin !== dut_o_freqDataIndex) begin
             @(negedge clk);
             $fatal(1, "freqIndex (#bin) should be %d but is %d @ %01t", bin, dut_o_freqDataIndex, $time);
           end
+          // check if the result is correct
           if ((X[dut_o_freqDataIndex].r !== dut_o_freqDataReal) ||
               (X[dut_o_freqDataIndex].i !== dut_o_freqDataImag)) begin
             @(negedge clk);
@@ -110,6 +111,7 @@ module testbench_DFTStage;
     $stop;
   end
 
+  // dut instantiation
   DFTStageWrapper dut_DFTStageWrapper
   (
     .i_clk(clk),
@@ -120,9 +122,7 @@ module testbench_DFTStage;
     .o_freqDataEn(dut_o_freqDataEn),
     .o_freqDataIndex(dut_o_freqDataIndex),
     .o_freqDataReal(dut_o_freqDataReal),
-    .o_freqDataImag(dut_o_freqDataImag),
-    .o_r_f(),
-    .o_dataOld()
+    .o_freqDataImag(dut_o_freqDataImag)
     );
 
 
