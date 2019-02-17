@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Feb 17 18:11:45 2019
+# Process ID: 8916
+# Current directory: C:/Users/unive/Desktop/Test/ABP/Vivado/HDMI/I2C_Master
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15304 C:\Users\unive\Desktop\Test\ABP\Vivado\HDMI\I2C_Master\I2C_Master.xpr
+# Log file: C:/Users/unive/Desktop/Test/ABP/Vivado/HDMI/I2C_Master/vivado.log
+# Journal file: C:/Users/unive/Desktop/Test/ABP/Vivado/HDMI/I2C_Master\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/unive/Desktop/Test/ABP/Vivado/HDMI/I2C_Master/I2C_Master.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source i2cmaster_tb.tcl
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+source i2cmaster_tb.tcl
+close_sim
+launch_simulation
+source i2cmaster_tb.tcl
+close_sim
+launch_simulation
+source i2cmaster_tb.tcl
+relaunch_sim
+close_sim

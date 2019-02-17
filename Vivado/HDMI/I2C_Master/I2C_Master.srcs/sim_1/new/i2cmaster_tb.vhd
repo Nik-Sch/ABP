@@ -22,15 +22,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity i2cmaster_tb is
 end i2cmaster_tb;
 
@@ -99,13 +90,14 @@ begin
     clk <= not clk;
 end process clockgen;
 
+-- Test for read operation
 addr_in(7 downto 0) <= "11111111";
+
+-- Test for write operation
+--addr_in(7 downto 0) <= "11111110";
+
+
 addr_in(15 downto 8) <= "10101010";
 enable_in(0) <= '1';
-
---i2creceiver : process
---    wait until sda = 'Z';
---    sda <= '1';
---end process i2creceiver;
 
 end Behavioral;
