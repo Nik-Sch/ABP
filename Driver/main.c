@@ -4,10 +4,6 @@
 
 #include "i2c_master/i2c_reg.h"
 
-#define LED_REGISTER_ADDR 0x41200000
-
-static volatile unsigned char *const led_register = (unsigned char*)(LED_REGISTER_ADDR);
-
 int main(int argc, char **argv) {
 
     /* Debugging */

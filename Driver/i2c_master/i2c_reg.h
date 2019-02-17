@@ -49,10 +49,16 @@
 
 static volatile unsigned int *const iic_access = (unsigned int *)IIC_REGISTER_ADDR;
 
+/* Initialization of the AXI IIC component*/
 void I2CMasterSetup(void);
 
+/* Write data to the register with the address addr */
 void writeI2CRegisterMaster(unsigned char addr, unsigned char data);
+
+/* Read data from the register with the address addr */
 unsigned char readI2CRegisterMaster(unsigned char addr);
+
+/* Modify only the data which is between index end and index start on the register with the address addr*/
 void modifyI2CRegisterMaster(unsigned char addr, unsigned char end, unsigned char start, unsigned char data);
 
 

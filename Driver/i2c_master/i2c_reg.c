@@ -23,7 +23,7 @@ void I2CMasterSetup(void) {
     *I2CMasterRetrieveRegister(CR) |= IIC_EN;
 
     /* Remove TX_FIFO_RESET */
-    /**I2CMasterRetrieveRegister(CR) &= ~(TX_FIFO_RESET);*/
+    *I2CMasterRetrieveRegister(CR) &= ~(TX_FIFO_RESET);
 }
 
 void checkReadiness(void) {
@@ -38,19 +38,15 @@ void checkReadiness(void) {
 }
 
 void writeAddrInfo(unsigned char addr) {
-	printf("%x", START_BIT | (ADV7511_SLAVE_ADDR << 1) | WRITE_BIT);
-
-
     /* Set start bit, slave address and write bit */
 	*I2CMasterRetrieveRegister(TX_FIFO) = START_BIT | (ADV7511_SLAVE_ADDR << 1) | WRITE_BIT;
-
-	printf("%x", addr);
 
     /* Set Base address of register */
 	*I2CMasterRetrieveRegister(TX_FIFO) = addr;
 }
 
 unsigned char readI2CRegisterMaster(unsigned char addr) {
+	/* Check if new operation can be executed */
     checkReadiness();
 
     /* Prepare Slave Address and Register Address */
@@ -73,6 +69,7 @@ unsigned char readI2CRegisterMaster(unsigned char addr) {
 }
 
 void writeI2CRegisterMaster(unsigned char addr, unsigned char data) {
+	/* Check if new operation can be executed */
     checkReadiness();
 
     /* Prepare Slave Address and Register Address */
