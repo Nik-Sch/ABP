@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/audio/src/helloworld.c" element2="/audio/src/platform_config.h" element3="/audio/src/platform.c" element4="/audio/src/platform.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1546823547665"/>
-</session>
